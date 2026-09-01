@@ -1,0 +1,18 @@
+{
+  "otsikko": "Brunon, Wernerin ja Moritzin pelit",
+  "aikavyohyke": "Europe/Helsinki",
+  "lapset": [
+    { "nimi": "Bruno",  "vari": "#1a56c4", "vari_tumma": "#7fb0ff" },
+    { "nimi": "Werner", "vari": "#8a5a00", "vari_tumma": "#e8b84b" },
+    { "nimi": "Moritz", "vari": "#10662c", "vari_tumma": "#6dce8c" }
+  ],
+  "joukkueet": [
+    { "lapsi": "Bruno",  "nimi": "ToPo M1A",  "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/969" },
+    { "lapsi": "Bruno",  "nimi": "ToPo U19",  "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/5754904" },
+    { "lapsi": "Werner", "nimi": "HBA M1A",   "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/4634877" },
+    { "lapsi": "Moritz", "nimi": "RPC",       "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/5756063" },
+    { "lapsi": "Moritz", "nimi": "U15 1D",    "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/5000040" }
+  ],
+  "menneet_paivat": 30,
+  "tulevat_paivat": 240
+}
