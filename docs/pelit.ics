@@ -1,0 +1,872 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//stude.fi//koripallo//FI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Brunon\, Wernerin ja Moritzin pelit
+X-WR-TIMEZONE:Europe/Helsinki
+BEGIN:VEVENT
+UID:1009988-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20260913T070000Z
+DTEND:20260913T090000Z
+SUMMARY:Moritz: Pussihukat /Punainen – RiKos
+LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1009988
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009988
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1005600-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20260919T140000Z
+DTEND:20260919T160000Z
+SUMMARY:Bruno: ToPo – v2
+LOCATION:Lehtisaaren Kuntotalo\, Kaaponkuja\, Jyväskylä
+DESCRIPTION:19-vuotiaat pojat\, SM-karsinnat\nTulos ja tilastot: https://t
+ ulospalvelu.basket.fi/match/1005600
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1005600
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1009992-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20260930T163500Z
+DTEND:20260930T183500Z
+SUMMARY:Moritz: ToPo – Pussihukat /Punainen
+LOCATION:Töölön Kisahalli\, B-puoli\, Paavo Nurmen Kuja 1\, Helsinki
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1009992
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009992
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006588-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261002T150000Z
+DTEND:20261002T170000Z
+SUMMARY:Werner: HBA-Märsky – Karkkila
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Valmistavat ottelut\, miehet\nTulos ja tilastot: https://tulos
+ palvelu.basket.fi/match/1006588
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006588
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006706-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261009T153000Z
+DTEND:20261009T173000Z
+SUMMARY:Bruno: Torpan Pojat – HBA-Märsky
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006706
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006706
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006706-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261009T153000Z
+DTEND:20261009T173000Z
+SUMMARY:Werner: Torpan Pojat – HBA-Märsky
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006706
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006706
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006764-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261016T153000Z
+DTEND:20261016T173000Z
+SUMMARY:Werner: HBA-Märsky – Kobrat
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006764
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006764
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006724-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261018T140000Z
+DTEND:20261018T160000Z
+SUMMARY:Bruno: Helsingin NMKY – Torpan Pojat
+LOCATION:Namika Areena\, Pilkekuja 10\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006724
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006724
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006713-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261023T153000Z
+DTEND:20261023T173000Z
+SUMMARY:Bruno: Torpan Pojat – Raholan Pyrkivä
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006713
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006713
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006761-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261023T153000Z
+DTEND:20261023T173000Z
+SUMMARY:Werner: HBA-Märsky – Helsingin NMKY
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006761
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006761
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1009995-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261024T093000Z
+DTEND:20261024T113000Z
+SUMMARY:Moritz: Pussihukat /Punainen – Tapiolan Honka
+LOCATION:Kartanonkosken koulu\, Tilkuntie 5\, Vantaa
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1009995
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009995
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1009997-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261031T103000Z
+DTEND:20261031T123000Z
+SUMMARY:Moritz: Kori-80/Kombo – Pussihukat /Punainen
+LOCATION:Killan koulu\, Sarvimäentie 35\, Kerava
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1009997
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009997
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006750-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261031T150000Z
+DTEND:20261031T170000Z
+SUMMARY:Werner: Raholan Pyrkivä – HBA-Märsky
+LOCATION:Tesoman palloiluhalli\, Tesoman valtatie 46\, Tampere
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006750
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006750
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006681-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261101T140000Z
+DTEND:20261101T160000Z
+SUMMARY:Bruno: Karkkila – Torpan Pojat
+LOCATION:Karkkilan liikuntahalli\, Anttilankatu 2-4 \, Karkkila
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006681
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006681
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006714-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261106T163000Z
+DTEND:20261106T183000Z
+SUMMARY:Bruno: Torpan Pojat – Äänekosken Huima
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006714
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006714
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006763-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261106T163000Z
+DTEND:20261106T183000Z
+SUMMARY:Werner: HBA-Märsky – Karkkila
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006763
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006763
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1010002-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Moritz: Pussihukat /Punainen – LePy
+LOCATION:Kartanonkosken koulu\, Tilkuntie 5\, Vantaa
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1010002
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010002
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006772-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261113T163000Z
+DTEND:20261113T183000Z
+SUMMARY:Werner: Äänekosken Huima – HBA-Märsky
+LOCATION:Äänekosken liikuntatalo\, Koulumäenkatu 2\, Äänekoski
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006772
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006772
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006659-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261115T150000Z
+DTEND:20261115T170000Z
+SUMMARY:Bruno: Pantterit – Torpan Pojat
+LOCATION:Herttoniemenr. liik.halli\, Petter Wetterin tie 5\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006659
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006659
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006708-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261120T163000Z
+DTEND:20261120T183000Z
+SUMMARY:Bruno: Torpan Pojat – Jyväskylä Basketball Academy
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006708
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006708
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006766-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261120T163000Z
+DTEND:20261120T183000Z
+SUMMARY:Werner: HBA-Märsky – Pantterit
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006766
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006766
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1010007-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Moritz: MaSu – Pussihukat /Punainen
+LOCATION:Kankarepuiston peruskoulu\, Somerikkopolku 6\, Helsinki
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1010007
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010007
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006692-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261126T163000Z
+DTEND:20261126T183000Z
+SUMMARY:Bruno: Lappeenrannan NMKY – Torpan Pojat
+LOCATION:Lappeenrannan Urheilutalo\, Pohjolankatu 29\, Lappeenranta
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006692
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006692
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006662-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261127T163000Z
+DTEND:20261127T183000Z
+SUMMARY:Werner: Jyväskylä Basketball Academy – HBA-Märsky
+LOCATION:Jyväskylän Monitoimitalo\, Kuntoportti 3\, Jyväskylä
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006662
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006662
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1010012-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261128T080000Z
+DTEND:20261128T100000Z
+SUMMARY:Moritz: Pussihukat /Punainen – HNMKY Valkoinen
+LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1010012
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010012
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006737-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261205T150000Z
+DTEND:20261205T170000Z
+SUMMARY:Bruno: Torpan Pojat – Pyrintö Akatemia
+LOCATION:Pirkkolahalli\, Pirkkolan metsätie 8\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006737
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006737
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006765-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261206T130000Z
+DTEND:20261206T150000Z
+SUMMARY:Werner: HBA-Märsky – Lappeenrannan NMKY
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006765
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006765
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006739-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261210T170000Z
+DTEND:20261210T190000Z
+SUMMARY:Werner: Pyrintö Akatemia – HBA-Märsky
+LOCATION:Pyynikin palloiluhalli\, Ammattikoulunkatu 20\, Tampere
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006739
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006739
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1010016-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261212T110000Z
+DTEND:20261212T130000Z
+SUMMARY:Moritz: Porvoon Tarmo – Pussihukat /Punainen
+LOCATION:Strömborgska skolan\, Peippolantie 3\, Porvoo
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
+ tot: https://tulospalvelu.basket.fi/match/1010016
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010016
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006735-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261212T150000Z
+DTEND:20261212T170000Z
+SUMMARY:Bruno: ACO Basket – Torpan Pojat
+LOCATION:Ouluhalli\, Ouluhallintie 20\, Oulu
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006735
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006735
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006760-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261218T153000Z
+DTEND:20261218T173000Z
+SUMMARY:Werner: HBA-Märsky – ACO Basket
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006760
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006760
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006710-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20261218T163000Z
+DTEND:20261218T183000Z
+SUMMARY:Bruno: Torpan Pojat – Kobrat
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006710
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006710
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006707-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270108T163000Z
+DTEND:20270108T183000Z
+SUMMARY:Bruno: Torpan Pojat – Helsingin NMKY
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006707
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006707
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006695-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270108T163000Z
+DTEND:20270108T183000Z
+SUMMARY:Werner: Kobrat – HBA-Märsky
+LOCATION:Lapuan urheilutalo\, Urheilukatu 3\, Lapua
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006695
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006695
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006758-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270116T150000Z
+DTEND:20270116T170000Z
+SUMMARY:Bruno: Raholan Pyrkivä – Torpan Pojat
+LOCATION:Tesoman palloiluhalli\, Tesoman valtatie 46\, Tampere
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006758
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006758
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006716-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270117T150000Z
+DTEND:20270117T170000Z
+SUMMARY:Werner: Helsingin NMKY – HBA-Märsky
+LOCATION:Namika Areena\, Pilkekuja 10\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006716
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006716
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006709-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270122T163000Z
+DTEND:20270122T183000Z
+SUMMARY:Bruno: Torpan Pojat – Karkkila
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006709
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006709
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006768-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270122T181500Z
+DTEND:20270122T201500Z
+SUMMARY:Werner: HBA-Märsky – Raholan Pyrkivä
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006768
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006768
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006769-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270129T153000Z
+DTEND:20270129T173000Z
+SUMMARY:Bruno: HBA-Märsky – Torpan Pojat
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006769
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006769
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006769-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270129T153000Z
+DTEND:20270129T173000Z
+SUMMARY:Werner: HBA-Märsky – Torpan Pojat
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006769
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006769
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006673-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270131T140000Z
+DTEND:20270131T160000Z
+SUMMARY:Werner: Karkkila – HBA-Märsky
+LOCATION:Karkkilan liikuntahalli\, Anttilankatu 2-4 \, Karkkila
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006673
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006673
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006781-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270131T150000Z
+DTEND:20270131T170000Z
+SUMMARY:Bruno: Äänekosken Huima – Torpan Pojat
+LOCATION:Äänekosken liikuntatalo\, Koulumäenkatu 2\, Äänekoski
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006781
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006781
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006770-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270205T153000Z
+DTEND:20270205T173000Z
+SUMMARY:Werner: HBA-Märsky – Äänekosken Huima
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006770
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006770
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006712-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270205T163000Z
+DTEND:20270205T183000Z
+SUMMARY:Bruno: Torpan Pojat – Pantterit
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006712
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006712
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006670-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270211T163000Z
+DTEND:20270211T183000Z
+SUMMARY:Bruno: Jyväskylä Basketball Academy – Torpan Pojat
+LOCATION:Jyväskylän Monitoimitalo\, Kuntoportti 3\, Jyväskylä
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006670
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006670
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006651-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270214T150000Z
+DTEND:20270214T170000Z
+SUMMARY:Werner: Pantterit – HBA-Märsky
+LOCATION:Herttoniemenr. liik.halli\, Petter Wetterin tie 5\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006651
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006651
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006762-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270217T163000Z
+DTEND:20270217T183000Z
+SUMMARY:Werner: HBA-Märsky – Jyväskylä Basketball Academy
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006762
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006762
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006711-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270219T163000Z
+DTEND:20270219T183000Z
+SUMMARY:Bruno: Torpan Pojat – Lappeenrannan NMKY
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006711
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006711
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006684-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270225T163000Z
+DTEND:20270225T183000Z
+SUMMARY:Werner: Lappeenrannan NMKY – HBA-Märsky
+LOCATION:Lappeenrannan Urheilutalo\, Pohjolankatu 29\, Lappeenranta
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006684
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006684
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006747-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270225T170000Z
+DTEND:20270225T190000Z
+SUMMARY:Bruno: Pyrintö Akatemia – Torpan Pojat
+LOCATION:Pyynikin palloiluhalli\, Ammattikoulunkatu 20\, Tampere
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006747
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006747
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006705-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270305T163000Z
+DTEND:20270305T183000Z
+SUMMARY:Bruno: Torpan Pojat – ACO Basket
+LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006705
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006705
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006767-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270305T163000Z
+DTEND:20270305T183000Z
+SUMMARY:Werner: HBA-Märsky – Pyrintö Akatemia
+LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006767
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006767
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006703-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270314T150000Z
+DTEND:20270314T170000Z
+SUMMARY:Bruno: Kobrat – Torpan Pojat
+LOCATION:Lapuan urheilutalo\, Urheilukatu 3\, Lapua
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006703
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006703
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1006726-stude@stude.fi
+DTSTAMP:20260901T074500Z
+DTSTART:20270314T150000Z
+DTEND:20270314T170000Z
+SUMMARY:Werner: ACO Basket – HBA-Märsky
+LOCATION:Ouluhalli\, Ouluhallintie 20\, Oulu
+DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
+ u.basket.fi/match/1006726
+URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006726
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Peli alkaa kahden tunnin kuluttua
+END:VALARM
+END:VEVENT
+END:VCALENDAR

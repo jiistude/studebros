@@ -3,17 +3,844 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pelit päivittyvät hetken kuluttua</title>
+<title>Brunon, Wernerin ja Moritzin pelit</title>
+<meta name="description" content="Otteluaikataulut yhdellä sivulla.">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-         font-size: 20px; line-height: 1.5; max-width: 34rem; margin: 4rem auto; padding: 0 1rem;
-         color: #14161a; background: #f6f7f9; }
-  @media (prefers-color-scheme: dark) { body { color: #f0f2f5; background: #121417; } }
+  :root {
+    --teksti: #14161a; --himmea: #5b6470; --tausta: #f6f7f9;
+    --kortti: #ffffff; --raja: #e2e6eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 1rem 4rem;
+    background: var(--tausta); color: var(--teksti);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 20px; line-height: 1.5; -webkit-text-size-adjust: 100%;
+  }
+  .kehys { max-width: 44rem; margin: 0 auto; }
+  header { padding: 2.5rem 0 1.5rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .5rem; }
+  .selite { color: var(--himmea); font-size: 1rem; margin: 0 0 1rem; }
+  h2 {
+    font-size: 1.5rem; margin: 2.5rem 0 .5rem;
+    padding-bottom: .4rem; border-bottom: 3px solid var(--raja);
+  }
+  h3 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: .04em;
+    color: var(--himmea); margin: 1.75rem 0 .6rem; font-weight: 600;
+  }
+  .ottelu {
+    --lapsi: var(--vaalea);
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--kortti); border: 1px solid var(--raja);
+    border-left: 8px solid var(--lapsi);
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .6rem;
+  }
+  .kello {
+    font-variant-numeric: tabular-nums; font-weight: 700;
+    min-width: 3.8rem; flex-shrink: 0; font-size: 1.15rem; padding-top: .1rem;
+  }
+  .lapsi {
+    font-size: .8rem; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 700; color: var(--lapsi); margin-bottom: .1rem;
+  }
+  .joukkueet { font-size: 1.1rem; line-height: 1.35; }
+  .joukkueet .oma { font-weight: 700; }
+  .joukkueet .vs { color: var(--himmea); }
+  .sarja { color: var(--himmea); font-size: .9rem; margin-top: .15rem; }
+  a.halli {
+    display: block; margin-top: .35rem; font-size: .95rem;
+    color: #1a56c4; text-decoration: underline; text-underline-offset: 3px;
+  }
+  a.seuraa {
+    display: inline-block; margin-top: .6rem;
+    font-size: 1rem; font-weight: 600; text-decoration: none;
+    color: var(--lapsi); border: 2px solid currentColor; border-radius: 999px;
+    padding: .4rem 1rem; line-height: 1.2;
+  }
+  a.seuraa:hover, a.seuraa:focus { background: var(--lapsi); color: #fff; }
+  .suodattimet { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 .5rem; }
+  .suodattimet button {
+    font: inherit; font-size: 1rem; font-weight: 600; cursor: pointer;
+    border: 2px solid var(--raja); background: var(--kortti);
+    color: var(--vaalea, var(--teksti));
+    border-radius: 999px; padding: .45rem 1.1rem;
+  }
+  .suodattimet button[aria-pressed="true"] { border-color: currentColor; }
+  .huomio, .tyhja {
+    background: #fff8e1; border: 1px solid #f0dfa8; border-radius: 10px;
+    padding: .9rem 1.1rem; font-size: .95rem; color: #6b5a20;
+  }
+  .tyhja { background: var(--kortti); border-color: var(--raja); color: var(--himmea); }
+  footer {
+    margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--raja);
+    font-size: .9rem; color: var(--himmea);
+  }
+  footer a { color: #1a56c4; }
+  .kalenteri {
+    display: inline-block; background: #14161a; color: #fff;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    padding: .7rem 1.2rem; border-radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --teksti: #f0f2f5; --himmea: #9aa4b2; --tausta: #121417;
+      --kortti: #1c1f24; --raja: #2c3138;
+    }
+    .ottelu { --lapsi: var(--tumma); }
+    .suodattimet button { color: var(--tumma, var(--teksti)); }
+    a.halli, footer a { color: #7fb0ff; }
+    a.seuraa:hover, a.seuraa:focus { color: #14161a; }
+    .huomio { background: #2a2415; border-color: #4a3f20; color: #e8d9a8; }
+    .kalenteri { background: #f0f2f5; color: #14161a; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 19px; }
+    h1 { font-size: 1.6rem; }
+    .ottelu { gap: .75rem; padding: .9rem; }
+  }
 </style>
 </head>
 <body>
-  <h1>Pelit päivittyvät hetken kuluttua</h1>
-  <p>Tämä sivu korvautuu otteluaikataululla, kun haku on ajettu ensimmäisen kerran.
-     Ohjeet löytyvät projektin tiedostosta <strong>OHJEET.md</strong>, vaihe 4.</p>
+<div class="kehys">
+  <header>
+    <h1>Brunon, Wernerin ja Moritzin pelit</h1>
+    <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
+    <a class="kalenteri" href="pelit.ics">Lisää kaikki pelit omaan kalenteriin</a>
+  </header>
+
+  <div class="suodattimet" id="suodattimet">
+    <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
+    <button type="button" data-lapsi="Bruno" aria-pressed="false" style="--vaalea:#1a56c4;--tumma:#7fb0ff">Bruno</button>
+    <button type="button" data-lapsi="Werner" aria-pressed="false" style="--vaalea:#8a5a00;--tumma:#e8b84b">Werner</button>
+    <button type="button" data-lapsi="Moritz" aria-pressed="false" style="--vaalea:#10662c;--tumma:#6dce8c">Moritz</button>
+  </div>
+
+  <p class="huomio">Otteluohjelmaa ei ole vielä julkaistu: Moritz / RPC. Pelit ilmestyvät tähän automaattisesti heti kun ne julkaistaan.</p>
+
+  <h2>Tulevat ottelut</h2>
+  
+      <section class="paiva">
+        <h3>sunnuntaina 13. syyskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">10:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span class="oma">Pussihukat /Punainen</span> <span class="vs">&ndash;</span> <span>RiKos</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Martinlaakson%20koulu%2C%20Martinlaaksonpolku%209%2C%20Vantaa">Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1009988">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 19. syyskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo U19</div>
+          <div class="joukkueet"><span>ToPo</span> <span class="vs">&ndash;</span> <span>v2</span></div>
+          <div class="sarja">19-vuotiaat pojat, SM-karsinnat</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lehtisaaren%20Kuntotalo%2C%20Kaaponkuja%2C%20Jyv%C3%A4skyl%C3%A4">Lehtisaaren Kuntotalo, Kaaponkuja, Jyväskylä</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1005600">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>keskiviikkona 30. syyskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">19:35</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span>ToPo</span> <span class="vs">&ndash;</span> <span class="oma">Pussihukat /Punainen</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=T%C3%B6%C3%B6l%C3%B6n%20Kisahalli%2C%20B-puoli%2C%20Paavo%20Nurmen%20Kuja%201%2C%20Helsinki">Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1009992">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 2. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Karkkila</span></div>
+          <div class="sarja">Valmistavat ottelut, miehet</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006588">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 9. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006706">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Torpan Pojat</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006706">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 16. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Kobrat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006764">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 18. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Helsingin NMKY</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Namika%20Areena%2C%20Pilkekuja%2010%2C%20Helsinki">Namika Areena, Pilkekuja 10, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006724">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 23. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Raholan Pyrkivä</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006713">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Helsingin NMKY</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006761">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 24. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">12:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span class="oma">Pussihukat /Punainen</span> <span class="vs">&ndash;</span> <span>Tapiolan Honka</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kartanonkosken%20koulu%2C%20Tilkuntie%205%2C%20Vantaa">Kartanonkosken koulu, Tilkuntie 5, Vantaa</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1009995">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 31. lokakuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">12:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span>Kori-80/Kombo</span> <span class="vs">&ndash;</span> <span class="oma">Pussihukat /Punainen</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Killan%20koulu%2C%20Sarvim%C3%A4entie%2035%2C%20Kerava">Killan koulu, Sarvimäentie 35, Kerava</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1009997">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Raholan Pyrkivä</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tesoman%20palloiluhalli%2C%20Tesoman%20valtatie%2046%2C%20Tampere">Tesoman palloiluhalli, Tesoman valtatie 46, Tampere</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006750">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 1. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">16:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Karkkila</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Karkkilan%20liikuntahalli%2C%20Anttilankatu%202-4%20%2C%20Karkkila">Karkkilan liikuntahalli, Anttilankatu 2-4 , Karkkila</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006681">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 6. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Äänekosken Huima</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006714">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Karkkila</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006763">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 7. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">12:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span class="oma">Pussihukat /Punainen</span> <span class="vs">&ndash;</span> <span>LePy</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kartanonkosken%20koulu%2C%20Tilkuntie%205%2C%20Vantaa">Kartanonkosken koulu, Tilkuntie 5, Vantaa</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1010002">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 13. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Äänekosken Huima</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%C3%84%C3%A4nekosken%20liikuntatalo%2C%20Koulum%C3%A4enkatu%202%2C%20%C3%84%C3%A4nekoski">Äänekosken liikuntatalo, Koulumäenkatu 2, Äänekoski</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006772">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 15. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Pantterit</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Herttoniemenr.%20liik.halli%2C%20Petter%20Wetterin%20tie%205%2C%20Helsinki">Herttoniemenr. liik.halli, Petter Wetterin tie 5, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006659">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 20. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Jyväskylä Basketball Academy</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006708">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Pantterit</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006766">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 21. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">12:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span>MaSu</span> <span class="vs">&ndash;</span> <span class="oma">Pussihukat /Punainen</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kankarepuiston%20peruskoulu%2C%20Somerikkopolku%206%2C%20Helsinki">Kankarepuiston peruskoulu, Somerikkopolku 6, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1010007">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>torstaina 26. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Lappeenrannan NMKY</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lappeenrannan%20Urheilutalo%2C%20Pohjolankatu%2029%2C%20Lappeenranta">Lappeenrannan Urheilutalo, Pohjolankatu 29, Lappeenranta</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006692">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 27. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Jyväskylä Basketball Academy</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jyv%C3%A4skyl%C3%A4n%20Monitoimitalo%2C%20Kuntoportti%203%2C%20Jyv%C3%A4skyl%C3%A4">Jyväskylän Monitoimitalo, Kuntoportti 3, Jyväskylä</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006662">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 28. marraskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">10:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span class="oma">Pussihukat /Punainen</span> <span class="vs">&ndash;</span> <span>HNMKY Valkoinen</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Martinlaakson%20koulu%2C%20Martinlaaksonpolku%209%2C%20Vantaa">Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1010012">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 5. joulukuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Pyrintö Akatemia</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pirkkolahalli%2C%20Pirkkolan%20mets%C3%A4tie%208%2C%20Helsinki">Pirkkolahalli, Pirkkolan metsätie 8, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006737">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 6. joulukuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">15:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Lappeenrannan NMKY</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006765">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>torstaina 10. joulukuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">19:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Pyrintö Akatemia</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pyynikin%20palloiluhalli%2C%20Ammattikoulunkatu%2020%2C%20Tampere">Pyynikin palloiluhalli, Ammattikoulunkatu 20, Tampere</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006739">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 12. joulukuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#10662c;--tumma:#6dce8c">
+        <div class="kello">13:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Moritz &middot; U15 1D</div>
+          <div class="joukkueet"><span>Porvoon Tarmo</span> <span class="vs">&ndash;</span> <span class="oma">Pussihukat /Punainen</span></div>
+          <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Str%C3%B6mborgska%20skolan%2C%20Peippolantie%203%2C%20Porvoo">Strömborgska skolan, Peippolantie 3, Porvoo</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1010016">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>ACO Basket</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ouluhalli%2C%20Ouluhallintie%2020%2C%20Oulu">Ouluhalli, Ouluhallintie 20, Oulu</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006735">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 18. joulukuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>ACO Basket</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006760">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Kobrat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006710">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 8. tammikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Helsingin NMKY</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006707">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Kobrat</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lapuan%20urheilutalo%2C%20Urheilukatu%203%2C%20Lapua">Lapuan urheilutalo, Urheilukatu 3, Lapua</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006695">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>lauantaina 16. tammikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Raholan Pyrkivä</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tesoman%20palloiluhalli%2C%20Tesoman%20valtatie%2046%2C%20Tampere">Tesoman palloiluhalli, Tesoman valtatie 46, Tampere</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006758">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 17. tammikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Helsingin NMKY</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Namika%20Areena%2C%20Pilkekuja%2010%2C%20Helsinki">Namika Areena, Pilkekuja 10, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006716">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 22. tammikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Karkkila</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006709">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">20:15</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Raholan Pyrkivä</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006768">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 29. tammikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>HBA-Märsky</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006769">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006769">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 31. tammikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">16:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Karkkila</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Karkkilan%20liikuntahalli%2C%20Anttilankatu%202-4%20%2C%20Karkkila">Karkkilan liikuntahalli, Anttilankatu 2-4 , Karkkila</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006673">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Äänekosken Huima</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%C3%84%C3%A4nekosken%20liikuntatalo%2C%20Koulum%C3%A4enkatu%202%2C%20%C3%84%C3%A4nekoski">Äänekosken liikuntatalo, Koulumäenkatu 2, Äänekoski</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006781">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 5. helmikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Äänekosken Huima</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006770">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Pantterit</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006712">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>torstaina 11. helmikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Jyväskylä Basketball Academy</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jyv%C3%A4skyl%C3%A4n%20Monitoimitalo%2C%20Kuntoportti%203%2C%20Jyv%C3%A4skyl%C3%A4">Jyväskylän Monitoimitalo, Kuntoportti 3, Jyväskylä</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006670">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 14. helmikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Pantterit</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Herttoniemenr.%20liik.halli%2C%20Petter%20Wetterin%20tie%205%2C%20Helsinki">Herttoniemenr. liik.halli, Petter Wetterin tie 5, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006651">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>keskiviikkona 17. helmikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Jyväskylä Basketball Academy</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006762">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 19. helmikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>Lappeenrannan NMKY</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006711">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>torstaina 25. helmikuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>Lappeenrannan NMKY</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lappeenrannan%20Urheilutalo%2C%20Pohjolankatu%2029%2C%20Lappeenranta">Lappeenrannan Urheilutalo, Pohjolankatu 29, Lappeenranta</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006684">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">19:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Pyrintö Akatemia</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pyynikin%20palloiluhalli%2C%20Ammattikoulunkatu%2020%2C%20Tampere">Pyynikin palloiluhalli, Ammattikoulunkatu 20, Tampere</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006747">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>perjantaina 5. maaliskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span class="oma">Torpan Pojat</span> <span class="vs">&ndash;</span> <span>ACO Basket</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Munkkiniemen%20Yhteiskoulu%2C%20Laajalahdentie%2021%2C%20Helsinki">Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006705">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">18:30</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span class="oma">HBA-Märsky</span> <span class="vs">&ndash;</span> <span>Pyrintö Akatemia</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Urhea-halli%2C%20M%C3%A4kel%C3%A4nkatu%2047%2C%20Helsinki">Urhea-halli, Mäkelänkatu 47, Helsinki</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006767">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+      <section class="paiva">
+        <h3>sunnuntaina 14. maaliskuuta</h3>
+        
+      <article class="ottelu" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Bruno &middot; ToPo M1A</div>
+          <div class="joukkueet"><span>Kobrat</span> <span class="vs">&ndash;</span> <span class="oma">Torpan Pojat</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lapuan%20urheilutalo%2C%20Urheilukatu%203%2C%20Lapua">Lapuan urheilutalo, Urheilukatu 3, Lapua</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006703">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="ottelu" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+        <div class="kello">17:00</div>
+        <div class="tiedot">
+          <div class="lapsi">Werner &middot; HBA M1A</div>
+          <div class="joukkueet"><span>ACO Basket</span> <span class="vs">&ndash;</span> <span class="oma">HBA-Märsky</span></div>
+          <div class="sarja">Miesten I divisioona A</div>
+          <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ouluhalli%2C%20Ouluhallintie%2020%2C%20Oulu">Ouluhalli, Ouluhallintie 20, Oulu</a>
+          <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006726">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      </section>
+
+  <h2>Pelatut ottelut</h2>
+  <p class="tyhja">Pelattuja otteluita ei vielä ole.</p>
+
+  <footer>
+    <p>Päivitetty 1. syyskuuta 2026 klo 10.45. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
+  </footer>
+</div>
+
+<script>
+  var napit = document.querySelectorAll('#suodattimet button');
+  napit.forEach(function (nappi) {
+    nappi.addEventListener('click', function () {
+      var valinta = nappi.dataset.lapsi;
+      napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n === nappi)); });
+      document.querySelectorAll('.ottelu').forEach(function (kortti) {
+        var lapsi = kortti.querySelector('.lapsi').textContent.split('·')[0].trim();
+        kortti.style.display = (valinta === 'kaikki' || lapsi === valinta) ? '' : 'none';
+      });
+      document.querySelectorAll('.paiva').forEach(function (osio) {
+        var nakyvia = osio.querySelectorAll('.ottelu:not([style*="display: none"])').length;
+        osio.style.display = nakyvia ? '' : 'none';
+      });
+    });
+  });
+</script>
 </body>
 </html>
