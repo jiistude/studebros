@@ -18,6 +18,7 @@ const JUURI = __dirname;
 const ULOS = path.join(JUURI, "docs");
 const PROBE = process.argv.includes("--probe");
 
+const { teemaCss } = require("./teemat");
 const KONFIG = process.env.KONFIG || "joukkueet.json";
 const asetukset = JSON.parse(fs.readFileSync(path.join(JUURI, KONFIG), "utf8"));
 const TZ = asetukset.aikavyohyke || "Europe/Helsinki";
@@ -190,7 +191,7 @@ function ottelukortti(o, varit) {
   const vierasLuokka = o.omaKotona === false ? ' class="oma"' : "";
 
   return `
-      <article class="ottelu" style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
+      <article class="ottelu" data-lapsi="${esc(o.lapsi)}" style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
         <div class="kello">${esc(o.kello)}</div>
         <div class="tiedot">
           <div class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</div>
@@ -220,6 +221,23 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
       </section>`).join("");
   };
 
+  // Etusivulla näytetään vain lähiviikot, loput painikkeen takana.
+  const viikot = asetukset.etusivun_viikot ?? 6;
+  const raja = paivaSiirtymalla(viikot * 7);
+  const lahella = viikot > 0 ? tulevat.filter((o) => o.paiva <= raja) : tulevat;
+  const loput = viikot > 0 ? tulevat.filter((o) => o.paiva > raja) : [];
+
+  // Nosto sivun ylälaitaan: se peli, joka on ajallisesti seuraavana.
+  const seuraava = tulevat[0];
+  const seuraavaHtml = seuraava
+    ? `<section class="seuraava">
+      <div class="kohta">Seuraava peli</div>
+      <div class="peli">${esc(seuraava.koti)} &ndash; ${esc(seuraava.vieras)}</div>
+      <div class="milloin">${esc(pitkaPaiva(seuraava.paiva))} klo ${esc(seuraava.kello.replace(":", "."))} &middot; ${esc(seuraava.lapsi)}</div>
+      ${seuraava.halli ? `<div class="missa">${esc(seuraava.halli)}</div>` : ""}
+    </section>`
+    : "";
+
   const huomio = puuttuvat.length
     ? `<p class="huomio">Otteluohjelmaa ei ole vielä julkaistu: ${puuttuvat.map(esc).join(", ")}. Pelit ilmestyvät tähän automaattisesti heti kun ne julkaistaan.</p>`
     : "";
@@ -232,99 +250,7 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
 <title>${esc(asetukset.otsikko)}</title>
 <meta name="description" content="Otteluaikataulut yhdellä sivulla.">
 <style>
-  :root {
-    --teksti: #14161a; --himmea: #5b6470; --tausta: #f6f7f9;
-    --kortti: #ffffff; --raja: #e2e6eb;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; padding: 0 1rem 4rem;
-    background: var(--tausta); color: var(--teksti);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    font-size: 20px; line-height: 1.5; -webkit-text-size-adjust: 100%;
-  }
-  .kehys { max-width: 44rem; margin: 0 auto; }
-  header { padding: 2.5rem 0 1.5rem; }
-  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .5rem; }
-  .selite { color: var(--himmea); font-size: 1rem; margin: 0 0 1rem; }
-  h2 {
-    font-size: 1.5rem; margin: 2.5rem 0 .5rem;
-    padding-bottom: .4rem; border-bottom: 3px solid var(--raja);
-  }
-  h3 {
-    font-size: 1.05rem; text-transform: uppercase; letter-spacing: .04em;
-    color: var(--himmea); margin: 1.75rem 0 .6rem; font-weight: 600;
-  }
-  .ottelu {
-    --lapsi: var(--vaalea);
-    display: flex; gap: 1rem; align-items: flex-start;
-    background: var(--kortti); border: 1px solid var(--raja);
-    border-left: 8px solid var(--lapsi);
-    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .6rem;
-  }
-  .kello {
-    font-variant-numeric: tabular-nums; font-weight: 700;
-    min-width: 3.8rem; flex-shrink: 0; font-size: 1.15rem; padding-top: .1rem;
-  }
-  .lapsi {
-    font-size: .8rem; text-transform: uppercase; letter-spacing: .06em;
-    font-weight: 700; color: var(--lapsi); margin-bottom: .1rem;
-  }
-  .joukkueet { font-size: 1.1rem; line-height: 1.35; }
-  .joukkueet .oma { font-weight: 700; }
-  .joukkueet .vs { color: var(--himmea); }
-  .sarja { color: var(--himmea); font-size: .9rem; margin-top: .15rem; }
-  a.halli {
-    display: block; margin-top: .35rem; font-size: .95rem;
-    color: #1a56c4; text-decoration: underline; text-underline-offset: 3px;
-  }
-  a.seuraa {
-    display: inline-block; margin-top: .6rem;
-    font-size: 1rem; font-weight: 600; text-decoration: none;
-    color: var(--lapsi); border: 2px solid currentColor; border-radius: 999px;
-    padding: .4rem 1rem; line-height: 1.2;
-  }
-  a.seuraa:hover, a.seuraa:focus { background: var(--lapsi); color: #fff; }
-  .suodattimet { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 .5rem; }
-  .suodattimet button {
-    font: inherit; font-size: 1rem; font-weight: 600; cursor: pointer;
-    border: 2px solid var(--raja); background: var(--kortti);
-    color: var(--vaalea, var(--teksti));
-    border-radius: 999px; padding: .45rem 1.1rem;
-  }
-  .suodattimet button[aria-pressed="true"] { border-color: currentColor; }
-  .huomio, .tyhja {
-    background: #fff8e1; border: 1px solid #f0dfa8; border-radius: 10px;
-    padding: .9rem 1.1rem; font-size: .95rem; color: #6b5a20;
-  }
-  .tyhja { background: var(--kortti); border-color: var(--raja); color: var(--himmea); }
-  footer {
-    margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--raja);
-    font-size: .9rem; color: var(--himmea);
-  }
-  footer a { color: #1a56c4; }
-  .kalenteri {
-    display: inline-block; background: #14161a; color: #fff;
-    text-decoration: none; font-weight: 600; font-size: 1rem;
-    padding: .7rem 1.2rem; border-radius: 10px;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --teksti: #f0f2f5; --himmea: #9aa4b2; --tausta: #121417;
-      --kortti: #1c1f24; --raja: #2c3138;
-    }
-    .ottelu { --lapsi: var(--tumma); }
-    .suodattimet button { color: var(--tumma, var(--teksti)); }
-    a.halli, footer a { color: #7fb0ff; }
-    a.seuraa:hover, a.seuraa:focus { color: #14161a; }
-    .huomio { background: #2a2415; border-color: #4a3f20; color: #e8d9a8; }
-    .kalenteri { background: #f0f2f5; color: #14161a; }
-  }
-  @media (max-width: 480px) {
-    body { font-size: 19px; }
-    h1 { font-size: 1.6rem; }
-    .ottelu { gap: .75rem; padding: .9rem; }
-  }
+${teemaCss(asetukset.teema)}
 </style>
 </head>
 <body>
@@ -335,6 +261,8 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
     <a class="kalenteri" href="pelit.ics">Lisää kaikki pelit omaan kalenteriin</a>
   </header>
 
+  ${seuraavaHtml}
+
   <div class="suodattimet" id="suodattimet">
     <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
     ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n    ")}
@@ -343,7 +271,9 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   ${huomio}
 
   <h2>Tulevat ottelut</h2>
-  ${tulevat.length ? ryhmittele(tulevat) : `<p class="tyhja">Tulevia otteluita ei ole tällä hetkellä tiedossa.</p>`}
+  ${tulevat.length ? ryhmittele(lahella) : `<p class="tyhja">Tulevia otteluita ei ole tällä hetkellä tiedossa.</p>`}
+  ${loput.length ? `<button type="button" class="lisaa" id="naytaKaikki">Näytä koko kausi (${loput.length} ottelua lisää)</button>
+  <div id="loput" hidden>${ryhmittele(loput)}</div>` : ""}
 
   <h2>Pelatut ottelut</h2>
   ${menneet.length ? ryhmittele(menneet) : `<p class="tyhja">Pelattuja otteluita ei vielä ole.</p>`}
@@ -354,13 +284,21 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
 </div>
 
 <script>
+  var lisaaNappi = document.getElementById('naytaKaikki');
+  if (lisaaNappi) {
+    lisaaNappi.addEventListener('click', function () {
+      document.getElementById('loput').hidden = false;
+      lisaaNappi.hidden = true;
+    });
+  }
+
   var napit = document.querySelectorAll('#suodattimet button');
   napit.forEach(function (nappi) {
     nappi.addEventListener('click', function () {
       var valinta = nappi.dataset.lapsi;
       napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n === nappi)); });
       document.querySelectorAll('.ottelu').forEach(function (kortti) {
-        var lapsi = kortti.querySelector('.lapsi').textContent.split('·')[0].trim();
+        var lapsi = kortti.dataset.lapsi;
         kortti.style.display = (valinta === 'kaikki' || lapsi === valinta) ? '' : 'none';
       });
       document.querySelectorAll('.paiva').forEach(function (osio) {
