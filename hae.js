@@ -221,6 +221,23 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
       </section>`).join("");
   };
 
+  // Kalenterin tilauslinkit. Tilaus päivittyy itsestään, ladattu tiedosto ei,
+  // joten tilaaminen on selvästi ensisijainen vaihtoehto.
+  const osoite = (asetukset.sivun_osoite || "").replace(/\/+$/, "");
+  const icsHttps = osoite ? `${osoite}/pelit.ics` : "";
+  const icsWebcal = icsHttps.replace(/^https?:/, "webcal:");
+  const tilausHtml = icsHttps
+    ? `<div class="tilaus">
+      <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
+      <div class="tilausNapit">
+        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent(icsHttps)}">Google-kalenteri</a>
+        <a class="kalenteri toissijainen" href="${esc(icsWebcal)}">iPhone tai Mac</a>
+        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="${esc(icsHttps)}">Kopioi osoite</button>
+      </div>
+      <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">${esc(icsHttps)}</span>.</p>
+    </div>`
+    : `<a class="kalenteri" href="pelit.ics">Lataa pelit kalenteriin</a>`;
+
   // Etusivulla näytetään vain lähiviikot, loput painikkeen takana.
   const viikot = asetukset.etusivun_viikot ?? 6;
   const raja = paivaSiirtymalla(viikot * 7);
@@ -258,7 +275,7 @@ ${teemaCss(asetukset.teema)}
   <header>
     <h1>${esc(asetukset.otsikko)}</h1>
     <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
-    <a class="kalenteri" href="pelit.ics">Lisää kaikki pelit omaan kalenteriin</a>
+    ${tilausHtml}
   </header>
 
   ${seuraavaHtml}
@@ -284,6 +301,23 @@ ${teemaCss(asetukset.teema)}
 </div>
 
 <script>
+  var kopioi = document.getElementById('kopioi');
+  if (kopioi) {
+    kopioi.addEventListener('click', function () {
+      var teksti = kopioi.dataset.osoite;
+      var alkuperainen = kopioi.textContent;
+      var onnistui = function () {
+        kopioi.textContent = 'Kopioitu';
+        setTimeout(function () { kopioi.textContent = alkuperainen; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(teksti).then(onnistui, function () { window.prompt('Kopioi osoite:', teksti); });
+      } else {
+        window.prompt('Kopioi osoite:', teksti);
+      }
+    });
+  }
+
   var lisaaNappi = document.getElementById('naytaKaikki');
   if (lisaaNappi) {
     lisaaNappi.addEventListener('click', function () {

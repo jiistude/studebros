@@ -87,11 +87,24 @@ const PERUSTA = `
     padding: .9rem 1rem;
   }
   .lisaa:hover, .lisaa:focus { border-style: solid; border-color: var(--linkki); }
+  .tilaus {
+    background: var(--kortti); border: 1px solid var(--raja);
+    border-radius: var(--pyoristys); padding: 1.1rem 1.25rem;
+  }
+  .tilausOtsikko { margin: 0 0 .75rem; font-weight: 800; font-size: 1.05rem; }
+  .tilausNapit { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tilausSelite { margin: .8rem 0 0; font-size: .88rem; color: var(--himmea); }
+  .osoite { font-variant-numeric: tabular-nums; word-break: break-all; }
   .kalenteri {
     display: inline-block; background: var(--nappiTausta); color: var(--nappiTeksti);
-    text-decoration: none; font-weight: 700; font-size: 1rem;
+    text-decoration: none; font: inherit; font-weight: 700; font-size: 1rem;
     padding: .75rem 1.25rem; border-radius: var(--pyoristys);
+    border: 2px solid var(--nappiTausta); cursor: pointer;
   }
+  .kalenteri.toissijainen {
+    background: transparent; color: var(--linkki); border-color: var(--raja);
+  }
+  .kalenteri.toissijainen:hover, .kalenteri.toissijainen:focus { border-color: var(--linkki); }
   footer {
     margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--raja);
     font-size: .9rem; color: var(--himmea);
