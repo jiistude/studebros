@@ -88,11 +88,24 @@
     padding: .9rem 1rem;
   }
   .lisaa:hover, .lisaa:focus { border-style: solid; border-color: var(--linkki); }
+  .tilaus {
+    background: var(--kortti); border: 1px solid var(--raja);
+    border-radius: var(--pyoristys); padding: 1.1rem 1.25rem;
+  }
+  .tilausOtsikko { margin: 0 0 .75rem; font-weight: 800; font-size: 1.05rem; }
+  .tilausNapit { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tilausSelite { margin: .8rem 0 0; font-size: .88rem; color: var(--himmea); }
+  .osoite { font-variant-numeric: tabular-nums; word-break: break-all; }
   .kalenteri {
     display: inline-block; background: var(--nappiTausta); color: var(--nappiTeksti);
-    text-decoration: none; font-weight: 700; font-size: 1rem;
+    text-decoration: none; font: inherit; font-weight: 700; font-size: 1rem;
     padding: .75rem 1.25rem; border-radius: var(--pyoristys);
+    border: 2px solid var(--nappiTausta); cursor: pointer;
   }
+  .kalenteri.toissijainen {
+    background: transparent; color: var(--linkki); border-color: var(--raja);
+  }
+  .kalenteri.toissijainen:hover, .kalenteri.toissijainen:focus { border-color: var(--linkki); }
   footer {
     margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--raja);
     font-size: .9rem; color: var(--himmea);
@@ -164,7 +177,15 @@
   <header>
     <h1>Brunon, Wernerin ja Moritzin pelit</h1>
     <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
-    <a class="kalenteri" href="pelit.ics">Lisää kaikki pelit omaan kalenteriin</a>
+    <div class="tilaus">
+      <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
+      <div class="tilausNapit">
+        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Fbasket.stude.fi%2Fpelit.ics">Google-kalenteri</a>
+        <a class="kalenteri toissijainen" href="webcal://basket.stude.fi/pelit.ics">iPhone tai Mac</a>
+        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="https://basket.stude.fi/pelit.ics">Kopioi osoite</button>
+      </div>
+      <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">https://basket.stude.fi/pelit.ics</span>.</p>
+    </div>
   </header>
 
   <section class="seuraava">
@@ -888,11 +909,28 @@
   <p class="tyhja">Pelattuja otteluita ei vielä ole.</p>
 
   <footer>
-    <p>Päivitetty 4. syyskuuta 2026 klo 11.05. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
+    <p>Päivitetty 4. syyskuuta 2026 klo 11.16. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>
 
 <script>
+  var kopioi = document.getElementById('kopioi');
+  if (kopioi) {
+    kopioi.addEventListener('click', function () {
+      var teksti = kopioi.dataset.osoite;
+      var alkuperainen = kopioi.textContent;
+      var onnistui = function () {
+        kopioi.textContent = 'Kopioitu';
+        setTimeout(function () { kopioi.textContent = alkuperainen; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(teksti).then(onnistui, function () { window.prompt('Kopioi osoite:', teksti); });
+      } else {
+        window.prompt('Kopioi osoite:', teksti);
+      }
+    });
+  }
+
   var lisaaNappi = document.getElementById('naytaKaikki');
   if (lisaaNappi) {
     lisaaNappi.addEventListener('click', function () {
