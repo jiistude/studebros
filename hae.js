@@ -366,12 +366,6 @@ function taita(rivi) {
   return osat.join("\r\n");
 }
 
-// "Bruno" / "Bruno ja Werner" / "Bruno, Werner ja Moritz"
-function luettele(nimet) {
-  if (nimet.length <= 1) return nimet[0] || "";
-  return `${nimet.slice(0, -1).join(", ")} ja ${nimet[nimet.length - 1]}`;
-}
-
 function icsTeksti(s) {
   return String(s ?? "").replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
 }
@@ -388,31 +382,18 @@ function rakennaIcs(ottelut) {
     "X-WR-TIMEZONE:Europe/Helsinki",
   ];
 
-  // Sama ottelu esiintyy kahdesti, jos kaksi lapsista pelaa toisiaan vastaan.
-  // Kalenteriin siitä tehdään yksi tapahtuma, jonka otsikossa on molemmat nimet.
-  const ryhmat = new Map();
   for (const o of ottelut) {
-    const avain = o.match_id || `${o.paiva}-${o.kello}-${o.koti}-${o.vieras}`;
-    if (!ryhmat.has(avain)) {
-      ryhmat.set(avain, { ...o, avain, lapset: [o.lapsi] });
-    } else {
-      const ryhma = ryhmat.get(avain);
-      if (!ryhma.lapset.includes(o.lapsi)) ryhma.lapset.push(o.lapsi);
-    }
-  }
-
-  for (const o of ryhmat.values()) {
     const alku = new Date(o.alku);
     // Ottelulle varataan kalenterista oletuksena kaksi tuntia.
     const kesto = Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120;
     const loppu = new Date(alku.getTime() + kesto * 60000);
     rivit.push(
       "BEGIN:VEVENT",
-      `UID:${o.avain}-stude@stude.fi`,
+      `UID:${o.match_id || `${o.paiva}-${o.kello}`}-stude@stude.fi`,
       `DTSTAMP:${nyt}`,
       `DTSTART:${utcLeima(alku)}`,
       `DTEND:${utcLeima(loppu)}`,
-      taita(`SUMMARY:${icsTeksti(`${luettele(o.lapset)}: ${o.koti} – ${o.vieras}`)}`),
+      taita(`SUMMARY:${icsTeksti(`${o.lapsi}: ${o.koti} – ${o.vieras}`)}`),
       taita(`LOCATION:${icsTeksti(o.halli)}`),
       taita(`DESCRIPTION:${icsTeksti(
         [o.sarja, o.linkki ? `Tulos ja tilastot: ${o.linkki}` : ""].filter(Boolean).join("\n")
