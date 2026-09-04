@@ -48,5 +48,6 @@
   ],
   "menneet_paivat": 30,
   "tulevat_paivat": 240,
-  "etusivun_viikot": 6
+  "etusivun_viikot": 6,
+  "ottelun_kesto_min": 120
 }
