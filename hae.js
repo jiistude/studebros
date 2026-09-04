@@ -230,8 +230,7 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
     ? `<div class="tilaus">
       <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
       <div class="tilausNapit">
-        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent(icsHttps)}">Google-kalenteri</a>
-        <a class="kalenteri toissijainen" href="${esc(icsWebcal)}">iPhone tai Mac</a>
+        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=${esc(icsWebcal)}">Google-kalenteri</a>        <a class="kalenteri toissijainen" href="${esc(icsWebcal)}">iPhone tai Mac</a>
         <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="${esc(icsHttps)}">Kopioi osoite</button>
       </div>
       <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">${esc(icsHttps)}</span>.</p>
