@@ -350,7 +350,9 @@ function rakennaIcs(ottelut) {
 
   for (const o of ottelut) {
     const alku = new Date(o.alku);
-    const loppu = new Date(alku.getTime() + 2 * 3600000);
+    // Ottelulle varataan kalenterista oletuksena kaksi tuntia.
+    const kesto = Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120;
+    const loppu = new Date(alku.getTime() + kesto * 60000);
     rivit.push(
       "BEGIN:VEVENT",
       `UID:${o.match_id || `${o.paiva}-${o.kello}`}-stude@stude.fi`,
