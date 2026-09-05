@@ -1,5 +1,5 @@
 {
-  "paivitetty": "4. syyskuuta 2026 klo 12.16",
+  "paivitetty": "5. syyskuuta 2026 klo 21.09",
   "tulevat": [
     {
       "match_id": "1009988",
@@ -62,6 +62,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1012843",
+      "alku": "2026-10-04T08:00:00.000Z",
+      "paiva": "2026-10-04",
+      "kello": "11:00",
+      "koti": "Kataja Basket",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Motonet Areena, Kisapolku 3, Joensuu",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012843",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1006706",
       "alku": "2026-10-09T15:30:00.000Z",
       "paiva": "2026-10-09",
@@ -89,6 +104,21 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1012846",
+      "alku": "2026-10-11T14:00:00.000Z",
+      "paiva": "2026-10-11",
+      "kello": "17:00",
+      "koti": "Pussihukat /Punainen",
+      "vieras": "KTP",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012846",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": true,
       "mennyt": false
     },
     {
@@ -167,6 +197,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1012867",
+      "alku": "2026-10-25T12:45:00.000Z",
+      "paiva": "2026-10-25",
+      "kello": "14:45",
+      "koti": "Pussihukat /Punainen",
+      "vieras": "Pälkäneen Luja-Lukko",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012867",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1009997",
       "alku": "2026-10-31T10:30:00.000Z",
       "paiva": "2026-10-31",
@@ -193,6 +238,21 @@
       "linkki": "https://tulospalvelu.basket.fi/match/1006750",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1012858",
+      "alku": "2026-11-01T09:00:00.000Z",
+      "paiva": "2026-11-01",
+      "kello": "11:00",
+      "koti": "Ura Basket",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Valkeavuoren liikuntahalli 2, Veitenmäentie 29, Kaarina",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012858",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
       "omaKotona": false,
       "mennyt": false
     },
@@ -272,6 +332,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1012863",
+      "alku": "2026-11-15T08:00:00.000Z",
+      "paiva": "2026-11-15",
+      "kello": "10:00",
+      "koti": "Oulun NMKY",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Rajakylän koulu, Ruiskukkatie 4-6, Oulu",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012863",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1006659",
       "alku": "2026-11-15T15:00:00.000Z",
       "paiva": "2026-11-15",
@@ -332,6 +407,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1012853",
+      "alku": "2026-11-22T10:15:00.000Z",
+      "paiva": "2026-11-22",
+      "kello": "12:15",
+      "koti": "Pussihukat /Punainen",
+      "vieras": "Kori-80 1",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012853",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1006692",
       "alku": "2026-11-26T16:30:00.000Z",
       "paiva": "2026-11-26",
@@ -374,6 +464,21 @@
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": true,
+      "mennyt": false
+    },
+    {
+      "match_id": "1012848",
+      "alku": "2026-11-29T11:30:00.000Z",
+      "paiva": "2026-11-29",
+      "kello": "13:30",
+      "koti": "Tampereen Pyrintö",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Hervannan vapaa-aikakeskus, Lindforsinkatu 5 , Tampere",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012848",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": false,
       "mennyt": false
     },
     {
