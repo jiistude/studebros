@@ -1,5 +1,5 @@
 {
-  "paivitetty": "9. syyskuuta 2026 klo 11.34",
+  "paivitetty": "9. syyskuuta 2026 klo 11.39",
   "tulevat": [
     {
       "match_id": "1009988",
@@ -14,6 +14,7 @@
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": true,
+      "poissa": true,
       "mennyt": false
     },
     {
