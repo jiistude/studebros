@@ -39,6 +39,13 @@ const PERUSTA = `
     font-size: .75rem; text-transform: uppercase; letter-spacing: .07em;
     font-weight: 800; color: var(--lapsi); margin-bottom: .15rem;
   }
+  .ottelu.poissa { opacity: .6; }
+  .ottelu.poissa .joukkueet { text-decoration: line-through; text-decoration-thickness: 1px; }
+  .poissaMerkki {
+    display: inline-block; margin-top: .4rem;
+    font-size: .85rem; font-weight: 700; color: var(--himmea);
+    border: 1px solid var(--raja); border-radius: 999px; padding: .15rem .7rem;
+  }
   .joukkueet { font-size: 1.1rem; line-height: 1.35; }
   .joukkueet .oma { font-weight: 700; }
   .joukkueet .vs { color: var(--himmea); }

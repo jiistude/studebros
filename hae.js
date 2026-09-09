@@ -120,6 +120,81 @@ function lueAika(kentta) {
   return seinakelloUTC(...luvut, kentta.parametrit.TZID || TZ);
 }
 
+/* -------------------------------------------- käsin lisätyt tiedot */
+
+function lueTiedostoJosOn(nimi) {
+  const polku = path.join(JUURI, nimi);
+  return fs.existsSync(polku) ? fs.readFileSync(polku, "utf8") : "";
+}
+
+// lisapelit.txt: yksi peli kerrallaan "avain: arvo" -riveinä, pelit erotettu
+// tyhjällä rivillä. Rivien järjestyksellä ei ole väliä ja # aloittaa kommentin.
+function lueLisapelit() {
+  const teksti = lueTiedostoJosOn("lisapelit.txt");
+  if (!teksti.trim()) return [];
+
+  const ottelut = [];
+  for (const lohko of teksti.split(/\n\s*\n/)) {
+    const kentat = {};
+    for (const rivi of lohko.split("\n")) {
+      const puhdas = rivi.trim();
+      if (!puhdas || puhdas.startsWith("#")) continue;
+      const jako = puhdas.indexOf(":");
+      if (jako < 1) continue;
+      kentat[puhdas.slice(0, jako).trim().toLowerCase()] = puhdas.slice(jako + 1).trim();
+    }
+
+    if (!kentat.lapsi || !kentat.alkaa) continue;
+
+    const aika = kentat.alkaa.match(/^(\d{4})-(\d{2})-(\d{2})[ T]+(\d{1,2})[:.](\d{2})/);
+    if (!aika) {
+      console.error(`lisapelit.txt: en ymmärrä aikaa "${kentat.alkaa}". Odotettu muoto 2026-10-24 14:30.`);
+      continue;
+    }
+    const alku = seinakelloUTC(+aika[1], +aika[2], +aika[3], +aika[4], +aika[5], TZ);
+    const koti = kentat.koti || "";
+    const vieras = kentat.vieras || "";
+
+    ottelut.push({
+      match_id: "",
+      alku: alku.toISOString(),
+      paiva: paivaTZ(alku),
+      kello: kelloTZ(alku),
+      koti, vieras,
+      sarja: kentat.sarja || "",
+      halli: kentat.paikka || "",
+      linkki: kentat.linkki || "",
+      lapsi: kentat.lapsi,
+      joukkue: kentat.joukkue || "",
+      omaKotona: kentat.oma ? kentat.oma === koti : null,
+      kesto: Number(kentat.kesto) > 0 ? Number(kentat.kesto) : null,
+      kasin: true,
+    });
+  }
+  return ottelut;
+}
+
+// poissa.txt: yksi rivi per peli, "PÄIVÄMÄÄRÄ [KELLO] NIMI".
+function luePoissa() {
+  const teksti = lueTiedostoJosOn("poissa.txt");
+  const merkinnat = [];
+  for (const rivi of teksti.split("\n")) {
+    const puhdas = rivi.trim();
+    if (!puhdas || puhdas.startsWith("#")) continue;
+    const osat = puhdas.match(/^(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2})[:.](\d{2}))?\s+(.+?)\s*$/);
+    if (!osat) {
+      console.error(`poissa.txt: en ymmärrä riviä "${puhdas}".`);
+      continue;
+    }
+    merkinnat.push({
+      paiva: osat[1],
+      kello: osat[2] ? `${pad(osat[2])}:${osat[3]}` : "",
+      lapsi: osat[4],
+    });
+  }
+  return merkinnat;
+}
+
 /* -------------------------------------------------------- normalisointi */
 
 // SUMMARY on muotoa "Kotijoukkue – Vierasjoukkue, Sarjan nimi".
@@ -191,12 +266,13 @@ function ottelukortti(o, varit) {
   const vierasLuokka = o.omaKotona === false ? ' class="oma"' : "";
 
   return `
-      <article class="ottelu" data-lapsi="${esc(o.lapsi)}" style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
+      <article class="ottelu${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
         <div class="kello">${esc(o.kello)}</div>
         <div class="tiedot">
           <div class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</div>
           <div class="joukkueet"><span${kotiLuokka}>${esc(o.koti)}</span> <span class="vs">&ndash;</span> <span${vierasLuokka}>${esc(o.vieras)}</span></div>
           ${o.sarja ? `<div class="sarja">${esc(o.sarja)}</div>` : ""}
+          ${o.poissa ? `<div class="poissaMerkki">${esc(o.lapsi)} ei ole mukana tässä pelissä</div>` : ""}
           ${kartta}
           ${seuraa}
         </div>
@@ -245,7 +321,7 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const loput = viikot > 0 ? tulevat.filter((o) => o.paiva > raja) : [];
 
   // Nosto sivun ylälaitaan: se peli, joka on ajallisesti seuraavana.
-  const seuraava = tulevat[0];
+  const seuraava = tulevat.find((o) => !o.poissa);
   const seuraavaHtml = seuraava
     ? `<section class="seuraava">
       <div class="kohta">Seuraava peli</div>
@@ -366,6 +442,12 @@ function taita(rivi) {
   return osat.join("\r\n");
 }
 
+// "Bruno" / "Bruno ja Werner" / "Bruno, Werner ja Moritz"
+function luettele(nimet) {
+  if (nimet.length <= 1) return nimet[0] || "";
+  return `${nimet.slice(0, -1).join(", ")} ja ${nimet[nimet.length - 1]}`;
+}
+
 function icsTeksti(s) {
   return String(s ?? "").replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
 }
@@ -382,18 +464,31 @@ function rakennaIcs(ottelut) {
     "X-WR-TIMEZONE:Europe/Helsinki",
   ];
 
+  // Sama ottelu esiintyy kahdesti, jos kaksi lapsista pelaa toisiaan vastaan.
+  // Kalenteriin siitä tehdään yksi tapahtuma, jonka otsikossa on molemmat nimet.
+  const ryhmat = new Map();
   for (const o of ottelut) {
+    const avain = o.match_id || `${o.paiva}-${o.kello}-${o.koti}-${o.vieras}`;
+    if (!ryhmat.has(avain)) {
+      ryhmat.set(avain, { ...o, avain, lapset: [o.lapsi] });
+    } else {
+      const ryhma = ryhmat.get(avain);
+      if (!ryhma.lapset.includes(o.lapsi)) ryhma.lapset.push(o.lapsi);
+    }
+  }
+
+  for (const o of ryhmat.values()) {
     const alku = new Date(o.alku);
     // Ottelulle varataan kalenterista oletuksena kaksi tuntia.
-    const kesto = Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120;
+    const kesto = o.kesto || (Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120);
     const loppu = new Date(alku.getTime() + kesto * 60000);
     rivit.push(
       "BEGIN:VEVENT",
-      `UID:${o.match_id || `${o.paiva}-${o.kello}`}-stude@stude.fi`,
+      `UID:${o.avain}-stude@stude.fi`,
       `DTSTAMP:${nyt}`,
       `DTSTART:${utcLeima(alku)}`,
       `DTEND:${utcLeima(loppu)}`,
-      taita(`SUMMARY:${icsTeksti(`${o.lapsi}: ${o.koti} – ${o.vieras}`)}`),
+      taita(`SUMMARY:${icsTeksti(`${luettele(o.lapset)}: ${o.koti} – ${o.vieras}`)}`),
       taita(`LOCATION:${icsTeksti(o.halli)}`),
       taita(`DESCRIPTION:${icsTeksti(
         [o.sarja, o.linkki ? `Tulos ja tilastot: ${o.linkki}` : ""].filter(Boolean).join("\n")
@@ -490,13 +585,34 @@ async function main() {
     process.exit(1);
   }
 
+  // Käsin lisätyt ottelut (EYBL, maajoukkue, turnaukset) mukaan samaan listaan.
+  const lisatyt = lueLisapelit();
+  if (lisatyt.length) console.log(`Käsin lisättyjä otteluita: ${lisatyt.length}.`);
+  kaikki.push(...lisatyt);
+
   const nahdyt = new Set();
   kaikki = kaikki.filter((o) => {
-    const tunnus = `${o.match_id}|${o.lapsi}|${o.joukkue}`;
+    const tunnus = `${o.match_id || `${o.paiva} ${o.kello} ${o.koti}`}|${o.lapsi}|${o.joukkue}`;
     if (nahdyt.has(tunnus)) return false;
     nahdyt.add(tunnus);
     return true;
   });
+
+  // Merkinnät peleistä, joissa poika ei ole kokoonpanossa.
+  const poissa = luePoissa();
+  let merkittyja = 0;
+  for (const o of kaikki) {
+    const osuma = poissa.some(
+      (p) => p.paiva === o.paiva && p.lapsi === o.lapsi && (!p.kello || p.kello === o.kello)
+    );
+    if (osuma) { o.poissa = true; merkittyja++; }
+  }
+  for (const p of poissa) {
+    if (!kaikki.some((o) => o.paiva === p.paiva && o.lapsi === p.lapsi && (!p.kello || p.kello === o.kello))) {
+      console.error(`poissa.txt: riville "${p.paiva} ${p.kello} ${p.lapsi}" ei löytynyt ottelua.`);
+    }
+  }
+  if (merkittyja) console.log(`Merkitty poissaolevaksi: ${merkittyja} ottelua.`);
 
   const alkaen = paivaSiirtymalla(-Math.abs(asetukset.menneet_paivat ?? 30));
   const asti = paivaSiirtymalla(Math.abs(asetukset.tulevat_paivat ?? 240));
@@ -506,15 +622,20 @@ async function main() {
   for (const o of kaikki) o.mennyt = o.paiva < tanaan;
 
   const jarjesta = (a, b) => a.alku.localeCompare(b.alku);
-  const tulevat = kaikki.filter((o) => !o.mennyt).sort(jarjesta);
-  const menneet = kaikki.filter((o) => o.mennyt).sort(jarjesta).reverse();
+  // Poissaolevaksi merkityt näytetään oletuksena himmennettyinä, mutta ne voi
+  // myös piilottaa kokonaan asetuksella poissa_toiminta: "piilota".
+  const sivulle = asetukset.poissa_toiminta === "piilota" ? kaikki.filter((o) => !o.poissa) : kaikki;
+  const tulevat = sivulle.filter((o) => !o.mennyt).sort(jarjesta);
+  const menneet = sivulle.filter((o) => o.mennyt).sort(jarjesta).reverse();
+  // Kalenteriin ei koskaan viedä pelejä, joissa poika ei ole mukana.
+  const kalenteriin = kaikki.filter((o) => !o.poissa).sort(jarjesta);
 
   const paivitetty = new Intl.DateTimeFormat("fi-FI", {
     timeZone: TZ, dateStyle: "long", timeStyle: "short",
   }).format(new Date());
 
   fs.writeFileSync(path.join(ULOS, "index.html"), rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }));
-  fs.writeFileSync(path.join(ULOS, "pelit.ics"), rakennaIcs(tulevat.concat(menneet)));
+  fs.writeFileSync(path.join(ULOS, "pelit.ics"), rakennaIcs(kalenteriin));
   fs.writeFileSync(path.join(ULOS, "ottelut.json"), JSON.stringify({ paivitetty, tulevat, menneet }, null, 2));
   fs.writeFileSync(path.join(ULOS, ".nojekyll"), "");
 

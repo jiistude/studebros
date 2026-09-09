@@ -1,0 +1,18 @@
+# Pelit, joissa poika ei ole kokoonpanossa
+#
+# Yksi rivi per peli:
+#
+#   PÄIVÄMÄÄRÄ NIMI              esim.  2026-10-09 Bruno
+#   PÄIVÄMÄÄRÄ KELLONAIKA NIMI   esim.  2026-11-21 14:00 Moritz
+#
+# Kellonaika tarvitaan vain jos samalla pojalla on saman päivän aikana useampi
+# peli ja haluat merkitä niistä vain yhden. Ilman kellonaikaa merkitään kaikki
+# kyseisen pojan sen päivän pelit.
+#
+# Merkitty peli näkyy sivulla himmennettynä ja huomautuksella, mutta se EI mene
+# kalenteriin. Jos haluat piilottaa sen sivulta kokonaan, lisää tiedostoon
+# joukkueet.json rivi:  "poissa_toiminta": "piilota"
+#
+# Rivi, joka alkaa #-merkillä, ohitetaan. Tyhjä tiedosto on täysin kelvollinen.
+# Jos kirjoitat rivin väärin tai peliä ei löydy, ajon loki kertoo siitä eikä
+# mikään mene rikki.

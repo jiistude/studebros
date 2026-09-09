@@ -1,0 +1,34 @@
+# Käsin lisättävät ottelut
+#
+# Tänne merkitään pelit, joita ei löydy Koripalloliiton tulospalvelusta:
+# EYBL-turnaukset, maajoukkuepelit, harjoitusottelut ja muut vastaavat.
+#
+# Yksi peli kerrallaan. Erota pelit toisistaan TYHJÄLLÄ RIVILLÄ.
+# Rivien järjestyksellä ei ole väliä. Rivi, joka alkaa #-merkillä, ohitetaan.
+#
+# Pakolliset:
+#   lapsi:   Bruno, Werner tai Moritz — kirjoita täsmälleen samoin kuin muualla
+#   alkaa:   2026-10-24 14:30  (vuosi-kuukausi-päivä ja kellonaika Suomen aikaa)
+#
+# Vapaaehtoiset:
+#   koti:    kotijoukkueen nimi
+#   vieras:  vierasjoukkueen nimi
+#   oma:     kumpi yllä olevista on pojan oma joukkue — se lihavoidaan sivulla
+#   joukkue: lyhyt tunniste, joka näkyy lapsen nimen perässä (esim. RPC EYBL)
+#   sarja:   sarjan tai turnauksen nimi
+#   paikka:  hallin nimi ja osoite, tulee sivulle karttalinkiksi
+#   linkki:  osoite, josta peliä voi seurata
+#   kesto:   pelin kesto minuutteina, jos kaksi tuntia ei sovi
+#
+# Alla on malli. Poista #-merkit sen edestä ja muokkaa, kun lisäät ensimmäisen
+# oikean pelin. Tyhjä tiedosto on täysin kelvollinen.
+
+# lapsi: Moritz
+# joukkue: RPC EYBL
+# alkaa: 2026-10-24 14:30
+# koti: Zalgiris Kaunas
+# vieras: RPC
+# oma: RPC
+# sarja: EYBL U15, alkulohko
+# paikka: Zalgirio arena, Kaunas, Liettua
+# linkki: https://eybl.eu/
