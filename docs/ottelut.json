@@ -1,5 +1,5 @@
 {
-  "paivitetty": "7. syyskuuta 2026 klo 7.01",
+  "paivitetty": "9. syyskuuta 2026 klo 11.32",
   "tulevat": [
     {
       "match_id": "1009988",
@@ -29,6 +29,21 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": null,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006595",
+      "alku": "2026-09-26T12:15:00.000Z",
+      "paiva": "2026-09-26",
+      "kello": "15:15",
+      "koti": "Torpan Pojat",
+      "vieras": "Karkkila",
+      "sarja": "Valmistavat ottelut, miehet",
+      "halli": "Pirkkolahalli, Pirkkolan metsätie 8, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006595",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": true,
       "mennyt": false
     },
     {
