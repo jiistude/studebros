@@ -16,4 +16,3 @@
 # Rivi, joka alkaa #-merkillä, ohitetaan. Tyhjä tiedosto on täysin kelvollinen.
 # Jos kirjoitat rivin väärin tai peliä ei löydy, ajon loki kertoo siitä eikä
 # mikään mene rikki.
-2026-09-13 Moritz
