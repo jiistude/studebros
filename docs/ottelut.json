@@ -1,21 +1,6 @@
 {
-  "paivitetty": "13. syyskuuta 2026 klo 21.10",
+  "paivitetty": "14. syyskuuta 2026 klo 7.01",
   "tulevat": [
-    {
-      "match_id": "1009988",
-      "alku": "2026-09-13T07:00:00.000Z",
-      "paiva": "2026-09-13",
-      "kello": "10:00",
-      "koti": "Pussihukat /Punainen",
-      "vieras": "RiKos",
-      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
-      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1009988",
-      "lapsi": "Moritz",
-      "joukkue": "U15 1D",
-      "omaKotona": true,
-      "mennyt": false
-    },
     {
       "match_id": "1005600",
       "alku": "2026-09-19T14:00:00.000Z",
