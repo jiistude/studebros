@@ -1,5 +1,5 @@
 {
-  "paivitetty": "14. syyskuuta 2026 klo 7.01",
+  "paivitetty": "19. syyskuuta 2026 klo 21.09",
   "tulevat": [
     {
       "match_id": "1005600",
@@ -7,13 +7,43 @@
       "paiva": "2026-09-19",
       "kello": "17:00",
       "koti": "ToPo",
-      "vieras": "v2",
+      "vieras": "LePy",
       "sarja": "19-vuotiaat pojat, SM-karsinnat",
       "halli": "Lehtisaaren Kuntotalo, Kaaponkuja, Jyväskylä",
       "linkki": "https://tulospalvelu.basket.fi/match/1005600",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
-      "omaKotona": null,
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
+      "match_id": "1005602",
+      "alku": "2026-09-20T07:00:00.000Z",
+      "paiva": "2026-09-20",
+      "kello": "10:00",
+      "koti": "HoNsU/JBA",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-karsinnat",
+      "halli": "Lehtisaaren Kuntotalo, Kaaponkuja, Jyväskylä",
+      "linkki": "https://tulospalvelu.basket.fi/match/1005602",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006593",
+      "alku": "2026-09-26T07:00:00.000Z",
+      "paiva": "2026-09-26",
+      "kello": "10:00",
+      "koti": "HBA-Märsky",
+      "vieras": "Turun NMKY",
+      "sarja": "Valmistavat ottelut, miehet",
+      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006593",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": true,
       "mennyt": false
     },
     {
