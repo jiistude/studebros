@@ -1,21 +1,6 @@
 {
-  "paivitetty": "19. syyskuuta 2026 klo 21.09",
+  "paivitetty": "20. syyskuuta 2026 klo 23.18",
   "tulevat": [
-    {
-      "match_id": "1005600",
-      "alku": "2026-09-19T14:00:00.000Z",
-      "paiva": "2026-09-19",
-      "kello": "17:00",
-      "koti": "ToPo",
-      "vieras": "LePy",
-      "sarja": "19-vuotiaat pojat, SM-karsinnat",
-      "halli": "Lehtisaaren Kuntotalo, Kaaponkuja, Jyväskylä",
-      "linkki": "https://tulospalvelu.basket.fi/match/1005600",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo U19",
-      "omaKotona": true,
-      "mennyt": false
-    },
     {
       "match_id": "1005602",
       "alku": "2026-09-20T07:00:00.000Z",
@@ -29,6 +14,21 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1005620",
+      "alku": "2026-09-20T13:30:00.000Z",
+      "paiva": "2026-09-20",
+      "kello": "16:30",
+      "koti": "ToPo",
+      "vieras": "TuNMKY",
+      "sarja": "19-vuotiaat pojat, SM-karsinnat",
+      "halli": "Lehtisaaren Kuntotalo, Kaaponkuja, Jyväskylä",
+      "linkki": "https://tulospalvelu.basket.fi/match/1005620",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
       "mennyt": false
     },
     {
