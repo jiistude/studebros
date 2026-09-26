@@ -1,5 +1,5 @@
 {
-  "paivitetty": "21. syyskuuta 2026 klo 7.01",
+  "paivitetty": "26. syyskuuta 2026 klo 23.38",
   "tulevat": [
     {
       "match_id": "1006593",
@@ -137,6 +137,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006905",
+      "alku": "2026-10-17T11:30:00.000Z",
+      "paiva": "2026-10-17",
+      "kello": "14:30",
+      "koti": "WB-Pantterit Black",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Merilahden peruskoulu_Kallvikinniementie, Kallvikinniementie 1, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006905",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1006724",
       "alku": "2026-10-18T14:00:00.000Z",
       "paiva": "2026-10-18",
@@ -197,6 +212,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006913",
+      "alku": "2026-10-24T12:30:00.000Z",
+      "paiva": "2026-10-24",
+      "kello": "15:30",
+      "koti": "ToPo",
+      "vieras": "Ura Basket",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006913",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1012867",
       "alku": "2026-10-25T12:45:00.000Z",
       "paiva": "2026-10-25",
@@ -224,6 +254,21 @@
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006922",
+      "alku": "2026-10-31T13:15:00.000Z",
+      "paiva": "2026-10-31",
+      "kello": "15:15",
+      "koti": "ToPo",
+      "vieras": "Salo Basketball",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006922",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
       "mennyt": false
     },
     {
@@ -317,6 +362,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006936",
+      "alku": "2026-11-08T10:00:00.000Z",
+      "paiva": "2026-11-08",
+      "kello": "12:00",
+      "koti": "HoNsU/JBA",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Gradia, Viitaniemen ammattioppilaitos, D-sali, Viitaniementie 1, Jyväskylä",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006936",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1006772",
       "alku": "2026-11-13T16:30:00.000Z",
       "paiva": "2026-11-13",
@@ -328,6 +388,21 @@
       "linkki": "https://tulospalvelu.basket.fi/match/1006772",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006918",
+      "alku": "2026-11-14T12:45:00.000Z",
+      "paiva": "2026-11-14",
+      "kello": "14:45",
+      "koti": "PuHu Juniorit",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006918",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
       "omaKotona": false,
       "mennyt": false
     },
@@ -407,6 +482,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006924",
+      "alku": "2026-11-21T17:45:00.000Z",
+      "paiva": "2026-11-21",
+      "kello": "19:45",
+      "koti": "HNMKY",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Namika Areena B, Pilkekuja 10, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006924",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1012853",
       "alku": "2026-11-22T10:15:00.000Z",
       "paiva": "2026-11-22",
@@ -479,6 +569,21 @@
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006930",
+      "alku": "2026-12-05T13:45:00.000Z",
+      "paiva": "2026-12-05",
+      "kello": "15:45",
+      "koti": "ToPo",
+      "vieras": "WB-Pantterit",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Pirkkolahalli, Pirkkolan metsätie 8, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006930",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
       "mennyt": false
     },
     {
@@ -617,6 +722,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006942",
+      "alku": "2027-01-16T10:45:00.000Z",
+      "paiva": "2027-01-16",
+      "kello": "12:45",
+      "koti": "ToPo",
+      "vieras": "BC Nokia",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006942",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1006758",
       "alku": "2027-01-16T15:00:00.000Z",
       "paiva": "2027-01-16",
@@ -677,6 +797,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006948",
+      "alku": "2027-01-24T11:30:00.000Z",
+      "paiva": "2027-01-24",
+      "kello": "13:30",
+      "koti": "Tampereen Pyrintö",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Pyynikin palloiluhalli, Ammattikoulunkatu 20, Tampere",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006948",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1006769",
       "alku": "2027-01-29T15:30:00.000Z",
       "paiva": "2027-01-29",
@@ -703,6 +838,21 @@
       "linkki": "https://tulospalvelu.basket.fi/match/1006769",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006993",
+      "alku": "2027-01-30T10:45:00.000Z",
+      "paiva": "2027-01-30",
+      "kello": "12:45",
+      "koti": "ToPo",
+      "vieras": "Tampereen Pyrintö",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006993",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
       "omaKotona": true,
       "mennyt": false
     },
@@ -767,6 +917,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006963",
+      "alku": "2027-02-06T10:45:00.000Z",
+      "paiva": "2027-02-06",
+      "kello": "12:45",
+      "koti": "ToPo",
+      "vieras": "PuHu Juniorit",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006963",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1006670",
       "alku": "2027-02-11T16:30:00.000Z",
       "paiva": "2027-02-11",
@@ -778,6 +943,21 @@
       "linkki": "https://tulospalvelu.basket.fi/match/1006670",
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006967",
+      "alku": "2027-02-13T13:00:00.000Z",
+      "paiva": "2027-02-13",
+      "kello": "15:00",
+      "koti": "Salo Basketball",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Salon urheilutalo, Perniöntie 7, Salo",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006967",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
       "omaKotona": false,
       "mennyt": false
     },
@@ -857,6 +1037,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006950",
+      "alku": "2027-02-27T10:45:00.000Z",
+      "paiva": "2027-02-27",
+      "kello": "12:45",
+      "koti": "ToPo",
+      "vieras": "WB-Pantterit Black",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006950",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1006705",
       "alku": "2027-03-05T16:30:00.000Z",
       "paiva": "2027-03-05",
@@ -887,6 +1082,21 @@
       "mennyt": false
     },
     {
+      "match_id": "1006958",
+      "alku": "2027-03-13T12:00:00.000Z",
+      "paiva": "2027-03-13",
+      "kello": "14:00",
+      "koti": "Ura Basket",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Valkeavuoren liikuntahalli, Veitenmäentie 29, Kaarina",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006958",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
       "match_id": "1006703",
       "alku": "2027-03-14T15:00:00.000Z",
       "paiva": "2027-03-14",
@@ -913,6 +1123,66 @@
       "linkki": "https://tulospalvelu.basket.fi/match/1006726",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006969",
+      "alku": "2027-03-20T10:45:00.000Z",
+      "paiva": "2027-03-20",
+      "kello": "12:45",
+      "koti": "ToPo",
+      "vieras": "HNMKY",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Pirkkolahalli, Pirkkolan metsätie 8, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006969",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006975",
+      "alku": "2027-04-03T14:30:00.000Z",
+      "paiva": "2027-04-03",
+      "kello": "17:30",
+      "koti": "WB-Pantterit",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Merilahden peruskoulu_Kallvikinniementie, Kallvikinniementie 1, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006975",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006981",
+      "alku": "2027-04-10T09:45:00.000Z",
+      "paiva": "2027-04-10",
+      "kello": "12:45",
+      "koti": "ToPo",
+      "vieras": "HoNsU/JBA",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006981",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": true,
+      "mennyt": false
+    },
+    {
+      "match_id": "1006987",
+      "alku": "2027-04-17T12:30:00.000Z",
+      "paiva": "2027-04-17",
+      "kello": "15:30",
+      "koti": "BC Nokia",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "AGCO Power Arena 1, Kankaantaankatu 4, Nokia",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006987",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
       "omaKotona": false,
       "mennyt": false
     }
