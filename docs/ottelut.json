@@ -1,36 +1,6 @@
 {
-  "paivitetty": "26. syyskuuta 2026 klo 23.38",
+  "paivitetty": "27. syyskuuta 2026 klo 23.51",
   "tulevat": [
-    {
-      "match_id": "1006593",
-      "alku": "2026-09-26T07:00:00.000Z",
-      "paiva": "2026-09-26",
-      "kello": "10:00",
-      "koti": "HBA-Märsky",
-      "vieras": "Turun NMKY",
-      "sarja": "Valmistavat ottelut, miehet",
-      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006593",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": true,
-      "mennyt": false
-    },
-    {
-      "match_id": "1006595",
-      "alku": "2026-09-26T12:15:00.000Z",
-      "paiva": "2026-09-26",
-      "kello": "15:15",
-      "koti": "Torpan Pojat",
-      "vieras": "Karkkila",
-      "sarja": "Valmistavat ottelut, miehet",
-      "halli": "Pirkkolahalli, Pirkkolan metsätie 8, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006595",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": true,
-      "mennyt": false
-    },
     {
       "match_id": "1009992",
       "alku": "2026-09-30T16:35:00.000Z",
