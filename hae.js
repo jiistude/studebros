@@ -201,13 +201,24 @@ function lueTulokset() {
   const teksti = lueTiedostoJosOn("tulokset.txt");
   const rivit = [];
   for (const rivi of teksti.split("\n")) {
-    const puhdas = rivi.trim();
+    let puhdas = rivi.trim();
     if (!puhdas || puhdas.startsWith("#")) continue;
+
+    // Verkko-osoite saa olla rivillä missä kohtaa tahansa: se poimitaan pois
+    // ennen muuta jäsentämistä ja liitetään ottelun linkiksi.
+    let linkki = "";
+    const osoite = puhdas.match(/\bhttps?:\/\/\S+/);
+    if (osoite) {
+      linkki = osoite[0].replace(/[.,;]+$/, "");
+      puhdas = (puhdas.slice(0, osoite.index) + puhdas.slice(osoite.index + osoite[0].length))
+        .replace(/\s+/g, " ").replace(/\|\s*$/, "").trim();
+    }
+
     const osat = puhdas.match(
       /^(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2})[:.](\d{2}))?\s+(\d{1,3})\s*[-–—]\s*(\d{1,3})(?:\s+([^\s|]+))?\s*(?:\|\s*(.*))?$/
     );
     if (!osat) {
-      console.error(`tulokset.txt: en ymmärrä riviä "${puhdas}".`);
+      console.error(`tulokset.txt: en ymmärrä riviä "${rivi.trim()}".`);
       continue;
     }
     rivit.push({
@@ -217,6 +228,7 @@ function lueTulokset() {
       vieras: Number(osat[5]),
       lapsi: osat[6] || "",
       muistiinpano: (osat[7] || "").trim(),
+      linkki,
     });
   }
   return rivit;
@@ -414,11 +426,10 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
     </div>`
     : `<a class="kalenteri" href="pelit.ics">Lataa pelit kalenteriin</a>`;
 
-  // Etusivulla näytetään vain lähiviikot, loput painikkeen takana.
-  const viikot = asetukset.etusivun_viikot ?? 6;
-  const raja = paivaSiirtymalla(viikot * 7);
-  const lahella = viikot > 0 ? tulevat.filter((o) => o.paiva <= raja) : tulevat;
-  const loput = viikot > 0 ? tulevat.filter((o) => o.paiva > raja) : [];
+  // Etusivulla näytetään vain seuraavat ottelut, loput painikkeen takana.
+  const montaTulevaa = asetukset.etusivun_tulevat ?? 10;
+  const lahella = montaTulevaa > 0 ? tulevat.slice(0, montaTulevaa) : tulevat;
+  const loput = montaTulevaa > 0 ? tulevat.slice(montaTulevaa) : [];
 
   // Pelatuista näytetään heti vain tuoreimmat, loput painikkeen takana.
   const montaPelattua = asetukset.etusivun_pelatut ?? 10;
@@ -831,6 +842,7 @@ async function main() {
       o.pisteetKoti = t.koti;
       o.pisteetVieras = t.vieras;
       o.muistiinpano = t.muistiinpano;
+      if (t.linkki) o.linkki = t.linkki;
     }
   }
   if (tulokset.length) console.log(`Kirjattuja tuloksia: ${tulokset.length}.`);
