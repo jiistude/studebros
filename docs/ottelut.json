@@ -1,21 +1,6 @@
 {
-  "paivitetty": "28. syyskuuta 2026 klo 13.13",
+  "paivitetty": "1. lokakuuta 2026 klo 8.13",
   "tulevat": [
-    {
-      "match_id": "1009992",
-      "alku": "2026-09-30T16:35:00.000Z",
-      "paiva": "2026-09-30",
-      "kello": "19:35",
-      "koti": "ToPo",
-      "vieras": "Pussihukat /Punainen",
-      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
-      "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1009992",
-      "lapsi": "Moritz",
-      "joukkue": "U15 1D",
-      "omaKotona": false,
-      "mennyt": false
-    },
     {
       "match_id": "1006588",
       "alku": "2026-10-02T15:00:00.000Z",
