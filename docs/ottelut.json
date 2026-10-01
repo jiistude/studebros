@@ -1,5 +1,5 @@
 {
-  "paivitetty": "1. lokakuuta 2026 klo 10.19",
+  "paivitetty": "1. lokakuuta 2026 klo 10.30",
   "tulevat": [
     {
       "match_id": "1006588",
@@ -1145,6 +1145,23 @@
   "menneet": [
     {
       "match_id": "",
+      "alku": "2026-09-30T16:35:00.000Z",
+      "paiva": "2026-09-30",
+      "kello": "19:35",
+      "koti": "ToPo",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
+      "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
+      "linkki": "",
+      "lapsi": "Moritz",
+      "joukkue": "U15 1D",
+      "omaKotona": false,
+      "kesto": null,
+      "kasin": true,
+      "mennyt": true
+    },
+    {
+      "match_id": "",
       "alku": "2026-09-26T07:00:00.000Z",
       "paiva": "2026-09-26",
       "kello": "10:00",
@@ -1208,7 +1225,7 @@
       "koti": "ToPo",
       "vieras": "LePy",
       "sarja": "19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä",
-      "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
+      "halli": "",
       "linkki": "https://tulospalvelu.basket.fi/match/1005600/lineups",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
