@@ -134,9 +134,21 @@ const PERUSTA = `
   .lisaa:hover, .lisaa:focus { border-style: solid; border-color: var(--linkki); }
   .tilaus {
     background: var(--kortti); border: 1px solid var(--raja);
-    border-radius: var(--pyoristys); padding: 1.1rem 1.25rem;
+    border-radius: var(--pyoristys); padding: 0 1.25rem; margin: 1.25rem 0 0;
   }
-  .tilausOtsikko { margin: 0 0 .75rem; font-weight: 800; font-size: 1.05rem; }
+  .tilaus > summary {
+    list-style: none; cursor: pointer; font-weight: 800; font-size: 1rem;
+    padding: .95rem 0; display: flex; align-items: center; gap: .6rem;
+  }
+  .tilaus > summary::-webkit-details-marker { display: none; }
+  .tilaus > summary::after {
+    content: ""; width: .5rem; height: .5rem; margin-left: auto;
+    border-right: 2px solid var(--himmea); border-bottom: 2px solid var(--himmea);
+    transform: rotate(45deg) translate(-2px, -2px); transition: transform .15s;
+  }
+  .tilaus[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+  .tilaus[open] > summary { padding-bottom: .5rem; }
+  .tilaus > :last-child { padding-bottom: 1.1rem; }
   .tilausNapit { display: flex; flex-wrap: wrap; gap: .5rem; }
   .tilausSelite { margin: .8rem 0 0; font-size: .88rem; color: var(--himmea); }
   .tilausSelite a { color: var(--linkki); text-underline-offset: 3px; }

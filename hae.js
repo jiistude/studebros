@@ -456,8 +456,8 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const icsHttps = osoite ? `${osoite}/pelit.ics` : "";
   const icsWebcal = icsHttps.replace(/^https?:/, "webcal:");
   const tilausHtml = icsHttps
-    ? `<div class="tilaus">
-      <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
+    ? `<details class="tilaus" id="tilaus">
+      <summary>Tilaa pelit omaan kalenteriin</summary>
       <div class="tilausNapit">
         <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=${esc(icsWebcal)}">Google-kalenteri</a>
         <a class="kalenteri toissijainen" href="${esc(icsWebcal)}">iPhone tai Mac</a>
@@ -467,7 +467,7 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
       <p class="tilausSelite">Vain yhden pojan pelit:${asetukset.lapset.map((l) =>
         ` <a href="${esc(icsWebcal.replace("pelit.ics", `pelit-${tunnisteeksi(l.nimi)}.ics`))}">${esc(l.nimi)}</a>`
       ).join(" &middot;")}</p>
-    </div>`
+    </details>`
     : `<a class="kalenteri" href="pelit.ics">Lataa pelit kalenteriin</a>`;
 
   // Etusivulla näytetään vain seuraavat ottelut, loput painikkeen takana.
@@ -531,10 +531,11 @@ ${teemaCss(asetukset.teema)}
     <h1><span class="pallo"><svg viewBox="0 0 268 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Studenpennut BWM"><clipPath id="spk"><circle cx="50" cy="50" r="46"/></clipPath><g clip-path="url(#spk)"><path d="M50 50 L50.0 4.0 A46 46 0 0 1 89.84 73.0 Z" fill="#FDD700"/><path d="M50 50 L89.84 73.0 A46 46 0 0 1 10.16 73.0 Z" fill="#012F53"/><path d="M50 50 L10.16 73.0 A46 46 0 0 1 50.0 4.0 Z" fill="#DA2128"/><g fill="none" stroke="var(--logoMuste)" stroke-width="4.5" stroke-linecap="round"><path d="M4 50h92"/><path d="M50 4v92"/><path d="M17 17c12 10 12 56 0 66"/><path d="M83 17c-12 10-12 56 0 66"/></g></g><circle cx="50" cy="50" r="46" fill="none" stroke="var(--logoMuste)" stroke-width="5"/><text x="112" y="69" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="800" font-size="56" letter-spacing="-3"><tspan fill="#FDD700">B</tspan><tspan fill="var(--logoW)">W</tspan><tspan fill="#DA2128">M</tspan></text></svg></span>${esc(asetukset.otsikko)}</h1>
     ${saldoHtml}
     ${kuvaus ? `<p class="selite">${muotoileKuvaus(kuvaus)}</p>` : ""}
-    ${tilausHtml}
   </header>
 
   ${seuraavaHtml}
+
+  ${tilausHtml}
 
 
   <div class="suodattimet" id="suodattimet">
@@ -628,6 +629,11 @@ ${teemaCss(asetukset.teema)}
       window.prompt('Kopioi teksti:', teksti);
     }
   }
+
+  // Tilauspaneeli on puhelimessa kiinni, jotta pelit näkyvät heti. Leveällä
+  // näytöllä tilaa riittää, joten se avataan valmiiksi.
+  var tilaus = document.getElementById('tilaus');
+  if (tilaus && window.matchMedia('(min-width: 720px)').matches) tilaus.open = true;
 
   var kopioi = document.getElementById('kopioi');
   if (kopioi) {
