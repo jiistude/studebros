@@ -265,36 +265,22 @@
     <p class="selite">Studenpentujen eli Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa. Tiedot <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelusta</a>.</p>
   </header>
 
-  <section class="seuraava" id="seuraavaPeli">
-      <div class="kohta">Seuraava peli</div>
-      <div class="peli">HBA-Märsky &ndash; Karkkila</div>
-      <div class="milloin">perjantaina 2. lokakuuta klo 18.00 &middot; Werner</div>
-      <div class="missa">Urhea-halli, Mäkelänkatu 47, Helsinki</div>
-    </section>
-
-  <details class="tilaus" id="tilaus">
-      <summary>Tilaa pelit omaan kalenteriin</summary>
-      <div class="tilausNapit">
-        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=webcal://basket.stude.fi/pelit.ics">Google-kalenteri</a>
-        <a class="kalenteri toissijainen" href="webcal://basket.stude.fi/pelit.ics">iPhone tai Mac</a>
-        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="https://basket.stude.fi/pelit.ics">Kopioi osoite</button>
-      </div>
-      <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">https://basket.stude.fi/pelit.ics</span>.</p>
-      <p class="tilausSelite">Vain yhden pojan pelit: <a href="webcal://basket.stude.fi/pelit-bruno.ics">Bruno</a> &middot; <a href="webcal://basket.stude.fi/pelit-werner.ics">Werner</a> &middot; <a href="webcal://basket.stude.fi/pelit-moritz.ics">Moritz</a></p>
-    </details>
-
-
-  <div class="suodattimet" id="suodattimet">
-    <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
-    <button type="button" data-lapsi="Bruno" aria-pressed="false" style="--vaalea:#7A5F00;--tumma:#FDD700">Bruno</button>
-    <button type="button" data-lapsi="Werner" aria-pressed="false" style="--vaalea:#012F53;--tumma:#5C9BD6">Werner</button>
-    <button type="button" data-lapsi="Moritz" aria-pressed="false" style="--vaalea:#CE2027;--tumma:#EF5A60">Moritz</button>
+  <div class="nakymat" id="nakymat" role="tablist">
+    <button type="button" data-nakyma="tulevat" aria-selected="true" role="tab">Tulevat</button>
+    <button type="button" data-nakyma="pelatut" aria-selected="false" role="tab">Pelatut</button>
   </div>
 
   
 
-  <h2>Tulevat ottelut</h2>
-  
+  <section id="osio-tulevat">
+    <h2>Tulevat ottelut</h2>
+    <div class="suodattimet">
+      <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
+      <button type="button" data-lapsi="Bruno" aria-pressed="false" style="--vaalea:#7A5F00;--tumma:#FDD700">Bruno</button>
+      <button type="button" data-lapsi="Werner" aria-pressed="false" style="--vaalea:#012F53;--tumma:#5C9BD6">Werner</button>
+      <button type="button" data-lapsi="Moritz" aria-pressed="false" style="--vaalea:#CE2027;--tumma:#EF5A60">Moritz</button>
+    </div>
+    
       <section class="paiva">
         <h3>perjantaina 2. lokakuuta</h3>
         
@@ -457,8 +443,7 @@
         </div>
       </article>
       </section>
-  <button type="button" class="lisaa" id="naytaKaikki">Näytä koko kausi (66 ottelua lisää)</button>
-  <div id="loput" hidden>
+    <div id="loput" hidden>
       <section class="paiva">
         <h3>lauantaina 24. lokakuuta</h3>
         
@@ -1501,9 +1486,18 @@
         </div>
       </article>
       </section></div>
+    <button type="button" class="lisaa" id="naytaKaikki">Näytä kaikki tulevat ottelut (66 lisää)</button>
+  </section>
 
-  <h2>Pelatut ottelut</h2>
-  
+  <section id="osio-pelatut" hidden>
+    <h2>Pelatut ottelut</h2>
+    <div class="suodattimet">
+      <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
+      <button type="button" data-lapsi="Bruno" aria-pressed="false" style="--vaalea:#7A5F00;--tumma:#FDD700">Bruno</button>
+      <button type="button" data-lapsi="Werner" aria-pressed="false" style="--vaalea:#012F53;--tumma:#5C9BD6">Werner</button>
+      <button type="button" data-lapsi="Moritz" aria-pressed="false" style="--vaalea:#CE2027;--tumma:#EF5A60">Moritz</button>
+    </div>
+    
       <section class="paiva">
         <h3>keskiviikkona 30. syyskuuta</h3>
         
@@ -1615,18 +1609,30 @@
         </div>
       </article>
       </section>
-  
+    
+  </section>
+
+  <details class="tilaus" id="tilaus">
+      <summary>Tilaa pelit omaan kalenteriin</summary>
+      <div class="tilausNapit">
+        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=webcal://basket.stude.fi/pelit.ics">Google-kalenteri</a>
+        <a class="kalenteri toissijainen" href="webcal://basket.stude.fi/pelit.ics">iPhone tai Mac</a>
+        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="https://basket.stude.fi/pelit.ics">Kopioi osoite</button>
+      </div>
+      <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">https://basket.stude.fi/pelit.ics</span>.</p>
+      <p class="tilausSelite">Vain yhden pojan pelit: <a href="webcal://basket.stude.fi/pelit-bruno.ics">Bruno</a> &middot; <a href="webcal://basket.stude.fi/pelit-werner.ics">Werner</a> &middot; <a href="webcal://basket.stude.fi/pelit-moritz.ics">Moritz</a></p>
+    </details>
 
   <footer>
     <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
-    <p>Päivitetty 1. lokakuuta 2026 klo 14.41. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
+    <p>Päivitetty 1. lokakuuta 2026 klo 17.47. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>
 
 <script>
   // Sivu on staattinen tiedosto, joka on voitu rakentaa tunteja sitten. Siksi
   // selain siivoaa jo pelatut ottelut pois "Tulevat ottelut" -listasta heti
-  // sivun avautuessa ja päivittää seuraavan pelin noston sen mukaisesti.
+  // sivun avautuessa.
   var OLETUSKESTO = 120;
   var VIIKKO_OTSIKKO = "Studenpentujen pelit | kausi 2026-2027 — seuraavat 7 päivää";
   var SIVUN_OSOITE = "https://basket.stude.fi";
@@ -1634,7 +1640,6 @@
   (function siivoaMenneet() {
     var nyt = Date.now();
     var kortit = document.querySelectorAll('.ottelu[data-tuleva="1"]');
-    var seuraava = null;
 
     kortit.forEach(function (kortti) {
       var alku = Date.parse(kortti.dataset.alku);
@@ -1643,26 +1648,8 @@
       if (alku + kesto < nyt) {
         kortti.dataset.ohi = '1';
         kortti.hidden = true;
-      } else if (!seuraava && !kortti.dataset.poissa) {
-        seuraava = kortti;
       }
     });
-
-    var nosto = document.getElementById('seuraavaPeli');
-    if (nosto) {
-      if (seuraava) {
-        var halli = seuraava.querySelector('.halli');
-        nosto.querySelector('.peli').textContent = seuraava.querySelector('.joukkueet').textContent.trim();
-        nosto.querySelector('.milloin').textContent =
-          seuraava.dataset.paivateksti + ' klo ' +
-          seuraava.querySelector('.kello').textContent.trim().replace(':', '.') + ' \u00b7 ' +
-          seuraava.dataset.lapsi;
-        nosto.querySelector('.missa').textContent = halli ? halli.textContent.trim() : '';
-        nosto.hidden = false;
-      } else {
-        nosto.hidden = true;
-      }
-    }
 
     paivitaPaivat();
   })();
@@ -1742,11 +1729,13 @@
     });
   });
 
-  var napit = document.querySelectorAll('#suodattimet button');
+  // Suodatinnapit ovat molempien listojen otsikon alla. Valinta koskee koko
+  // sivua, joten molempien rivien napit pidetään samassa tilassa.
+  var napit = document.querySelectorAll('.suodattimet button');
   napit.forEach(function (nappi) {
     nappi.addEventListener('click', function () {
       var valinta = nappi.dataset.lapsi;
-      napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n === nappi)); });
+      napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n.dataset.lapsi === valinta)); });
       document.querySelectorAll('.ottelu').forEach(function (kortti) {
         if (kortti.dataset.ohi) return; // jo pelattu, pysyy piilossa
         kortti.style.display = (valinta === 'kaikki' || kortti.dataset.lapsi === valinta) ? '' : 'none';
@@ -1754,6 +1743,27 @@
       paivitaPaivat();
     });
   });
+
+  // Sivulla näkyy kerrallaan vain toinen lista: tulevat tai pelatut.
+  (function nakymanVaihto() {
+    var napit = document.querySelectorAll('#nakymat button');
+    var osiot = { tulevat: document.getElementById('osio-tulevat'), pelatut: document.getElementById('osio-pelatut') };
+    napit.forEach(function (nappi) {
+      nappi.addEventListener('click', function () {
+        var valinta = nappi.dataset.nakyma;
+        napit.forEach(function (n) { n.setAttribute('aria-selected', String(n === nappi)); });
+        Object.keys(osiot).forEach(function (k) {
+          if (osiot[k]) osiot[k].hidden = k !== valinta;
+        });
+        if (location.hash !== '#' + valinta) history.replaceState(null, '', '#' + valinta);
+      });
+    });
+    // Osoitteen loppu #pelatut avaa suoraan pelatut ottelut.
+    if (location.hash === '#pelatut') {
+      var pelatutNappi = document.querySelector('#nakymat button[data-nakyma="pelatut"]');
+      if (pelatutNappi) pelatutNappi.click();
+    }
+  })();
 </script>
 </body>
 </html>
