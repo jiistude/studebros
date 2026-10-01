@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Studenpentujen pelit | kausi 2026-2027</title>
 <meta name="description" content="Seuraava peli: HBA-Märsky – Karkkila, perjantaina 2. lokakuuta klo 18.00.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="kuvake-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Studenpentujen pelit | kausi 2026-2027">
 <meta property="og:title" content="Studenpentujen pelit | kausi 2026-2027">
 <meta property="og:description" content="Seuraava peli: HBA-Märsky – Karkkila, perjantaina 2. lokakuuta klo 18.00.">
 <meta property="og:locale" content="fi_FI">
 <meta property="og:url" content="https://basket.stude.fi/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://basket.stude.fi/jakokuva.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 
   * { box-sizing: border-box; }
@@ -84,7 +87,8 @@
     margin-top: .35rem; font-size: .95rem; line-height: 1.45;
     border-left: 3px solid var(--raja); padding-left: .7rem; color: var(--teksti);
   }
-  .pallo { display: none; }
+  .pallo { display: none; --logoMuste: #0B0B0C; --logoW: #012F53; }
+  .pallo svg { width: 100%; height: 100%; display: block; }
   .viikko {
     font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
     background: none; border: 1px solid var(--raja); border-radius: var(--pyoristys);
@@ -179,9 +183,10 @@
     --huomioTausta: #FFF6E3; --huomioRaja: #E6D4A6; --huomioTeksti: #5E4B16;
   }
   .pallo {
-    display: block; width: 2.2rem; height: 2.2rem; color: #D9541C; margin: 0 0 .9rem;
+    display: block; width: auto; height: 2.9rem; margin: 0 0 1rem;
+    --logoMuste: #0B0B0C; --logoW: #012F53;
   }
-  .pallo svg { width: 100%; height: 100%; display: block; }
+  .pallo svg { width: auto; height: 100%; display: block; }
   h1 { font-weight: 800; letter-spacing: -.04em; line-height: .98; text-transform: uppercase; }
   h2 {
     font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; text-transform: uppercase;
@@ -243,9 +248,9 @@
 <body>
 <div class="kehys">
   <header>
-    <h1><span class="pallo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="21"/><path d="M24 3v42M3 24h42"/><path d="M9.5 8.5C16 16 16 32 9.5 39.5M38.5 8.5C32 16 32 32 38.5 39.5"/></svg></span>Studenpentujen pelit | kausi 2026-2027</h1>
+    <h1><span class="pallo"><svg viewBox="0 0 268 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Studenpennut BWM"><clipPath id="spk"><circle cx="50" cy="50" r="46"/></clipPath><g clip-path="url(#spk)"><path d="M50 50 L50.0 4.0 A46 46 0 0 1 89.84 73.0 Z" fill="#FDD700"/><path d="M50 50 L89.84 73.0 A46 46 0 0 1 10.16 73.0 Z" fill="#012F53"/><path d="M50 50 L10.16 73.0 A46 46 0 0 1 50.0 4.0 Z" fill="#DA2128"/><g fill="none" stroke="var(--logoMuste)" stroke-width="4.5" stroke-linecap="round"><path d="M4 50h92"/><path d="M50 4v92"/><path d="M17 17c12 10 12 56 0 66"/><path d="M83 17c-12 10-12 56 0 66"/></g></g><circle cx="50" cy="50" r="46" fill="none" stroke="var(--logoMuste)" stroke-width="5"/><text x="112" y="69" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="800" font-size="56" letter-spacing="-3"><tspan fill="#FDD700">B</tspan><tspan fill="var(--logoW)">W</tspan><tspan fill="#DA2128">M</tspan></text></svg></span>Studenpentujen pelit | kausi 2026-2027</h1>
     <p class="saldo"><span style="--vaalea:#7A5F00;--tumma:#FDD700">Bruno <strong>3&ndash;1</strong></span><span style="--vaalea:#012F53;--tumma:#5C9BD6">Werner <strong>1&ndash;0</strong></span><span style="--vaalea:#CE2027;--tumma:#EF5A60">Moritz <strong>2&ndash;0</strong></span></p>
-    <p class="selite">Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa. Tiedot <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelusta</a>.</p>
+    <p class="selite">Studenpentujen eli Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa. Tiedot <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelusta</a>.</p>
     <div class="tilaus">
       <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
       <div class="tilausNapit">
@@ -1601,7 +1606,7 @@
 
   <footer>
     <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
-    <p>Päivitetty 1. lokakuuta 2026 klo 12.09. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
+    <p>Päivitetty 1. lokakuuta 2026 klo 14.07. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>
 
