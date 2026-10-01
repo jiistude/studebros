@@ -465,10 +465,14 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
     ? `<p class="huomio">Otteluohjelmaa ei ole vielä julkaistu: ${puuttuvat.map(esc).join(", ")}. Pelit ilmestyvät tähän automaattisesti heti kun ne julkaistaan.</p>`
     : "";
 
+  // Otsikon alla näkyvä kuvausteksti. Asetus "kuvaus" joukkueet.json-tiedostossa,
+  // tyhjä merkkijono poistaa kappaleen kokonaan.
+  const kuvaus = asetukset.kuvaus ?? "Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.";
+
   // Kuvaus, joka näkyy kun osoite liitetään WhatsAppiin tai muuhun palveluun.
   const jakoKuvaus = seuraava
     ? `Seuraava peli: ${seuraava.koti} – ${seuraava.vieras}, ${pitkaPaiva(seuraava.paiva)} klo ${seuraava.kello.replace(":", ".")}.`
-    : "Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa.";
+    : kuvaus || `${asetukset.otsikko}: ottelut, tulokset ja kalenteri yhdessä paikassa.`;
 
   return `<!doctype html>
 <html lang="fi">
@@ -494,7 +498,7 @@ ${teemaCss(asetukset.teema)}
   <header>
     <h1><span class="pallo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="21"/><path d="M24 3v42M3 24h42"/><path d="M9.5 8.5C16 16 16 32 9.5 39.5M38.5 8.5C32 16 32 32 38.5 39.5"/></svg></span>${esc(asetukset.otsikko)}</h1>
     ${saldoHtml}
-    <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
+    ${kuvaus ? `<p class="selite">${esc(kuvaus)}</p>` : ""}
     ${tilausHtml}
   </header>
 

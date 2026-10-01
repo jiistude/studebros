@@ -1,5 +1,6 @@
 {
   "otsikko": "Brunon, Wernerin ja Moritzin pelit",
+  "kuvaus": "Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.",
   "teema": "lehti",
   "sivun_osoite": "https://basket.stude.fi",
   "aikavyohyke": "Europe/Helsinki",
@@ -49,7 +50,7 @@
   ],
   "menneet_paivat": 400,
   "tulevat_paivat": 240,
-  "etusivun_viikot": 6,
+  "etusivun_tulevat": 10,
   "etusivun_pelatut": 10,
   "ottelun_kesto_min": 120
 }

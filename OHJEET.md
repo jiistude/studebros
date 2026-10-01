@@ -192,6 +192,7 @@ Tiedostossa `joukkueet.json`:
 | Asetus | Merkitys |
 |---|---|
 | `otsikko` | Sivun otsikko |
+| `kuvaus` | Otsikon alla näkyvä esittelyteksti. Tyhjä merkkijono `""` poistaa sen kokonaan |
 | `teema` | Ulkoasu: `tulostaulu`, `parketti`, `lehti`, `raikas`, `selkea` tai `iso` |
 | `sivun_osoite` | Sivun julkinen osoite. Tästä rakennetaan tilauslinkit ja jakokortti |
 | `menneet_paivat` | Kuinka monen päivän vanhat ottelut näytetään (oletus 400) |
