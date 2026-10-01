@@ -39,6 +39,7 @@ koti: Pussihukat /Punainen
 vieras: RiKos
 oma: Pussihukat /Punainen
 sarja: 15-vuotiaat pojat I divisioona Eteläinen alue
+paikka: Martinlaakson koulu, Martinlaaksonpolku 4, Vantaa
 
 lapsi: Moritz
 joukkue: U15 1D
