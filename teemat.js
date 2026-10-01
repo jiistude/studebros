@@ -99,7 +99,18 @@ const PERUSTA = `
     padding: .4rem 1rem; line-height: 1.2;
   }
   a.seuraa:hover, a.seuraa:focus { background: var(--lapsi); color: #fff; }
-  .suodattimet { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 .5rem; }
+  /* Näkymän valinta: tulevat vai pelatut. Vain toinen lista näkyy kerrallaan. */
+  .nakymat { display: flex; gap: .4rem; margin: .75rem 0 0; }
+  .nakymat button {
+    flex: 1; font: inherit; font-size: 1rem; font-weight: 800; cursor: pointer;
+    border: 2px solid var(--raja); background: var(--kortti); color: var(--himmea);
+    border-radius: 999px; padding: .7rem 1rem; line-height: 1.2;
+  }
+  .nakymat button[aria-selected="true"] {
+    background: var(--nappiTausta); color: var(--nappiTeksti); border-color: var(--nappiTausta);
+  }
+  section > h2:first-child { margin-top: 2rem; }
+  .suodattimet { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.1rem; }
   .suodattimet button {
     font: inherit; font-size: .95rem; font-weight: 700; cursor: pointer;
     border: 2px solid var(--raja); background: var(--kortti);
@@ -584,6 +595,13 @@ const TEEMAT = {
     background: none; border-color: var(--raja);
     text-transform: uppercase; font-size: .78rem; letter-spacing: .14em;
   }
+  .nakymat { gap: 0; border: 1px solid #0B0B0C; }
+  .nakymat button {
+    background: none; border: none; border-radius: 0; color: var(--himmea);
+    text-transform: uppercase; font-size: .8rem; letter-spacing: .16em;
+    padding: .8rem 1rem;
+  }
+  .nakymat button[aria-selected="true"] { background: #0B0B0C; color: #FFFFFF; }
   .saldo span { background: none; border-color: var(--raja); }
   .tulos { font-size: 1.7rem; letter-spacing: -.03em; }
   .tulos.voitto .vt { color: #11703A; }
