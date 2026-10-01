@@ -511,6 +511,8 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(asetukset.otsikko)}</title>
 <meta name="description" content="${esc(jakoKuvaus)}">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="kuvake-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(asetukset.otsikko)}">
 <meta property="og:title" content="${esc(asetukset.otsikko)}">
@@ -526,7 +528,7 @@ ${teemaCss(asetukset.teema)}
 <body>
 <div class="kehys">
   <header>
-    <h1><span class="pallo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="21"/><path d="M24 3v42M3 24h42"/><path d="M9.5 8.5C16 16 16 32 9.5 39.5M38.5 8.5C32 16 32 32 38.5 39.5"/></svg></span>${esc(asetukset.otsikko)}</h1>
+    <h1><span class="pallo"><svg viewBox="0 0 268 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Studenpennut BWM"><clipPath id="spk"><circle cx="50" cy="50" r="46"/></clipPath><g clip-path="url(#spk)"><path d="M50 50 L50.0 4.0 A46 46 0 0 1 89.84 73.0 Z" fill="#FDD700"/><path d="M50 50 L89.84 73.0 A46 46 0 0 1 10.16 73.0 Z" fill="#012F53"/><path d="M50 50 L10.16 73.0 A46 46 0 0 1 50.0 4.0 Z" fill="#DA2128"/><g fill="none" stroke="var(--logoMuste)" stroke-width="4.5" stroke-linecap="round"><path d="M4 50h92"/><path d="M50 4v92"/><path d="M17 17c12 10 12 56 0 66"/><path d="M83 17c-12 10-12 56 0 66"/></g></g><circle cx="50" cy="50" r="46" fill="none" stroke="var(--logoMuste)" stroke-width="5"/><text x="112" y="69" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="800" font-size="56" letter-spacing="-3"><tspan fill="#FDD700">B</tspan><tspan fill="var(--logoW)">W</tspan><tspan fill="#DA2128">M</tspan></text></svg></span>${esc(asetukset.otsikko)}</h1>
     ${saldoHtml}
     ${kuvaus ? `<p class="selite">${muotoileKuvaus(kuvaus)}</p>` : ""}
     ${tilausHtml}

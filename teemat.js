@@ -76,7 +76,8 @@ const PERUSTA = `
     margin-top: .35rem; font-size: .95rem; line-height: 1.45;
     border-left: 3px solid var(--raja); padding-left: .7rem; color: var(--teksti);
   }
-  .pallo { display: none; }
+  .pallo { display: none; --logoMuste: #0B0B0C; --logoW: #012F53; }
+  .pallo svg { width: 100%; height: 100%; display: block; }
   .viikko {
     font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
     background: none; border: 1px solid var(--raja); border-radius: var(--pyoristys);
@@ -317,10 +318,10 @@ const TEEMAT = {
   .ottelu { --lapsi: var(--tumma); }
   .suodattimet button { color: var(--tumma, var(--teksti)); }
   .pallo {
-    display: inline-block; width: .9em; height: .9em; color: #E8A33D;
-    margin-right: .45rem; vertical-align: -.06em;
+    display: block; width: auto; height: 2.6rem; margin: 0 0 .9rem;
+    --logoMuste: #F3EDE2; --logoW: #5C9BD6;
   }
-  .pallo svg { width: 100%; height: 100%; display: block; }
+  .pallo svg { width: auto; height: 100%; display: block; }
   h1 { font-weight: 800; letter-spacing: -.02em; }
   h2 {
     font-size: 1.1rem; text-transform: uppercase; letter-spacing: .18em; font-weight: 800;
@@ -378,10 +379,10 @@ const TEEMAT = {
   .ottelu { --lapsi: var(--tumma); }
   .suodattimet button { color: var(--tumma, var(--teksti)); }
   .pallo {
-    display: inline-block; width: .85em; height: .85em; color: #FFB000;
-    margin-right: .5rem; vertical-align: -.04em;
+    display: block; width: auto; height: 2.6rem; margin: 0 0 .9rem;
+    --logoMuste: #E8EDF2; --logoW: #5C9BD6;
   }
-  .pallo svg { width: 100%; height: 100%; display: block; }
+  .pallo svg { width: auto; height: 100%; display: block; }
   h1 { font-weight: 700; letter-spacing: -.03em; }
   h2 {
     font-size: .95rem; text-transform: uppercase; letter-spacing: .3em; font-weight: 700;
@@ -445,11 +446,11 @@ const TEEMAT = {
   }
   .ottelu { --lapsi: var(--tumma); }
   .suodattimet button { color: var(--tumma, var(--teksti)); }
-  /* Ainoa oranssi sivulla on pallo itse: muut värit kertovat kenen peli on. */
   .pallo {
-    display: block; width: 2.2rem; height: 2.2rem; color: #E8743B; margin: 0 0 .9rem;
+    display: block; width: auto; height: 2.9rem; margin: 0 0 1rem;
+    --logoMuste: #FBFBFA; --logoW: #5C9BD6;
   }
-  .pallo svg { width: 100%; height: 100%; display: block; }
+  .pallo svg { width: auto; height: 100%; display: block; }
   h1 { font-weight: 800; letter-spacing: -.04em; line-height: .98; text-transform: uppercase; }
   h2 {
     font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; text-transform: uppercase;
@@ -520,9 +521,10 @@ const TEEMAT = {
     --huomioTausta: #FFF6E3; --huomioRaja: #E6D4A6; --huomioTeksti: #5E4B16;
   }
   .pallo {
-    display: block; width: 2.2rem; height: 2.2rem; color: #D9541C; margin: 0 0 .9rem;
+    display: block; width: auto; height: 2.9rem; margin: 0 0 1rem;
+    --logoMuste: #0B0B0C; --logoW: #012F53;
   }
-  .pallo svg { width: 100%; height: 100%; display: block; }
+  .pallo svg { width: auto; height: 100%; display: block; }
   h1 { font-weight: 800; letter-spacing: -.04em; line-height: .98; text-transform: uppercase; }
   h2 {
     font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; text-transform: uppercase;

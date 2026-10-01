@@ -185,6 +185,30 @@ Tulevissa peleissä siinä lukee *Seuraa peliä livenä* ja pelatuissa *Otteluti
 
 ---
 
+## Logo
+
+Studenpentujen epävirallinen merkki on koripallo, jonka kolme kenttää ovat poikien seurojen
+värit, sekä sanamerkki BWM ikäjärjestyksessä.
+
+Tiedostot ovat kansiossa `docs`, eli ne löytyvät myös osoitteesta `basket.stude.fi/logo.svg`
+ja niin edelleen:
+
+| Tiedosto | Mihin |
+|---|---|
+| `logo.svg` | Pallo ja BWM vaalealle pohjalle |
+| `logo-tumma.svg` | Sama tummalle pohjalle |
+| `merkki.svg` | Pelkkä pallo, pieniin kokoihin |
+| `merkki-tumma.svg` | Sama tummalle pohjalle |
+| `favicon.svg` | Selaimen välilehden kuvake |
+| `kuvake-180.png` | Kuvake puhelimen kotinäytölle |
+| `jakokuva.png` | Esikatselukuva WhatsAppiin, 1200 × 630 |
+
+Sivun otsikossa merkki on upotettuna suoraan sivulle, jolloin se ottaa musteen väriksi
+teeman mukaisen sävyn. Tummissa teemoissa myös Wernerin W vaalenee, koska laivastonsininen
+häviäisi mustaan.
+
+Jakokuva ei päivity itsestään. Jos otsikko tai osoite muuttuu, pyydä Claudelta uusi.
+
 ## Asetukset
 
 Tiedostossa `joukkueet.json`:
@@ -214,7 +238,7 @@ ajon loki huomauttaa siitä. WhatsApp-esikatseluun teksti menee ilman merkintöj
 | `etusivun_pelatut` | Montako pelattua näytetään heti, loput painikkeen takana. `0` = kaikki |
 | `ottelun_kesto_min` | Kuinka pitkän ajan ottelu varaa kalenterista, minuutteina (oletus 120) |
 | `poissa_toiminta` | `himmenna` (oletus) tai `piilota` |
-| `jakokuva` | Kuvatiedoston nimi kansiossa `docs`, joka näkyy jakokortissa |
+| `jakokuva` | Kuvatiedoston nimi kansiossa `docs`, joka näkyy jakokortissa (nyt `jakokuva.png`) |
 | `lapset` | Nimet ja värit, joilla ottelut merkitään |
 
 Värit on poimittu seurojen logoista: Bruno ToPon keltainen, Werner HBA:n laivastonsininen,
