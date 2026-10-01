@@ -7,13 +7,13 @@ X-WR-CALNAME:Moritz: koripallo
 X-WR-TIMEZONE:Europe/Helsinki
 BEGIN:VEVENT
 UID:2026-09-13-10:00-Pussihukat /Punainen-RiKos-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20260913T070000Z
 DTEND:20260913T090000Z
 SUMMARY:Moritz: Pussihukat /Punainen – RiKos
 LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 4\, Vantaa
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1009988/progress
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1009988/progress
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009988/progress
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -23,13 +23,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-30-19:35-ToPo-Pussihukat /Punainen-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20260930T163500Z
 DTEND:20260930T183500Z
 SUMMARY:Moritz: ToPo – Pussihukat /Punainen
 LOCATION:Töölön Kisahalli\, B-puoli\, Paavo Nurmen Kuja 1\, Helsinki
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1009992/progress
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1009992/progress
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009992/progress
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -39,13 +39,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012843-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261004T080000Z
 DTEND:20261004T100000Z
 SUMMARY:Moritz: Kataja Basket – Pussihukat /Punainen
 LOCATION:Motonet Areena\, Kisapolku 3\, Joensuu
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012843
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012843
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012843
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -55,13 +55,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012846-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261011T140000Z
 DTEND:20261011T160000Z
 SUMMARY:Moritz: Pussihukat /Punainen – KTP
 LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012846
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012846
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012846
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -71,13 +71,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1009995-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261024T093000Z
 DTEND:20261024T113000Z
 SUMMARY:Moritz: Pussihukat /Punainen – Tapiolan Honka
 LOCATION:Kartanonkosken koulu\, Tilkuntie 5\, Vantaa
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1009995
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1009995
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009995
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -87,13 +87,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012867-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261025T124500Z
 DTEND:20261025T144500Z
 SUMMARY:Moritz: Pussihukat /Punainen – Pälkäneen Luja-Lukko
 LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012867
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012867
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012867
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -103,13 +103,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1009997-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261031T103000Z
 DTEND:20261031T123000Z
 SUMMARY:Moritz: Kori-80/Kombo – Pussihukat /Punainen
 LOCATION:Killan koulu\, Sarvimäentie 35\, Kerava
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1009997
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1009997
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1009997
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -119,13 +119,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012858-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261101T090000Z
 DTEND:20261101T110000Z
 SUMMARY:Moritz: Ura Basket – Pussihukat /Punainen
 LOCATION:Valkeavuoren liikuntahalli 2\, Veitenmäentie 29\, Kaarina
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012858
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012858
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012858
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -135,13 +135,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1010002-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261107T103000Z
 DTEND:20261107T123000Z
 SUMMARY:Moritz: Pussihukat /Punainen – LePy
 LOCATION:Kartanonkosken koulu\, Tilkuntie 5\, Vantaa
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1010002
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1010002
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010002
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -151,13 +151,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012863-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261115T080000Z
 DTEND:20261115T100000Z
 SUMMARY:Moritz: Oulun NMKY – Pussihukat /Punainen
 LOCATION:Rajakylän koulu\, Ruiskukkatie 4-6\, Oulu
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012863
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012863
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012863
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -167,13 +167,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1010007-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261121T103000Z
 DTEND:20261121T123000Z
 SUMMARY:Moritz: MaSu – Pussihukat /Punainen
 LOCATION:Kankarepuiston peruskoulu\, Somerikkopolku 6\, Helsinki
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1010007
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1010007
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010007
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -183,13 +183,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012853-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261122T101500Z
 DTEND:20261122T121500Z
 SUMMARY:Moritz: Pussihukat /Punainen – Kori-80 1
 LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012853
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012853
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012853
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -199,13 +199,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1010012-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261128T080000Z
 DTEND:20261128T100000Z
 SUMMARY:Moritz: Pussihukat /Punainen – HNMKY Valkoinen
 LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1010012
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1010012
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010012
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -215,13 +215,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1012848-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261129T113000Z
 DTEND:20261129T133000Z
 SUMMARY:Moritz: Tampereen Pyrintö – Pussihukat /Punainen
 LOCATION:Hervannan vapaa-aikakeskus\, Lindforsinkatu 5 \, Tampere
-DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nTulos ja tilastot: ht
- tps://tulospalvelu.basket.fi/match/1012848
+DESCRIPTION:15-vuotiaat pojat\, Robert Petersen Cup\nOttelu tulospalveluss
+ a: https://tulospalvelu.basket.fi/match/1012848
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1012848
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -231,13 +231,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1010016-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261212T110000Z
 DTEND:20261212T130000Z
 SUMMARY:Moritz: Porvoon Tarmo – Pussihukat /Punainen
 LOCATION:Strömborgska skolan\, Peippolantie 3\, Porvoo
-DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nTulos ja tilas
- tot: https://tulospalvelu.basket.fi/match/1010016
+DESCRIPTION:15-vuotiaat pojat I divisioona Eteläinen alue\nOttelu tulospa
+ lvelussa: https://tulospalvelu.basket.fi/match/1010016
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1010016
 BEGIN:VALARM
 TRIGGER:-PT2H

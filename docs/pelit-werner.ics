@@ -7,13 +7,13 @@ X-WR-CALNAME:Werner: koripallo
 X-WR-TIMEZONE:Europe/Helsinki
 BEGIN:VEVENT
 UID:2026-09-26-10:00-HBA-Märsky-Turun NMKY-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20260926T070000Z
 DTEND:20260926T090000Z
 SUMMARY:Werner: HBA-Märsky – Turun NMKY
 LOCATION:
-DESCRIPTION:Harjoitusottelu\nTulos ja tilastot: https://tulospalvelu.baske
- t.fi/match/1006593/statistics
+DESCRIPTION:Harjoitusottelu\nOttelu tulospalvelussa: https://tulospalvelu.
+ basket.fi/match/1006593/statistics
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006593/statistics
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -23,13 +23,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006588-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261002T150000Z
 DTEND:20261002T170000Z
 SUMMARY:Werner: HBA-Märsky – Karkkila
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Valmistavat ottelut\, miehet\nTulos ja tilastot: https://tulos
- palvelu.basket.fi/match/1006588
+DESCRIPTION:Valmistavat ottelut\, miehet\nOttelu tulospalvelussa: https://
+ tulospalvelu.basket.fi/match/1006588
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006588
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -39,13 +39,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006706-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261009T153000Z
 DTEND:20261009T173000Z
 SUMMARY:Werner: Torpan Pojat – HBA-Märsky
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006706
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006706
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006706
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -55,13 +55,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006764-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261016T153000Z
 DTEND:20261016T173000Z
 SUMMARY:Werner: HBA-Märsky – Kobrat
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006764
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006764
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006764
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -71,13 +71,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006761-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261023T153000Z
 DTEND:20261023T173000Z
 SUMMARY:Werner: HBA-Märsky – Helsingin NMKY
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006761
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006761
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006761
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -87,13 +87,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006750-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261031T150000Z
 DTEND:20261031T170000Z
 SUMMARY:Werner: Raholan Pyrkivä – HBA-Märsky
 LOCATION:Tesoman palloiluhalli\, Tesoman valtatie 46\, Tampere
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006750
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006750
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006750
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -103,13 +103,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006763-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261106T163000Z
 DTEND:20261106T183000Z
 SUMMARY:Werner: HBA-Märsky – Karkkila
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006763
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006763
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006763
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -119,13 +119,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006772-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261113T163000Z
 DTEND:20261113T183000Z
 SUMMARY:Werner: Äänekosken Huima – HBA-Märsky
 LOCATION:Äänekosken liikuntatalo\, Koulumäenkatu 2\, Äänekoski
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006772
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006772
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006772
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -135,13 +135,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006766-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261120T163000Z
 DTEND:20261120T183000Z
 SUMMARY:Werner: HBA-Märsky – Pantterit
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006766
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006766
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006766
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -151,13 +151,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006662-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261127T163000Z
 DTEND:20261127T183000Z
 SUMMARY:Werner: Jyväskylä Basketball Academy – HBA-Märsky
 LOCATION:Jyväskylän Monitoimitalo\, Kuntoportti 3\, Jyväskylä
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006662
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006662
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006662
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -167,13 +167,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006765-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261206T130000Z
 DTEND:20261206T150000Z
 SUMMARY:Werner: HBA-Märsky – Lappeenrannan NMKY
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006765
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006765
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006765
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -183,13 +183,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006739-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261210T170000Z
 DTEND:20261210T190000Z
 SUMMARY:Werner: Pyrintö Akatemia – HBA-Märsky
 LOCATION:Pyynikin palloiluhalli\, Ammattikoulunkatu 20\, Tampere
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006739
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006739
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006739
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -199,13 +199,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006760-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20261218T153000Z
 DTEND:20261218T173000Z
 SUMMARY:Werner: HBA-Märsky – ACO Basket
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006760
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006760
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006760
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -215,13 +215,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006695-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270108T163000Z
 DTEND:20270108T183000Z
 SUMMARY:Werner: Kobrat – HBA-Märsky
 LOCATION:Lapuan urheilutalo\, Urheilukatu 3\, Lapua
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006695
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006695
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006695
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -231,13 +231,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006716-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270117T150000Z
 DTEND:20270117T170000Z
 SUMMARY:Werner: Helsingin NMKY – HBA-Märsky
 LOCATION:Namika Areena\, Pilkekuja 10\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006716
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006716
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006716
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -247,13 +247,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006768-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270122T181500Z
 DTEND:20270122T201500Z
 SUMMARY:Werner: HBA-Märsky – Raholan Pyrkivä
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006768
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006768
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006768
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -263,13 +263,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006769-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270129T153000Z
 DTEND:20270129T173000Z
 SUMMARY:Werner: HBA-Märsky – Torpan Pojat
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006769
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006769
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006769
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -279,13 +279,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006673-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270131T140000Z
 DTEND:20270131T160000Z
 SUMMARY:Werner: Karkkila – HBA-Märsky
 LOCATION:Karkkilan liikuntahalli\, Anttilankatu 2-4 \, Karkkila
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006673
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006673
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006673
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -295,13 +295,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006770-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270205T153000Z
 DTEND:20270205T173000Z
 SUMMARY:Werner: HBA-Märsky – Äänekosken Huima
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006770
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006770
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006770
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -311,13 +311,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006651-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270214T150000Z
 DTEND:20270214T170000Z
 SUMMARY:Werner: Pantterit – HBA-Märsky
 LOCATION:Herttoniemenr. liik.halli\, Petter Wetterin tie 5\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006651
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006651
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006651
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -327,13 +327,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006762-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270217T163000Z
 DTEND:20270217T183000Z
 SUMMARY:Werner: HBA-Märsky – Jyväskylä Basketball Academy
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006762
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006762
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006762
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -343,13 +343,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006684-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270225T163000Z
 DTEND:20270225T183000Z
 SUMMARY:Werner: Lappeenrannan NMKY – HBA-Märsky
 LOCATION:Lappeenrannan Urheilutalo\, Pohjolankatu 29\, Lappeenranta
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006684
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006684
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006684
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -359,13 +359,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006767-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270305T163000Z
 DTEND:20270305T183000Z
 SUMMARY:Werner: HBA-Märsky – Pyrintö Akatemia
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006767
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006767
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006767
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -375,13 +375,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006726-stude@stude.fi
-DTSTAMP:20261001T075200Z
+DTSTAMP:20261001T080000Z
 DTSTART:20270314T150000Z
 DTEND:20270314T170000Z
 SUMMARY:Werner: ACO Basket – HBA-Märsky
 LOCATION:Ouluhalli\, Ouluhallintie 20\, Oulu
-DESCRIPTION:Miesten I divisioona A\nTulos ja tilastot: https://tulospalvel
- u.basket.fi/match/1006726
+DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
+ alvelu.basket.fi/match/1006726
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006726
 BEGIN:VALARM
 TRIGGER:-PT2H
