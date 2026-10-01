@@ -480,16 +480,9 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const viimeisimmat = montaPelattua > 0 ? menneet.slice(0, montaPelattua) : menneet;
   const vanhemmat = montaPelattua > 0 ? menneet.slice(montaPelattua) : [];
 
-  // Nosto sivun ylälaitaan: se peli, joka on ajallisesti seuraavana.
-  // Selain päivittää tämän vielä uudelleen, jotta tieto on oikein silloinkin
-  // kun sivu on rakennettu edellisenä päivänä.
+  // Seuraavaa peliä ei näytetä sivulla erikseen, mutta sitä käytetään
+  // WhatsApp-jaon kuvaustekstissä.
   const seuraava = tulevat.find((o) => !o.poissa);
-  const seuraavaHtml = `<section class="seuraava" id="seuraavaPeli"${seuraava ? "" : " hidden"}>
-      <div class="kohta">Seuraava peli</div>
-      <div class="peli">${seuraava ? `${esc(seuraava.koti)} &ndash; ${esc(seuraava.vieras)}` : ""}</div>
-      <div class="milloin">${seuraava ? `${esc(pitkaPaiva(seuraava.paiva))} klo ${esc(seuraava.kello.replace(":", "."))} &middot; ${esc(seuraava.lapsi)}` : ""}</div>
-      <div class="missa">${seuraava && seuraava.halli ? esc(seuraava.halli) : ""}</div>
-    </section>`;
 
   const huomio = puuttuvat.length
     ? `<p class="huomio">Otteluohjelmaa ei ole vielä julkaistu: ${puuttuvat.map(esc).join(", ")}. Pelit ilmestyvät tähän automaattisesti heti kun ne julkaistaan.</p>`
@@ -533,27 +526,36 @@ ${teemaCss(asetukset.teema)}
     ${kuvaus ? `<p class="selite">${muotoileKuvaus(kuvaus)}</p>` : ""}
   </header>
 
-  ${seuraavaHtml}
-
-  ${tilausHtml}
-
-
-  <div class="suodattimet" id="suodattimet">
-    <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
-    ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n    ")}
+  <div class="nakymat" id="nakymat" role="tablist">
+    <button type="button" data-nakyma="tulevat" aria-selected="true" role="tab">Tulevat</button>
+    <button type="button" data-nakyma="pelatut" aria-selected="false" role="tab">Pelatut</button>
   </div>
 
   ${huomio}
 
-  <h2>Tulevat ottelut</h2>
-  ${tulevat.length ? ryhmittele(lahella) : `<p class="tyhja">Tulevia otteluita ei ole tällä hetkellä tiedossa.</p>`}
-  ${loput.length ? `<button type="button" class="lisaa" id="naytaKaikki">Näytä koko kausi (${loput.length} ottelua lisää)</button>
-  <div id="loput" hidden>${ryhmittele(loput)}</div>` : ""}
+  <section id="osio-tulevat">
+    <h2>Tulevat ottelut</h2>
+    <div class="suodattimet">
+      <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
+      ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n      ")}
+    </div>
+    ${tulevat.length ? ryhmittele(lahella) : `<p class="tyhja">Tulevia otteluita ei ole tällä hetkellä tiedossa.</p>`}
+    ${loput.length ? `<div id="loput" hidden>${ryhmittele(loput)}</div>
+    <button type="button" class="lisaa" id="naytaKaikki">Näytä kaikki tulevat ottelut (${loput.length} lisää)</button>` : ""}
+  </section>
 
-  <h2>Pelatut ottelut</h2>
-  ${menneet.length ? ryhmittele(viimeisimmat) : `<p class="tyhja">Pelattuja otteluita ei vielä ole.</p>`}
-  ${vanhemmat.length ? `<button type="button" class="lisaa" id="naytaVanhat">Näytä aiemmat (${vanhemmat.length} ottelua)</button>
-  <div id="vanhat" hidden>${ryhmittele(vanhemmat)}</div>` : ""}
+  <section id="osio-pelatut" hidden>
+    <h2>Pelatut ottelut</h2>
+    <div class="suodattimet">
+      <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
+      ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n      ")}
+    </div>
+    ${menneet.length ? ryhmittele(viimeisimmat) : `<p class="tyhja">Pelattuja otteluita ei vielä ole.</p>`}
+    ${vanhemmat.length ? `<div id="vanhat" hidden>${ryhmittele(vanhemmat)}</div>
+    <button type="button" class="lisaa" id="naytaVanhat">Näytä kaikki pelatut ottelut (${vanhemmat.length} lisää)</button>` : ""}
+  </section>
+
+  ${tilausHtml}
 
   <footer>
     <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
@@ -564,7 +566,7 @@ ${teemaCss(asetukset.teema)}
 <script>
   // Sivu on staattinen tiedosto, joka on voitu rakentaa tunteja sitten. Siksi
   // selain siivoaa jo pelatut ottelut pois "Tulevat ottelut" -listasta heti
-  // sivun avautuessa ja päivittää seuraavan pelin noston sen mukaisesti.
+  // sivun avautuessa.
   var OLETUSKESTO = ${Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120};
   var VIIKKO_OTSIKKO = ${JSON.stringify(`${asetukset.otsikko} — seuraavat 7 päivää`)};
   var SIVUN_OSOITE = ${JSON.stringify(osoite || "")};
@@ -572,7 +574,6 @@ ${teemaCss(asetukset.teema)}
   (function siivoaMenneet() {
     var nyt = Date.now();
     var kortit = document.querySelectorAll('.ottelu[data-tuleva="1"]');
-    var seuraava = null;
 
     kortit.forEach(function (kortti) {
       var alku = Date.parse(kortti.dataset.alku);
@@ -581,26 +582,8 @@ ${teemaCss(asetukset.teema)}
       if (alku + kesto < nyt) {
         kortti.dataset.ohi = '1';
         kortti.hidden = true;
-      } else if (!seuraava && !kortti.dataset.poissa) {
-        seuraava = kortti;
       }
     });
-
-    var nosto = document.getElementById('seuraavaPeli');
-    if (nosto) {
-      if (seuraava) {
-        var halli = seuraava.querySelector('.halli');
-        nosto.querySelector('.peli').textContent = seuraava.querySelector('.joukkueet').textContent.trim();
-        nosto.querySelector('.milloin').textContent =
-          seuraava.dataset.paivateksti + ' klo ' +
-          seuraava.querySelector('.kello').textContent.trim().replace(':', '.') + ' \\u00b7 ' +
-          seuraava.dataset.lapsi;
-        nosto.querySelector('.missa').textContent = halli ? halli.textContent.trim() : '';
-        nosto.hidden = false;
-      } else {
-        nosto.hidden = true;
-      }
-    }
 
     paivitaPaivat();
   })();
@@ -680,11 +663,13 @@ ${teemaCss(asetukset.teema)}
     });
   });
 
-  var napit = document.querySelectorAll('#suodattimet button');
+  // Suodatinnapit ovat molempien listojen otsikon alla. Valinta koskee koko
+  // sivua, joten molempien rivien napit pidetään samassa tilassa.
+  var napit = document.querySelectorAll('.suodattimet button');
   napit.forEach(function (nappi) {
     nappi.addEventListener('click', function () {
       var valinta = nappi.dataset.lapsi;
-      napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n === nappi)); });
+      napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n.dataset.lapsi === valinta)); });
       document.querySelectorAll('.ottelu').forEach(function (kortti) {
         if (kortti.dataset.ohi) return; // jo pelattu, pysyy piilossa
         kortti.style.display = (valinta === 'kaikki' || kortti.dataset.lapsi === valinta) ? '' : 'none';
@@ -692,6 +677,27 @@ ${teemaCss(asetukset.teema)}
       paivitaPaivat();
     });
   });
+
+  // Sivulla näkyy kerrallaan vain toinen lista: tulevat tai pelatut.
+  (function nakymanVaihto() {
+    var napit = document.querySelectorAll('#nakymat button');
+    var osiot = { tulevat: document.getElementById('osio-tulevat'), pelatut: document.getElementById('osio-pelatut') };
+    napit.forEach(function (nappi) {
+      nappi.addEventListener('click', function () {
+        var valinta = nappi.dataset.nakyma;
+        napit.forEach(function (n) { n.setAttribute('aria-selected', String(n === nappi)); });
+        Object.keys(osiot).forEach(function (k) {
+          if (osiot[k]) osiot[k].hidden = k !== valinta;
+        });
+        if (location.hash !== '#' + valinta) history.replaceState(null, '', '#' + valinta);
+      });
+    });
+    // Osoitteen loppu #pelatut avaa suoraan pelatut ottelut.
+    if (location.hash === '#pelatut') {
+      var pelatutNappi = document.querySelector('#nakymat button[data-nakyma="pelatut"]');
+      if (pelatutNappi) pelatutNappi.click();
+    }
+  })();
 </script>
 </body>
 </html>
