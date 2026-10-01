@@ -145,9 +145,21 @@
   .lisaa:hover, .lisaa:focus { border-style: solid; border-color: var(--linkki); }
   .tilaus {
     background: var(--kortti); border: 1px solid var(--raja);
-    border-radius: var(--pyoristys); padding: 1.1rem 1.25rem;
+    border-radius: var(--pyoristys); padding: 0 1.25rem; margin: 1.25rem 0 0;
   }
-  .tilausOtsikko { margin: 0 0 .75rem; font-weight: 800; font-size: 1.05rem; }
+  .tilaus > summary {
+    list-style: none; cursor: pointer; font-weight: 800; font-size: 1rem;
+    padding: .95rem 0; display: flex; align-items: center; gap: .6rem;
+  }
+  .tilaus > summary::-webkit-details-marker { display: none; }
+  .tilaus > summary::after {
+    content: ""; width: .5rem; height: .5rem; margin-left: auto;
+    border-right: 2px solid var(--himmea); border-bottom: 2px solid var(--himmea);
+    transform: rotate(45deg) translate(-2px, -2px); transition: transform .15s;
+  }
+  .tilaus[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+  .tilaus[open] > summary { padding-bottom: .5rem; }
+  .tilaus > :last-child { padding-bottom: 1.1rem; }
   .tilausNapit { display: flex; flex-wrap: wrap; gap: .5rem; }
   .tilausSelite { margin: .8rem 0 0; font-size: .88rem; color: var(--himmea); }
   .tilausSelite a { color: var(--linkki); text-underline-offset: 3px; }
@@ -251,16 +263,6 @@
     <h1><span class="pallo"><svg viewBox="0 0 268 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Studenpennut BWM"><clipPath id="spk"><circle cx="50" cy="50" r="46"/></clipPath><g clip-path="url(#spk)"><path d="M50 50 L50.0 4.0 A46 46 0 0 1 89.84 73.0 Z" fill="#FDD700"/><path d="M50 50 L89.84 73.0 A46 46 0 0 1 10.16 73.0 Z" fill="#012F53"/><path d="M50 50 L10.16 73.0 A46 46 0 0 1 50.0 4.0 Z" fill="#DA2128"/><g fill="none" stroke="var(--logoMuste)" stroke-width="4.5" stroke-linecap="round"><path d="M4 50h92"/><path d="M50 4v92"/><path d="M17 17c12 10 12 56 0 66"/><path d="M83 17c-12 10-12 56 0 66"/></g></g><circle cx="50" cy="50" r="46" fill="none" stroke="var(--logoMuste)" stroke-width="5"/><text x="112" y="69" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="800" font-size="56" letter-spacing="-3"><tspan fill="#FDD700">B</tspan><tspan fill="var(--logoW)">W</tspan><tspan fill="#DA2128">M</tspan></text></svg></span>Studenpentujen pelit | kausi 2026-2027</h1>
     <p class="saldo"><span style="--vaalea:#7A5F00;--tumma:#FDD700">Bruno <strong>3&ndash;1</strong></span><span style="--vaalea:#012F53;--tumma:#5C9BD6">Werner <strong>1&ndash;0</strong></span><span style="--vaalea:#CE2027;--tumma:#EF5A60">Moritz <strong>2&ndash;0</strong></span></p>
     <p class="selite">Studenpentujen eli Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa. Tiedot <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelusta</a>.</p>
-    <div class="tilaus">
-      <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
-      <div class="tilausNapit">
-        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=webcal://basket.stude.fi/pelit.ics">Google-kalenteri</a>
-        <a class="kalenteri toissijainen" href="webcal://basket.stude.fi/pelit.ics">iPhone tai Mac</a>
-        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="https://basket.stude.fi/pelit.ics">Kopioi osoite</button>
-      </div>
-      <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">https://basket.stude.fi/pelit.ics</span>.</p>
-      <p class="tilausSelite">Vain yhden pojan pelit: <a href="webcal://basket.stude.fi/pelit-bruno.ics">Bruno</a> &middot; <a href="webcal://basket.stude.fi/pelit-werner.ics">Werner</a> &middot; <a href="webcal://basket.stude.fi/pelit-moritz.ics">Moritz</a></p>
-    </div>
   </header>
 
   <section class="seuraava" id="seuraavaPeli">
@@ -269,6 +271,17 @@
       <div class="milloin">perjantaina 2. lokakuuta klo 18.00 &middot; Werner</div>
       <div class="missa">Urhea-halli, Mäkelänkatu 47, Helsinki</div>
     </section>
+
+  <details class="tilaus" id="tilaus">
+      <summary>Tilaa pelit omaan kalenteriin</summary>
+      <div class="tilausNapit">
+        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=webcal://basket.stude.fi/pelit.ics">Google-kalenteri</a>
+        <a class="kalenteri toissijainen" href="webcal://basket.stude.fi/pelit.ics">iPhone tai Mac</a>
+        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="https://basket.stude.fi/pelit.ics">Kopioi osoite</button>
+      </div>
+      <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">https://basket.stude.fi/pelit.ics</span>.</p>
+      <p class="tilausSelite">Vain yhden pojan pelit: <a href="webcal://basket.stude.fi/pelit-bruno.ics">Bruno</a> &middot; <a href="webcal://basket.stude.fi/pelit-werner.ics">Werner</a> &middot; <a href="webcal://basket.stude.fi/pelit-moritz.ics">Moritz</a></p>
+    </details>
 
 
   <div class="suodattimet" id="suodattimet">
@@ -1606,7 +1619,7 @@
 
   <footer>
     <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
-    <p>Päivitetty 1. lokakuuta 2026 klo 14.08. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
+    <p>Päivitetty 1. lokakuuta 2026 klo 14.41. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>
 
@@ -1678,6 +1691,11 @@
       window.prompt('Kopioi teksti:', teksti);
     }
   }
+
+  // Tilauspaneeli on puhelimessa kiinni, jotta pelit näkyvät heti. Leveällä
+  // näytöllä tilaa riittää, joten se avataan valmiiksi.
+  var tilaus = document.getElementById('tilaus');
+  if (tilaus && window.matchMedia('(min-width: 720px)').matches) tilaus.open = true;
 
   var kopioi = document.getElementById('kopioi');
   if (kopioi) {
