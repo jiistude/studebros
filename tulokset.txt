@@ -21,3 +21,5 @@
 # Rivi, joka alkaa #-merkillä, ohitetaan. Tyhjä tiedosto on täysin kelvollinen.
 # Jos riviä ei ymmärretä tai peliä ei löydy, ajon loki kertoo siitä eikä mikään
 # mene rikki.
+2026-09-13 78-66 | Kauden avaus.
+2026-09-30 54-99
