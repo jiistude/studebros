@@ -1,23 +1,23 @@
 {
   "otsikko": "Brunon, Wernerin ja Moritzin pelit",
-  "teema": "raikas",
+  "teema": "lehti",
   "sivun_osoite": "https://basket.stude.fi",
   "aikavyohyke": "Europe/Helsinki",
   "lapset": [
     {
       "nimi": "Bruno",
-      "vari": "#1a56c4",
-      "vari_tumma": "#7fb0ff"
+      "vari": "#7A5F00",
+      "vari_tumma": "#FDD700"
     },
     {
       "nimi": "Werner",
-      "vari": "#8a5a00",
-      "vari_tumma": "#e8b84b"
+      "vari": "#012F53",
+      "vari_tumma": "#5C9BD6"
     },
     {
       "nimi": "Moritz",
-      "vari": "#10662c",
-      "vari_tumma": "#6dce8c"
+      "vari": "#CE2027",
+      "vari_tumma": "#EF5A60"
     }
   ],
   "joukkueet": [

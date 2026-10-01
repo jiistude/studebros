@@ -1,25 +1,3 @@
-# Otteluiden tulokset ja muistiinpanot
-#
-# Yksi rivi per peli. Lyhin mahdollinen muoto on päivämäärä ja lopputulos:
-#
-#   2026-10-09 78-71
-#
-# Pisteet kirjoitetaan AINA muodossa koti-vieras, eli samassa järjestyksessä
-# kuin joukkueet näkyvät sivulla. Sivu päättelee siitä itse, voittiko vai
-# hävisikö oma joukkue.
-#
-# Tarkennukset, kun samana päivänä on useampi peli:
-#
-#   2026-10-09 19:00 78-71          vain tämä kellonaika
-#   2026-10-09 78-71 Bruno          vain Brunon peli
-#
-# Muistiinpano kirjoitetaan pystyviivan jälkeen. Se näkyy sivulla tuloksen alla:
-#
-#   2026-10-09 78-71 | Tiukka avaus. Bruno 14 pistettä ja 6 levypalloa.
-#
-# Pelkkä tulos riittää hyvin, ja senkin voi lisätä vasta viikkojen päästä.
-# Rivi, joka alkaa #-merkillä, ohitetaan. Tyhjä tiedosto on täysin kelvollinen.
-# Jos riviä ei ymmärretä tai peliä ei löydy, ajon loki kertoo siitä eikä mikään
-# mene rikki.
-2026-09-13 78-66 | Kauden avaus.
-2026-09-30 54-99
+2026-09-28 54-99
+2026-09-23 78-66
+2026-09-25 82-74 | Tiukka peli loppuun asti. Bruno 14 pistettä.

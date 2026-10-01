@@ -467,7 +467,7 @@ ${teemaCss(asetukset.teema)}
 <body>
 <div class="kehys">
   <header>
-    <h1>${esc(asetukset.otsikko)}</h1>
+    <h1><span class="pallo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="21"/><path d="M24 3v42M3 24h42"/><path d="M9.5 8.5C16 16 16 32 9.5 39.5M38.5 8.5C32 16 32 32 38.5 39.5"/></svg></span>${esc(asetukset.otsikko)}</h1>
     ${saldoHtml}
     <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
     ${tilausHtml}
@@ -475,7 +475,6 @@ ${teemaCss(asetukset.teema)}
 
   ${seuraavaHtml}
 
-  <button type="button" class="kalenteri toissijainen viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button>
 
   <div class="suodattimet" id="suodattimet">
     <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
@@ -495,6 +494,7 @@ ${teemaCss(asetukset.teema)}
   <div id="vanhat" hidden>${ryhmittele(vanhemmat)}</div>` : ""}
 
   <footer>
+    <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
     <p>Päivitetty ${esc(paivitetty)}. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>

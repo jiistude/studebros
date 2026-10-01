@@ -70,7 +70,13 @@ const PERUSTA = `
     margin-top: .35rem; font-size: .95rem; line-height: 1.45;
     border-left: 3px solid var(--raja); padding-left: .7rem; color: var(--teksti);
   }
-  .viikko { display: block; width: 100%; margin: .75rem 0 .25rem; }
+  .pallo { display: none; }
+  .viikko {
+    font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+    background: none; border: 1px solid var(--raja); border-radius: var(--pyoristys);
+    color: var(--himmea); padding: .35rem .8rem;
+  }
+  .viikko:hover, .viikko:focus { color: var(--teksti); border-color: var(--himmea); }
   .joukkueet { font-size: 1.1rem; line-height: 1.35; }
   .joukkueet .oma { font-weight: 700; }
   .joukkueet .vs { color: var(--himmea); }
@@ -126,6 +132,7 @@ const PERUSTA = `
   .tilausOtsikko { margin: 0 0 .75rem; font-weight: 800; font-size: 1.05rem; }
   .tilausNapit { display: flex; flex-wrap: wrap; gap: .5rem; }
   .tilausSelite { margin: .8rem 0 0; font-size: .88rem; color: var(--himmea); }
+  .tilausSelite a { color: var(--linkki); text-underline-offset: 3px; }
   .osoite { font-variant-numeric: tabular-nums; word-break: break-all; }
   .kalenteri {
     display: inline-block; background: var(--nappiTausta); color: var(--nappiTeksti);
@@ -284,6 +291,209 @@ const TEEMAT = {
     .tulos.voitto .vt { color: #6dce8c; }
     a.seuraa:hover, a.seuraa:focus { color: #000; }
   }
+`,
+  },
+
+  /* ------------------------------------------------------------ parketti */
+  parketti: {
+    nimi: "Parketti",
+    css: `
+  :root {
+    --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --koko: 20px; --otsikko: 2.5rem; --leveys: 46rem; --pyoristys: 3px;
+    --teksti: #F3EDE2; --himmea: #9C9382; --tausta: #121110;
+    --kortti: #1C1A16; --raja: #2E2A22; --linkki: #E8A33D;
+    --heroTausta: #1C1A16; --heroTeksti: #F6F1E7;
+    --nappiTausta: #E8A33D; --nappiTeksti: #171510;
+    --huomioTausta: #241D10; --huomioRaja: #4A3A1B; --huomioTeksti: #E6C98C;
+    --lapsi: var(--vaalea);
+  }
+  .ottelu { --lapsi: var(--tumma); }
+  .suodattimet button { color: var(--tumma, var(--teksti)); }
+  .pallo {
+    display: inline-block; width: .9em; height: .9em; color: #E8A33D;
+    margin-right: .45rem; vertical-align: -.06em;
+  }
+  .pallo svg { width: 100%; height: 100%; display: block; }
+  h1 { font-weight: 800; letter-spacing: -.02em; }
+  h2 {
+    font-size: 1.1rem; text-transform: uppercase; letter-spacing: .18em; font-weight: 800;
+    border-bottom: 1px solid var(--raja); padding-bottom: .6rem; color: #E8A33D;
+  }
+  h3 {
+    font-size: .8rem; letter-spacing: .16em; color: var(--himmea);
+    border-left: 3px solid #E8A33D; padding-left: .6rem; margin-bottom: .8rem;
+  }
+  .ottelu {
+    border: 1px solid var(--raja); border-left: 4px solid var(--lapsi);
+    padding: 1.1rem 1.2rem;
+  }
+  .kello {
+    min-width: 4rem; font-size: 1.3rem; letter-spacing: -.02em;
+    color: #E8A33D;
+  }
+  .lapsi { font-size: .7rem; letter-spacing: .16em; }
+  .joukkueet { font-size: 1.15rem; }
+  .seuraava {
+    position: relative; overflow: hidden;
+    background: radial-gradient(130% 150% at 12% -30%, #3A2F1C 0%, #1C1A16 62%);
+    border: 1px solid var(--raja); border-top: 3px solid #E8A33D;
+  }
+  .seuraava::after {
+    content: ""; position: absolute; right: -90px; top: -70px;
+    width: 280px; height: 280px; border: 2px solid rgba(232,163,61,.22);
+    border-radius: 50%; pointer-events: none;
+  }
+  .seuraava .kohta { color: #E8A33D; opacity: 1; letter-spacing: .2em; }
+  .seuraava .peli { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; }
+  .tilaus { background: var(--kortti); border-color: var(--raja); }
+  .kalenteri { font-weight: 800; letter-spacing: .02em; }
+  .kalenteri.toissijainen { color: #E8A33D; }
+  .suodattimet button { background: transparent; border-color: var(--raja); }
+  .saldo span { background: transparent; }
+  .tulos.voitto .vt { color: #7BD08A; }
+`,
+  },
+
+  /* --------------------------------------------------------- tulostaulu */
+  tulostaulu: {
+    nimi: "Tulostaulu",
+    css: `
+  :root {
+    --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --koko: 20px; --otsikko: 2.1rem; --leveys: 46rem; --pyoristys: 0px;
+    --teksti: #E8EDF2; --himmea: #8494A4; --tausta: #000000;
+    --kortti: #0A0D11; --raja: #1E252D; --linkki: #A8BED4;
+    --heroTausta: #0A0D11; --heroTeksti: #FFFFFF;
+    --nappiTausta: #D7DEE6; --nappiTeksti: #000000;
+    --huomioTausta: #15110A; --huomioRaja: #3E3520; --huomioTeksti: #D8C79A;
+  }
+  .ottelu { --lapsi: var(--tumma); }
+  .suodattimet button { color: var(--tumma, var(--teksti)); }
+  .pallo {
+    display: inline-block; width: .85em; height: .85em; color: #FFB000;
+    margin-right: .5rem; vertical-align: -.04em;
+  }
+  .pallo svg { width: 100%; height: 100%; display: block; }
+  h1 { font-weight: 700; letter-spacing: -.03em; }
+  h2 {
+    font-size: .95rem; text-transform: uppercase; letter-spacing: .3em; font-weight: 700;
+    color: #D7DEE6; border-bottom: 1px solid var(--raja); padding-bottom: .5rem;
+  }
+  h3 {
+    font-size: .75rem; letter-spacing: .2em; color: #0A0D11; background: var(--himmea);
+    display: inline-block; padding: .25rem .7rem; margin-bottom: .7rem;
+  }
+  .ottelu {
+    border: 1px solid var(--raja); border-left: 3px solid var(--lapsi);
+    padding: 1rem 1.1rem;
+    background: linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 3px), var(--kortti);
+  }
+  /* Kellolaatikko ottaa pojan seuravärin: väri merkitsee sivulla vain yhtä asiaa. */
+  .kello {
+    min-width: 4.6rem; font-size: 1.35rem; font-weight: 700; color: var(--lapsi);
+    border: 1px solid var(--lapsi); background: #000; text-align: center;
+    padding: .3rem .2rem; line-height: 1.1;
+  }
+  .lapsi { font-size: .68rem; letter-spacing: .2em; }
+  .joukkueet { font-size: 1.05rem; letter-spacing: -.01em; }
+  h1, h2, h3, .kello, .tulos, .saldo, .lapsi, .joukkueet,
+  .seuraava .kohta, .seuraava .peli, .suodattimet button, .kalenteri, a.seuraa, .lisaa {
+    font-family: var(--mono);
+  }
+  .seuraava {
+    border: 1px solid var(--raja); border-top: 3px solid #D7DEE6;
+    background:
+      linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 3px),
+      radial-gradient(90% 180% at 50% -40%, #16202B 0%, #0A0D11 70%);
+  }
+  .seuraava .kohta { color: #D7DEE6; opacity: 1; letter-spacing: .32em; }
+  .seuraava .peli { font-size: 1.5rem; font-weight: 700; letter-spacing: -.03em; }
+  .tilaus { background: var(--kortti); }
+  .kalenteri { font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .85rem; }
+  .kalenteri.toissijainen { color: #D7DEE6; }
+  .suodattimet button {
+    background: transparent; border-color: var(--raja);
+    text-transform: uppercase; font-size: .8rem; letter-spacing: .12em;
+  }
+  .saldo span { background: transparent; }
+  .tulos { font-size: 1.5rem; letter-spacing: -.02em; }
+  .tulos.voitto .vt { color: #00D264; }
+  a.seuraa { text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; }
+`,
+  },
+
+  /* ---------------------------------------------------------------- lehti */
+  lehti: {
+    nimi: "Lehti",
+    css: `
+  :root {
+    --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --koko: 20px; --otsikko: 3rem; --leveys: 44rem; --pyoristys: 0px;
+    --teksti: #FFFFFF; --himmea: #9A9AA2; --tausta: #0B0B0C;
+    --kortti: #0B0B0C; --raja: #26262B; --linkki: #C9C9D1;
+    --heroTausta: #0B0B0C; --heroTeksti: #FFFFFF;
+    --nappiTausta: #FFFFFF; --nappiTeksti: #0B0B0C;
+    --huomioTausta: #16161A; --huomioRaja: #33333B; --huomioTeksti: #D9D9E0;
+  }
+  .ottelu { --lapsi: var(--tumma); }
+  .suodattimet button { color: var(--tumma, var(--teksti)); }
+  /* Ainoa oranssi sivulla on pallo itse: muut värit kertovat kenen peli on. */
+  .pallo {
+    display: block; width: 2.2rem; height: 2.2rem; color: #E8743B; margin: 0 0 .9rem;
+  }
+  .pallo svg { width: 100%; height: 100%; display: block; }
+  h1 { font-weight: 800; letter-spacing: -.04em; line-height: .98; text-transform: uppercase; }
+  h2 {
+    font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; text-transform: uppercase;
+    border-bottom: 3px solid #FFFFFF; padding-bottom: .3rem; margin-bottom: 1.2rem;
+  }
+  h3 {
+    font-size: .72rem; letter-spacing: .24em; color: var(--himmea);
+    margin: 2rem 0 .4rem; font-weight: 700;
+  }
+  /* Ei kortteja, vaan lehtimäiset väliviivat. */
+  .ottelu {
+    background: none; border: none; border-top: 1px solid var(--raja);
+    border-radius: 0; padding: 1.1rem 0; margin: 0;
+  }
+  .ottelu:last-child { border-bottom: 1px solid var(--raja); }
+  .kello {
+    min-width: 5rem; font-size: 1.05rem; font-weight: 800; color: var(--lapsi);
+    letter-spacing: -.01em;
+  }
+  .lapsi {
+    font-size: .66rem; letter-spacing: .2em;
+    border-left: 3px solid var(--lapsi); padding-left: .5rem;
+  }
+  .joukkueet { font-size: 1.4rem; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; }
+  .joukkueet .oma { font-weight: 800; }
+  .joukkueet .vs { color: var(--lapsi); }
+  .seuraava {
+    background: none; border-top: 5px solid #FFFFFF; border-bottom: 1px solid var(--raja);
+    padding: 1.4rem 0 1.6rem; border-radius: 0;
+  }
+  .seuraava .kohta { color: #FFFFFF; opacity: 1; letter-spacing: .3em; }
+  .seuraava .peli {
+    font-size: 2.1rem; font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
+    text-transform: uppercase;
+  }
+  .tilaus { background: none; border: 1px solid var(--raja); }
+  .kalenteri { text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; font-weight: 800; }
+  .kalenteri.toissijainen { color: #FFFFFF; border-color: var(--raja); }
+  .suodattimet button {
+    background: none; border-color: var(--raja);
+    text-transform: uppercase; font-size: .78rem; letter-spacing: .14em;
+  }
+  .saldo span { background: none; border-color: var(--raja); }
+  .tulos { font-size: 1.7rem; letter-spacing: -.03em; }
+  .tulos.voitto .vt { color: #39D07A; }
+  a.seuraa {
+    text-transform: uppercase; font-size: .76rem; letter-spacing: .14em;
+    border-radius: 0; border-width: 1px;
+  }
+  .lisaa { border-style: solid; border-width: 1px; }
 `,
   },
 };

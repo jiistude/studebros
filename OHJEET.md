@@ -163,9 +163,9 @@ Kun osoite liitetään WhatsAppiin tai muuhun palveluun, siitä syntyy esikatsel
 näkyy otsikko ja seuraava peli. Jos haluat korttiin myös kuvan, lataa kuva kansioon `docs` ja
 lisää `joukkueet.json`-tiedostoon rivi `"jakokuva": "kuva.jpg"`.
 
-Seuraavan pelin noston alla on painike **Kopioi viikon pelit viestiksi**, joka kokoaa
+Sivun **alalaidassa** on huomaamaton painike **Kopioi viikon pelit viestiksi**, joka kokoaa
 seuraavan seitsemän päivän pelit valmiiksi tekstiksi leikepöydälle. Painike näkyy vain jos
-pelejä on tulossa.
+pelejä on tulossa, ja se on tarkoitettu sinun omaan käyttöösi.
 
 ## Ottelun seuraaminen livenä
 
@@ -181,7 +181,7 @@ Tiedostossa `joukkueet.json`:
 | Asetus | Merkitys |
 |---|---|
 | `otsikko` | Sivun otsikko |
-| `teema` | Ulkoasu: `raikas`, `selkea` tai `iso` |
+| `teema` | Ulkoasu: `tulostaulu`, `parketti`, `lehti`, `raikas`, `selkea` tai `iso` |
 | `sivun_osoite` | Sivun julkinen osoite. Tästä rakennetaan tilauslinkit ja jakokortti |
 | `menneet_paivat` | Kuinka monen päivän vanhat ottelut näytetään (oletus 400) |
 | `tulevat_paivat` | Kuinka pitkälle tulevaisuuteen katsotaan (oletus 240) |
@@ -192,8 +192,21 @@ Tiedostossa `joukkueet.json`:
 | `jakokuva` | Kuvatiedoston nimi kansiossa `docs`, joka näkyy jakokortissa |
 | `lapset` | Nimet ja värit, joilla ottelut merkitään |
 
+Värit on poimittu seurojen logoista: Bruno ToPon keltainen, Werner HBA:n laivastonsininen,
+Moritz PuHun punainen. Jokaisella on kaksi arvoa, koska sama sävy ei toimi sekä vaalealla
+että tummalla pohjalla: `vari` on vaaleita teemoja varten ja `vari_tumma` tummia varten.
+Jos joku vaihtaa seuraa, muuta molemmat.
+
+Teemojen oma värimaailma on tarkoituksella neutraali (valkoinen tai harmaa), jotta väri
+merkitsee sivulla vain yhtä asiaa: kenen peli on kyseessä. Ainoa poikkeus on otsikon
+koripallo, joka on oranssi.
+
 Ulkoasun vaihtoehdot ovat tiedostossa `teemat.js` omina lohkoinaan kommentoituna. Värit ja
 koot voi säätää sieltä ilman että sivun rakenteeseen tarvitsee koskea.
+
+Teemat `tulostaulu`, `parketti` ja `lehti` ovat tarkoituksella aina tummia riippumatta
+puhelimen tai koneen valoisa/tumma-asetuksesta. Teemat `raikas`, `selkea` ja `iso`
+mukautuvat laitteen asetukseen.
 
 ---
 
