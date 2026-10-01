@@ -47,6 +47,30 @@ const PERUSTA = `
     font-size: .85rem; font-weight: 700; color: var(--himmea);
     border: 1px solid var(--raja); border-radius: 999px; padding: .15rem .7rem;
   }
+  .saldo {
+    display: flex; flex-wrap: wrap; gap: .4rem .5rem;
+    margin: 0 0 1rem; font-size: .9rem;
+  }
+  .saldo span {
+    background: var(--kortti); border: 1px solid var(--raja); border-radius: 999px;
+    padding: .2rem .75rem; color: var(--vaalea, var(--teksti));
+  }
+  .saldo strong { font-variant-numeric: tabular-nums; }
+  .tulos {
+    margin-top: .4rem; font-size: 1.25rem; font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .tulos .vt {
+    font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em;
+    vertical-align: .22em; margin-left: .35rem; color: var(--himmea);
+  }
+  .tulos.voitto .vt { color: #11703a; }
+  .tulos.tappio .vt { color: var(--himmea); }
+  .muistiinpano {
+    margin-top: .35rem; font-size: .95rem; line-height: 1.45;
+    border-left: 3px solid var(--raja); padding-left: .7rem; color: var(--teksti);
+  }
+  .viikko { display: block; width: 100%; margin: .75rem 0 .25rem; }
   .joukkueet { font-size: 1.1rem; line-height: 1.35; }
   .joukkueet .oma { font-weight: 700; }
   .joukkueet .vs { color: var(--himmea); }
@@ -151,6 +175,8 @@ const TEEMAT = {
     }
     .ottelu { --lapsi: var(--tumma); }
     .suodattimet button { color: var(--tumma, var(--teksti)); }
+    .saldo span { color: var(--tumma, var(--teksti)); }
+    .tulos.voitto .vt { color: #6dce8c; }
     a.seuraa:hover, a.seuraa:focus { color: #14161a; }
   }
 `,
@@ -254,6 +280,8 @@ const TEEMAT = {
     }
     .ottelu { --lapsi: var(--tumma); }
     .suodattimet button { color: var(--tumma, var(--teksti)); }
+    .saldo span { color: var(--tumma, var(--teksti)); }
+    .tulos.voitto .vt { color: #6dce8c; }
     a.seuraa:hover, a.seuraa:focus { color: #000; }
   }
 `,

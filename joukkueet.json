@@ -47,8 +47,9 @@
       "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/5000040"
     }
   ],
-  "menneet_paivat": 30,
+  "menneet_paivat": 400,
   "tulevat_paivat": 240,
   "etusivun_viikot": 6,
+  "etusivun_pelatut": 10,
   "ottelun_kesto_min": 120
 }

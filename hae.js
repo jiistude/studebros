@@ -195,6 +195,63 @@ function luePoissa() {
   return merkinnat;
 }
 
+// tulokset.txt: yksi rivi per peli.
+//   PÄIVÄMÄÄRÄ [KELLO] KOTI-VIERAS [NIMI] [| muistiinpano]
+function lueTulokset() {
+  const teksti = lueTiedostoJosOn("tulokset.txt");
+  const rivit = [];
+  for (const rivi of teksti.split("\n")) {
+    const puhdas = rivi.trim();
+    if (!puhdas || puhdas.startsWith("#")) continue;
+    const osat = puhdas.match(
+      /^(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2})[:.](\d{2}))?\s+(\d{1,3})\s*[-–—]\s*(\d{1,3})(?:\s+([^\s|]+))?\s*(?:\|\s*(.*))?$/
+    );
+    if (!osat) {
+      console.error(`tulokset.txt: en ymmärrä riviä "${puhdas}".`);
+      continue;
+    }
+    rivit.push({
+      paiva: osat[1],
+      kello: osat[2] ? `${pad(osat[2])}:${osat[3]}` : "",
+      koti: Number(osat[4]),
+      vieras: Number(osat[5]),
+      lapsi: osat[6] || "",
+      muistiinpano: (osat[7] || "").trim(),
+    });
+  }
+  return rivit;
+}
+
+/* ------------------------------------------------------------- arkisto */
+
+// Tulospalvelun kalenterisyötteissä on vain tulevia otteluita: pelattu ottelu
+// katoaa syötteestä kokonaan. Siksi jokainen kerran nähty ottelu tallennetaan
+// tänne, jotta mennyt kausi säilyy.
+const ARKISTO = path.join(ULOS, "historia.json");
+
+function otteluTunnus(o) {
+  return `${o.match_id || `${o.paiva} ${o.kello} ${o.koti}`}|${o.lapsi}|${o.joukkue}`;
+}
+
+function lueArkisto() {
+  try {
+    const data = JSON.parse(fs.readFileSync(ARKISTO, "utf8"));
+    return data && typeof data === "object" ? data : {};
+  } catch {
+    return {};
+  }
+}
+
+function kirjoitaArkisto(arkisto) {
+  const jarjestetty = {};
+  for (const avain of Object.keys(arkisto).sort((a, b) =>
+    (arkisto[a].alku || "").localeCompare(arkisto[b].alku || "")
+  )) {
+    jarjestetty[avain] = arkisto[avain];
+  }
+  fs.writeFileSync(ARKISTO, JSON.stringify(jarjestetty, null, 1));
+}
+
 /* -------------------------------------------------------- normalisointi */
 
 // SUMMARY on muotoa "Kotijoukkue – Vierasjoukkue, Sarjan nimi".
@@ -249,6 +306,20 @@ function pitkaPaiva(iso) {
   return `${VIIKONPAIVAT[d.getUTCDay()]} ${p}. ${KUUKAUDET[k - 1]}`;
 }
 
+function tunnisteeksi(nimi) {
+  return String(nimi).toLowerCase()
+    .replace(/[äå]/g, "a").replace(/ö/g, "o")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+// Palauttaa true jos oma joukkue voitti, false jos hävisi, null jos ei tiedetä.
+function voittiko(o) {
+  if (o.pisteetKoti === undefined || o.omaKotona === null || o.omaKotona === undefined) return null;
+  if (o.pisteetKoti === o.pisteetVieras) return null;
+  const kotiVoitti = o.pisteetKoti > o.pisteetVieras;
+  return o.omaKotona ? kotiVoitti : !kotiVoitti;
+}
+
 function ottelukortti(o, varit) {
   const v = varit[o.lapsi] || { vaalea: "#444", tumma: "#bbb" };
 
@@ -272,6 +343,14 @@ function ottelukortti(o, varit) {
           <div class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</div>
           <div class="joukkueet"><span${kotiLuokka}>${esc(o.koti)}</span> <span class="vs">&ndash;</span> <span${vierasLuokka}>${esc(o.vieras)}</span></div>
           ${o.sarja ? `<div class="sarja">${esc(o.sarja)}</div>` : ""}
+          ${(() => {
+            if (o.pisteetKoti === undefined) return "";
+            const voitto = voittiko(o);
+            const luokka = voitto === true ? " voitto" : voitto === false ? " tappio" : "";
+            const merkki = voitto === true ? "Voitto" : voitto === false ? "Tappio" : "";
+            return `<div class="tulos${luokka}">${o.pisteetKoti} &ndash; ${o.pisteetVieras}${merkki ? ` <span class="vt">${merkki}</span>` : ""}</div>`;
+          })()}
+          ${o.muistiinpano ? `<div class="muistiinpano">${esc(o.muistiinpano)}</div>` : ""}
           ${o.poissa ? `<div class="poissaMerkki">${esc(o.lapsi)} ei ole mukana tässä pelissä</div>` : ""}
           ${kartta}
           ${seuraa}
@@ -297,6 +376,24 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
       </section>`).join("");
   };
 
+  // Kausisaldo lasketaan käsin kirjatuista tuloksista.
+  const saldot = asetukset.lapset.map((l) => {
+    let voitot = 0, tappiot = 0;
+    for (const o of menneet) {
+      if (o.lapsi !== l.nimi || o.poissa) continue;
+      const v = voittiko(o);
+      if (v === true) voitot++;
+      else if (v === false) tappiot++;
+    }
+    return { nimi: l.nimi, vari: l.vari, vari_tumma: l.vari_tumma || l.vari, voitot, tappiot };
+  }).filter((s) => s.voitot + s.tappiot > 0);
+
+  const saldoHtml = saldot.length
+    ? `<p class="saldo">${saldot.map((s) =>
+        `<span style="--vaalea:${s.vari};--tumma:${s.vari_tumma}">${esc(s.nimi)} <strong>${s.voitot}&ndash;${s.tappiot}</strong></span>`
+      ).join("")}</p>`
+    : "";
+
   // Kalenterin tilauslinkit. Tilaus päivittyy itsestään, ladattu tiedosto ei,
   // joten tilaaminen on selvästi ensisijainen vaihtoehto.
   const osoite = (asetukset.sivun_osoite || "").replace(/\/+$/, "");
@@ -311,6 +408,9 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
         <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="${esc(icsHttps)}">Kopioi osoite</button>
       </div>
       <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">${esc(icsHttps)}</span>.</p>
+      <p class="tilausSelite">Vain yhden pojan pelit:${asetukset.lapset.map((l) =>
+        ` <a href="${esc(icsWebcal.replace("pelit.ics", `pelit-${tunnisteeksi(l.nimi)}.ics`))}">${esc(l.nimi)}</a>`
+      ).join(" &middot;")}</p>
     </div>`
     : `<a class="kalenteri" href="pelit.ics">Lataa pelit kalenteriin</a>`;
 
@@ -319,6 +419,11 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const raja = paivaSiirtymalla(viikot * 7);
   const lahella = viikot > 0 ? tulevat.filter((o) => o.paiva <= raja) : tulevat;
   const loput = viikot > 0 ? tulevat.filter((o) => o.paiva > raja) : [];
+
+  // Pelatuista näytetään heti vain tuoreimmat, loput painikkeen takana.
+  const montaPelattua = asetukset.etusivun_pelatut ?? 10;
+  const viimeisimmat = montaPelattua > 0 ? menneet.slice(0, montaPelattua) : menneet;
+  const vanhemmat = montaPelattua > 0 ? menneet.slice(montaPelattua) : [];
 
   // Nosto sivun ylälaitaan: se peli, joka on ajallisesti seuraavana.
   // Selain päivittää tämän vielä uudelleen, jotta tieto on oikein silloinkin
@@ -335,13 +440,26 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
     ? `<p class="huomio">Otteluohjelmaa ei ole vielä julkaistu: ${puuttuvat.map(esc).join(", ")}. Pelit ilmestyvät tähän automaattisesti heti kun ne julkaistaan.</p>`
     : "";
 
+  // Kuvaus, joka näkyy kun osoite liitetään WhatsAppiin tai muuhun palveluun.
+  const jakoKuvaus = seuraava
+    ? `Seuraava peli: ${seuraava.koti} – ${seuraava.vieras}, ${pitkaPaiva(seuraava.paiva)} klo ${seuraava.kello.replace(":", ".")}.`
+    : "Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa.";
+
   return `<!doctype html>
 <html lang="fi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(asetukset.otsikko)}</title>
-<meta name="description" content="Otteluaikataulut yhdellä sivulla.">
+<meta name="description" content="${esc(jakoKuvaus)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="${esc(asetukset.otsikko)}">
+<meta property="og:title" content="${esc(asetukset.otsikko)}">
+<meta property="og:description" content="${esc(jakoKuvaus)}">
+<meta property="og:locale" content="fi_FI">
+${osoite ? `<meta property="og:url" content="${esc(osoite)}/">` : ""}
+${asetukset.jakokuva && osoite ? `<meta property="og:image" content="${esc(osoite)}/${esc(asetukset.jakokuva)}">
+<meta name="twitter:card" content="summary_large_image">` : `<meta name="twitter:card" content="summary">`}
 <style>
 ${teemaCss(asetukset.teema)}
 </style>
@@ -350,11 +468,14 @@ ${teemaCss(asetukset.teema)}
 <div class="kehys">
   <header>
     <h1>${esc(asetukset.otsikko)}</h1>
+    ${saldoHtml}
     <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
     ${tilausHtml}
   </header>
 
   ${seuraavaHtml}
+
+  <button type="button" class="kalenteri toissijainen viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button>
 
   <div class="suodattimet" id="suodattimet">
     <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
@@ -369,7 +490,9 @@ ${teemaCss(asetukset.teema)}
   <div id="loput" hidden>${ryhmittele(loput)}</div>` : ""}
 
   <h2>Pelatut ottelut</h2>
-  ${menneet.length ? ryhmittele(menneet) : `<p class="tyhja">Pelattuja otteluita ei vielä ole.</p>`}
+  ${menneet.length ? ryhmittele(viimeisimmat) : `<p class="tyhja">Pelattuja otteluita ei vielä ole.</p>`}
+  ${vanhemmat.length ? `<button type="button" class="lisaa" id="naytaVanhat">Näytä aiemmat (${vanhemmat.length} ottelua)</button>
+  <div id="vanhat" hidden>${ryhmittele(vanhemmat)}</div>` : ""}
 
   <footer>
     <p>Päivitetty ${esc(paivitetty)}. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
@@ -381,6 +504,8 @@ ${teemaCss(asetukset.teema)}
   // selain siivoaa jo pelatut ottelut pois "Tulevat ottelut" -listasta heti
   // sivun avautuessa ja päivittää seuraavan pelin noston sen mukaisesti.
   var OLETUSKESTO = ${Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120};
+  var VIIKKO_OTSIKKO = ${JSON.stringify(`${asetukset.otsikko} — seuraavat 7 päivää`)};
+  var SIVUN_OSOITE = ${JSON.stringify(osoite || "")};
 
   (function siivoaMenneet() {
     var nyt = Date.now();
@@ -429,30 +554,64 @@ ${teemaCss(asetukset.teema)}
     });
   }
 
+  // Yhteinen leikepöytäapuri, jossa on varasuunnitelma vanhoille selaimille.
+  function kopioiTeksti(teksti, nappi, valmisSana) {
+    var alkuperainen = nappi.textContent;
+    var onnistui = function () {
+      nappi.textContent = valmisSana;
+      setTimeout(function () { nappi.textContent = alkuperainen; }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(teksti).then(onnistui, function () { window.prompt('Kopioi teksti:', teksti); });
+    } else {
+      window.prompt('Kopioi teksti:', teksti);
+    }
+  }
+
   var kopioi = document.getElementById('kopioi');
   if (kopioi) {
     kopioi.addEventListener('click', function () {
-      var teksti = kopioi.dataset.osoite;
-      var alkuperainen = kopioi.textContent;
-      var onnistui = function () {
-        kopioi.textContent = 'Kopioitu';
-        setTimeout(function () { kopioi.textContent = alkuperainen; }, 2000);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(teksti).then(onnistui, function () { window.prompt('Kopioi osoite:', teksti); });
-      } else {
-        window.prompt('Kopioi osoite:', teksti);
-      }
+      kopioiTeksti(kopioi.dataset.osoite, kopioi, 'Kopioitu');
     });
   }
 
-  var lisaaNappi = document.getElementById('naytaKaikki');
-  if (lisaaNappi) {
-    lisaaNappi.addEventListener('click', function () {
-      document.getElementById('loput').hidden = false;
-      lisaaNappi.hidden = true;
+  // Kokoaa seuraavan seitsemän päivän pelit valmiiksi viestiksi, jonka voi
+  // liittää esimerkiksi WhatsApp-ryhmään.
+  (function viikonPelit() {
+    var nappi = document.getElementById('kopioiViikko');
+    if (!nappi) return;
+    var raja = Date.now() + 7 * 86400000;
+    var rivit = [];
+
+    document.querySelectorAll('.ottelu[data-tuleva="1"]').forEach(function (k) {
+      if (k.dataset.ohi || k.dataset.poissa) return;
+      var alku = Date.parse(k.dataset.alku);
+      if (isNaN(alku) || alku > raja) return;
+      var pvm = new Date(alku).toLocaleDateString('fi-FI', { weekday: 'short', day: 'numeric', month: 'numeric' });
+      var halli = k.querySelector('.halli');
+      var kello = k.querySelector('.kello').textContent.trim().replace(':', '.');
+      rivit.push(pvm + ' klo ' + kello + ' \\u00b7 ' + k.dataset.lapsi + '\\n' +
+        k.querySelector('.joukkueet').textContent.trim() +
+        (halli ? '\\n' + halli.textContent.trim() : ''));
     });
-  }
+
+    if (!rivit.length) return;
+    nappi.hidden = false;
+    nappi.addEventListener('click', function () {
+      var teksti = VIIKKO_OTSIKKO + '\\n\\n' + rivit.join('\\n\\n') + (SIVUN_OSOITE ? '\\n\\n' + SIVUN_OSOITE : '');
+      kopioiTeksti(teksti, nappi, 'Kopioitu viestiksi');
+    });
+  })();
+
+  [['naytaKaikki', 'loput'], ['naytaVanhat', 'vanhat']].forEach(function (pari) {
+    var nappi = document.getElementById(pari[0]);
+    var osio = document.getElementById(pari[1]);
+    if (!nappi || !osio) return;
+    nappi.addEventListener('click', function () {
+      osio.hidden = false;
+      nappi.hidden = true;
+    });
+  });
 
   var napit = document.querySelectorAll('#suodattimet button');
   napit.forEach(function (nappi) {
@@ -501,7 +660,7 @@ function icsTeksti(s) {
   return String(s ?? "").replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
 }
 
-function rakennaIcs(ottelut) {
+function rakennaIcs(ottelut, nimi) {
   const nyt = utcLeima(new Date());
   const rivit = [
     "BEGIN:VCALENDAR",
@@ -509,7 +668,7 @@ function rakennaIcs(ottelut) {
     "PRODID:-//stude.fi//koripallo//FI",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    `X-WR-CALNAME:${icsTeksti(asetukset.otsikko)}`,
+    `X-WR-CALNAME:${icsTeksti(nimi || asetukset.otsikko)}`,
     "X-WR-TIMEZONE:Europe/Helsinki",
   ];
 
@@ -634,18 +793,47 @@ async function main() {
     process.exit(1);
   }
 
+  // Syötteistä saadut ottelut arkistoon, ja arkisto takaisin listaksi. Näin
+  // pelatut ottelut säilyvät vaikka ne katoavat tulospalvelun syötteestä.
+  const arkisto = lueArkisto();
+  const ennen = Object.keys(arkisto).length;
+  for (const o of kaikki) arkisto[otteluTunnus(o)] = o;
+  kirjoitaArkisto(arkisto);
+  const uusia = Object.keys(arkisto).length - ennen;
+  console.log(`Arkistossa ${Object.keys(arkisto).length} ottelua (${uusia} uutta).`);
+  kaikki = Object.values(arkisto);
+
   // Käsin lisätyt ottelut (EYBL, maajoukkue, turnaukset) mukaan samaan listaan.
+  // Niitä ei arkistoida, koska ne ovat jo pysyvästi tiedostossa lisapelit.txt.
   const lisatyt = lueLisapelit();
   if (lisatyt.length) console.log(`Käsin lisättyjä otteluita: ${lisatyt.length}.`);
   kaikki.push(...lisatyt);
 
   const nahdyt = new Set();
   kaikki = kaikki.filter((o) => {
-    const tunnus = `${o.match_id || `${o.paiva} ${o.kello} ${o.koti}`}|${o.lapsi}|${o.joukkue}`;
+    const tunnus = otteluTunnus(o);
     if (nahdyt.has(tunnus)) return false;
     nahdyt.add(tunnus);
     return true;
   });
+
+  // Käsin kirjatut lopputulokset ja muistiinpanot.
+  const tulokset = lueTulokset();
+  for (const t of tulokset) {
+    const osumat = kaikki.filter(
+      (o) => o.paiva === t.paiva && (!t.kello || t.kello === o.kello) && (!t.lapsi || t.lapsi === o.lapsi)
+    );
+    if (!osumat.length) {
+      console.error(`tulokset.txt: riville "${t.paiva} ${t.koti}-${t.vieras}" ei löytynyt ottelua.`);
+      continue;
+    }
+    for (const o of osumat) {
+      o.pisteetKoti = t.koti;
+      o.pisteetVieras = t.vieras;
+      o.muistiinpano = t.muistiinpano;
+    }
+  }
+  if (tulokset.length) console.log(`Kirjattuja tuloksia: ${tulokset.length}.`);
 
   // Merkinnät peleistä, joissa poika ei ole kokoonpanossa.
   const poissa = luePoissa();
@@ -690,6 +878,15 @@ async function main() {
 
   fs.writeFileSync(path.join(ULOS, "index.html"), rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }));
   fs.writeFileSync(path.join(ULOS, "pelit.ics"), rakennaIcs(kalenteriin));
+
+  // Lapsikohtaiset kalenterit, jotta voi tilata vain yhden pojan pelit.
+  for (const l of asetukset.lapset) {
+    const omat = kalenteriin.filter((o) => o.lapsi === l.nimi);
+    fs.writeFileSync(
+      path.join(ULOS, `pelit-${tunnisteeksi(l.nimi)}.ics`),
+      rakennaIcs(omat, `${l.nimi}: koripallo`)
+    );
+  }
   fs.writeFileSync(path.join(ULOS, "ottelut.json"), JSON.stringify({ paivitetty, tulevat, menneet }, null, 2));
   fs.writeFileSync(path.join(ULOS, ".nojekyll"), "");
 
