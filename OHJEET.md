@@ -193,7 +193,20 @@ Tiedostossa `joukkueet.json`:
 |---|---|
 | `otsikko` | Sivun otsikko |
 | `kuvaus` | Otsikon alla näkyvä esittelyteksti. Tyhjä merkkijono `""` poistaa sen kokonaan |
-| `teema` | Ulkoasu: `tulostaulu`, `parketti`, `lehti`, `raikas`, `selkea` tai `iso` |
+
+Kuvaustekstiin voi lisätä linkkejä ja lihavointia kahdella merkintätavalla:
+
+| Merkintä | Lopputulos |
+|---|---|
+| `[näkyvä teksti](https://osoite.fi)` | linkki, joka avautuu uuteen välilehteen |
+| `[kirjoita meille](mailto:janne@stude.fi)` | sähköpostilinkki |
+| `**lihavoitu**` | **lihavoitu** |
+
+Muuta merkintää ei ole, eikä HTML-koodi toimi — se näkyisi sivulla sellaisenaan. Tämä on
+tarkoituksellista: yksikään kirjoitusvirhe kuvaustekstissä ei voi rikkoa sivun rakennetta.
+Jos linkin osoite ei ala `https://`, `mailto:`, `/` tai `#`, linkki jätetään tekemättä ja
+ajon loki huomauttaa siitä. WhatsApp-esikatseluun teksti menee ilman merkintöjä.
+| `teema` | Ulkoasu: `lehti-vaalea`, `lehti`, `tulostaulu`, `parketti`, `raikas`, `selkea` tai `iso` |
 | `sivun_osoite` | Sivun julkinen osoite. Tästä rakennetaan tilauslinkit ja jakokortti |
 | `menneet_paivat` | Kuinka monen päivän vanhat ottelut näytetään (oletus 400) |
 | `tulevat_paivat` | Kuinka pitkälle tulevaisuuteen katsotaan (oletus 240) |
@@ -205,9 +218,22 @@ Tiedostossa `joukkueet.json`:
 | `lapset` | Nimet ja värit, joilla ottelut merkitään |
 
 Värit on poimittu seurojen logoista: Bruno ToPon keltainen, Werner HBA:n laivastonsininen,
-Moritz PuHun punainen. Jokaisella on kaksi arvoa, koska sama sävy ei toimi sekä vaalealla
-että tummalla pohjalla: `vari` on vaaleita teemoja varten ja `vari_tumma` tummia varten.
-Jos joku vaihtaa seuraa, muuta molemmat.
+Moritz PuHun punainen. Jokaisella lapsella on neljä väriarvoa:
+
+| Kenttä | Mihin |
+|---|---|
+| `vari` | Tekstiväri vaaleilla teemoilla — tummennettu versio logon sävystä, jotta kontrasti riittää |
+| `vari_tumma` | Tekstiväri tummilla teemoilla — vaalennettu versio |
+| `pohja` | Nimitarran pohjaväri, logon oma sävy sellaisenaan |
+| `pohja_teksti` | Tekstiväri nimitarran päällä |
+
+Kaksi ensimmäistä ovat tekstivärejä, joten niiden on erotuttava taustasta. Siksi ToPon
+keltainen ei kelpaa sellaisenaan vaaleaan teemaan: se saa valkoista vasten kontrastisuhteen
+1,4:1, kun luettavuuden raja on 4,5:1. Nimitarrassa sama keltainen toimii, koska siellä se
+on pohjavärinä ja teksti sen päällä on tummaa.
+
+Nimitarrat ovat käytössä teemassa `lehti-vaalea`. Jos joku vaihtaa seuraa, muuta kaikki
+neljä arvoa.
 
 Teemojen oma värimaailma on tarkoituksella neutraali (valkoinen tai harmaa), jotta väri
 merkitsee sivulla vain yhtä asiaa: kenen peli on kyseessä. Ainoa poikkeus on otsikon
@@ -216,9 +242,12 @@ koripallo, joka on oranssi.
 Ulkoasun vaihtoehdot ovat tiedostossa `teemat.js` omina lohkoinaan kommentoituna. Värit ja
 koot voi säätää sieltä ilman että sivun rakenteeseen tarvitsee koskea.
 
-Teemat `tulostaulu`, `parketti` ja `lehti` ovat tarkoituksella aina tummia riippumatta
-puhelimen tai koneen valoisa/tumma-asetuksesta. Teemat `raikas`, `selkea` ja `iso`
-mukautuvat laitteen asetukseen.
+Teemat `lehti-vaalea`, `tulostaulu`, `parketti` ja `lehti` ovat tarkoituksella aina joko
+vaaleita tai tummia riippumatta puhelimen tai koneen valoisa/tumma-asetuksesta. Teemat
+`raikas`, `selkea` ja `iso` mukautuvat laitteen asetukseen.
+
+`lehti-vaalea` ja `lehti` ovat sama ulkoasu eri pohjavärillä, joten niiden välillä voi
+vaihtaa milloin tahansa ilman muita muutoksia.
 
 ---
 

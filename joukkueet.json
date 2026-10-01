@@ -1,24 +1,30 @@
 {
   "otsikko": "Brunon, Wernerin ja Moritzin pelit",
   "kuvaus": "Brunon, Wernerin ja Moritzin ottelut, tulokset ja kalenteri yhdessä paikassa. Tiedot [Koripalloliiton tulospalvelusta](https://tulospalvelu.basket.fi/).",
-  "teema": "raikas",
+  "teema": "lehti-vaalea",
   "sivun_osoite": "https://basket.stude.fi",
   "aikavyohyke": "Europe/Helsinki",
   "lapset": [
     {
       "nimi": "Bruno",
-      "vari": "#1a56c4",
-      "vari_tumma": "#7fb0ff"
+      "vari": "#7A5F00",
+      "vari_tumma": "#FDD700",
+      "pohja": "#FDD700",
+      "pohja_teksti": "#0B0B0C"
     },
     {
       "nimi": "Werner",
-      "vari": "#8a5a00",
-      "vari_tumma": "#e8b84b"
+      "vari": "#012F53",
+      "vari_tumma": "#5C9BD6",
+      "pohja": "#012F53",
+      "pohja_teksti": "#FFFFFF"
     },
     {
       "nimi": "Moritz",
-      "vari": "#10662c",
-      "vari_tumma": "#6dce8c"
+      "vari": "#CE2027",
+      "vari_tumma": "#EF5A60",
+      "pohja": "#DA2128",
+      "pohja_teksti": "#FFFFFF"
     }
   ],
   "joukkueet": [
@@ -48,7 +54,9 @@
       "kalenteri": "https://koripallo-api.torneopal.fi/calendar/team/5000040"
     }
   ],
-  "menneet_paivat": 30,
+  "menneet_paivat": 400,
   "tulevat_paivat": 240,
+  "etusivun_tulevat": 10,
+  "etusivun_pelatut": 10,
   "ottelun_kesto_min": 120
 }

@@ -498,6 +498,84 @@ const TEEMAT = {
   .lisaa { border-style: solid; border-width: 1px; }
 `,
   },
+
+  /* -------------------------------------------------------- lehti-vaalea */
+  /* Sama rakenne ja typografia kuin Lehdessä, mutta vaalealla pohjalla.
+     Lasten värit ovat seurojen logoista, tummina versioina jotta kontrasti
+     valkoista vasten riittää (Bruno 5,9:1 · Werner 13,2:1 · Moritz 5,3:1). */
+  "lehti-vaalea": {
+    nimi: "Lehti vaalea",
+    css: `
+  :root {
+    --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --koko: 20px; --otsikko: 3rem; --leveys: 44rem; --pyoristys: 0px;
+    --teksti: #0B0B0C; --himmea: #5F5F68; --tausta: #FBFBFA;
+    --kortti: #FBFBFA; --raja: #DCDCE2; --linkki: #44444C;
+    --heroTausta: transparent; --heroTeksti: #0B0B0C;
+    --nappiTausta: #0B0B0C; --nappiTeksti: #FFFFFF;
+    --huomioTausta: #FFF6E3; --huomioRaja: #E6D4A6; --huomioTeksti: #5E4B16;
+  }
+  .pallo {
+    display: block; width: 2.2rem; height: 2.2rem; color: #D9541C; margin: 0 0 .9rem;
+  }
+  .pallo svg { width: 100%; height: 100%; display: block; }
+  h1 { font-weight: 800; letter-spacing: -.04em; line-height: .98; text-transform: uppercase; }
+  h2 {
+    font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; text-transform: uppercase;
+    border-bottom: 3px solid #0B0B0C; padding-bottom: .3rem; margin-bottom: 1.2rem;
+  }
+  h3 {
+    font-size: .72rem; letter-spacing: .24em; color: var(--himmea);
+    margin: 2rem 0 .4rem; font-weight: 700;
+  }
+  /* Ei kortteja, vaan lehtimäiset väliviivat. */
+  .ottelu {
+    background: none; border: none; border-top: 1px solid var(--raja);
+    border-radius: 0; padding: 1.1rem 0; margin: 0;
+  }
+  .ottelu:last-child { border-bottom: 1px solid var(--raja); }
+  .kello {
+    min-width: 5rem; font-size: 1.05rem; font-weight: 800; color: var(--lapsi);
+    letter-spacing: -.01em;
+  }
+  /* Nimitarra seuran brändivärillä. Sisävarjo tekee vaalean keltaisen tarran
+     reunan näkyväksi myös valkoista pohjaa vasten. */
+  .lapsi {
+    display: inline-block; font-size: .66rem; letter-spacing: .18em;
+    background: var(--pohja); color: var(--pohjaTeksti);
+    border-left: none; padding: .3rem .6rem; border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+    margin-bottom: .45rem;
+  }
+  .joukkueet { font-size: 1.4rem; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; }
+  .joukkueet .oma { font-weight: 800; }
+  .joukkueet .vs { color: var(--lapsi); }
+  .seuraava {
+    background: none; border-top: 5px solid #0B0B0C; border-bottom: 1px solid var(--raja);
+    padding: 1.4rem 0 1.6rem; border-radius: 0;
+  }
+  .seuraava .kohta { color: #0B0B0C; opacity: 1; letter-spacing: .3em; }
+  .seuraava .peli {
+    font-size: 2.1rem; font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
+    text-transform: uppercase;
+  }
+  .tilaus { background: none; border: 1px solid var(--raja); }
+  .kalenteri { text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; font-weight: 800; }
+  .kalenteri.toissijainen { color: #0B0B0C; border-color: var(--raja); }
+  .suodattimet button {
+    background: none; border-color: var(--raja);
+    text-transform: uppercase; font-size: .78rem; letter-spacing: .14em;
+  }
+  .saldo span { background: none; border-color: var(--raja); }
+  .tulos { font-size: 1.7rem; letter-spacing: -.03em; }
+  .tulos.voitto .vt { color: #11703A; }
+  a.seuraa {
+    text-transform: uppercase; font-size: .76rem; letter-spacing: .14em;
+    border-radius: 0; border-width: 1px;
+  }
+  .lisaa { border-style: solid; border-width: 1px; }
+`,
+  },
 };
 
 function teemaCss(nimi) {

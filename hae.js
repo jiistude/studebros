@@ -363,7 +363,7 @@ function ottelukortti(o, varit) {
   const vierasLuokka = o.omaKotona === false ? ' class="oma"' : "";
 
   return `
-      <article class="ottelu${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" data-alku="${esc(o.alku)}" data-kesto="${o.kesto || ""}" data-paivateksti="${esc(pitkaPaiva(o.paiva))}" data-tuleva="${o.mennyt ? "0" : "1"}"${o.poissa ? ' data-poissa="1"' : ""} style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
+      <article class="ottelu${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" data-alku="${esc(o.alku)}" data-kesto="${o.kesto || ""}" data-paivateksti="${esc(pitkaPaiva(o.paiva))}" data-tuleva="${o.mennyt ? "0" : "1"}"${o.poissa ? ' data-poissa="1"' : ""} style="--vaalea:${v.vaalea};--tumma:${v.tumma};--pohja:${v.pohja};--pohjaTeksti:${v.pohjaTeksti}">
         <div class="kello">${esc(o.kello)}</div>
         <div class="tiedot">
           <div class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</div>
@@ -409,7 +409,14 @@ function riisuKuvaus(teksti) {
 
 function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const varit = Object.fromEntries(
-    asetukset.lapset.map((l) => [l.nimi, { vaalea: l.vari, tumma: l.vari_tumma || l.vari }])
+    asetukset.lapset.map((l) => [l.nimi, {
+      vaalea: l.vari,
+      tumma: l.vari_tumma || l.vari,
+      // Nimitarran pohjaväri on seuran oma sävy sellaisenaan, ja teksti sen päällä
+      // valitaan erikseen jotta kontrasti riittää.
+      pohja: l.pohja || l.vari,
+      pohjaTeksti: l.pohja_teksti || "#FFFFFF",
+    }])
   );
 
   const ryhmittele = (lista) => {
