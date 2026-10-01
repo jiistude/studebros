@@ -32,3 +32,19 @@
 # sarja: EYBL U15, alkulohko
 # paikka: Zalgirio arena, Kaunas, Liettua
 # linkki: https://eybl.eu/
+lapsi: Moritz
+joukkue: U15 1D
+alkaa: 2026-09-13 10:00
+koti: Pussihukat /Punainen
+vieras: RiKos
+oma: Pussihukat /Punainen
+sarja: 15-vuotiaat pojat I divisioona Eteläinen alue
+
+lapsi: Moritz
+joukkue: U15 1D
+alkaa: 2026-09-30 19:35
+koti: ToPo
+vieras: Pussihukat /Punainen
+oma: Pussihukat /Punainen
+sarja: 15-vuotiaat pojat I divisioona Eteläinen alue
+paikka: Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki
