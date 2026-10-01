@@ -133,18 +133,32 @@ function lueLisapelit() {
   const teksti = lueTiedostoJosOn("lisapelit.txt");
   if (!teksti.trim()) return [];
 
-  const ottelut = [];
-  for (const lohko of teksti.split(/\n\s*\n/)) {
-    const kentat = {};
-    for (const rivi of lohko.split("\n")) {
-      const puhdas = rivi.trim();
-      if (!puhdas || puhdas.startsWith("#")) continue;
-      const jako = puhdas.indexOf(":");
-      if (jako < 1) continue;
-      kentat[puhdas.slice(0, jako).trim().toLowerCase()] = puhdas.slice(jako + 1).trim();
+  // Pelit erotetaan tyhjällä rivillä, mutta myös uusi "lapsi:" aloittaa uuden
+  // pelin — näin unohtunut tyhjä rivi ei sulauta kahta peliä yhdeksi.
+  const lohkot = [];
+  let nykyinen = {};
+  for (const rivi of teksti.split("\n")) {
+    const puhdas = rivi.trim();
+    if (!puhdas || puhdas.startsWith("#")) {
+      if (!puhdas && Object.keys(nykyinen).length) { lohkot.push(nykyinen); nykyinen = {}; }
+      continue;
     }
+    const jako = puhdas.indexOf(":");
+    if (jako < 1) continue;
+    const avain = puhdas.slice(0, jako).trim().toLowerCase();
+    if (avain === "lapsi" && nykyinen.lapsi) { lohkot.push(nykyinen); nykyinen = {}; }
+    nykyinen[avain] = puhdas.slice(jako + 1).trim();
+  }
+  if (Object.keys(nykyinen).length) lohkot.push(nykyinen);
 
-    if (!kentat.lapsi || !kentat.alkaa) continue;
+  const ottelut = [];
+  for (const kentat of lohkot) {
+    if (!kentat.lapsi || !kentat.alkaa) {
+      if (Object.keys(kentat).length) {
+        console.error(`lisapelit.txt: ohitettiin lohko, josta puuttuu lapsi tai alkaa (${JSON.stringify(kentat).slice(0, 80)}…).`);
+      }
+      continue;
+    }
 
     const aika = kentat.alkaa.match(/^(\d{4})-(\d{2})-(\d{2})[ T]+(\d{1,2})[:.](\d{2})/);
     if (!aika) {
@@ -207,7 +221,7 @@ function lueTulokset() {
     // Verkko-osoite saa olla rivillä missä kohtaa tahansa: se poimitaan pois
     // ennen muuta jäsentämistä ja liitetään ottelun linkiksi.
     let linkki = "";
-    const osoite = puhdas.match(/\bhttps?:\/\/\S+/);
+    const osoite = puhdas.match(/\bhttps?:\/\/[^\s|]+/);
     if (osoite) {
       linkki = osoite[0].replace(/[.,;]+$/, "");
       puhdas = (puhdas.slice(0, osoite.index) + puhdas.slice(osoite.index + osoite[0].length))
@@ -341,7 +355,7 @@ function ottelukortti(o, varit) {
 
   const seuraa = o.linkki
     ? `<a class="seuraa" target="_blank" rel="noopener" href="${esc(o.linkki)}">${
-        o.mennyt ? "Tulos ja tilastot" : "Seuraa peliä livenä"
+        o.mennyt ? "Ottelutilastot" : "Seuraa peliä livenä"
       } <span aria-hidden="true">&rarr;</span></a>`
     : "";
 
@@ -710,7 +724,7 @@ function rakennaIcs(ottelut, nimi) {
       taita(`SUMMARY:${icsTeksti(`${luettele(o.lapset)}: ${o.koti} – ${o.vieras}`)}`),
       taita(`LOCATION:${icsTeksti(o.halli)}`),
       taita(`DESCRIPTION:${icsTeksti(
-        [o.sarja, o.linkki ? `Tulos ja tilastot: ${o.linkki}` : ""].filter(Boolean).join("\n")
+        [o.sarja, o.linkki ? `Ottelu tulospalvelussa: ${o.linkki}` : ""].filter(Boolean).join("\n")
       )}`),
       ...(o.linkki ? [taita(`URL;VALUE=URI:${o.linkki}`)] : []),
       "BEGIN:VALARM",
