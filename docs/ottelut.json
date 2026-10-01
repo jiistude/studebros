@@ -1,5 +1,5 @@
 {
-  "paivitetty": "1. lokakuuta 2026 klo 10.51",
+  "paivitetty": "1. lokakuuta 2026 klo 10.52",
   "tulevat": [
     {
       "match_id": "1006588",
@@ -1161,6 +1161,26 @@
       "pisteetKoti": 54,
       "pisteetVieras": 99,
       "muistiinpano": "",
+      "mennyt": true
+    },
+    {
+      "match_id": "",
+      "alku": "2026-09-26T12:15:00.000Z",
+      "paiva": "2026-09-26",
+      "kello": "15:15",
+      "koti": "ToPo",
+      "vieras": "Karkkila",
+      "sarja": "Harjoitusottelu",
+      "halli": "",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006595/lineups",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
+      "pisteetKoti": 82,
+      "pisteetVieras": 74,
+      "muistiinpano": "valmistava ottelu. Bruno 11p.",
       "mennyt": true
     },
     {
