@@ -49,3 +49,34 @@ vieras: Pussihukat /Punainen
 oma: Pussihukat /Punainen
 sarja: 15-vuotiaat pojat I divisioona Eteläinen alue
 paikka: Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki
+lapsi: Bruno
+joukkue: ToPo U19
+alkaa: 2026-09-19 17:00
+koti: ToPo
+vieras: LePy
+oma: ToPo
+sarja: 19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä
+
+lapsi: Bruno
+joukkue: ToPo U19
+alkaa: 2026-09-20 10:00
+koti: HoNsU/JBA
+vieras: ToPo
+oma: ToPo
+sarja: 19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä
+
+lapsi: Bruno
+joukkue: ToPo U19
+alkaa: 2026-09-20 16:30
+koti: ToPo
+vieras: TuNMKY
+oma: ToPo
+sarja: 19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä
+
+lapsi: Werner
+joukkue: HBA M1A
+alkaa: 2026-09-26 10:00
+koti: HBA-Märsky
+vieras: Turun NMKY
+oma: HBA-Märsky
+sarja: Harjoitusottelu
