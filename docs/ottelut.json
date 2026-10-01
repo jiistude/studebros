@@ -1,5 +1,5 @@
 {
-  "paivitetty": "1. lokakuuta 2026 klo 10.14",
+  "paivitetty": "1. lokakuuta 2026 klo 10.19",
   "tulevat": [
     {
       "match_id": "1006588",
@@ -1172,12 +1172,15 @@
       "vieras": "TuNMKY",
       "sarja": "19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä",
       "halli": "",
-      "linkki": "",
+      "linkki": "https://tulospalvelu.basket.fi/match/1005620/lineups",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 94,
+      "pisteetVieras": 79,
+      "muistiinpano": "MU19 SM-karsintaa. Voitolla sarjapaikka MU19 SM-sarjassa kaudelle 2026-2027",
       "mennyt": true
     },
     {
