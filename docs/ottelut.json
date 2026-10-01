@@ -1158,6 +1158,9 @@
       "omaKotona": false,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 54,
+      "pisteetVieras": 99,
+      "muistiinpano": "",
       "mennyt": true
     },
     {
@@ -1175,6 +1178,9 @@
       "omaKotona": true,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 78,
+      "pisteetVieras": 66,
+      "muistiinpano": "Kauden avaus.",
       "mennyt": true
     }
   ]
