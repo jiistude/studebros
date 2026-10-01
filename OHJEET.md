@@ -65,6 +65,17 @@ voitto–tappio-saldon otsikon alle. Muistiinpano pystyviivan jälkeen on vapaae
 Jos samana päivänä on useampi peli, tarkenna kellonajalla (`2026-10-09 19:00 78-71`) tai
 nimellä (`2026-10-09 78-71 Bruno`).
 
+**Linkki ottelusivulle:** jos rivillä on verkko-osoite, siitä tulee ottelun *Tulos ja
+tilastot* -painikkeen kohde. Osoitteen saa kirjoittaa mihin kohtaan riviä tahansa:
+
+```
+2026-10-09 78-71 https://tulospalvelu.basket.fi/match/1234567 | Tiukka avaus.
+```
+
+Tulospalvelusta haetuilla otteluilla linkki on jo valmiina, joten tätä tarvitaan lähinnä
+käsin lisättyihin peleihin. Vaihtoehtoisesti linkin voi antaa `lisapelit.txt`-tiedoston
+`linkki:`-rivillä — kumpi tahansa käy, ja `tulokset.txt` voittaa jos molemmat on annettu.
+
 Pelkkä tulos riittää hyvin, ja sen voi lisätä vaikka viikkojen päästä — peli ei katoa
 mihinkään, koska se on arkistossa.
 
@@ -170,7 +181,7 @@ pelejä on tulossa, ja se on tarkoitettu sinun omaan käyttöösi.
 ## Ottelun seuraaminen livenä
 
 Jokaisen ottelun kohdalla on painike, joka vie ottelun omalle sivulle tulospalvelussa.
-Tulevissa peleissä siinä lukee *Seuraa peliä livenä* ja pelatuissa *Tulos ja tilastot*.
+Tulevissa peleissä siinä lukee *Seuraa peliä livenä* ja pelatuissa *Ottelutilastot*.
 
 ---
 
@@ -185,7 +196,7 @@ Tiedostossa `joukkueet.json`:
 | `sivun_osoite` | Sivun julkinen osoite. Tästä rakennetaan tilauslinkit ja jakokortti |
 | `menneet_paivat` | Kuinka monen päivän vanhat ottelut näytetään (oletus 400) |
 | `tulevat_paivat` | Kuinka pitkälle tulevaisuuteen katsotaan (oletus 240) |
-| `etusivun_viikot` | Montako viikkoa tulevia näytetään heti, loput painikkeen takana. `0` = kaikki |
+| `etusivun_tulevat` | Montako tulevaa ottelua näytetään heti, loput painikkeen takana. `0` = kaikki |
 | `etusivun_pelatut` | Montako pelattua näytetään heti, loput painikkeen takana. `0` = kaikki |
 | `ottelun_kesto_min` | Kuinka pitkän ajan ottelu varaa kalenterista, minuutteina (oletus 120) |
 | `poissa_toiminta` | `himmenna` (oletus) tai `piilota` |
