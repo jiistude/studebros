@@ -32,6 +32,7 @@
 # sarja: EYBL U15, alkulohko
 # paikka: Zalgirio arena, Kaunas, Liettua
 # linkki: https://eybl.eu/
+
 lapsi: Moritz
 joukkue: U15 1D
 alkaa: 2026-09-13 10:00
@@ -49,6 +50,7 @@ vieras: Pussihukat /Punainen
 oma: Pussihukat /Punainen
 sarja: 15-vuotiaat pojat I divisioona Eteläinen alue
 paikka: Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki
+
 lapsi: Bruno
 joukkue: ToPo U19
 alkaa: 2026-09-19 17:00
@@ -79,4 +81,12 @@ alkaa: 2026-09-26 10:00
 koti: HBA-Märsky
 vieras: Turun NMKY
 oma: HBA-Märsky
+sarja: Harjoitusottelu
+
+lapsi: Bruno
+joukkue: ToPo M1A
+alkaa: 2026-09-26
+koti: ToPo
+vieras: Karkkila
+oma: ToPo
 sarja: Harjoitusottelu
