@@ -7,6 +7,7 @@
 
 const PERUSTA = `
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   body {
     margin: 0; padding: 0 1rem 4rem;
     background: var(--tausta); color: var(--teksti);

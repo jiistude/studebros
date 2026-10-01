@@ -266,7 +266,7 @@ function ottelukortti(o, varit) {
   const vierasLuokka = o.omaKotona === false ? ' class="oma"' : "";
 
   return `
-      <article class="ottelu${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
+      <article class="ottelu${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" data-alku="${esc(o.alku)}" data-kesto="${o.kesto || ""}" data-paivateksti="${esc(pitkaPaiva(o.paiva))}" data-tuleva="${o.mennyt ? "0" : "1"}"${o.poissa ? ' data-poissa="1"' : ""} style="--vaalea:${v.vaalea};--tumma:${v.tumma}">
         <div class="kello">${esc(o.kello)}</div>
         <div class="tiedot">
           <div class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</div>
@@ -321,15 +321,15 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const loput = viikot > 0 ? tulevat.filter((o) => o.paiva > raja) : [];
 
   // Nosto sivun ylälaitaan: se peli, joka on ajallisesti seuraavana.
+  // Selain päivittää tämän vielä uudelleen, jotta tieto on oikein silloinkin
+  // kun sivu on rakennettu edellisenä päivänä.
   const seuraava = tulevat.find((o) => !o.poissa);
-  const seuraavaHtml = seuraava
-    ? `<section class="seuraava">
+  const seuraavaHtml = `<section class="seuraava" id="seuraavaPeli"${seuraava ? "" : " hidden"}>
       <div class="kohta">Seuraava peli</div>
-      <div class="peli">${esc(seuraava.koti)} &ndash; ${esc(seuraava.vieras)}</div>
-      <div class="milloin">${esc(pitkaPaiva(seuraava.paiva))} klo ${esc(seuraava.kello.replace(":", "."))} &middot; ${esc(seuraava.lapsi)}</div>
-      ${seuraava.halli ? `<div class="missa">${esc(seuraava.halli)}</div>` : ""}
-    </section>`
-    : "";
+      <div class="peli">${seuraava ? `${esc(seuraava.koti)} &ndash; ${esc(seuraava.vieras)}` : ""}</div>
+      <div class="milloin">${seuraava ? `${esc(pitkaPaiva(seuraava.paiva))} klo ${esc(seuraava.kello.replace(":", "."))} &middot; ${esc(seuraava.lapsi)}` : ""}</div>
+      <div class="missa">${seuraava && seuraava.halli ? esc(seuraava.halli) : ""}</div>
+    </section>`;
 
   const huomio = puuttuvat.length
     ? `<p class="huomio">Otteluohjelmaa ei ole vielä julkaistu: ${puuttuvat.map(esc).join(", ")}. Pelit ilmestyvät tähän automaattisesti heti kun ne julkaistaan.</p>`
@@ -377,6 +377,58 @@ ${teemaCss(asetukset.teema)}
 </div>
 
 <script>
+  // Sivu on staattinen tiedosto, joka on voitu rakentaa tunteja sitten. Siksi
+  // selain siivoaa jo pelatut ottelut pois "Tulevat ottelut" -listasta heti
+  // sivun avautuessa ja päivittää seuraavan pelin noston sen mukaisesti.
+  var OLETUSKESTO = ${Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120};
+
+  (function siivoaMenneet() {
+    var nyt = Date.now();
+    var kortit = document.querySelectorAll('.ottelu[data-tuleva="1"]');
+    var seuraava = null;
+
+    kortit.forEach(function (kortti) {
+      var alku = Date.parse(kortti.dataset.alku);
+      if (isNaN(alku)) return;
+      var kesto = (Number(kortti.dataset.kesto) > 0 ? Number(kortti.dataset.kesto) : OLETUSKESTO) * 60000;
+      if (alku + kesto < nyt) {
+        kortti.dataset.ohi = '1';
+        kortti.hidden = true;
+      } else if (!seuraava && !kortti.dataset.poissa) {
+        seuraava = kortti;
+      }
+    });
+
+    var nosto = document.getElementById('seuraavaPeli');
+    if (nosto) {
+      if (seuraava) {
+        var halli = seuraava.querySelector('.halli');
+        nosto.querySelector('.peli').textContent = seuraava.querySelector('.joukkueet').textContent.trim();
+        nosto.querySelector('.milloin').textContent =
+          seuraava.dataset.paivateksti + ' klo ' +
+          seuraava.querySelector('.kello').textContent.trim().replace(':', '.') + ' \\u00b7 ' +
+          seuraava.dataset.lapsi;
+        nosto.querySelector('.missa').textContent = halli ? halli.textContent.trim() : '';
+        nosto.hidden = false;
+      } else {
+        nosto.hidden = true;
+      }
+    }
+
+    paivitaPaivat();
+  })();
+
+  // Piilottaa päiväotsikon, jos sen alla ei ole yhtään näkyvää ottelua.
+  function paivitaPaivat() {
+    document.querySelectorAll('.paiva').forEach(function (osio) {
+      var nakyvia = 0;
+      osio.querySelectorAll('.ottelu').forEach(function (k) {
+        if (!k.hidden && k.style.display !== 'none') nakyvia++;
+      });
+      osio.hidden = nakyvia === 0;
+    });
+  }
+
   var kopioi = document.getElementById('kopioi');
   if (kopioi) {
     kopioi.addEventListener('click', function () {
@@ -408,13 +460,10 @@ ${teemaCss(asetukset.teema)}
       var valinta = nappi.dataset.lapsi;
       napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n === nappi)); });
       document.querySelectorAll('.ottelu').forEach(function (kortti) {
-        var lapsi = kortti.dataset.lapsi;
-        kortti.style.display = (valinta === 'kaikki' || lapsi === valinta) ? '' : 'none';
+        if (kortti.dataset.ohi) return; // jo pelattu, pysyy piilossa
+        kortti.style.display = (valinta === 'kaikki' || kortti.dataset.lapsi === valinta) ? '' : 'none';
       });
-      document.querySelectorAll('.paiva').forEach(function (osio) {
-        var nakyvia = osio.querySelectorAll('.ottelu:not([style*="display: none"])').length;
-        osio.style.display = nakyvia ? '' : 'none';
-      });
+      paivitaPaivat();
     });
   });
 </script>
@@ -616,10 +665,15 @@ async function main() {
 
   const alkaen = paivaSiirtymalla(-Math.abs(asetukset.menneet_paivat ?? 30));
   const asti = paivaSiirtymalla(Math.abs(asetukset.tulevat_paivat ?? 240));
-  const tanaan = paivaSiirtymalla(0);
 
   kaikki = kaikki.filter((o) => o.paiva >= alkaen && o.paiva <= asti);
-  for (const o of kaikki) o.mennyt = o.paiva < tanaan;
+  // Ottelu siirtyy pelattuihin vasta kun sen arvioitu kesto on kulunut umpeen,
+  // ei vasta vuorokauden vaihtuessa.
+  const oletuskesto = Number(asetukset.ottelun_kesto_min) > 0 ? Number(asetukset.ottelun_kesto_min) : 120;
+  const nytMs = Date.now();
+  for (const o of kaikki) {
+    o.mennyt = new Date(o.alku).getTime() + (o.kesto || oletuskesto) * 60000 < nytMs;
+  }
 
   const jarjesta = (a, b) => a.alku.localeCompare(b.alku);
   // Poissaolevaksi merkityt näytetään oletuksena himmennettyinä, mutta ne voi
