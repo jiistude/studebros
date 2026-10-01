@@ -1,5 +1,5 @@
 {
-  "paivitetty": "1. lokakuuta 2026 klo 10.08",
+  "paivitetty": "1. lokakuuta 2026 klo 10.14",
   "tulevat": [
     {
       "match_id": "1006588",
@@ -1152,12 +1152,15 @@
       "vieras": "Turun NMKY",
       "sarja": "Harjoitusottelu",
       "halli": "",
-      "linkki": "",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006593/statistics",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 90,
+      "pisteetVieras": 63,
+      "muistiinpano": "Pre-season, valmistava ottelu. Werner 13p.",
       "mennyt": true
     },
     {
@@ -1203,12 +1206,15 @@
       "vieras": "LePy",
       "sarja": "19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä",
       "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
-      "linkki": "",
+      "linkki": "https://tulospalvelu.basket.fi/match/1005600/lineups",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 102,
+      "pisteetVieras": 56,
+      "muistiinpano": "MU19 SM-karsintaa.",
       "mennyt": true
     },
     {
