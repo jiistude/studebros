@@ -16,7 +16,11 @@ const PERUSTA = `
   }
   .kehys { max-width: var(--leveys); margin: 0 auto; }
   header { padding: 2.5rem 0 1.5rem; }
-  h1 { font-size: var(--otsikko); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.015em; }
+  h1 {
+    font-size: var(--otsikko); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.015em;
+    overflow-wrap: break-word; hyphens: auto;
+  }
+  .seuraava .peli, .joukkueet { overflow-wrap: break-word; }
   .selite { color: var(--himmea); font-size: .95rem; margin: 0 0 1.25rem; max-width: 32rem; }
   .selite a { color: var(--linkki); text-underline-offset: 3px; }
   .selite strong { color: var(--teksti); }
@@ -432,7 +436,7 @@ const TEEMAT = {
     css: `
   :root {
     --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    --koko: 20px; --otsikko: 3rem; --leveys: 44rem; --pyoristys: 0px;
+    --koko: 20px; --otsikko: clamp(1.9rem, 7.5vw, 3rem); --leveys: 44rem; --pyoristys: 0px;
     --teksti: #FFFFFF; --himmea: #9A9AA2; --tausta: #0B0B0C;
     --kortti: #0B0B0C; --raja: #26262B; --linkki: #C9C9D1;
     --heroTausta: #0B0B0C; --heroTeksti: #FFFFFF;
@@ -478,8 +482,8 @@ const TEEMAT = {
   }
   .seuraava .kohta { color: #FFFFFF; opacity: 1; letter-spacing: .3em; }
   .seuraava .peli {
-    font-size: 2.1rem; font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
-    text-transform: uppercase;
+    font-size: clamp(1.5rem, 5.5vw, 2.1rem); font-weight: 800; letter-spacing: -.04em;
+    line-height: 1.02; text-transform: uppercase;
   }
   .tilaus { background: none; border: 1px solid var(--raja); }
   .kalenteri { text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; font-weight: 800; }
@@ -508,7 +512,7 @@ const TEEMAT = {
     css: `
   :root {
     --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    --koko: 20px; --otsikko: 3rem; --leveys: 44rem; --pyoristys: 0px;
+    --koko: 20px; --otsikko: clamp(1.9rem, 7.5vw, 3rem); --leveys: 44rem; --pyoristys: 0px;
     --teksti: #0B0B0C; --himmea: #5F5F68; --tausta: #FBFBFA;
     --kortti: #FBFBFA; --raja: #DCDCE2; --linkki: #44444C;
     --heroTausta: transparent; --heroTeksti: #0B0B0C;
@@ -556,8 +560,8 @@ const TEEMAT = {
   }
   .seuraava .kohta { color: #0B0B0C; opacity: 1; letter-spacing: .3em; }
   .seuraava .peli {
-    font-size: 2.1rem; font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
-    text-transform: uppercase;
+    font-size: clamp(1.5rem, 5.5vw, 2.1rem); font-weight: 800; letter-spacing: -.04em;
+    line-height: 1.02; text-transform: uppercase;
   }
   .tilaus { background: none; border: 1px solid var(--raja); }
   .kalenteri { text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; font-weight: 800; }
