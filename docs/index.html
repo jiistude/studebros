@@ -78,7 +78,13 @@
     margin-top: .35rem; font-size: .95rem; line-height: 1.45;
     border-left: 3px solid var(--raja); padding-left: .7rem; color: var(--teksti);
   }
-  .viikko { display: block; width: 100%; margin: .75rem 0 .25rem; }
+  .pallo { display: none; }
+  .viikko {
+    font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+    background: none; border: 1px solid var(--raja); border-radius: var(--pyoristys);
+    color: var(--himmea); padding: .35rem .8rem;
+  }
+  .viikko:hover, .viikko:focus { color: var(--teksti); border-color: var(--himmea); }
   .joukkueet { font-size: 1.1rem; line-height: 1.35; }
   .joukkueet .oma { font-weight: 700; }
   .joukkueet .vs { color: var(--himmea); }
@@ -134,6 +140,7 @@
   .tilausOtsikko { margin: 0 0 .75rem; font-weight: 800; font-size: 1.05rem; }
   .tilausNapit { display: flex; flex-wrap: wrap; gap: .5rem; }
   .tilausSelite { margin: .8rem 0 0; font-size: .88rem; color: var(--himmea); }
+  .tilausSelite a { color: var(--linkki); text-underline-offset: 3px; }
   .osoite { font-variant-numeric: tabular-nums; word-break: break-all; }
   .kalenteri {
     display: inline-block; background: var(--nappiTausta); color: var(--nappiTeksti);
@@ -157,65 +164,79 @@
   }
 
   :root {
-    --fontti: "Avenir Next", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    --koko: 20px; --otsikko: 2.4rem; --leveys: 46rem; --pyoristys: 18px;
-    --teksti: #0f2136; --himmea: #5f7288; --tausta: #eef4f9;
-    --kortti: #ffffff; --raja: #dce7f0; --linkki: #0b6bb5;
-    --korostus: #0b6bb5;
-    --heroTausta: linear-gradient(135deg, #0b6bb5 0%, #16a3a3 100%); --heroTeksti: #ffffff;
-    --nappiTausta: #0b6bb5; --nappiTeksti: #ffffff;
-    --huomioTausta: #fff6dd; --huomioRaja: #f2e0ab; --huomioTeksti: #6b5620;
+    --fontti: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --koko: 20px; --otsikko: 3rem; --leveys: 44rem; --pyoristys: 0px;
+    --teksti: #FFFFFF; --himmea: #9A9AA2; --tausta: #0B0B0C;
+    --kortti: #0B0B0C; --raja: #26262B; --linkki: #C9C9D1;
+    --heroTausta: #0B0B0C; --heroTeksti: #FFFFFF;
+    --nappiTausta: #FFFFFF; --nappiTeksti: #0B0B0C;
+    --huomioTausta: #16161A; --huomioRaja: #33333B; --huomioTeksti: #D9D9E0;
   }
-  body { background: var(--tausta); }
-  h1 { font-weight: 800; }
+  .ottelu { --lapsi: var(--tumma); }
+  .suodattimet button { color: var(--tumma, var(--teksti)); }
+  /* Ainoa oranssi sivulla on pallo itse: muut värit kertovat kenen peli on. */
+  .pallo {
+    display: block; width: 2.2rem; height: 2.2rem; color: #E8743B; margin: 0 0 .9rem;
+  }
+  .pallo svg { width: 100%; height: 100%; display: block; }
+  h1 { font-weight: 800; letter-spacing: -.04em; line-height: .98; text-transform: uppercase; }
   h2 {
-    border-bottom: none; padding-bottom: 0; font-weight: 800;
-    display: flex; align-items: center; gap: .75rem;
+    font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; text-transform: uppercase;
+    border-bottom: 3px solid #FFFFFF; padding-bottom: .3rem; margin-bottom: 1.2rem;
   }
-  h2::after { content: ""; flex: 1; height: 3px; background: var(--raja); border-radius: 2px; }
   h3 {
-    display: inline-block; background: var(--kortti); border: 1px solid var(--raja);
-    border-radius: 999px; padding: .3rem .9rem; color: var(--korostus);
-    font-size: .82rem; letter-spacing: .06em;
+    font-size: .72rem; letter-spacing: .24em; color: var(--himmea);
+    margin: 2rem 0 .4rem; font-weight: 700;
   }
+  /* Ei kortteja, vaan lehtimäiset väliviivat. */
   .ottelu {
-    border: none; box-shadow: 0 2px 10px rgba(15, 33, 54, .07);
-    padding: 1.1rem 1.25rem;
+    background: none; border: none; border-top: 1px solid var(--raja);
+    border-radius: 0; padding: 1.1rem 0; margin: 0;
   }
+  .ottelu:last-child { border-bottom: 1px solid var(--raja); }
   .kello {
-    min-width: 0; font-size: 1rem; background: var(--tausta); color: var(--korostus);
-    border-radius: 10px; padding: .45rem .6rem; text-align: center; line-height: 1.1;
+    min-width: 5rem; font-size: 1.05rem; font-weight: 800; color: var(--lapsi);
+    letter-spacing: -.01em;
   }
   .lapsi {
-    display: inline-block; background: color-mix(in srgb, var(--lapsi) 12%, transparent);
-    border-radius: 999px; padding: .18rem .6rem; margin-bottom: .35rem;
+    font-size: .66rem; letter-spacing: .2em;
+    border-left: 3px solid var(--lapsi); padding-left: .5rem;
   }
-  .joukkueet { font-size: 1.15rem; }
-  .suodattimet button { border-color: transparent; box-shadow: 0 1px 4px rgba(15,33,54,.08); }
-  .suodattimet button[aria-pressed="true"] { border-color: currentColor; }
-  a.seuraa { border-width: 2px; }
-  .seuraava { box-shadow: 0 8px 24px rgba(11, 107, 181, .22); }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --teksti: #eaf1f8; --himmea: #93a7bb; --tausta: #0d1722;
-      --kortti: #16232f; --raja: #24384a; --linkki: #6cb8f0; --korostus: #6cb8f0;
-      --heroTausta: linear-gradient(135deg, #0b4f85 0%, #10756f 100%);
-      --nappiTausta: #6cb8f0; --nappiTeksti: #0d1722;
-      --huomioTausta: #2b2617; --huomioRaja: #4b4122; --huomioTeksti: #ecdcae;
-    }
-    .ottelu { --lapsi: var(--tumma); box-shadow: none; border: 1px solid var(--raja); }
-    .kello { background: #0d1722; }
-    .suodattimet button { color: var(--tumma, var(--teksti)); box-shadow: none; border-color: var(--raja); }
-    a.seuraa:hover, a.seuraa:focus { color: #0d1722; }
+  .joukkueet { font-size: 1.4rem; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; }
+  .joukkueet .oma { font-weight: 800; }
+  .joukkueet .vs { color: var(--lapsi); }
+  .seuraava {
+    background: none; border-top: 5px solid #FFFFFF; border-bottom: 1px solid var(--raja);
+    padding: 1.4rem 0 1.6rem; border-radius: 0;
   }
+  .seuraava .kohta { color: #FFFFFF; opacity: 1; letter-spacing: .3em; }
+  .seuraava .peli {
+    font-size: 2.1rem; font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
+    text-transform: uppercase;
+  }
+  .tilaus { background: none; border: 1px solid var(--raja); }
+  .kalenteri { text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; font-weight: 800; }
+  .kalenteri.toissijainen { color: #FFFFFF; border-color: var(--raja); }
+  .suodattimet button {
+    background: none; border-color: var(--raja);
+    text-transform: uppercase; font-size: .78rem; letter-spacing: .14em;
+  }
+  .saldo span { background: none; border-color: var(--raja); }
+  .tulos { font-size: 1.7rem; letter-spacing: -.03em; }
+  .tulos.voitto .vt { color: #39D07A; }
+  a.seuraa {
+    text-transform: uppercase; font-size: .76rem; letter-spacing: .14em;
+    border-radius: 0; border-width: 1px;
+  }
+  .lisaa { border-style: solid; border-width: 1px; }
 
 </style>
 </head>
 <body>
 <div class="kehys">
   <header>
-    <h1>Brunon, Wernerin ja Moritzin pelit</h1>
-    <p class="saldo"><span style="--vaalea:#10662c;--tumma:#6dce8c">Moritz <strong>2&ndash;0</strong></span></p>
+    <h1><span class="pallo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="21"/><path d="M24 3v42M3 24h42"/><path d="M9.5 8.5C16 16 16 32 9.5 39.5M38.5 8.5C32 16 32 32 38.5 39.5"/></svg></span>Brunon, Wernerin ja Moritzin pelit</h1>
+    
     <p class="selite">Tiedot päivittyvät automaattisesti Koripalloliiton tulospalvelusta. Jokaisen ottelun kohdalta pääset seuraamaan tulosta ja tilastoja livenä, vaikket pääsisi paikalle.</p>
     <div class="tilaus">
       <p class="tilausOtsikko">Tilaa pelit omaan kalenteriin</p>
@@ -236,13 +257,12 @@
       <div class="missa">Urhea-halli, Mäkelänkatu 47, Helsinki</div>
     </section>
 
-  <button type="button" class="kalenteri toissijainen viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button>
 
   <div class="suodattimet" id="suodattimet">
     <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
-    <button type="button" data-lapsi="Bruno" aria-pressed="false" style="--vaalea:#1a56c4;--tumma:#7fb0ff">Bruno</button>
-    <button type="button" data-lapsi="Werner" aria-pressed="false" style="--vaalea:#8a5a00;--tumma:#e8b84b">Werner</button>
-    <button type="button" data-lapsi="Moritz" aria-pressed="false" style="--vaalea:#10662c;--tumma:#6dce8c">Moritz</button>
+    <button type="button" data-lapsi="Bruno" aria-pressed="false" style="--vaalea:#7A5F00;--tumma:#FDD700">Bruno</button>
+    <button type="button" data-lapsi="Werner" aria-pressed="false" style="--vaalea:#012F53;--tumma:#5C9BD6">Werner</button>
+    <button type="button" data-lapsi="Moritz" aria-pressed="false" style="--vaalea:#CE2027;--tumma:#EF5A60">Moritz</button>
   </div>
 
   
@@ -252,7 +272,7 @@
       <section class="paiva">
         <h3>perjantaina 2. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-02T15:00:00.000Z" data-kesto="" data-paivateksti="perjantaina 2. lokakuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-02T15:00:00.000Z" data-kesto="" data-paivateksti="perjantaina 2. lokakuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -269,7 +289,7 @@
       <section class="paiva">
         <h3>sunnuntaina 4. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-04T08:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 4. lokakuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-04T08:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 4. lokakuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">11:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -286,7 +306,7 @@
       <section class="paiva">
         <h3>perjantaina 9. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-09T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 9. lokakuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-09T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 9. lokakuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -299,7 +319,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006706">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-09T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 9. lokakuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-09T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 9. lokakuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -316,7 +336,7 @@
       <section class="paiva">
         <h3>sunnuntaina 11. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-11T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 11. lokakuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-11T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 11. lokakuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -333,7 +353,7 @@
       <section class="paiva">
         <h3>perjantaina 16. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-16T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 16. lokakuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-16T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 16. lokakuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -350,7 +370,7 @@
       <section class="paiva">
         <h3>lauantaina 17. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-17T11:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 17. lokakuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-17T11:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 17. lokakuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">14:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -367,7 +387,7 @@
       <section class="paiva">
         <h3>sunnuntaina 18. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-18T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 18. lokakuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-18T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 18. lokakuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -384,7 +404,7 @@
       <section class="paiva">
         <h3>perjantaina 23. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-23T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 23. lokakuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-23T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 23. lokakuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -397,7 +417,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006713">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-23T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 23. lokakuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-23T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 23. lokakuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -414,7 +434,7 @@
       <section class="paiva">
         <h3>lauantaina 24. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-24T09:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 24. lokakuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-24T09:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 24. lokakuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">12:30</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
@@ -427,7 +447,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1009995">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-24T12:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 24. lokakuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-24T12:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 24. lokakuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">15:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -444,7 +464,7 @@
       <section class="paiva">
         <h3>sunnuntaina 25. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-25T12:45:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 25. lokakuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-25T12:45:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 25. lokakuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">14:45</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -461,7 +481,7 @@
       <section class="paiva">
         <h3>lauantaina 31. lokakuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-31T10:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 31. lokakuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-10-31T10:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 31. lokakuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">12:30</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
@@ -474,7 +494,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1009997">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-31T13:15:00.000Z" data-kesto="" data-paivateksti="lauantaina 31. lokakuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-10-31T13:15:00.000Z" data-kesto="" data-paivateksti="lauantaina 31. lokakuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">15:15</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -487,7 +507,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006922">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-31T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 31. lokakuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-10-31T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 31. lokakuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -504,7 +524,7 @@
       <section class="paiva">
         <h3>sunnuntaina 1. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-01T09:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 1. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-01T09:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 1. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">11:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -517,7 +537,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1012858">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-01T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 1. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-01T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 1. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">16:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -534,7 +554,7 @@
       <section class="paiva">
         <h3>perjantaina 6. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-06T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 6. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-06T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 6. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -547,7 +567,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006714">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-06T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 6. marraskuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-06T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 6. marraskuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -564,7 +584,7 @@
       <section class="paiva">
         <h3>lauantaina 7. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-07T10:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 7. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-07T10:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 7. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">12:30</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
@@ -581,7 +601,7 @@
       <section class="paiva">
         <h3>sunnuntaina 8. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-08T10:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 8. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-08T10:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 8. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -600,7 +620,7 @@
       <section class="paiva">
         <h3>perjantaina 13. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-13T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 13. marraskuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-13T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 13. marraskuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -617,7 +637,7 @@
       <section class="paiva">
         <h3>lauantaina 14. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-14T12:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 14. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-14T12:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 14. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">14:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -634,7 +654,7 @@
       <section class="paiva">
         <h3>sunnuntaina 15. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-15T08:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 15. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-15T08:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 15. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">10:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -647,7 +667,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1012863">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-15T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 15. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-15T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 15. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -664,7 +684,7 @@
       <section class="paiva">
         <h3>perjantaina 20. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-20T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 20. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-20T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 20. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -677,7 +697,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006708">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-20T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 20. marraskuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-20T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 20. marraskuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -694,7 +714,7 @@
       <section class="paiva">
         <h3>lauantaina 21. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-21T10:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 21. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-21T10:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 21. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">12:30</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
@@ -707,7 +727,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1010007">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-21T17:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 21. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-21T17:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 21. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">19:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -724,7 +744,7 @@
       <section class="paiva">
         <h3>sunnuntaina 22. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-22T10:15:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 22. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-22T10:15:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 22. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">12:15</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -741,7 +761,7 @@
       <section class="paiva">
         <h3>torstaina 26. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-26T16:30:00.000Z" data-kesto="" data-paivateksti="torstaina 26. marraskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-11-26T16:30:00.000Z" data-kesto="" data-paivateksti="torstaina 26. marraskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -758,7 +778,7 @@
       <section class="paiva">
         <h3>perjantaina 27. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-27T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 27. marraskuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-11-27T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 27. marraskuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -775,7 +795,7 @@
       <section class="paiva">
         <h3>lauantaina 28. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-28T08:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 28. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-28T08:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 28. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">10:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
@@ -792,7 +812,7 @@
       <section class="paiva">
         <h3>sunnuntaina 29. marraskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-29T11:30:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 29. marraskuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-11-29T11:30:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 29. marraskuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">13:30</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; RPC</div>
@@ -809,7 +829,7 @@
       <section class="paiva">
         <h3>lauantaina 5. joulukuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-05T13:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 5. joulukuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-05T13:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 5. joulukuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">15:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -822,7 +842,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006930">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-05T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 5. joulukuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-05T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 5. joulukuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -839,7 +859,7 @@
       <section class="paiva">
         <h3>sunnuntaina 6. joulukuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-12-06T13:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 6. joulukuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-12-06T13:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 6. joulukuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">15:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -856,7 +876,7 @@
       <section class="paiva">
         <h3>torstaina 10. joulukuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-12-10T17:00:00.000Z" data-kesto="" data-paivateksti="torstaina 10. joulukuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-12-10T17:00:00.000Z" data-kesto="" data-paivateksti="torstaina 10. joulukuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">19:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -873,7 +893,7 @@
       <section class="paiva">
         <h3>lauantaina 12. joulukuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-12-12T11:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 12. joulukuuta" data-tuleva="1" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-12-12T11:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 12. joulukuuta" data-tuleva="1" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">13:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
@@ -886,7 +906,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1010016">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-12T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 12. joulukuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-12T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 12. joulukuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -903,7 +923,7 @@
       <section class="paiva">
         <h3>perjantaina 18. joulukuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2026-12-18T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 18. joulukuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2026-12-18T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 18. joulukuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -916,7 +936,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006760">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-18T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 18. joulukuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2026-12-18T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 18. joulukuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -933,7 +953,7 @@
       <section class="paiva">
         <h3>perjantaina 8. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-08T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 8. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-08T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 8. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -946,7 +966,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006707">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-08T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 8. tammikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-08T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 8. tammikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -963,7 +983,7 @@
       <section class="paiva">
         <h3>lauantaina 16. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-16T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 16. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-16T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 16. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -976,7 +996,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006942">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-16T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 16. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-16T15:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 16. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -993,7 +1013,7 @@
       <section class="paiva">
         <h3>sunnuntaina 17. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-17T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 17. tammikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-17T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 17. tammikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1010,7 +1030,7 @@
       <section class="paiva">
         <h3>perjantaina 22. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-22T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 22. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-22T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 22. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1023,7 +1043,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006709">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-22T18:15:00.000Z" data-kesto="" data-paivateksti="perjantaina 22. tammikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-22T18:15:00.000Z" data-kesto="" data-paivateksti="perjantaina 22. tammikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">20:15</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1040,7 +1060,7 @@
       <section class="paiva">
         <h3>sunnuntaina 24. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-24T11:30:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 24. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-24T11:30:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 24. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">13:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1057,7 +1077,7 @@
       <section class="paiva">
         <h3>perjantaina 29. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-29T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 29. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-29T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 29. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1070,7 +1090,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006769">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-29T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 29. tammikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-29T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 29. tammikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1087,7 +1107,7 @@
       <section class="paiva">
         <h3>lauantaina 30. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-30T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 30. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-30T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 30. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1104,7 +1124,7 @@
       <section class="paiva">
         <h3>sunnuntaina 31. tammikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-31T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 31. tammikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-01-31T14:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 31. tammikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">16:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1117,7 +1137,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006673">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-31T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 31. tammikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-01-31T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 31. tammikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1134,7 +1154,7 @@
       <section class="paiva">
         <h3>perjantaina 5. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-05T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. helmikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-05T15:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. helmikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1147,7 +1167,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006770">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-05T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-05T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1164,7 +1184,7 @@
       <section class="paiva">
         <h3>lauantaina 6. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-06T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 6. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-06T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 6. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1181,7 +1201,7 @@
       <section class="paiva">
         <h3>torstaina 11. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-11T16:30:00.000Z" data-kesto="" data-paivateksti="torstaina 11. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-11T16:30:00.000Z" data-kesto="" data-paivateksti="torstaina 11. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1198,7 +1218,7 @@
       <section class="paiva">
         <h3>lauantaina 13. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-13T13:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 13. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-13T13:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 13. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">15:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1215,7 +1235,7 @@
       <section class="paiva">
         <h3>sunnuntaina 14. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-14T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 14. helmikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-14T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 14. helmikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1232,7 +1252,7 @@
       <section class="paiva">
         <h3>keskiviikkona 17. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-17T16:30:00.000Z" data-kesto="" data-paivateksti="keskiviikkona 17. helmikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-17T16:30:00.000Z" data-kesto="" data-paivateksti="keskiviikkona 17. helmikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1249,7 +1269,7 @@
       <section class="paiva">
         <h3>perjantaina 19. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-19T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 19. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-19T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 19. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1266,7 +1286,7 @@
       <section class="paiva">
         <h3>torstaina 25. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-25T16:30:00.000Z" data-kesto="" data-paivateksti="torstaina 25. helmikuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-02-25T16:30:00.000Z" data-kesto="" data-paivateksti="torstaina 25. helmikuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1279,7 +1299,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006684">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-25T17:00:00.000Z" data-kesto="" data-paivateksti="torstaina 25. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-25T17:00:00.000Z" data-kesto="" data-paivateksti="torstaina 25. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">19:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1296,7 +1316,7 @@
       <section class="paiva">
         <h3>lauantaina 27. helmikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-27T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 27. helmikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-02-27T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 27. helmikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1313,7 +1333,7 @@
       <section class="paiva">
         <h3>perjantaina 5. maaliskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-05T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. maaliskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-05T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. maaliskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1326,7 +1346,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006705">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-03-05T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. maaliskuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-03-05T16:30:00.000Z" data-kesto="" data-paivateksti="perjantaina 5. maaliskuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">18:30</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1343,7 +1363,7 @@
       <section class="paiva">
         <h3>lauantaina 13. maaliskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-13T12:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 13. maaliskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-13T12:00:00.000Z" data-kesto="" data-paivateksti="lauantaina 13. maaliskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">14:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1360,7 +1380,7 @@
       <section class="paiva">
         <h3>sunnuntaina 14. maaliskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-14T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 14. maaliskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-14T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 14. maaliskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo M1A</div>
@@ -1373,7 +1393,7 @@
           <a class="seuraa" target="_blank" rel="noopener" href="https://tulospalvelu.basket.fi/match/1006703">Seuraa peliä livenä <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
-      <article class="ottelu" data-lapsi="Werner" data-alku="2027-03-14T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 14. maaliskuuta" data-tuleva="1" style="--vaalea:#8a5a00;--tumma:#e8b84b">
+      <article class="ottelu" data-lapsi="Werner" data-alku="2027-03-14T15:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 14. maaliskuuta" data-tuleva="1" style="--vaalea:#012F53;--tumma:#5C9BD6">
         <div class="kello">17:00</div>
         <div class="tiedot">
           <div class="lapsi">Werner &middot; HBA M1A</div>
@@ -1390,7 +1410,7 @@
       <section class="paiva">
         <h3>lauantaina 20. maaliskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-20T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 20. maaliskuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-03-20T10:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 20. maaliskuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1407,7 +1427,7 @@
       <section class="paiva">
         <h3>lauantaina 3. huhtikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-04-03T14:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 3. huhtikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-04-03T14:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 3. huhtikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">17:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1424,7 +1444,7 @@
       <section class="paiva">
         <h3>lauantaina 10. huhtikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-04-10T09:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 10. huhtikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-04-10T09:45:00.000Z" data-kesto="" data-paivateksti="lauantaina 10. huhtikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">12:45</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1441,7 +1461,7 @@
       <section class="paiva">
         <h3>lauantaina 17. huhtikuuta</h3>
         
-      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-04-17T12:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 17. huhtikuuta" data-tuleva="1" style="--vaalea:#1a56c4;--tumma:#7fb0ff">
+      <article class="ottelu" data-lapsi="Bruno" data-alku="2027-04-17T12:30:00.000Z" data-kesto="" data-paivateksti="lauantaina 17. huhtikuuta" data-tuleva="1" style="--vaalea:#7A5F00;--tumma:#FDD700">
         <div class="kello">15:30</div>
         <div class="tiedot">
           <div class="lapsi">Bruno &middot; ToPo U19</div>
@@ -1461,13 +1481,13 @@
       <section class="paiva">
         <h3>keskiviikkona 30. syyskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-09-30T16:35:00.000Z" data-kesto="" data-paivateksti="keskiviikkona 30. syyskuuta" data-tuleva="0" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-09-30T16:35:00.000Z" data-kesto="" data-paivateksti="keskiviikkona 30. syyskuuta" data-tuleva="0" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">19:35</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
           <div class="joukkueet"><span>ToPo</span> <span class="vs">&ndash;</span> <span class="oma">Pussihukat /Punainen</span></div>
           <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
-          <div class="tulos voitto">54 &ndash; 99 <span class="vt">Voitto</span></div>
+          
           
           
           <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=T%C3%B6%C3%B6l%C3%B6n%20Kisahalli%2C%20B-puoli%2C%20Paavo%20Nurmen%20Kuja%201%2C%20Helsinki">Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki</a>
@@ -1478,14 +1498,14 @@
       <section class="paiva">
         <h3>sunnuntaina 13. syyskuuta</h3>
         
-      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-09-13T07:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 13. syyskuuta" data-tuleva="0" style="--vaalea:#10662c;--tumma:#6dce8c">
+      <article class="ottelu" data-lapsi="Moritz" data-alku="2026-09-13T07:00:00.000Z" data-kesto="" data-paivateksti="sunnuntaina 13. syyskuuta" data-tuleva="0" style="--vaalea:#CE2027;--tumma:#EF5A60">
         <div class="kello">10:00</div>
         <div class="tiedot">
           <div class="lapsi">Moritz &middot; U15 1D</div>
           <div class="joukkueet"><span class="oma">Pussihukat /Punainen</span> <span class="vs">&ndash;</span> <span>RiKos</span></div>
           <div class="sarja">15-vuotiaat pojat I divisioona Eteläinen alue</div>
-          <div class="tulos voitto">78 &ndash; 66 <span class="vt">Voitto</span></div>
-          <div class="muistiinpano">Kauden avaus.</div>
+          
+          
           
           <a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Martinlaakson%20koulu%2C%20Martinlaaksonpolku%204%2C%20Vantaa">Martinlaakson koulu, Martinlaaksonpolku 4, Vantaa</a>
           
@@ -1495,7 +1515,8 @@
   
 
   <footer>
-    <p>Päivitetty 1. lokakuuta 2026 klo 9.02. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
+    <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
+    <p>Päivitetty 1. lokakuuta 2026 klo 9.47. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>
 
