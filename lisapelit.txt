@@ -85,7 +85,7 @@ sarja: Harjoitusottelu
 
 lapsi: Bruno
 joukkue: ToPo M1A
-alkaa: 2026-09-26
+alkaa: 2026-09-26 15:15
 koti: ToPo
 vieras: Karkkila
 oma: ToPo
