@@ -18,6 +18,8 @@ const PERUSTA = `
   header { padding: 2.5rem 0 1.5rem; }
   h1 { font-size: var(--otsikko); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.015em; }
   .selite { color: var(--himmea); font-size: .95rem; margin: 0 0 1.25rem; max-width: 32rem; }
+  .selite a { color: var(--linkki); text-underline-offset: 3px; }
+  .selite strong { color: var(--teksti); }
   h2 {
     font-size: 1.5rem; margin: 2.5rem 0 .5rem;
     padding-bottom: .4rem; border-bottom: 3px solid var(--raja);

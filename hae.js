@@ -384,6 +384,29 @@ function ottelukortti(o, varit) {
       </article>`;
 }
 
+// Kuvaustekstin kevyt muotoilu. Teksti suojataan aina ensin, ja vasta sen
+// jälkeen sallitaan kaksi merkintää: [teksti](osoite) ja **lihavointi**.
+// Näin yksikään kulmasulku tai lainausmerkki ei voi rikkoa sivua.
+function muotoileKuvaus(teksti) {
+  return esc(teksti)
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (koko, nimi, osoite) => {
+      if (!/^(https?:\/\/|mailto:|\/|#)/.test(osoite)) {
+        console.error(`kuvaus: ohitettiin linkki "${osoite}" (sallittuja ovat https://, mailto:, / ja #).`);
+        return nimi;
+      }
+      const uusiValilehti = /^https?:\/\//.test(osoite) ? ' target="_blank" rel="noopener"' : "";
+      return `<a href="${osoite}"${uusiValilehti}>${nimi}</a>`;
+    })
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+}
+
+// Sama teksti ilman merkintöjä, esimerkiksi WhatsApp-esikatselua varten.
+function riisuKuvaus(teksti) {
+  return String(teksti ?? "")
+    .replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1");
+}
+
 function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   const varit = Object.fromEntries(
     asetukset.lapset.map((l) => [l.nimi, { vaalea: l.vari, tumma: l.vari_tumma || l.vari }])
@@ -472,7 +495,7 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
   // Kuvaus, joka näkyy kun osoite liitetään WhatsAppiin tai muuhun palveluun.
   const jakoKuvaus = seuraava
     ? `Seuraava peli: ${seuraava.koti} – ${seuraava.vieras}, ${pitkaPaiva(seuraava.paiva)} klo ${seuraava.kello.replace(":", ".")}.`
-    : kuvaus || `${asetukset.otsikko}: ottelut, tulokset ja kalenteri yhdessä paikassa.`;
+    : riisuKuvaus(kuvaus) || `${asetukset.otsikko}: ottelut, tulokset ja kalenteri yhdessä paikassa.`;
 
   return `<!doctype html>
 <html lang="fi">
@@ -498,7 +521,7 @@ ${teemaCss(asetukset.teema)}
   <header>
     <h1><span class="pallo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="21"/><path d="M24 3v42M3 24h42"/><path d="M9.5 8.5C16 16 16 32 9.5 39.5M38.5 8.5C32 16 32 32 38.5 39.5"/></svg></span>${esc(asetukset.otsikko)}</h1>
     ${saldoHtml}
-    ${kuvaus ? `<p class="selite">${esc(kuvaus)}</p>` : ""}
+    ${kuvaus ? `<p class="selite">${muotoileKuvaus(kuvaus)}</p>` : ""}
     ${tilausHtml}
   </header>
 
