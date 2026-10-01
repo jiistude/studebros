@@ -41,7 +41,7 @@
 2026-09-20 16:30 94-79 https://tulospalvelu.basket.fi/match/1005620/lineups | MU19 SM-karsintaa. Voitolla sarjapaikka MU19 SM-sarjaan kaudelle 2026-2027.
 
 # --- Bruno, ToPo M1A, valmistavat ottelut ---
-2026-09-26 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
+2026-09-26 15:15 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
 
 # --- Werner, HBA M1A, valmistavat ottelut ---
-2026-09-26 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu. Werner 13p.
+2026-09-26 10:00 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu. Werner 13p.
