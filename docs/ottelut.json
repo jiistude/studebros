@@ -1,5 +1,5 @@
 {
-  "paivitetty": "2. lokakuuta 2026 klo 22.58",
+  "paivitetty": "2. lokakuuta 2026 klo 23.07",
   "tulevat": [
     {
       "match_id": "1012843",
@@ -1128,24 +1128,6 @@
     }
   ],
   "menneet": [
-    {
-      "match_id": "1006588",
-      "alku": "2026-10-02T15:00:00.000Z",
-      "paiva": "2026-10-02",
-      "kello": "18:00",
-      "koti": "HBA-Märsky",
-      "vieras": "Karkkila",
-      "sarja": "Valmistavat ottelut, miehet",
-      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006592/lineups",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": true,
-      "pisteetKoti": 71,
-      "pisteetVieras": 83,
-      "muistiinpano": "Werner 25min 7pts/4ast",
-      "mennyt": true
-    },
     {
       "match_id": "1006592",
       "alku": "2026-10-02T14:59:00.000Z",
