@@ -1,4 +1,18 @@
 {
+ "1006592|Werner|HBA M1A": {
+  "match_id": "1006592",
+  "alku": "2026-10-02T14:59:00.000Z",
+  "paiva": "2026-10-02",
+  "kello": "17:59",
+  "koti": "HBA-Märsky",
+  "vieras": "Karkkila",
+  "sarja": "Valmistavat ottelut, miehet",
+  "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
+  "linkki": "https://tulospalvelu.basket.fi/match/1006592",
+  "lapsi": "Werner",
+  "joukkue": "HBA M1A",
+  "omaKotona": true
+ },
  "1006588|Werner|HBA M1A": {
   "match_id": "1006588",
   "alku": "2026-10-02T15:00:00.000Z",
