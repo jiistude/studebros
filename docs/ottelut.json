@@ -1,21 +1,6 @@
 {
-  "paivitetty": "4. lokakuuta 2026 klo 11.54",
+  "paivitetty": "4. lokakuuta 2026 klo 23.39",
   "tulevat": [
-    {
-      "match_id": "1012843",
-      "alku": "2026-10-04T08:00:00.000Z",
-      "paiva": "2026-10-04",
-      "kello": "11:00",
-      "koti": "Kataja Basket",
-      "vieras": "Pussihukat /Punainen",
-      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
-      "halli": "Motonet Areena, Kisapolku 3, Joensuu",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012843",
-      "lapsi": "Moritz",
-      "joukkue": "RPC",
-      "omaKotona": false,
-      "mennyt": false
-    },
     {
       "match_id": "1006706",
       "alku": "2026-10-09T15:30:00.000Z",
@@ -1128,6 +1113,21 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1012843",
+      "alku": "2026-10-04T08:00:00.000Z",
+      "paiva": "2026-10-04",
+      "kello": "11:00",
+      "koti": "Kataja Basket",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Motonet Areena, Kisapolku 3, Joensuu",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012843",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": false,
+      "mennyt": true
+    },
     {
       "match_id": "1006592",
       "alku": "2026-10-02T14:59:00.000Z",
