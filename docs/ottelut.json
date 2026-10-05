@@ -1,5 +1,5 @@
 {
-  "paivitetty": "5. lokakuuta 2026 klo 12.43",
+  "paivitetty": "5. lokakuuta 2026 klo 14.07",
   "tulevat": [
     {
       "match_id": "1006706",
@@ -1122,10 +1122,13 @@
       "vieras": "Pussihukat /Punainen",
       "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
       "halli": "Motonet Areena, Kisapolku 3, Joensuu",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012843",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012843/progress",
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": false,
+      "pisteetKoti": 71,
+      "pisteetVieras": 90,
+      "muistiinpano": "Robert Petersen Cupin ensimmäinen peli. Moritz 8p.",
       "mennyt": true
     },
     {
@@ -1163,7 +1166,7 @@
       "kasin": true,
       "pisteetKoti": 54,
       "pisteetVieras": 99,
-      "muistiinpano": "",
+      "muistiinpano": "Aluedivaria RPC ryhmällä. Moritz 17p.",
       "mennyt": true
     },
     {
@@ -1283,7 +1286,7 @@
       "kasin": true,
       "pisteetKoti": 78,
       "pisteetVieras": 66,
-      "muistiinpano": "Kauden avaus.",
+      "muistiinpano": "Kauden avaus. Moritz 8p.",
       "mennyt": true
     }
   ]
