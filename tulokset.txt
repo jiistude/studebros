@@ -32,8 +32,12 @@
 # mene rikki.
 
 # --- Moritz, U15 1D ---
-2026-09-13 78-66 https://tulospalvelu.basket.fi/match/1009988/progress | Kauden avaus.
-2026-09-30 54-99 https://tulospalvelu.basket.fi/match/1009992/progress
+2026-09-13 78-66 https://tulospalvelu.basket.fi/match/1009988/progress | Kauden avaus. Moritz 8p.
+2026-09-30 54-99 https://tulospalvelu.basket.fi/match/1009992/progress | Aluedivaria RPC ryhmällä. Moritz 17p.
+
+# --- Moritz, RPC ---
+2026-10-04 71-90 https://tulospalvelu.basket.fi/match/1012843/progress | Robert Petersen Cupin ensimmäinen peli. Moritz 8p.
+
 
 # --- Bruno, ToPo U19, SM-karsinnat Jyväskylässä ---
 2026-09-19 102-56 https://tulospalvelu.basket.fi/match/1005600/lineups | MU19 SM-karsintaa.
