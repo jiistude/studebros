@@ -1,36 +1,6 @@
 {
-  "paivitetty": "9. lokakuuta 2026 klo 12.44",
+  "paivitetty": "10. lokakuuta 2026 klo 0.05",
   "tulevat": [
-    {
-      "match_id": "1006706",
-      "alku": "2026-10-09T15:30:00.000Z",
-      "paiva": "2026-10-09",
-      "kello": "18:30",
-      "koti": "Torpan Pojat",
-      "vieras": "HBA-Märsky",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006706",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": true,
-      "mennyt": false
-    },
-    {
-      "match_id": "1006706",
-      "alku": "2026-10-09T15:30:00.000Z",
-      "paiva": "2026-10-09",
-      "kello": "18:30",
-      "koti": "Torpan Pojat",
-      "vieras": "HBA-Märsky",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006706",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": false,
-      "mennyt": false
-    },
     {
       "match_id": "1012846",
       "alku": "2026-10-11T14:00:00.000Z",
@@ -1113,6 +1083,42 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006706",
+      "alku": "2026-10-09T15:30:00.000Z",
+      "paiva": "2026-10-09",
+      "kello": "18:30",
+      "koti": "Torpan Pojat",
+      "vieras": "HBA-Märsky",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006706/statistics",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": false,
+      "pisteetKoti": 74,
+      "pisteetVieras": 82,
+      "muistiinpano": "",
+      "mennyt": true
+    },
+    {
+      "match_id": "1006706",
+      "alku": "2026-10-09T15:30:00.000Z",
+      "paiva": "2026-10-09",
+      "kello": "18:30",
+      "koti": "Torpan Pojat",
+      "vieras": "HBA-Märsky",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006706/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": true,
+      "pisteetKoti": 74,
+      "pisteetVieras": 82,
+      "muistiinpano": "",
+      "mennyt": true
+    },
     {
       "match_id": "1012843",
       "alku": "2026-10-04T08:00:00.000Z",
