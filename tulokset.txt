@@ -47,6 +47,8 @@
 # --- Bruno, ToPo M1A, valmistavat ottelut ---
 2026-09-26 15:15 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
 
+2026-10-09 74-82 https://tulospalvelu.basket.fi/match/1006706/statistics
+
 # --- Werner, HBA M1A, valmistavat ottelut ---
 2026-09-26 10:00 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu. Werner 13p.
 2026-10-02 71-83 https://tulospalvelu.basket.fi/match/1006592/lineups | Werner 25min 7pts/4ast
