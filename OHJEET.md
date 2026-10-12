@@ -69,7 +69,7 @@ nimellä (`2026-10-09 78-71 Bruno`).
 tilastot* -painikkeen kohde. Osoitteen saa kirjoittaa mihin kohtaan riviä tahansa:
 
 ```
-2026-10-09 78-71 https://tulospalvelu.basket.fi/match/1234567 | Tiukka avaus.
+2026-10-09 78-71 https://tulospalvelu.basket.fi/match/1234567/statistics | Tiukka avaus.
 ```
 
 Tulospalvelusta haetuilla otteluilla linkki on jo valmiina, joten tätä tarvitaan lähinnä
@@ -183,6 +183,9 @@ pelejä on tulossa, ja se on tarkoitettu sinun omaan käyttöösi.
 Jokaisen ottelun kohdalla on painike, joka vie ottelun omalle sivulle tulospalvelussa.
 Tulevissa peleissä siinä lukee *Seuraa peliä livenä* ja pelatuissa *Ottelutilastot*.
 
+Linkin muoto tulee asetuksista `ottelun_osoite_tuleva` ja `ottelun_osoite_pelattu`. Jos
+tulospalvelu joskus muuttaa osoitteitaan, ks. *Jos jokin menee rikki*.
+
 ---
 
 ## Logo
@@ -238,6 +241,8 @@ ajon loki huomauttaa siitä. WhatsApp-esikatseluun teksti menee ilman merkintöj
 | `etusivun_pelatut` | Montako pelattua näytetään heti, loput painikkeen takana. `0` = kaikki |
 | `ottelun_kesto_min` | Kuinka pitkän ajan ottelu varaa kalenterista, minuutteina (oletus 120) |
 | `poissa_toiminta` | `himmenna` (oletus) tai `piilota` |
+| `ottelun_osoite_tuleva` | Tulevan ottelun linkki tulospalveluun. `{id}` korvautuu ottelunumerolla |
+| `ottelun_osoite_pelattu` | Pelatun ottelun linkki tulospalveluun, samalla tavalla |
 | `jakokuva` | Kuvatiedoston nimi kansiossa `docs`, joka näkyy jakokortissa (nyt `jakokuva.png`) |
 | `lapset` | Nimet ja värit, joilla ottelut merkitään |
 
@@ -312,8 +317,23 @@ tilanteessa.
 | Tulos ei näy sivulla | Rivi `tulokset.txt`-tiedostossa ei osunut peliin | Katso ajon loki, tarkista päivämäärä |
 | Oma joukkue ei lihavoitu | Syötteessä on vasta yksi ottelu | Korjaantuu itsestään |
 | Sivu näyttää vanhalta | Selaimen välimuisti | Kova päivitys **⌘ + ⇧ + R** |
+| Ottelulinkki avaa tulospalvelun, mutta ottelua ei näy | Tulospalvelu on muuttanut osoitteitaan | Ks. alla |
 
 Ajon loki: **Actions** → ylin ajo → **paivita** → *Hae ottelut ja rakenna sivu*.
+
+### Ottelulinkit eivät toimi
+
+Tulospalvelu ei anna virheilmoitusta rikkinäisestä linkistä: sivu latautuu, mutta ottelu
+jää näkymättä. Näin tapahtui lokakuussa 2026, kun liitto uudisti palvelunsa.
+
+1. Avaa jokin ottelu tulospalvelussa itse (joukkueen sivulta otteluohjelmasta).
+2. Kopioi selaimen osoiteriviltä toimiva osoite, esimerkiksi
+   `https://tulospalvelu.basket.fi/match/1006764/preview`.
+3. Korvaa ottelunumero merkinnällä `{id}` ja liitä tulos `joukkueet.json`-tiedostoon:
+   tuleva ottelu kohtaan `ottelun_osoite_tuleva`, pelattu kohtaan `ottelun_osoite_pelattu`.
+
+Kaikki sivun ja kalenterien linkit korjautuvat seuraavassa ajossa, myös vanhoissa
+otteluissa. `tulokset.txt`-tiedostoon käsin kirjoitettuihin linkkeihin muutos ei koske.
 
 ---
 

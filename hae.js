@@ -248,6 +248,30 @@ function lueTulokset() {
   return rivit;
 }
 
+/* ------------------------------------------------- tulospalvelun osoite */
+
+// Tulospalvelu vaatii lokakuusta 2026 alkaen osoitteen perään alasivun nimen
+// (pelkkä /match/<numero> ei enää avaa ottelua). Osoitemallit ovat asetuksia,
+// jotta seuraava vastaava muutos on yhden rivin korjaus joukkueet.json-tiedostoon.
+const OSOITE_TULEVA = "https://tulospalvelu.basket.fi/match/{id}/preview";
+const OSOITE_PELATTU = "https://tulospalvelu.basket.fi/match/{id}/statistics";
+const virheellisetMallit = new Set();
+
+function otteluOsoite(id, mennyt) {
+  const malli = String(
+    (mennyt ? asetukset.ottelun_osoite_pelattu : asetukset.ottelun_osoite_tuleva) ||
+      (mennyt ? OSOITE_PELATTU : OSOITE_TULEVA)
+  );
+  if (!malli.includes("{id}")) {
+    if (!virheellisetMallit.has(malli)) {
+      virheellisetMallit.add(malli);
+      console.error(`Osoitemallista puuttuu {id}: "${malli}". Ottelulinkit jätetään pois.`);
+    }
+    return "";
+  }
+  return malli.replace("{id}", encodeURIComponent(id));
+}
+
 /* ------------------------------------------------------------- arkisto */
 
 // Tulospalvelun kalenterisyötteissä on vain tulevia otteluita: pelattu ottelu
@@ -823,7 +847,9 @@ async function haeJoukkue(joukkue) {
       kello: kelloTZ(alku),
       koti, vieras, sarja,
       halli: t.LOCATION?.arvo || "",
-      linkki: id ? `https://tulospalvelu.basket.fi/match/${id}` : (t.URL?.arvo || ""),
+      // Tulospalvelun linkki rakennetaan vasta kun tiedetään, onko ottelu
+      // jo pelattu (ks. otteluOsoite). Ilman ottelunumeroa käytetään syötteen URL:ia.
+      linkki: id ? "" : (t.URL?.arvo || ""),
       lapsi: joukkue.lapsi,
       joukkue: joukkue.nimi,
       omaKotona: null,
@@ -904,7 +930,7 @@ async function main() {
       o.pisteetKoti = t.koti;
       o.pisteetVieras = t.vieras;
       o.muistiinpano = t.muistiinpano;
-      if (t.linkki) o.linkki = t.linkki;
+      if (t.linkki) { o.linkki = t.linkki; o.linkkiKasin = true; }
     }
   }
   if (tulokset.length) console.log(`Kirjattuja tuloksia: ${tulokset.length}.`);
@@ -935,6 +961,13 @@ async function main() {
   const nytMs = Date.now();
   for (const o of kaikki) {
     o.mennyt = new Date(o.alku).getTime() + (o.kesto || oletuskesto) * 60000 < nytMs;
+  }
+
+  // Tulospalvelun linkki riippuu siitä, onko ottelu pelattu, joten se rakennetaan
+  // vasta tässä. Tämä korjaa myös arkiston vanhan muotoiset linkit. Käsin annettu
+  // linkki (tulokset.txt) jätetään ennalleen.
+  for (const o of kaikki) {
+    if (o.match_id && !o.linkkiKasin) o.linkki = otteluOsoite(o.match_id, o.mennyt);
   }
 
   const jarjesta = (a, b) => a.alku.localeCompare(b.alku);
