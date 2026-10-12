@@ -1,5 +1,5 @@
 {
-  "paivitetty": "12. lokakuuta 2026 klo 12.55",
+  "paivitetty": "12. lokakuuta 2026 klo 20.37",
   "tulevat": [
     {
       "match_id": "1006764",
@@ -1077,10 +1077,13 @@
       "vieras": "KTP",
       "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
       "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012846",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012846/events",
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": true,
+      "pisteetKoti": 85,
+      "pisteetVieras": 58,
+      "muistiinpano": "",
       "mennyt": true
     },
     {
