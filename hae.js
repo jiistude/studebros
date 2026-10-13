@@ -178,6 +178,7 @@ function lueLisapelit() {
       sarja: kentat.sarja || "",
       halli: kentat.paikka || "",
       linkki: kentat.linkki || "",
+      striimi: /^https:\/\//.test(kentat.striimi || "") ? kentat.striimi : "",
       lapsi: kentat.lapsi,
       joukkue: kentat.joukkue || "",
       omaKotona: kentat.oma ? kentat.oma === koti : null,
@@ -243,6 +244,43 @@ function lueTulokset() {
       lapsi: osat[6] || "",
       muistiinpano: (osat[7] || "").trim(),
       linkki,
+    });
+  }
+  return rivit;
+}
+
+// striimit.txt: yksi rivi per lähetys, "PÄIVÄMÄÄRÄ KELLO [NIMI] OSOITE".
+// Kellonajaksi käy ottelun alkamisaika tai KorisTV:n lähetyksen alkamisaika
+// (yleensä 5 min ennen ottelua): rivi osuu otteluun, jonka alku on enintään
+// STRIIMI_TOLERANSSI_MIN minuutin päässä. Ilman nimeä rivi koskee kaikkia
+// samaan aikaan alkavia pelejä (esim. kun kaksi poikaa pelaa vastakkain).
+const STRIIMI_TOLERANSSI_MIN = 15;
+
+function lueStriimit() {
+  const teksti = lueTiedostoJosOn("striimit.txt");
+  const rivit = [];
+  for (const rivi of teksti.split("\n")) {
+    let puhdas = rivi.trim();
+    if (!puhdas || puhdas.startsWith("#")) continue;
+
+    const osoite = puhdas.match(/\bhttps:\/\/[^\s|]+/);
+    if (!osoite) {
+      console.error(`striimit.txt: riviltä puuttuu https-osoite: "${puhdas}".`);
+      continue;
+    }
+    puhdas = (puhdas.slice(0, osoite.index) + puhdas.slice(osoite.index + osoite[0].length))
+      .replace(/\s+#.*$/, "").replace(/\s+/g, " ").trim();
+
+    const osat = puhdas.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{1,2})[:.](\d{2})(?:\s+(\S+))?$/);
+    if (!osat) {
+      console.error(`striimit.txt: en ymmärrä riviä "${rivi.trim()}". Odotettu muoto 2026-10-18 17:00 https://koristv.fi/…`);
+      continue;
+    }
+    rivit.push({
+      alku: seinakelloUTC(+osat[1], +osat[2], +osat[3], +osat[4], +osat[5], TZ).getTime(),
+      teksti: rivi.trim(),
+      lapsi: osat[6] || "",
+      striimi: osoite[0].replace(/[.,;]+$/, ""),
     });
   }
   return rivit;
@@ -382,6 +420,12 @@ function ottelukortti(o, varit) {
         o.mennyt ? "Ottelutilastot" : "Seuraa peliä livenä"
       } <span aria-hidden="true">&rarr;</span></a>`
     : "";
+  const striimi = o.striimi
+    ? `<a class="seuraa striimi" target="_blank" rel="noopener" href="${esc(o.striimi)}">${
+        o.mennyt ? "Katso tallenne" : "Katso striimi"
+      } <span class="maksu">(maksullinen)</span> <span aria-hidden="true">&rarr;</span></a>`
+    : "";
+  const painikkeet = seuraa || striimi ? `<div class="painikkeet">${seuraa}${striimi}</div>` : "";
 
   const kotiLuokka = o.omaKotona === true ? ' class="oma"' : "";
   const vierasLuokka = o.omaKotona === false ? ' class="oma"' : "";
@@ -403,7 +447,7 @@ function ottelukortti(o, varit) {
           ${o.muistiinpano ? `<div class="muistiinpano">${esc(o.muistiinpano)}</div>` : ""}
           ${o.poissa ? `<div class="poissaMerkki">${esc(o.lapsi)} ei ole mukana tässä pelissä</div>` : ""}
           ${kartta}
-          ${seuraa}
+          ${painikkeet}
         </div>
       </article>`;
 }
@@ -796,7 +840,7 @@ function rakennaIcs(ottelut, nimi) {
       taita(`SUMMARY:${icsTeksti(`${luettele(o.lapset)}: ${o.koti} – ${o.vieras}`)}`),
       taita(`LOCATION:${icsTeksti(o.halli)}`),
       taita(`DESCRIPTION:${icsTeksti(
-        [o.sarja, o.linkki ? `Ottelu tulospalvelussa: ${o.linkki}` : ""].filter(Boolean).join("\n")
+        [o.sarja, o.linkki ? `Ottelu tulospalvelussa: ${o.linkki}` : "", o.striimi ? `Striimi KorisTV:ssä (maksullinen): ${o.striimi}` : ""].filter(Boolean).join("\n")
       )}`),
       ...(o.linkki ? [taita(`URL;VALUE=URI:${o.linkki}`)] : []),
       "BEGIN:VALARM",
@@ -950,6 +994,28 @@ async function main() {
     }
   }
   if (merkittyja) console.log(`Merkitty poissaolevaksi: ${merkittyja} ottelua.`);
+
+  // Striimilinkit (KorisTV). striimit.txt koskee vain tulospalvelusta haettuja
+  // pelejä; käsin lisätyn pelin striimi annetaan lisapelit.txt:n striimi:-rivillä.
+  // Näin päällekkäinen turnauspeli ei saa vahingossa sarjapelin linkkiä.
+  for (const o of kaikki) if (!o.kasin) delete o.striimi;
+  const striimit = lueStriimit();
+  let striimeja = 0;
+  for (const s of striimit) {
+    const osumat = kaikki.filter(
+      (o) => !o.kasin && Math.abs(new Date(o.alku).getTime() - s.alku) <= STRIIMI_TOLERANSSI_MIN * 60000 &&
+        (!s.lapsi || s.lapsi === o.lapsi)
+    );
+    if (!osumat.length) {
+      if (s.alku > Date.now() - Math.abs(asetukset.menneet_paivat ?? 30) * 86400000) {
+        console.error(`striimit.txt: riville "${s.teksti}" ei löytynyt ottelua.`);
+      }
+      continue;
+    }
+    for (const o of osumat) o.striimi = s.striimi;
+    striimeja++;
+  }
+  if (striimit.length) console.log(`Striimilinkkejä: ${striimeja}/${striimit.length} riviä osui otteluun.`);
 
   const alkaen = paivaSiirtymalla(-Math.abs(asetukset.menneet_paivat ?? 30));
   const asti = paivaSiirtymalla(Math.abs(asetukset.tulevat_paivat ?? 240));

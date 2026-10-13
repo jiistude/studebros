@@ -18,6 +18,7 @@
 #   sarja:   sarjan tai turnauksen nimi
 #   paikka:  hallin nimi ja osoite, tulee sivulle karttalinkiksi
 #   linkki:  osoite, josta peliä voi seurata
+#   striimi: videolähetyksen osoite (esim. KorisTV) — näkyy "Katso striimi" -painikkeena
 #   kesto:   pelin kesto minuutteina, jos kaksi tuntia ei sovi
 #
 # Alla on malli. Poista #-merkit sen edestä ja muokkaa, kun lisäät ensimmäisen
@@ -32,6 +33,7 @@
 # sarja: EYBL U15, alkulohko
 # paikka: Zalgirio arena, Kaunas, Liettua
 # linkki: https://eybl.eu/
+# striimi: https://koristv.fi/puhu-p12/games/g/abcd1234
 
 lapsi: Moritz
 joukkue: U15 1D
