@@ -101,7 +101,6 @@ const PERUSTA = `
   a.seuraa:hover, a.seuraa:focus { background: var(--lapsi); color: #fff; }
   /* Tulospalvelu- ja striimipainike rinnakkain, kapealla näytöllä allekkain. */
   .painikkeet { display: flex; flex-wrap: wrap; column-gap: .5rem; }
-  a.seuraa .maksu { font-weight: 400; opacity: .8; }
   /* Näkymän valinta: tulevat vai pelatut. Vain toinen lista näkyy kerrallaan. */
   .nakymat { display: flex; gap: .4rem; margin: .75rem 0 0; }
   .nakymat button {
