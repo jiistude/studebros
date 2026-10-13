@@ -1,5 +1,5 @@
 {
-  "paivitetty": "13. lokakuuta 2026 klo 12.49",
+  "paivitetty": "13. lokakuuta 2026 klo 19.55",
   "tulevat": [
     {
       "match_id": "1006764",
@@ -47,6 +47,23 @@
       "mennyt": false
     },
     {
+      "match_id": "",
+      "alku": "2026-10-22T18:45:00.000Z",
+      "paiva": "2026-10-22",
+      "kello": "21:45",
+      "koti": "HBA-Märsky",
+      "vieras": "Pallacanestro Forlì",
+      "sarja": "Civis Cup",
+      "halli": "",
+      "linkki": "",
+      "lapsi": "Werner",
+      "joukkue": "HBA U19",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1006713",
       "alku": "2026-10-23T15:30:00.000Z",
       "paiva": "2026-10-23",
@@ -77,6 +94,23 @@
       "mennyt": false
     },
     {
+      "match_id": "",
+      "alku": "2026-10-23T15:30:00.000Z",
+      "paiva": "2026-10-23",
+      "kello": "18:30",
+      "koti": "DEAC",
+      "vieras": "HBA-Märsky",
+      "sarja": "Civis Cup",
+      "halli": "",
+      "linkki": "",
+      "lapsi": "Werner",
+      "joukkue": "HBA U19",
+      "omaKotona": false,
+      "kesto": null,
+      "kasin": true,
+      "mennyt": false
+    },
+    {
       "match_id": "1009995",
       "alku": "2026-10-24T09:30:00.000Z",
       "paiva": "2026-10-24",
@@ -104,6 +138,23 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "mennyt": false
+    },
+    {
+      "match_id": "",
+      "alku": "2026-10-24T15:15:00.000Z",
+      "paiva": "2026-10-24",
+      "kello": "18:15",
+      "koti": "HBA-Märsky",
+      "vieras": "Basket Brno",
+      "sarja": "Civis Cup",
+      "halli": "",
+      "linkki": "",
+      "lapsi": "Werner",
+      "joukkue": "HBA U19",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
       "mennyt": false
     },
     {
