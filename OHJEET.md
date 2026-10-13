@@ -10,7 +10,7 @@ Kaikki ylläpito tehdään selaimessa GitHubissa. Koodia ei tarvitse kirjoittaa.
 ## Sisällys
 
 - [Seuratut joukkueet](#seuratut-joukkueet)
-- [Arjen ylläpito](#arjen-ylläpito) — tulokset, poissaolot, käsin lisätyt pelit
+- [Arjen ylläpito](#arjen-ylläpito) — tulokset, poissaolot, käsin lisätyt pelit, striimit
 - [Kalenterin tilaaminen](#kalenterin-tilaaminen)
 - [Jakaminen](#jakaminen)
 - [Asetukset](#asetukset)
@@ -109,10 +109,41 @@ oma: RPC
 sarja: EYBL U15, alkulohko
 paikka: Zalgirio arena, Kaunas, Liettua
 linkki: https://eybl.eu/
+striimi: https://koristv.fi/…
 ```
 
-Pakollisia ovat vain `lapsi` ja `alkaa`. Kenttä `oma` kertoo kumpi joukkue on pojan oma,
+Pakollisia ovat vain `lapsi` ja `alkaa`. `striimi` lisää peliin *Katso striimi* -painikkeen. Kenttä `oma` kertoo kumpi joukkue on pojan oma,
 jotta se lihavoidaan. `kesto: 100` säätää yksittäisen pelin keston minuutteina.
+
+### Striimit — `striimit.txt`
+
+Suurin osa liiton sarjojen peleistä lähetetään maksullisena KorisTV:ssä. Tulospalvelun
+kalenterisyötteessä striimilinkkiä ei ole, eikä sitä voi päätellä ottelunumerosta, joten
+linkit kirjataan tähän tiedostoon. Peliin tulee silloin toinen painike: tulevissa
+*Katso striimi (maksullinen)* ja pelatuissa *Katso tallenne (maksullinen)*. Linkki menee
+myös kalenterimerkintään.
+
+```
+2026-10-18 17:00 Bruno https://koristv.fi/hnmky-m1/games/g/ecfglmo1
+2026-10-09 18:30 https://koristv.fi/topo-m1/games/g/t7f4fqcu  # ToPo–HBA, molemmat pojat
+```
+
+- Kelloksi käy ottelun alkamisaika tai lähetyksen alkamisaika (KorisTV:ssä yleensä
+  5 minuuttia aiemmin). Rivi osuu peliin, joka alkaa enintään 15 minuutin päässä.
+- Nimi on vapaaehtoinen. Ilman sitä linkki tulee kaikille samaan aikaan alkaville peleille.
+- Tiedosto koskee tulospalvelusta haettuja pelejä. Käsin lisätyn pelin striimi kirjoitetaan
+  `lisapelit.txt`-tiedostoon `striimi:`-riville.
+- `#`-merkin jälkeen voi kirjoittaa kommentin, esimerkiksi joukkueet.
+- Jos rivi ei osu mihinkään peliin, ajon loki kertoo siitä.
+
+**Kuka tiedoston täyttää:** Claude kokoaa rivit KorisTV:n kanavilta pyydettäessä, ja muutokset
+tulevat pull requestina. Yksittäisen rivin voi lisätä tai korjata myös itse. Miesten
+1-divisioonan ja U19 SM-sarjan lähetykset ovat KorisTV:ssä koko kaudelta, mutta nuorten
+pelien lähetykset ilmestyvät yleensä vasta muutamaa viikkoa ennen peliä. Siksi päivitystä
+kannattaa pyytää noin kerran kuussa tai kun ottelu siirtyy.
+
+Striimilinkkejä ei haeta automaattisesti. Liitolle on luvattu, että sivu käyttää vain julkisia
+kalenterisyötteitä, ja tulospalvelun tai KorisTV:n ajastettu lukeminen rikkoisi lupauksen.
 
 ### Arkisto — `docs/historia.json`
 
@@ -185,6 +216,10 @@ Tulevissa peleissä siinä lukee *Seuraa peliä livenä* ja pelatuissa *Otteluti
 
 Linkin muoto tulee asetuksista `ottelun_osoite_tuleva` ja `ottelun_osoite_pelattu`. Jos
 tulospalvelu joskus muuttaa osoitteitaan, ks. *Jos jokin menee rikki*.
+
+Jos pelille on kirjattu striimi (ks. *Striimit*), sen vieressä on toinen painike, joka avaa
+lähetyksen KorisTV:ssä. Katsominen on maksullista: yksittäinen ottelu tai kausipassi ostetaan
+KorisTV:stä.
 
 ---
 
