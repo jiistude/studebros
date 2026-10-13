@@ -90,3 +90,35 @@ koti: ToPo
 vieras: Karkkila
 oma: ToPo
 sarja: Harjoitusottelu
+
+lapsi: Werner
+joukkue: HBA U19
+alkaa: 2026-10-22 21:45
+koti: HBA-Märsky
+vieras: Pallacanestro Forlì
+oma: HBA-Märsky
+sarja: Civis Cup
+
+lapsi: Werner
+joukkue: HBA U19
+alkaa: 2026-10-23 18:30
+koti: DEAC
+vieras: HBA-Märsky
+oma: HBA-Märsky
+sarja: Civis Cup
+
+lapsi: Werner
+joukkue: HBA U19
+alkaa: 2026-10-24 18:15
+koti: HBA-Märsky
+vieras: Basket Brno
+oma: HBA-Märsky
+sarja: Civis Cup
+
+lapsi: Werner
+joukkue: HBA U19
+alkaa: 2026-10-25 tbd
+koti: HBA-Märsky
+vieras: tbd
+oma: HBA-Märsky
+sarja: Civis Cup sijoitusottelu
