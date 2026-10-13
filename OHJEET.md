@@ -120,7 +120,9 @@ jotta se lihavoidaan. `kesto: 100` säätää yksittäisen pelin keston minuutte
 Suurin osa liiton sarjojen peleistä lähetetään maksullisena KorisTV:ssä. Tulospalvelun
 kalenterisyötteessä striimilinkkiä ei ole, eikä sitä voi päätellä ottelunumerosta, joten
 linkit kirjataan tähän tiedostoon. Peliin tulee silloin toinen painike: tulevissa
-*Katso striimi (maksullinen)* ja pelatuissa *Katso tallenne (maksullinen)*. Linkki menee
+*Katso striimi* ja pelatuissa *Katso tallenne*. KorisTV:n lähetykset ovat maksullisia, mutta
+painikkeessa sitä ei mainita, koska käsin lisättyjen pelien striimit (esim. YouTubessa) ovat
+usein ilmaisia. Linkki menee
 myös kalenterimerkintään.
 
 ```
@@ -218,8 +220,8 @@ Linkin muoto tulee asetuksista `ottelun_osoite_tuleva` ja `ottelun_osoite_pelatt
 tulospalvelu joskus muuttaa osoitteitaan, ks. *Jos jokin menee rikki*.
 
 Jos pelille on kirjattu striimi (ks. *Striimit*), sen vieressä on toinen painike, joka avaa
-lähetyksen KorisTV:ssä. Katsominen on maksullista: yksittäinen ottelu tai kausipassi ostetaan
-KorisTV:stä.
+lähetyksen. KorisTV:n lähetykset ovat maksullisia: yksittäinen ottelu tai kausipassi ostetaan
+KorisTV:stä. Käsin lisättyjen pelien striimit voivat olla muualla, esimerkiksi YouTubessa.
 
 ---
 

@@ -423,7 +423,7 @@ function ottelukortti(o, varit) {
   const striimi = o.striimi
     ? `<a class="seuraa striimi" target="_blank" rel="noopener" href="${esc(o.striimi)}">${
         o.mennyt ? "Katso tallenne" : "Katso striimi"
-      } <span class="maksu">(maksullinen)</span> <span aria-hidden="true">&rarr;</span></a>`
+      } <span aria-hidden="true">&rarr;</span></a>`
     : "";
   const painikkeet = seuraa || striimi ? `<div class="painikkeet">${seuraa}${striimi}</div>` : "";
 
@@ -840,7 +840,7 @@ function rakennaIcs(ottelut, nimi) {
       taita(`SUMMARY:${icsTeksti(`${luettele(o.lapset)}: ${o.koti} – ${o.vieras}`)}`),
       taita(`LOCATION:${icsTeksti(o.halli)}`),
       taita(`DESCRIPTION:${icsTeksti(
-        [o.sarja, o.linkki ? `Ottelu tulospalvelussa: ${o.linkki}` : "", o.striimi ? `Striimi KorisTV:ssä (maksullinen): ${o.striimi}` : ""].filter(Boolean).join("\n")
+        [o.sarja, o.linkki ? `Ottelu tulospalvelussa: ${o.linkki}` : "", o.striimi ? `Striimi: ${o.striimi}` : ""].filter(Boolean).join("\n")
       )}`),
       ...(o.linkki ? [taita(`URL;VALUE=URI:${o.linkki}`)] : []),
       "BEGIN:VALARM",
