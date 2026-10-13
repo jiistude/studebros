@@ -99,6 +99,7 @@ vieras: Pallacanestro Forlì
 oma: HBA-Märsky
 sarja: Civis Cup
 paikka: Debrecen, Unkari
+linkki: https://civiscup.hu/event/5067/
 
 lapsi: Werner
 joukkue: HBA U19
@@ -108,6 +109,7 @@ vieras: HBA-Märsky
 oma: HBA-Märsky
 sarja: Civis Cup
 paikka: Debrecen, Unkari
+linkki: https://civiscup.hu/event/5084/
 
 lapsi: Werner
 joukkue: HBA U19
@@ -117,6 +119,7 @@ vieras: Basket Brno
 oma: HBA-Märsky
 sarja: Civis Cup
 paikka: Debrecen, Unkari
+linkki: https://civiscup.hu/event/5098/
 
 lapsi: Werner
 joukkue: HBA U19
@@ -124,5 +127,6 @@ alkaa: 2026-10-25 12:00
 koti: HBA-Märsky
 vieras: tbd
 oma: HBA-Märsky
-sarja: Civis Cup sijoitusottelu
+sarja: Civis Cup sijoitusottelu. Aika ja vastustaja ratkeaa 24.10.
 paikka: Debrecen, Unkari
+linkki: https://civiscup.hu/games/
