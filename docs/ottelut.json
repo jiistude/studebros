@@ -1,5 +1,5 @@
 {
-  "paivitetty": "13. lokakuuta 2026 klo 20.17",
+  "paivitetty": "13. lokakuuta 2026 klo 20.41",
   "tulevat": [
     {
       "match_id": "1006764",
@@ -14,6 +14,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/gx6d18gw",
       "mennyt": false
     },
     {
@@ -29,6 +30,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/mrvaweau",
       "mennyt": false
     },
     {
@@ -44,6 +46,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/hnmky-m1/games/g/ecfglmo1",
       "mennyt": false
     },
     {
@@ -56,6 +59,7 @@
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/event/5067/",
+      "striimi": "",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
@@ -76,6 +80,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/oq5sth9b",
       "mennyt": false
     },
     {
@@ -91,6 +96,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/go4ds1y8",
       "mennyt": false
     },
     {
@@ -103,6 +109,7 @@
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/event/5084/",
+      "striimi": "",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": false,
@@ -123,6 +130,7 @@
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/puhu-p12/games/g/2zca1nka",
       "mennyt": false
     },
     {
@@ -138,6 +146,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/9dolftua",
       "mennyt": false
     },
     {
@@ -150,6 +159,7 @@
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/event/5098/",
+      "striimi": "",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
@@ -167,6 +177,7 @@
       "sarja": "Civis Cup sijoitusottelu. Aika ja vastustaja ratkeaa 24.10.",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/games/",
+      "striimi": "",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
@@ -187,6 +198,7 @@
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/puhu-p12/games/g/iqx97fnt",
       "mennyt": false
     },
     {
@@ -217,6 +229,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/js0uahcm",
       "mennyt": false
     },
     {
@@ -232,6 +245,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/rapy-m1/games/g/2mv3ywns",
       "mennyt": false
     },
     {
@@ -247,6 +261,7 @@
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/ura-basket-p2012/games/g/yxsl5yj2",
       "mennyt": false
     },
     {
@@ -262,6 +277,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/karkkila-m1/games/g/lotvdw6c",
       "mennyt": false
     },
     {
@@ -277,6 +293,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/dvg43amk",
       "mennyt": false
     },
     {
@@ -292,6 +309,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/30uo743",
       "mennyt": false
     },
     {
@@ -322,6 +340,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/v91st10t",
       "mennyt": false
     },
     {
@@ -337,6 +356,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/huima-m1/games/g/7gl7qxb4",
       "mennyt": false
     },
     {
@@ -352,6 +372,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/4wfmbqrw",
       "mennyt": false
     },
     {
@@ -367,6 +388,7 @@
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/onmky-p2012/games/g/rgv8r5u2",
       "mennyt": false
     },
     {
@@ -382,6 +404,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/pantterit-m1/games/g/xiifvnw9",
       "mennyt": false
     },
     {
@@ -397,6 +420,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/xrjd6l0o",
       "mennyt": false
     },
     {
@@ -412,6 +436,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/f84jl918",
       "mennyt": false
     },
     {
@@ -442,6 +467,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/2apx0b57",
       "mennyt": false
     },
     {
@@ -472,6 +498,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/lrnmky-m1/games/g/cvqhynqd",
       "mennyt": false
     },
     {
@@ -487,6 +514,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/jba-m1/games/g/du4pg1kq",
       "mennyt": false
     },
     {
@@ -517,6 +545,7 @@
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/rpc-p15/games/g/o2xbnf6y",
       "mennyt": false
     },
     {
@@ -532,6 +561,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/bf96lxfk",
       "mennyt": false
     },
     {
@@ -547,6 +577,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/bwgpf8kf",
       "mennyt": false
     },
     {
@@ -562,6 +593,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/dyaw52ub",
       "mennyt": false
     },
     {
@@ -577,6 +609,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/pyrinto-m1-a/games/g/33ks993p",
       "mennyt": false
     },
     {
@@ -607,6 +640,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/aco-m1/games/g/wfxcbo1k",
       "mennyt": false
     },
     {
@@ -622,6 +656,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/5q1twm6b",
       "mennyt": false
     },
     {
@@ -637,6 +672,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/st0ih5ez",
       "mennyt": false
     },
     {
@@ -652,6 +688,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/n2hubtzs",
       "mennyt": false
     },
     {
@@ -667,6 +704,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/kobrat-m1/games/g/mvhdny2n",
       "mennyt": false
     },
     {
@@ -682,6 +720,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/lskwos20",
       "mennyt": false
     },
     {
@@ -697,6 +736,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/rapy-m1/games/g/f2m3h2we",
       "mennyt": false
     },
     {
@@ -712,6 +752,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/hnmky-m1/games/g/jrbxqif",
       "mennyt": false
     },
     {
@@ -727,6 +768,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/ta1ofai3",
       "mennyt": false
     },
     {
@@ -742,6 +784,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/lda3qy44",
       "mennyt": false
     },
     {
@@ -757,6 +800,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/qq7gh07d",
       "mennyt": false
     },
     {
@@ -772,6 +816,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/hba-m1/games/g/yi7tl1ar",
       "mennyt": false
     },
     {
@@ -787,6 +832,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/yi7tl1ar",
       "mennyt": false
     },
     {
@@ -802,6 +848,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/y5mpkve7",
       "mennyt": false
     },
     {
@@ -817,6 +864,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/karkkila-m1/games/g/3kwrs6vf",
       "mennyt": false
     },
     {
@@ -832,6 +880,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/huima-m1/games/g/6ia8dtux",
       "mennyt": false
     },
     {
@@ -847,6 +896,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/hisx1cu1",
       "mennyt": false
     },
     {
@@ -862,6 +912,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/qsf11pu3",
       "mennyt": false
     },
     {
@@ -877,6 +928,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/fv80v1xu",
       "mennyt": false
     },
     {
@@ -892,6 +944,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/jba-m1/games/g/9836729d",
       "mennyt": false
     },
     {
@@ -907,6 +960,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/w1axam7q",
       "mennyt": false
     },
     {
@@ -922,6 +976,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/pantterit-m1/games/g/t5hh7usw",
       "mennyt": false
     },
     {
@@ -937,6 +992,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/sm2rrwni",
       "mennyt": false
     },
     {
@@ -952,6 +1008,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/hw2xupyv",
       "mennyt": false
     },
     {
@@ -967,6 +1024,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/lrnmky-m1/games/g/mcrn0j17",
       "mennyt": false
     },
     {
@@ -982,6 +1040,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/pyrinto-m1-a/games/g/iz65y5f0",
       "mennyt": false
     },
     {
@@ -997,6 +1056,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/la1ko786",
       "mennyt": false
     },
     {
@@ -1012,6 +1072,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/8ss3isq6",
       "mennyt": false
     },
     {
@@ -1027,6 +1088,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/h01w03u8",
       "mennyt": false
     },
     {
@@ -1042,6 +1104,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/f3acplh6",
       "mennyt": false
     },
     {
@@ -1057,6 +1120,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/kobrat-m1/games/g/le1n7zz8",
       "mennyt": false
     },
     {
@@ -1072,6 +1136,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/aco-m1/games/g/9u6qqawo",
       "mennyt": false
     },
     {
@@ -1087,6 +1152,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/zhrlzex9",
       "mennyt": false
     },
     {
@@ -1102,6 +1168,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/fa0vc47y",
       "mennyt": false
     },
     {
@@ -1117,6 +1184,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/rbo6oja",
       "mennyt": false
     },
     {
@@ -1132,6 +1200,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/hqiagkxf",
       "mennyt": false
     }
   ],
@@ -1153,6 +1222,7 @@
       "pisteetVieras": 58,
       "muistiinpano": "Robert Petersen Cup. Moritz 11 p.",
       "linkkiKasin": true,
+      "striimi": "https://koristv.fi/puhu-p12/games/g/eaddm8ag",
       "mennyt": true
     },
     {
@@ -1172,6 +1242,7 @@
       "pisteetVieras": 82,
       "muistiinpano": "",
       "linkkiKasin": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/t7f4fqcu",
       "mennyt": true
     },
     {
@@ -1191,6 +1262,7 @@
       "pisteetVieras": 82,
       "muistiinpano": "",
       "linkkiKasin": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/t7f4fqcu",
       "mennyt": true
     },
     {
@@ -1210,6 +1282,7 @@
       "pisteetVieras": 90,
       "muistiinpano": "Robert Petersen Cupin ensimmäinen peli. Moritz 8p.",
       "linkkiKasin": true,
+      "striimi": "https://koristv.fi/puhu-p12/games/g/1lfq0gxh",
       "mennyt": true
     },
     {
@@ -1241,6 +1314,7 @@
       "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
       "halli": "Töölön Kisahalli, B-puoli, Paavo Nurmen Kuja 1, Helsinki",
       "linkki": "https://tulospalvelu.basket.fi/match/1009992/progress",
+      "striimi": "",
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": false,
@@ -1262,6 +1336,7 @@
       "sarja": "Harjoitusottelu",
       "halli": "",
       "linkki": "https://tulospalvelu.basket.fi/match/1006595/lineups",
+      "striimi": "",
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
@@ -1283,6 +1358,7 @@
       "sarja": "Harjoitusottelu",
       "halli": "",
       "linkki": "https://tulospalvelu.basket.fi/match/1006593/statistics",
+      "striimi": "",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
@@ -1304,6 +1380,7 @@
       "sarja": "19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä",
       "halli": "",
       "linkki": "https://tulospalvelu.basket.fi/match/1005620/lineups",
+      "striimi": "",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
@@ -1325,6 +1402,7 @@
       "sarja": "19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä",
       "halli": "",
       "linkki": "https://tulospalvelu.basket.fi/match/1005602/lineups",
+      "striimi": "",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
@@ -1346,6 +1424,7 @@
       "sarja": "19-vuotiaat pojat, SM-karsinnat Lohko A, Jyväskylä",
       "halli": "",
       "linkki": "https://tulospalvelu.basket.fi/match/1005600/lineups",
+      "striimi": "",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
@@ -1367,6 +1446,7 @@
       "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
       "halli": "Martinlaakson koulu, Martinlaaksonpolku 4, Vantaa",
       "linkki": "https://tulospalvelu.basket.fi/match/1009988/progress",
+      "striimi": "",
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": true,
