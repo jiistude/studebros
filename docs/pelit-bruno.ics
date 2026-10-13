@@ -7,7 +7,7 @@ X-WR-CALNAME:Bruno: koripallo
 X-WR-TIMEZONE:Europe/Helsinki
 BEGIN:VEVENT
 UID:2026-09-19-17:00-ToPo-LePy-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20260919T140000Z
 DTEND:20260919T160000Z
 SUMMARY:Bruno: ToPo – LePy
@@ -23,7 +23,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-20-10:00-HoNsU/JBA-ToPo-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20260920T070000Z
 DTEND:20260920T090000Z
 SUMMARY:Bruno: HoNsU/JBA – ToPo
@@ -39,7 +39,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-20-16:30-ToPo-TuNMKY-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20260920T133000Z
 DTEND:20260920T153000Z
 SUMMARY:Bruno: ToPo – TuNMKY
@@ -55,7 +55,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-26-15:15-ToPo-Karkkila-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20260926T121500Z
 DTEND:20260926T141500Z
 SUMMARY:Bruno: ToPo – Karkkila
@@ -71,14 +71,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006706-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261009T153000Z
 DTEND:20261009T173000Z
 SUMMARY:Bruno: Torpan Pojat – HBA-Märsky
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006706/statistics\nStriimi KorisTV:ssä (maksulli
- nen): https://koristv.fi/topo-m1/games/g/t7f4fqcu
+ alvelu.basket.fi/match/1006706/statistics\nStriimi: https://koristv.fi/to
+ po-m1/games/g/t7f4fqcu
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006706/statistics
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -88,15 +88,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006905-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261017T113000Z
 DTEND:20261017T133000Z
 SUMMARY:Bruno: WB-Pantterit Black – ToPo
 LOCATION:Merilahden peruskoulu_Kallvikinniementie\, Kallvikinniementie 1\,
   Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006905/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/mrvaweau
+ tulospalvelu.basket.fi/match/1006905/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/mrvaweau
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006905/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -106,14 +106,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006724-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261018T140000Z
 DTEND:20261018T160000Z
 SUMMARY:Bruno: Helsingin NMKY – Torpan Pojat
 LOCATION:Namika Areena\, Pilkekuja 10\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006724/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/hnmky-m1/games/g/ecfglmo1
+ alvelu.basket.fi/match/1006724/preview\nStriimi: https://koristv.fi/hnmky
+ -m1/games/g/ecfglmo1
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006724/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -123,14 +123,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006713-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261023T153000Z
 DTEND:20261023T173000Z
 SUMMARY:Bruno: Torpan Pojat – Raholan Pyrkivä
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006713/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/oq5sth9b
+ alvelu.basket.fi/match/1006713/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/oq5sth9b
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006713/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -140,14 +140,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006913-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261024T123000Z
 DTEND:20261024T143000Z
 SUMMARY:Bruno: ToPo – Ura Basket
 LOCATION:Töölön Kisahalli\, B-puoli\, Paavo Nurmen Kuja 1\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006913/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/9dolftua
+ tulospalvelu.basket.fi/match/1006913/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/9dolftua
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006913/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -157,14 +157,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006922-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261031T131500Z
 DTEND:20261031T151500Z
 SUMMARY:Bruno: ToPo – Salo Basketball
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006922/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/js0uahcm
+ tulospalvelu.basket.fi/match/1006922/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/js0uahcm
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006922/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -174,14 +174,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006681-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261101T140000Z
 DTEND:20261101T160000Z
 SUMMARY:Bruno: Karkkila – Torpan Pojat
 LOCATION:Karkkilan liikuntahalli\, Anttilankatu 2-4 \, Karkkila
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006681/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/karkkila-m1/games/g/lotvdw6c
+ alvelu.basket.fi/match/1006681/preview\nStriimi: https://koristv.fi/karkk
+ ila-m1/games/g/lotvdw6c
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006681/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -191,14 +191,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006714-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261106T163000Z
 DTEND:20261106T183000Z
 SUMMARY:Bruno: Torpan Pojat – Äänekosken Huima
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006714/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/dvg43amk
+ alvelu.basket.fi/match/1006714/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/dvg43amk
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006714/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -208,15 +208,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006936-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261108T100000Z
 DTEND:20261108T120000Z
 SUMMARY:Bruno: HoNsU/JBA – ToPo
 LOCATION:Gradia\, Viitaniemen ammattioppilaitos\, D-sali\, Viitaniementie 
  1\, Jyväskylä
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006936/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/v91st10t
+ tulospalvelu.basket.fi/match/1006936/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/v91st10t
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006936/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -226,14 +226,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006918-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261114T124500Z
 DTEND:20261114T144500Z
 SUMMARY:Bruno: PuHu Juniorit – ToPo
 LOCATION:Martinlaakson koulu\, Martinlaaksonpolku 9\, Vantaa
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006918/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/4wfmbqrw
+ tulospalvelu.basket.fi/match/1006918/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/4wfmbqrw
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006918/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -243,14 +243,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006659-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261115T150000Z
 DTEND:20261115T170000Z
 SUMMARY:Bruno: Pantterit – Torpan Pojat
 LOCATION:Herttoniemenr. liik.halli\, Petter Wetterin tie 5\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006659/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/pantterit-m1/games/g/xiifvnw9
+ alvelu.basket.fi/match/1006659/preview\nStriimi: https://koristv.fi/pantt
+ erit-m1/games/g/xiifvnw9
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006659/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -260,14 +260,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006708-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261120T163000Z
 DTEND:20261120T183000Z
 SUMMARY:Bruno: Torpan Pojat – Jyväskylä Basketball Academy
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006708/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/xrjd6l0o
+ alvelu.basket.fi/match/1006708/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/xrjd6l0o
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006708/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -277,14 +277,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006924-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261121T174500Z
 DTEND:20261121T194500Z
 SUMMARY:Bruno: HNMKY – ToPo
 LOCATION:Namika Areena B\, Pilkekuja 10\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006924/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/2apx0b57
+ tulospalvelu.basket.fi/match/1006924/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/2apx0b57
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006924/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -294,14 +294,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006692-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261126T163000Z
 DTEND:20261126T183000Z
 SUMMARY:Bruno: Lappeenrannan NMKY – Torpan Pojat
 LOCATION:Lappeenrannan Urheilutalo\, Pohjolankatu 29\, Lappeenranta
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006692/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/lrnmky-m1/games/g/cvqhynqd
+ alvelu.basket.fi/match/1006692/preview\nStriimi: https://koristv.fi/lrnmk
+ y-m1/games/g/cvqhynqd
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006692/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -311,14 +311,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006930-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261205T134500Z
 DTEND:20261205T154500Z
 SUMMARY:Bruno: ToPo – WB-Pantterit
 LOCATION:Pirkkolahalli\, Pirkkolan metsätie 8\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006930/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/bf96lxfk
+ tulospalvelu.basket.fi/match/1006930/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/bf96lxfk
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006930/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -328,14 +328,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006737-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261205T150000Z
 DTEND:20261205T170000Z
 SUMMARY:Bruno: Torpan Pojat – Pyrintö Akatemia
 LOCATION:Pirkkolahalli\, Pirkkolan metsätie 8\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006737/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/bwgpf8kf
+ alvelu.basket.fi/match/1006737/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/bwgpf8kf
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006737/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -345,14 +345,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006735-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261212T150000Z
 DTEND:20261212T170000Z
 SUMMARY:Bruno: ACO Basket – Torpan Pojat
 LOCATION:Ouluhalli\, Ouluhallintie 20\, Oulu
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006735/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/aco-m1/games/g/wfxcbo1k
+ alvelu.basket.fi/match/1006735/preview\nStriimi: https://koristv.fi/aco-m
+ 1/games/g/wfxcbo1k
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006735/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -362,14 +362,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006710-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20261218T163000Z
 DTEND:20261218T183000Z
 SUMMARY:Bruno: Torpan Pojat – Kobrat
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006710/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/st0ih5ez
+ alvelu.basket.fi/match/1006710/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/st0ih5ez
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006710/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -379,14 +379,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006707-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270108T163000Z
 DTEND:20270108T183000Z
 SUMMARY:Bruno: Torpan Pojat – Helsingin NMKY
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006707/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/n2hubtzs
+ alvelu.basket.fi/match/1006707/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/n2hubtzs
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006707/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -396,14 +396,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006942-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270116T104500Z
 DTEND:20270116T124500Z
 SUMMARY:Bruno: ToPo – BC Nokia
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006942/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/lskwos20
+ tulospalvelu.basket.fi/match/1006942/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/lskwos20
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006942/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -413,14 +413,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006758-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270116T150000Z
 DTEND:20270116T170000Z
 SUMMARY:Bruno: Raholan Pyrkivä – Torpan Pojat
 LOCATION:Tesoman palloiluhalli\, Tesoman valtatie 46\, Tampere
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006758/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/rapy-m1/games/g/f2m3h2we
+ alvelu.basket.fi/match/1006758/preview\nStriimi: https://koristv.fi/rapy-
+ m1/games/g/f2m3h2we
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006758/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -430,14 +430,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006709-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270122T163000Z
 DTEND:20270122T183000Z
 SUMMARY:Bruno: Torpan Pojat – Karkkila
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006709/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/ta1ofai3
+ alvelu.basket.fi/match/1006709/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/ta1ofai3
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006709/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -447,14 +447,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006948-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270124T113000Z
 DTEND:20270124T133000Z
 SUMMARY:Bruno: Tampereen Pyrintö – ToPo
 LOCATION:Pyynikin palloiluhalli\, Ammattikoulunkatu 20\, Tampere
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006948/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/qq7gh07d
+ tulospalvelu.basket.fi/match/1006948/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/qq7gh07d
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006948/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -464,14 +464,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006769-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270129T153000Z
 DTEND:20270129T173000Z
 SUMMARY:Bruno: HBA-Märsky – Torpan Pojat
 LOCATION:Urhea-halli\, Mäkelänkatu 47\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006769/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/hba-m1/games/g/yi7tl1ar
+ alvelu.basket.fi/match/1006769/preview\nStriimi: https://koristv.fi/hba-m
+ 1/games/g/yi7tl1ar
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006769/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -481,14 +481,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006993-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270130T104500Z
 DTEND:20270130T124500Z
 SUMMARY:Bruno: ToPo – Tampereen Pyrintö
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006993/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/y5mpkve7
+ tulospalvelu.basket.fi/match/1006993/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/y5mpkve7
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006993/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -498,14 +498,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006781-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270131T150000Z
 DTEND:20270131T170000Z
 SUMMARY:Bruno: Äänekosken Huima – Torpan Pojat
 LOCATION:Äänekosken liikuntatalo\, Koulumäenkatu 2\, Äänekoski
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006781/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/huima-m1/games/g/6ia8dtux
+ alvelu.basket.fi/match/1006781/preview\nStriimi: https://koristv.fi/huima
+ -m1/games/g/6ia8dtux
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006781/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -515,14 +515,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006712-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270205T163000Z
 DTEND:20270205T183000Z
 SUMMARY:Bruno: Torpan Pojat – Pantterit
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006712/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/qsf11pu3
+ alvelu.basket.fi/match/1006712/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/qsf11pu3
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006712/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -532,14 +532,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006963-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270206T104500Z
 DTEND:20270206T124500Z
 SUMMARY:Bruno: ToPo – PuHu Juniorit
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006963/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/fv80v1xu
+ tulospalvelu.basket.fi/match/1006963/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/fv80v1xu
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006963/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -549,14 +549,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006670-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270211T163000Z
 DTEND:20270211T183000Z
 SUMMARY:Bruno: Jyväskylä Basketball Academy – Torpan Pojat
 LOCATION:Jyväskylän Monitoimitalo\, Kuntoportti 3\, Jyväskylä
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006670/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/jba-m1/games/g/9836729d
+ alvelu.basket.fi/match/1006670/preview\nStriimi: https://koristv.fi/jba-m
+ 1/games/g/9836729d
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006670/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -566,14 +566,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006967-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270213T130000Z
 DTEND:20270213T150000Z
 SUMMARY:Bruno: Salo Basketball – ToPo
 LOCATION:Salon urheilutalo\, Perniöntie 7\, Salo
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006967/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/w1axam7q
+ tulospalvelu.basket.fi/match/1006967/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/w1axam7q
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006967/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -583,14 +583,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006711-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270219T163000Z
 DTEND:20270219T183000Z
 SUMMARY:Bruno: Torpan Pojat – Lappeenrannan NMKY
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006711/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/hw2xupyv
+ alvelu.basket.fi/match/1006711/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/hw2xupyv
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006711/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -600,14 +600,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006747-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270225T170000Z
 DTEND:20270225T190000Z
 SUMMARY:Bruno: Pyrintö Akatemia – Torpan Pojat
 LOCATION:Pyynikin palloiluhalli\, Ammattikoulunkatu 20\, Tampere
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006747/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/pyrinto-m1-a/games/g/iz65y5f0
+ alvelu.basket.fi/match/1006747/preview\nStriimi: https://koristv.fi/pyrin
+ to-m1-a/games/g/iz65y5f0
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006747/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -617,14 +617,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006950-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270227T104500Z
 DTEND:20270227T124500Z
 SUMMARY:Bruno: ToPo – WB-Pantterit Black
 LOCATION:Töölön Kisahalli\, B-puoli\, Paavo Nurmen Kuja 1\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006950/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/la1ko786
+ tulospalvelu.basket.fi/match/1006950/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/la1ko786
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006950/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -634,14 +634,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006705-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270305T163000Z
 DTEND:20270305T183000Z
 SUMMARY:Bruno: Torpan Pojat – ACO Basket
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006705/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/topo-m1/games/g/8ss3isq6
+ alvelu.basket.fi/match/1006705/preview\nStriimi: https://koristv.fi/topo-
+ m1/games/g/8ss3isq6
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006705/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -651,14 +651,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006958-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270313T120000Z
 DTEND:20270313T140000Z
 SUMMARY:Bruno: Ura Basket – ToPo
 LOCATION:Valkeavuoren liikuntahalli\, Veitenmäentie 29\, Kaarina
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006958/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/f3acplh6
+ tulospalvelu.basket.fi/match/1006958/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/f3acplh6
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006958/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -668,14 +668,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006703-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270314T150000Z
 DTEND:20270314T170000Z
 SUMMARY:Bruno: Kobrat – Torpan Pojat
 LOCATION:Lapuan urheilutalo\, Urheilukatu 3\, Lapua
 DESCRIPTION:Miesten I divisioona A\nOttelu tulospalvelussa: https://tulosp
- alvelu.basket.fi/match/1006703/preview\nStriimi KorisTV:ssä (maksullinen
- ): https://koristv.fi/kobrat-m1/games/g/le1n7zz8
+ alvelu.basket.fi/match/1006703/preview\nStriimi: https://koristv.fi/kobra
+ t-m1/games/g/le1n7zz8
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006703/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -685,14 +685,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006969-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270320T104500Z
 DTEND:20270320T124500Z
 SUMMARY:Bruno: ToPo – HNMKY
 LOCATION:Pirkkolahalli\, Pirkkolan metsätie 8\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006969/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/zhrlzex9
+ tulospalvelu.basket.fi/match/1006969/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/zhrlzex9
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006969/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -702,15 +702,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006975-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270403T143000Z
 DTEND:20270403T163000Z
 SUMMARY:Bruno: WB-Pantterit – ToPo
 LOCATION:Merilahden peruskoulu_Kallvikinniementie\, Kallvikinniementie 1\,
   Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006975/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/fa0vc47y
+ tulospalvelu.basket.fi/match/1006975/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/fa0vc47y
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006975/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -720,14 +720,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006981-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270410T094500Z
 DTEND:20270410T114500Z
 SUMMARY:Bruno: ToPo – HoNsU/JBA
 LOCATION:Munkkiniemen Yhteiskoulu\, Laajalahdentie 21\, Helsinki
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006981/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/rbo6oja
+ tulospalvelu.basket.fi/match/1006981/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/rbo6oja
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006981/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
@@ -737,14 +737,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:1006987-stude@stude.fi
-DTSTAMP:20261013T174100Z
+DTSTAMP:20261013T174800Z
 DTSTART:20270417T123000Z
 DTEND:20270417T143000Z
 SUMMARY:Bruno: BC Nokia – ToPo
 LOCATION:AGCO Power Arena 1\, Kankaantaankatu 4\, Nokia
 DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006987/preview\nStriimi KorisTV:ssä (maksu
- llinen): https://koristv.fi/koripallomu19sm/games/g/hqiagkxf
+ tulospalvelu.basket.fi/match/1006987/preview\nStriimi: https://koristv.fi
+ /koripallomu19sm/games/g/hqiagkxf
 URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006987/preview
 BEGIN:VALARM
 TRIGGER:-PT2H
