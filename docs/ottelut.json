@@ -1,22 +1,6 @@
 {
-  "paivitetty": "16. lokakuuta 2026 klo 10.36",
+  "paivitetty": "16. lokakuuta 2026 klo 23.15",
   "tulevat": [
-    {
-      "match_id": "1006764",
-      "alku": "2026-10-16T15:30:00.000Z",
-      "paiva": "2026-10-16",
-      "kello": "18:30",
-      "koti": "HBA-Märsky",
-      "vieras": "Kobrat",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006764/preview",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": true,
-      "striimi": "https://koristv.fi/hba-m1/games/g/gx6d18gw",
-      "mennyt": false
-    },
     {
       "match_id": "1006905",
       "alku": "2026-10-17T11:30:00.000Z",
@@ -1205,6 +1189,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006764",
+      "alku": "2026-10-16T15:30:00.000Z",
+      "paiva": "2026-10-16",
+      "kello": "18:30",
+      "koti": "HBA-Märsky",
+      "vieras": "Kobrat",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006764/statistics",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/gx6d18gw",
+      "mennyt": true
+    },
     {
       "match_id": "1012846",
       "alku": "2026-10-11T14:00:00.000Z",
