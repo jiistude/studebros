@@ -1,22 +1,6 @@
 {
-  "paivitetty": "17. lokakuuta 2026 klo 10.15",
+  "paivitetty": "17. lokakuuta 2026 klo 20.14",
   "tulevat": [
-    {
-      "match_id": "1006905",
-      "alku": "2026-10-17T11:30:00.000Z",
-      "paiva": "2026-10-17",
-      "kello": "14:30",
-      "koti": "WB-Pantterit Black",
-      "vieras": "ToPo",
-      "sarja": "19-vuotiaat pojat, SM-sarja",
-      "halli": "Merilahden peruskoulu_Kallvikinniementie, Kallvikinniementie 1, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006905/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo U19",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/koripallomu19sm/games/g/mrvaweau",
-      "mennyt": false
-    },
     {
       "match_id": "1006724",
       "alku": "2026-10-18T14:00:00.000Z",
@@ -1190,6 +1174,26 @@
   ],
   "menneet": [
     {
+      "match_id": "1006905",
+      "alku": "2026-10-17T11:30:00.000Z",
+      "paiva": "2026-10-17",
+      "kello": "14:30",
+      "koti": "WB-Pantterit Black",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Merilahden peruskoulu_Kallvikinniementie, Kallvikinniementie 1, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006905/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "pisteetKoti": 86,
+      "pisteetVieras": 66,
+      "muistiinpano": "",
+      "linkkiKasin": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/mrvaweau",
+      "mennyt": true
+    },
+    {
       "match_id": "1006764",
       "alku": "2026-10-16T15:30:00.000Z",
       "paiva": "2026-10-16",
@@ -1202,6 +1206,10 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "pisteetKoti": 81,
+      "pisteetVieras": 59,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/hba-m1/games/g/gx6d18gw",
       "mennyt": true
     },
