@@ -1,22 +1,6 @@
 {
-  "paivitetty": "18. lokakuuta 2026 klo 10.29",
+  "paivitetty": "18. lokakuuta 2026 klo 22.51",
   "tulevat": [
-    {
-      "match_id": "1006724",
-      "alku": "2026-10-18T14:00:00.000Z",
-      "paiva": "2026-10-18",
-      "kello": "17:00",
-      "koti": "Helsingin NMKY",
-      "vieras": "Torpan Pojat",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Namika Areena, Pilkekuja 10, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006724/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/hnmky-m1/games/g/ecfglmo1",
-      "mennyt": false
-    },
     {
       "match_id": "",
       "alku": "2026-10-22T18:45:00.000Z",
@@ -588,7 +572,7 @@
       "koti": "Porvoon Tarmo",
       "vieras": "Pussihukat /Punainen",
       "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
-      "halli": "Strömborgska skolan, Peippolantie 3, Porvoo",
+      "halli": "Kokonhalli, Jääkiekkotie 3, Porvoo",
       "linkki": "https://tulospalvelu.basket.fi/match/1010016/preview",
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
@@ -1173,6 +1157,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006724",
+      "alku": "2026-10-18T14:00:00.000Z",
+      "paiva": "2026-10-18",
+      "kello": "17:00",
+      "koti": "Helsingin NMKY",
+      "vieras": "Torpan Pojat",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Namika Areena, Pilkekuja 10, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006724/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/hnmky-m1/games/g/ecfglmo1",
+      "mennyt": true
+    },
     {
       "match_id": "1006905",
       "alku": "2026-10-17T11:30:00.000Z",
