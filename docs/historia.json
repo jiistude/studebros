@@ -125,20 +125,6 @@
   "joukkue": "ToPo M1A",
   "omaKotona": true
  },
- "1006761|Werner|HBA M1A": {
-  "match_id": "1006761",
-  "alku": "2026-10-23T15:30:00.000Z",
-  "paiva": "2026-10-23",
-  "kello": "18:30",
-  "koti": "HBA-Märsky",
-  "vieras": "Helsingin NMKY",
-  "sarja": "Miesten I divisioona A",
-  "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-  "linkki": "",
-  "lapsi": "Werner",
-  "joukkue": "HBA M1A",
-  "omaKotona": true
- },
  "1009995|Moritz|U15 1D": {
   "match_id": "1009995",
   "alku": "2026-10-24T09:30:00.000Z",
@@ -628,6 +614,20 @@
   "lapsi": "Werner",
   "joukkue": "HBA M1A",
   "omaKotona": false
+ },
+ "1006761|Werner|HBA M1A": {
+  "match_id": "1006761",
+  "alku": "2027-01-13T16:30:00.000Z",
+  "paiva": "2027-01-13",
+  "kello": "18:30",
+  "koti": "HBA-Märsky",
+  "vieras": "Helsingin NMKY",
+  "sarja": "Miesten I divisioona A",
+  "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
+  "linkki": "",
+  "lapsi": "Werner",
+  "joukkue": "HBA M1A",
+  "omaKotona": true
  },
  "1006942|Bruno|ToPo U19": {
   "match_id": "1006942",

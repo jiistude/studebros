@@ -1,5 +1,5 @@
 {
-  "paivitetty": "21. lokakuuta 2026 klo 11.04",
+  "paivitetty": "22. lokakuuta 2026 klo 0.01",
   "tulevat": [
     {
       "match_id": "",
@@ -33,22 +33,6 @@
       "joukkue": "ToPo M1A",
       "omaKotona": true,
       "striimi": "https://koristv.fi/topo-m1/games/g/oq5sth9b",
-      "mennyt": false
-    },
-    {
-      "match_id": "1006761",
-      "alku": "2026-10-23T15:30:00.000Z",
-      "paiva": "2026-10-23",
-      "kello": "18:30",
-      "koti": "HBA-Märsky",
-      "vieras": "Helsingin NMKY",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006761/preview",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": true,
-      "striimi": "https://koristv.fi/hba-m1/games/g/go4ds1y8",
       "mennyt": false
     },
     {
@@ -657,6 +641,21 @@
       "joukkue": "HBA M1A",
       "omaKotona": false,
       "striimi": "https://koristv.fi/kobrat-m1/games/g/mvhdny2n",
+      "mennyt": false
+    },
+    {
+      "match_id": "1006761",
+      "alku": "2027-01-13T16:30:00.000Z",
+      "paiva": "2027-01-13",
+      "kello": "18:30",
+      "koti": "HBA-Märsky",
+      "vieras": "Helsingin NMKY",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006761/preview",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": true,
       "mennyt": false
     },
     {
