@@ -232,6 +232,29 @@ pelinsä kerralla, ei vain etusivun viittä ensimmäistä.
 Linkki vain avaa sivun valmiiksi suodatettuna. Vastaanottaja näkee yhä painikkeet ja voi
 valita muutkin pojat. WhatsAppin esikatselukortti on sama kaikille linkeille.
 
+### Kävijätilasto
+
+Sivun käyttöä seurataan GoatCounterilla: <https://studebros.goatcounter.com>. Se ei käytä
+evästeitä eikä tunnista yksittäisiä kävijöitä, joten evästebanneria ei tarvita.
+
+Raportissa näkyvät sivulataukset ja sen alla tapahtumat eli klikkaukset:
+
+| Tapahtuma | Mitä laskee |
+|---|---|
+| `tulospalvelu-live`, `tulospalvelu-tilastot` | ottelun painike tulospalveluun (otsikkona pojan nimi) |
+| `striimi`, `tallenne` | *Katso striimi* / *Katso tallenne* |
+| `kartta` | hallin karttalinkki |
+| `tilaa-google`, `tilaa-iphone`, `tilaa-kopioi` | kalenterin tilauspainikkeet |
+| `tilaa-bruno`, `tilaa-werner`, `tilaa-moritz` | yhden pojan kalenterin tilaus |
+| `kopioi-viikko` | *Kopioi viikon pelit viestiksi* |
+| `suodatin-…`, `nakyma-…` | pojan valinta ja Tulevat/Pelatut-painikkeet |
+
+Jakolinkillä avatut sivut näkyvät omina riveinään, esimerkiksi `/#bruno`.
+
+**Rajoite:** kalenterin tilanneiden sovellukset hakevat `pelit.ics`-tiedostoa suoraan, eikä
+tilasto näe sitä. Tilastosta näkee, montako kertaa tilauspainiketta on painettu, mutta ei,
+montako tilausta on yhä käytössä.
+
 ## Ottelun seuraaminen livenä
 
 Jokaisen ottelun kohdalla on painike, joka vie ottelun omalle sivulle tulospalvelussa.
@@ -299,6 +322,7 @@ ajon loki huomauttaa siitä. WhatsApp-esikatseluun teksti menee ilman merkintöj
 | `etusivun_pelatut` | Montako pelattua näytetään heti, loput painikkeen takana. `0` = kaikki |
 | `ottelun_kesto_min` | Kuinka pitkän ajan ottelu varaa kalenterista, minuutteina (oletus 120) |
 | `poissa_toiminta` | `himmenna` (oletus) tai `piilota` |
+| `goatcounter` | Kävijätilaston laskentaosoite. Poista rivi, jos tilastointi halutaan lopettaa |
 | `ottelun_osoite_tuleva` | Tulevan ottelun linkki tulospalveluun. `{id}` korvautuu ottelunumerolla |
 | `ottelun_osoite_pelattu` | Pelatun ottelun linkki tulospalveluun, samalla tavalla |
 | `jakokuva` | Kuvatiedoston nimi kansiossa `docs`, joka näkyy jakokortissa (nyt `jakokuva.png`) |
