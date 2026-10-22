@@ -211,6 +211,27 @@ Sivun **alalaidassa** on huomaamaton painike **Kopioi viikon pelit viestiksi**, 
 seuraavan seitsemän päivän pelit valmiiksi tekstiksi leikepöydälle. Painike näkyy vain jos
 pelejä on tulossa, ja se on tarkoitettu sinun omaan käyttöösi.
 
+### Linkki yhden pojan peleihin
+
+Osoitteen loppuun voi lisätä pojan nimen ja näkymän. Sivu avautuu silloin suoraan valmiiksi
+suodatettuna:
+
+| Osoite | Avautuu |
+|---|---|
+| <https://basket.stude.fi/#bruno> | Brunon tulevat pelit |
+| <https://basket.stude.fi/#bruno-pelatut> | Brunon pelatut pelit |
+| <https://basket.stude.fi/#pelatut> | kaikkien pelatut pelit |
+
+Sama toimii nimillä `werner` ja `moritz`. Isoilla ja pienillä kirjaimilla ei ole väliä, eikä
+osien järjestyksellä (`#pelatut-bruno` käy yhtä hyvin).
+
+Helpoin tapa saada linkki on valita sivulla poika ja näkymä painikkeista: osoiterivi päivittyy
+itsestään, ja sen voi kopioida sellaisenaan. Kun poika on valittuna, sivu näyttää kaikki hänen
+pelinsä kerralla, ei vain etusivun viittä ensimmäistä.
+
+Linkki vain avaa sivun valmiiksi suodatettuna. Vastaanottaja näkee yhä painikkeet ja voi
+valita muutkin pojat. WhatsAppin esikatselukortti on sama kaikille linkeille.
+
 ## Ottelun seuraaminen livenä
 
 Jokaisen ottelun kohdalla on painike, joka vie ottelun omalle sivulle tulospalvelussa.
