@@ -1,5 +1,5 @@
 {
-  "paivitetty": "22. lokakuuta 2026 klo 23.46",
+  "paivitetty": "22. lokakuuta 2026 klo 23.50",
   "tulevat": [
     {
       "match_id": "1006713",
@@ -1166,13 +1166,17 @@
       "vieras": "Pallacanestro Forlì",
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
-      "linkki": "https://civiscup.hu/event/5067/",
+      "linkki": "https://civiscup.hu/event/5073/",
       "striimi": "https://www.youtube.com/watch?v=Dez4fXX2qvU",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 97,
+      "pisteetVieras": 56,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "mennyt": true
     },
     {
