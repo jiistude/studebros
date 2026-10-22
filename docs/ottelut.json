@@ -1,5 +1,5 @@
 {
-  "paivitetty": "22. lokakuuta 2026 klo 15.02",
+  "paivitetty": "22. lokakuuta 2026 klo 15.06",
   "tulevat": [
     {
       "match_id": "",
@@ -67,6 +67,24 @@
       "joukkue": "U15 1D",
       "omaKotona": true,
       "striimi": "https://koristv.fi/puhu-p12/games/g/2zca1nka",
+      "mennyt": false
+    },
+    {
+      "match_id": "",
+      "alku": "2026-10-24T11:30:00.000Z",
+      "paiva": "2026-10-24",
+      "kello": "14:30",
+      "koti": "Puhu White",
+      "vieras": "LePy",
+      "sarja": "16-vuotiaat pojat I divisioona Eteläinen alue",
+      "halli": "Kartanonkosken koulu, Tilkuntie 5, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1009812/preview",
+      "striimi": "",
+      "lapsi": "Moritz",
+      "joukkue": "U16 1D",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
       "mennyt": false
     },
     {
