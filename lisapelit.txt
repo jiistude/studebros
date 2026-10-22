@@ -132,3 +132,13 @@ oma: HBA-Märsky
 sarja: Civis Cup sijoitusottelu. Aika ja vastustaja ratkeaa 24.10.
 paikka: Debrecen, Unkari
 linkki: https://civiscup.hu/games/
+
+lapsi: Moritz
+joukkue: U16 1D
+alkaa: 2026-10-24 14:30
+koti: Puhu White
+vieras: LePy
+oma: Puhu White
+sarja: 16-vuotiaat pojat I divisioona Eteläinen alue
+paikka: Kartanonkosken koulu, Tilkuntie 5, Vantaa
+linkki: https://tulospalvelu.basket.fi/match/1009812/preview
