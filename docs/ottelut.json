@@ -1,5 +1,5 @@
 {
-  "paivitetty": "22. lokakuuta 2026 klo 15.08",
+  "paivitetty": "22. lokakuuta 2026 klo 15.13",
   "tulevat": [
     {
       "match_id": "",
@@ -11,7 +11,7 @@
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/event/5067/",
-      "striimi": "",
+      "striimi": "https://www.youtube.com/watch?v=Dez4fXX2qvU",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
@@ -45,7 +45,7 @@
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/event/5084/",
-      "striimi": "",
+      "striimi": "https://www.youtube.com/watch?v=9c_Up8CFbc0",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": false,
@@ -113,7 +113,7 @@
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
       "linkki": "https://civiscup.hu/event/5098/",
-      "striimi": "",
+      "striimi": "https://www.youtube.com/watch?v=eZkW-qrLudw",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
