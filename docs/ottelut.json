@@ -1,24 +1,6 @@
 {
-  "paivitetty": "22. lokakuuta 2026 klo 15.25",
+  "paivitetty": "22. lokakuuta 2026 klo 23.46",
   "tulevat": [
-    {
-      "match_id": "",
-      "alku": "2026-10-22T18:45:00.000Z",
-      "paiva": "2026-10-22",
-      "kello": "21:45",
-      "koti": "HBA-Märsky",
-      "vieras": "Pallacanestro Forlì",
-      "sarja": "Civis Cup",
-      "halli": "Debrecen, Unkari",
-      "linkki": "https://civiscup.hu/event/5067/",
-      "striimi": "https://www.youtube.com/watch?v=Dez4fXX2qvU",
-      "lapsi": "Werner",
-      "joukkue": "HBA U19",
-      "omaKotona": true,
-      "kesto": null,
-      "kasin": true,
-      "mennyt": false
-    },
     {
       "match_id": "1006713",
       "alku": "2026-10-23T15:30:00.000Z",
@@ -66,6 +48,7 @@
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": true,
+      "poissa": true,
       "striimi": "https://koristv.fi/puhu-p12/games/g/2zca1nka",
       "mennyt": false
     },
@@ -1174,6 +1157,24 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "",
+      "alku": "2026-10-22T18:45:00.000Z",
+      "paiva": "2026-10-22",
+      "kello": "21:45",
+      "koti": "HBA-Märsky",
+      "vieras": "Pallacanestro Forlì",
+      "sarja": "Civis Cup",
+      "halli": "Debrecen, Unkari",
+      "linkki": "https://civiscup.hu/event/5067/",
+      "striimi": "https://www.youtube.com/watch?v=Dez4fXX2qvU",
+      "lapsi": "Werner",
+      "joukkue": "HBA U19",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
+      "mennyt": true
+    },
     {
       "match_id": "1006724",
       "alku": "2026-10-18T14:00:00.000Z",
