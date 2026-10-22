@@ -17,4 +17,4 @@
 # Jos kirjoitat rivin väärin tai peliä ei löydy, ajon loki kertoo siitä eikä
 # mikään mene rikki.
 
-2026-10-24 15:30 Moritz
+2026-10-24 14:30 Moritz
