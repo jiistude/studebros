@@ -1,5 +1,5 @@
 {
-  "paivitetty": "22. lokakuuta 2026 klo 11.02",
+  "paivitetty": "22. lokakuuta 2026 klo 14.57",
   "tulevat": [
     {
       "match_id": "",
@@ -1165,10 +1165,14 @@
       "vieras": "Torpan Pojat",
       "sarja": "Miesten I divisioona A",
       "halli": "Namika Areena, Pilkekuja 10, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006724/statistics",
+      "linkki": "https://basket.fi/sarjat/tilastopalvelu/?gs_game=sr%3Agame%3Aa3fc1476-a1ef-11f1-b963-c56cb465d621&gs_tab=overview&gs_game_details_tab=box-score",
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": false,
+      "pisteetKoti": 76,
+      "pisteetVieras": 96,
+      "muistiinpano": "Bruno 18 min, 9p.",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/hnmky-m1/games/g/ecfglmo1",
       "mennyt": true
     },
