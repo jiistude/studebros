@@ -605,7 +605,7 @@ ${teemaCss(asetukset.teema)}
     <h2>Tulevat ottelut</h2>
     <div class="suodattimet">
       <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
-      ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n      ")}
+      ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" data-tunniste="${esc(tunnisteeksi(l.nimi))}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n      ")}
     </div>
     ${tulevat.length ? ryhmittele(lahella) : `<p class="tyhja">Tulevia otteluita ei ole tällä hetkellä tiedossa.</p>`}
     ${loput.length ? `<div id="loput" hidden>${ryhmittele(loput)}</div>
@@ -616,7 +616,7 @@ ${teemaCss(asetukset.teema)}
     <h2>Pelatut ottelut</h2>
     <div class="suodattimet">
       <button type="button" data-lapsi="kaikki" aria-pressed="true">Kaikki</button>
-      ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n      ")}
+      ${asetukset.lapset.map((l) => `<button type="button" data-lapsi="${esc(l.nimi)}" data-tunniste="${esc(tunnisteeksi(l.nimi))}" aria-pressed="false" style="--vaalea:${l.vari};--tumma:${l.vari_tumma || l.vari}">${esc(l.nimi)}</button>`).join("\n      ")}
     </div>
     ${menneet.length ? ryhmittele(viimeisimmat) : `<p class="tyhja">Pelattuja otteluita ei vielä ole.</p>`}
     ${vanhemmat.length ? `<div id="vanhat" hidden>${ryhmittele(vanhemmat)}</div>
@@ -731,40 +731,77 @@ ${teemaCss(asetukset.teema)}
     });
   });
 
+  // Valittu näkymä ja poika näkyvät osoitteen lopussa, jotta linkin voi jakaa:
+  //   #pelatut          pelatut ottelut
+  //   #bruno            Brunon tulevat ottelut
+  //   #bruno-pelatut    Brunon pelatut ottelut (osien järjestyksellä ei ole väliä)
+  var tila = { nakyma: 'tulevat', lapsi: 'kaikki' };
+
+  function paivitaOsoite() {
+    var osat = [];
+    if (tila.lapsi !== 'kaikki') {
+      var n = document.querySelector('.suodattimet button[data-lapsi="' + tila.lapsi + '"]');
+      if (n && n.dataset.tunniste) osat.push(n.dataset.tunniste);
+    }
+    if (tila.nakyma === 'pelatut' || !osat.length) osat.push(tila.nakyma);
+    var uusi = '#' + osat.join('-');
+    if (location.hash !== uusi) history.replaceState(null, '', uusi);
+  }
+
   // Suodatinnapit ovat molempien listojen otsikon alla. Valinta koskee koko
   // sivua, joten molempien rivien napit pidetään samassa tilassa.
   var napit = document.querySelectorAll('.suodattimet button');
+  function valitseLapsi(valinta) {
+    tila.lapsi = valinta;
+    napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n.dataset.lapsi === valinta)); });
+    document.querySelectorAll('.ottelu').forEach(function (kortti) {
+      if (kortti.dataset.ohi) return; // jo pelattu, pysyy piilossa
+      kortti.style.display = (valinta === 'kaikki' || kortti.dataset.lapsi === valinta) ? '' : 'none';
+    });
+    // Etusivun rajaus (esim. 5 peliä) koskee kaikkia poikia yhteensä. Yhden pojan
+    // näkymässä avataan koko lista, ettei osa hänen peleistään jää painikkeen taakse.
+    if (valinta !== 'kaikki') {
+      [['naytaKaikki', 'loput'], ['naytaVanhat', 'vanhat']].forEach(function (pari) {
+        var nappi = document.getElementById(pari[0]);
+        var osio = document.getElementById(pari[1]);
+        if (osio) osio.hidden = false;
+        if (nappi) nappi.hidden = true;
+      });
+    }
+    paivitaPaivat();
+  }
   napit.forEach(function (nappi) {
     nappi.addEventListener('click', function () {
-      var valinta = nappi.dataset.lapsi;
-      napit.forEach(function (n) { n.setAttribute('aria-pressed', String(n.dataset.lapsi === valinta)); });
-      document.querySelectorAll('.ottelu').forEach(function (kortti) {
-        if (kortti.dataset.ohi) return; // jo pelattu, pysyy piilossa
-        kortti.style.display = (valinta === 'kaikki' || kortti.dataset.lapsi === valinta) ? '' : 'none';
-      });
-      paivitaPaivat();
+      valitseLapsi(nappi.dataset.lapsi);
+      paivitaOsoite();
     });
   });
 
   // Sivulla näkyy kerrallaan vain toinen lista: tulevat tai pelatut.
-  (function nakymanVaihto() {
-    var napit = document.querySelectorAll('#nakymat button');
-    var osiot = { tulevat: document.getElementById('osio-tulevat'), pelatut: document.getElementById('osio-pelatut') };
-    napit.forEach(function (nappi) {
-      nappi.addEventListener('click', function () {
-        var valinta = nappi.dataset.nakyma;
-        napit.forEach(function (n) { n.setAttribute('aria-selected', String(n === nappi)); });
-        Object.keys(osiot).forEach(function (k) {
-          if (osiot[k]) osiot[k].hidden = k !== valinta;
-        });
-        if (location.hash !== '#' + valinta) history.replaceState(null, '', '#' + valinta);
-      });
+  var nakymaNapit = document.querySelectorAll('#nakymat button');
+  var osiot = { tulevat: document.getElementById('osio-tulevat'), pelatut: document.getElementById('osio-pelatut') };
+  function valitseNakyma(valinta) {
+    tila.nakyma = valinta;
+    nakymaNapit.forEach(function (n) { n.setAttribute('aria-selected', String(n.dataset.nakyma === valinta)); });
+    Object.keys(osiot).forEach(function (k) {
+      if (osiot[k]) osiot[k].hidden = k !== valinta;
     });
-    // Osoitteen loppu #pelatut avaa suoraan pelatut ottelut.
-    if (location.hash === '#pelatut') {
-      var pelatutNappi = document.querySelector('#nakymat button[data-nakyma="pelatut"]');
-      if (pelatutNappi) pelatutNappi.click();
-    }
+  }
+  nakymaNapit.forEach(function (nappi) {
+    nappi.addEventListener('click', function () {
+      valitseNakyma(nappi.dataset.nakyma);
+      paivitaOsoite();
+    });
+  });
+
+  // Osoitteen loppu luetaan sivun avautuessa: #pelatut, #bruno, #bruno-pelatut jne.
+  (function lueOsoite() {
+    var osat = decodeURIComponent(location.hash.slice(1)).toLowerCase().split(/[-\/&,+ ]+/);
+    osat.forEach(function (osa) {
+      if (osa === 'pelatut' || osa === 'tulevat') { valitseNakyma(osa); return; }
+      var n = document.querySelector('.suodattimet button[data-tunniste="' + osa.replace(/[^a-z0-9]/g, '') + '"]');
+      if (n) valitseLapsi(n.dataset.lapsi);
+    });
   })();
 </script>
 </body>
