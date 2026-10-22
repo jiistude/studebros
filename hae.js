@@ -408,20 +408,27 @@ function voittiko(o) {
   return o.omaKotona ? kotiVoitti : !kotiVoitti;
 }
 
+// GoatCounter-klikkauslaskuri: palauttaa attribuutit vain kun laskuri on käytössä.
+// count.js laskee data-goatcounter-click -merkityt klikkaukset itsestään.
+function gc(tapahtuma, otsikko) {
+  if (!asetukset.goatcounter) return "";
+  return ` data-goatcounter-click="${esc(tapahtuma)}"${otsikko ? ` data-goatcounter-title="${esc(otsikko)}"` : ""}`;
+}
+
 function ottelukortti(o, varit) {
   const v = varit[o.lapsi] || { vaalea: "#444", tumma: "#bbb" };
 
   const kartta = o.halli
-    ? `<a class="halli" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.halli)}">${esc(o.halli)}</a>`
+    ? `<a class="halli" target="_blank" rel="noopener"${gc("kartta", o.lapsi)} href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.halli)}">${esc(o.halli)}</a>`
     : "";
 
   const seuraa = o.linkki
-    ? `<a class="seuraa" target="_blank" rel="noopener" href="${esc(o.linkki)}">${
+    ? `<a class="seuraa" target="_blank" rel="noopener"${gc(o.mennyt ? "tulospalvelu-tilastot" : "tulospalvelu-live", o.lapsi)} href="${esc(o.linkki)}">${
         o.mennyt ? "Ottelutilastot" : "Seuraa peliä livenä"
       } <span aria-hidden="true">&rarr;</span></a>`
     : "";
   const striimi = o.striimi
-    ? `<a class="seuraa striimi" target="_blank" rel="noopener" href="${esc(o.striimi)}">${
+    ? `<a class="seuraa striimi" target="_blank" rel="noopener"${gc(o.mennyt ? "tallenne" : "striimi", o.lapsi)} href="${esc(o.striimi)}">${
         o.mennyt ? "Katso tallenne" : "Katso striimi"
       } <span aria-hidden="true">&rarr;</span></a>`
     : "";
@@ -527,16 +534,16 @@ function rakennaHtml({ tulevat, menneet, puuttuvat, paivitetty }) {
     ? `<details class="tilaus" id="tilaus">
       <summary>Tilaa pelit omaan kalenteriin</summary>
       <div class="tilausNapit">
-        <a class="kalenteri" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?cid=${esc(icsWebcal)}">Google-kalenteri</a>
-        <a class="kalenteri toissijainen" href="${esc(icsWebcal)}">iPhone tai Mac</a>
-        <button type="button" class="kalenteri toissijainen" id="kopioi" data-osoite="${esc(icsHttps)}">Kopioi osoite</button>
+        <a class="kalenteri" target="_blank" rel="noopener"${gc("tilaa-google")} href="https://calendar.google.com/calendar/render?cid=${esc(icsWebcal)}">Google-kalenteri</a>
+        <a class="kalenteri toissijainen"${gc("tilaa-iphone")} href="${esc(icsWebcal)}">iPhone tai Mac</a>
+        <button type="button" class="kalenteri toissijainen" id="kopioi"${gc("tilaa-kopioi")} data-osoite="${esc(icsHttps)}">Kopioi osoite</button>
       </div>
       <p class="tilausSelite">Tilattu kalenteri päivittyy itsestään, myös silloin kun otteluaikoja siirretään. Osoite on <span class="osoite">${esc(icsHttps)}</span>.</p>
       <p class="tilausSelite">Vain yhden pojan pelit:${asetukset.lapset.map((l) =>
-        ` <a href="${esc(icsWebcal.replace("pelit.ics", `pelit-${tunnisteeksi(l.nimi)}.ics`))}">${esc(l.nimi)}</a>`
+        ` <a${gc(`tilaa-${tunnisteeksi(l.nimi)}`)} href="${esc(icsWebcal.replace("pelit.ics", `pelit-${tunnisteeksi(l.nimi)}.ics`))}">${esc(l.nimi)}</a>`
       ).join(" &middot;")}</p>
     </details>`
-    : `<a class="kalenteri" href="pelit.ics">Lataa pelit kalenteriin</a>`;
+    : `<a class="kalenteri"${gc("lataa-ics")} href="pelit.ics">Lataa pelit kalenteriin</a>`;
 
   // Etusivulla näytetään vain seuraavat ottelut, loput painikkeen takana.
   const montaTulevaa = asetukset.etusivun_tulevat ?? 10;
@@ -626,7 +633,7 @@ ${teemaCss(asetukset.teema)}
   ${tilausHtml}
 
   <footer>
-    <p><button type="button" class="viikko" id="kopioiViikko" hidden>Kopioi viikon pelit viestiksi</button></p>
+    <p><button type="button" class="viikko" id="kopioiViikko"${gc("kopioi-viikko")} hidden>Kopioi viikon pelit viestiksi</button></p>
     <p>Päivitetty ${esc(paivitetty)}. Lähde: <a href="https://tulospalvelu.basket.fi/" target="_blank" rel="noopener">Koripalloliiton tulospalvelu</a>.</p>
   </footer>
 </div>
@@ -737,6 +744,13 @@ ${teemaCss(asetukset.teema)}
   //   #bruno-pelatut    Brunon pelatut ottelut (osien järjestyksellä ei ole väliä)
   var tila = { nakyma: 'tulevat', lapsi: 'kaikki' };
 
+  // Kävijätilasto (GoatCounter): painikkeiden käyttö tapahtumina. Ei evästeitä.
+  function laske(tapahtuma) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: tapahtuma, event: true });
+    }
+  }
+
   function paivitaOsoite() {
     var osat = [];
     if (tila.lapsi !== 'kaikki') {
@@ -774,6 +788,7 @@ ${teemaCss(asetukset.teema)}
     nappi.addEventListener('click', function () {
       valitseLapsi(nappi.dataset.lapsi);
       paivitaOsoite();
+      laske('suodatin-' + (nappi.dataset.tunniste || 'kaikki'));
     });
   });
 
@@ -791,6 +806,7 @@ ${teemaCss(asetukset.teema)}
     nappi.addEventListener('click', function () {
       valitseNakyma(nappi.dataset.nakyma);
       paivitaOsoite();
+      laske('nakyma-' + nappi.dataset.nakyma);
     });
   });
 
@@ -804,7 +820,8 @@ ${teemaCss(asetukset.teema)}
     });
   })();
 </script>
-</body>
+${asetukset.goatcounter ? `<script data-goatcounter="${esc(asetukset.goatcounter)}" data-goatcounter-settings='{"allow_frag": true}' async src="https://gc.zgo.at/count.js"></script>
+` : ""}</body>
 </html>
 `;
 }
