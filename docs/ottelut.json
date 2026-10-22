@@ -1,5 +1,5 @@
 {
-  "paivitetty": "22. lokakuuta 2026 klo 23.58",
+  "paivitetty": "23. lokakuuta 2026 klo 0.02",
   "tulevat": [
     {
       "match_id": "1006713",
@@ -503,18 +503,17 @@
     },
     {
       "match_id": "1006737",
-      "alku": "2026-12-05T15:00:00.000Z",
+      "alku": "2026-12-05T16:00:00.000Z",
       "paiva": "2026-12-05",
-      "kello": "17:00",
+      "kello": "18:00",
       "koti": "Torpan Pojat",
       "vieras": "Pyrintö Akatemia",
       "sarja": "Miesten I divisioona A",
-      "halli": "Pirkkolahalli, Pirkkolan metsätie 8, Helsinki",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
       "linkki": "https://tulospalvelu.basket.fi/match/1006737/preview",
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
-      "striimi": "https://koristv.fi/topo-m1/games/g/bwgpf8kf",
       "mennyt": false
     },
     {
