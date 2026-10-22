@@ -102,6 +102,7 @@ oma: HBA-Märsky
 sarja: Civis Cup
 paikka: Debrecen, Unkari
 linkki: https://civiscup.hu/event/5067/
+striimi: https://www.youtube.com/watch?v=Dez4fXX2qvU
 
 lapsi: Werner
 joukkue: HBA U19
@@ -112,6 +113,7 @@ oma: HBA-Märsky
 sarja: Civis Cup
 paikka: Debrecen, Unkari
 linkki: https://civiscup.hu/event/5084/
+striimi: https://www.youtube.com/watch?v=9c_Up8CFbc0
 
 lapsi: Werner
 joukkue: HBA U19
@@ -122,6 +124,7 @@ oma: HBA-Märsky
 sarja: Civis Cup
 paikka: Debrecen, Unkari
 linkki: https://civiscup.hu/event/5098/
+striimi: https://www.youtube.com/watch?v=eZkW-qrLudw
 
 lapsi: Werner
 joukkue: HBA U19
