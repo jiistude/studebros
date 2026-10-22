@@ -55,3 +55,6 @@
 2026-09-26 10:00 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu. Werner 13p.
 2026-10-02 71-83 https://tulospalvelu.basket.fi/match/1006592/statistics | Werner 25min 7pts/4ast
 2026-10-16 18:30 81-59 Werner https://tulospalvelu.basket.fi/match/1006764/statistics
+
+# --- Werner, HBA U19 ---
+2026-10-22 21:45 97-56 https://civiscup.hu/event/5073/
