@@ -50,7 +50,7 @@
 2026-09-26 15:15 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
 2026-10-09 74-82 https://tulospalvelu.basket.fi/match/1006706/statistics
 2026-10-18 76-96 https://tulospalvelu.basket.fi/match/1006724/statistics | Bruno 18 min, 9p.
-2026-10-23 90-92 https://basket.fi/sarjat/tilastopalvelu/?gs_game=sr%3Agame%3Aabc5212a-a1ef-11f1-908f-95671fc1d6d2&gs_tab=overview&gs_game_details_tab=box-score 
+2026-10-23 90-92 Bruno https://basket.fi/sarjat/tilastopalvelu/?gs_game=sr%3Agame%3Aabc5212a-a1ef-11f1-908f-95671fc1d6d2&gs_tab=overview&gs_game_details_tab=box-score 
 
 # --- Werner, HBA M1A ---
 2026-09-26 10:00 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu. Werner 13p.
