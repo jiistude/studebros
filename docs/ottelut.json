@@ -1,5 +1,5 @@
 {
-  "paivitetty": "23. lokakuuta 2026 klo 22.11",
+  "paivitetty": "23. lokakuuta 2026 klo 23.30",
   "tulevat": [
     {
       "match_id": "1009995",
@@ -1137,6 +1137,10 @@
       "omaKotona": false,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 83,
+      "pisteetVieras": 85,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "mennyt": true
     },
     {
