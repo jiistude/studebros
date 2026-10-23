@@ -1,5 +1,5 @@
 {
-  "paivitetty": "23. lokakuuta 2026 klo 22.00",
+  "paivitetty": "23. lokakuuta 2026 klo 22.11",
   "tulevat": [
     {
       "match_id": "1009995",
@@ -1130,17 +1130,13 @@
       "vieras": "HBA-Märsky",
       "sarja": "Civis Cup",
       "halli": "Debrecen, Unkari",
-      "linkki": "https://basket.fi/sarjat/tilastopalvelu/?gs_game=sr%3Agame%3Aabc5212a-a1ef-11f1-908f-95671fc1d6d2&gs_tab=overview&gs_game_details_tab=box-score",
+      "linkki": "https://civiscup.hu/event/5084/",
       "striimi": "https://www.youtube.com/watch?v=9c_Up8CFbc0",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": false,
       "kesto": null,
       "kasin": true,
-      "pisteetKoti": 90,
-      "pisteetVieras": 92,
-      "muistiinpano": "",
-      "linkkiKasin": true,
       "mennyt": true
     },
     {
