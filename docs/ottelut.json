@@ -1,24 +1,6 @@
 {
-  "paivitetty": "24. lokakuuta 2026 klo 17.33",
+  "paivitetty": "24. lokakuuta 2026 klo 22.58",
   "tulevat": [
-    {
-      "match_id": "",
-      "alku": "2026-10-24T15:15:00.000Z",
-      "paiva": "2026-10-24",
-      "kello": "18:15",
-      "koti": "HBA-Märsky",
-      "vieras": "Basket Brno",
-      "sarja": "Civis Cup",
-      "halli": "Debrecen, Unkari",
-      "linkki": "https://civiscup.hu/event/5098/",
-      "striimi": "https://www.youtube.com/watch?v=eZkW-qrLudw",
-      "lapsi": "Werner",
-      "joukkue": "HBA U19",
-      "omaKotona": true,
-      "kesto": null,
-      "kasin": true,
-      "mennyt": false
-    },
     {
       "match_id": "",
       "alku": "2026-10-25T10:00:00.000Z",
@@ -1070,6 +1052,24 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "",
+      "alku": "2026-10-24T15:15:00.000Z",
+      "paiva": "2026-10-24",
+      "kello": "18:15",
+      "koti": "HBA-Märsky",
+      "vieras": "Basket Brno",
+      "sarja": "Civis Cup",
+      "halli": "Debrecen, Unkari",
+      "linkki": "https://civiscup.hu/event/5098/",
+      "striimi": "https://www.youtube.com/watch?v=eZkW-qrLudw",
+      "lapsi": "Werner",
+      "joukkue": "HBA U19",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
+      "mennyt": true
+    },
     {
       "match_id": "1006913",
       "alku": "2026-10-24T12:30:00.000Z",
