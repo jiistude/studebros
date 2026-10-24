@@ -34,6 +34,7 @@
 # --- Moritz, U15 1D ---
 2026-09-13 78-66 https://tulospalvelu.basket.fi/match/1009988/progress | Kauden avaus. Moritz 8p.
 2026-09-30 54-99 https://tulospalvelu.basket.fi/match/1009992/progress | Aluedivaria RPC ryhmällä. Moritz 17p.
+2026-10-24 14:30 52-126
 
 # --- Moritz, RPC ---
 2026-10-04 71-90 https://tulospalvelu.basket.fi/match/1012843/progress | Robert Petersen Cupin ensimmäinen peli. Moritz 8p.
@@ -45,6 +46,7 @@
 2026-09-20 10:00 82-65 https://tulospalvelu.basket.fi/match/1005602/lineups | MU19 SM-karsintaa.
 2026-09-20 16:30 94-79 https://tulospalvelu.basket.fi/match/1005620/lineups | MU19 SM-karsintaa. Voitolla sarjapaikka MU19 SM-sarjaan kaudelle 2026-2027.
 2026-10-17 14:30 86-66 Bruno https://tulospalvelu.basket.fi/match/1006905/statistics
+2026-10-24 15:30 71-54
 
 # --- Bruno, ToPo M1A ---
 2026-09-26 15:15 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
