@@ -39,6 +39,7 @@
 # --- Moritz, RPC ---
 2026-10-04 71-90 https://tulospalvelu.basket.fi/match/1012843/progress | Robert Petersen Cupin ensimmäinen peli. Moritz 8p.
 2026-10-11 85-58 https://tulospalvelu.basket.fi/match/1012846/progress | Robert Petersen Cup. Moritz 11 p.
+2026-10-25 74-66 Moritz
 
 
 # --- Bruno, ToPo U19 ---
