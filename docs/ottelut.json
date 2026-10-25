@@ -1,22 +1,6 @@
 {
-  "paivitetty": "25. lokakuuta 2026 klo 13.34",
+  "paivitetty": "25. lokakuuta 2026 klo 18.29",
   "tulevat": [
-    {
-      "match_id": "1012867",
-      "alku": "2026-10-25T12:45:00.000Z",
-      "paiva": "2026-10-25",
-      "kello": "14:45",
-      "koti": "Pussihukat /Punainen",
-      "vieras": "Pälkäneen Luja-Lukko",
-      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
-      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012867/preview",
-      "lapsi": "Moritz",
-      "joukkue": "RPC",
-      "omaKotona": true,
-      "striimi": "https://koristv.fi/puhu-p12/games/g/iqx97fnt",
-      "mennyt": false
-    },
     {
       "match_id": "",
       "alku": "2026-10-25T14:45:00.000Z",
@@ -1052,6 +1036,25 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1012867",
+      "alku": "2026-10-25T12:45:00.000Z",
+      "paiva": "2026-10-25",
+      "kello": "14:45",
+      "koti": "Pussihukat /Punainen",
+      "vieras": "Pälkäneen Luja-Lukko",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012867/statistics",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": true,
+      "pisteetKoti": 74,
+      "pisteetVieras": 66,
+      "muistiinpano": "",
+      "striimi": "https://koristv.fi/puhu-p12/games/g/iqx97fnt",
+      "mennyt": true
+    },
     {
       "match_id": "",
       "alku": "2026-10-24T15:15:00.000Z",
