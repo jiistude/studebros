@@ -128,13 +128,13 @@ striimi: https://www.youtube.com/watch?v=eZkW-qrLudw
 
 lapsi: Werner
 joukkue: HBA U19
-alkaa: 2026-10-25 12:00
+alkaa: 2026-10-25 15:45
 koti: HBA-Märsky
-vieras: tbd
+vieras: Orange1 Academy
 oma: HBA-Märsky
-sarja: Civis Cup sijoitusottelu. Aika ja vastustaja ratkeaa 24.10.
+sarja: Civis Cup finaali
 paikka: Debrecen, Unkari
-linkki: https://civiscup.hu/games/
+linkki: https://civiscup.hu/event/final-2/
 
 lapsi: Moritz
 joukkue: U16 1D
