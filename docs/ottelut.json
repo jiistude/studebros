@@ -1,24 +1,6 @@
 {
-  "paivitetty": "25. lokakuuta 2026 klo 18.29",
+  "paivitetty": "25. lokakuuta 2026 klo 22.08",
   "tulevat": [
-    {
-      "match_id": "",
-      "alku": "2026-10-25T14:45:00.000Z",
-      "paiva": "2026-10-25",
-      "kello": "16:45",
-      "koti": "HBA-Märsky",
-      "vieras": "Orange1 Academy",
-      "sarja": "Civis Cup finaali",
-      "halli": "Debrecen, Unkari",
-      "linkki": "https://civiscup.hu/event/final-2/",
-      "striimi": "https://www.youtube.com/live/dSZR4ToDTuk?si=2hkFPHLqG3ksTNii",
-      "lapsi": "Werner",
-      "joukkue": "HBA U19",
-      "omaKotona": true,
-      "kesto": null,
-      "kasin": true,
-      "mennyt": false
-    },
     {
       "match_id": "1009997",
       "alku": "2026-10-31T10:30:00.000Z",
@@ -1036,6 +1018,24 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "",
+      "alku": "2026-10-25T14:45:00.000Z",
+      "paiva": "2026-10-25",
+      "kello": "16:45",
+      "koti": "HBA-Märsky",
+      "vieras": "Orange1 Academy",
+      "sarja": "Civis Cup finaali",
+      "halli": "Debrecen, Unkari",
+      "linkki": "https://civiscup.hu/event/final-2/",
+      "striimi": "https://www.youtube.com/live/dSZR4ToDTuk?si=2hkFPHLqG3ksTNii",
+      "lapsi": "Werner",
+      "joukkue": "HBA U19",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
+      "mennyt": true
+    },
     {
       "match_id": "1012867",
       "alku": "2026-10-25T12:45:00.000Z",
