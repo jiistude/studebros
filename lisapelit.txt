@@ -128,7 +128,7 @@ striimi: https://www.youtube.com/watch?v=eZkW-qrLudw
 
 lapsi: Werner
 joukkue: HBA U19
-alkaa: 2026-10-25 15:45
+alkaa: 2026-10-25 16:45
 koti: HBA-Märsky
 vieras: Orange1 Academy
 oma: HBA-Märsky
