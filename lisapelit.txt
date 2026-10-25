@@ -135,6 +135,7 @@ oma: HBA-Märsky
 sarja: Civis Cup finaali
 paikka: Debrecen, Unkari
 linkki: https://civiscup.hu/event/final-2/
+striimi: https://www.youtube.com/live/dSZR4ToDTuk?si=2hkFPHLqG3ksTNii
 
 lapsi: Moritz
 joukkue: U16 1D
