@@ -1,5 +1,5 @@
 {
-  "paivitetty": "26. lokakuuta 2026 klo 10.12",
+  "paivitetty": "26. lokakuuta 2026 klo 12.11",
   "tulevat": [
     {
       "match_id": "1009997",
@@ -1027,13 +1027,17 @@
       "vieras": "Orange1 Academy",
       "sarja": "Civis Cup finaali",
       "halli": "Debrecen, Unkari",
-      "linkki": "https://civiscup.hu/event/final-2/",
+      "linkki": "https://netcasting4.webpont.com/?hun_haj_civ_16",
       "striimi": "https://www.youtube.com/live/dSZR4ToDTuk?si=2hkFPHLqG3ksTNii",
       "lapsi": "Werner",
       "joukkue": "HBA U19",
       "omaKotona": true,
       "kesto": null,
       "kasin": true,
+      "pisteetKoti": 84,
+      "pisteetVieras": 65,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "mennyt": true
     },
     {
