@@ -13,8 +13,12 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: write  # robotti tallentaa rakennetun sivun repoon
+  pages: write     # julkaisu GitHub Pagesiin
+  id-token: write  # julkaisun tunnistautuminen
 
+# Vain yksi ajo kerrallaan. Uusi ajo odottaa edellisen valmistumista, joten
+# päällekkäiset julkaisut eivät enää törmää toisiinsa.
 concurrency:
   group: paivita
   cancel-in-progress: false
@@ -43,3 +47,21 @@ jobs:
             git commit -m "Päivitetyt ottelutiedot"
             git push
           fi
+
+      - name: Paketoi sivu julkaistavaksi
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+  # Sivu julkaistaan tästä työnkulusta, ei enää jokaisesta commitista erikseen.
+  # Vaatii asetuksen Settings → Pages → Source: GitHub Actions.
+  julkaise:
+    needs: paivita
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.julkaisu.outputs.page_url }}
+    steps:
+      - name: Julkaise GitHub Pagesiin
+        id: julkaisu
+        uses: actions/deploy-pages@v4

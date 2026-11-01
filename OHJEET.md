@@ -394,6 +394,7 @@ tilanteessa.
 |---|---|---|
 | Ajo punaisena, lokissa `HTTP 403` | Tulospalvelu ei päästä GitHubin palvelimia | Kerro Claudelle, siirrytään varasuunnitelmaan |
 | Ajo punaisena, lokissa `HTTP 404` | Joukkueen syöteosoite on väärä | Tarkista numero `joukkueet.json`-tiedostosta |
+| *julkaise*-vaihe punaisena, lokissa `in progress deployment` | GitHubin edellinen julkaisu on jumissa | Odota hetki ja paina **Re-run failed jobs**; tiedot eivät katoa |
 | Ajo punaisena, lokissa `[rejected]` ja `fetch first` | Ajo käynnistettiin *Re-run jobs* -painikkeella | Käynnistä **Run workflow** -painikkeella |
 | Ajo punaisena, lokissa `SyntaxError` | Pilkkuvirhe `joukkueet.json`-tiedostossa | Viimeisen rivin perään ei tule pilkkua |
 | Tulos ei näy sivulla | Rivi `tulokset.txt`-tiedostossa ei osunut peliin | Katso ajon loki, tarkista päivämäärä |
@@ -449,8 +450,8 @@ Tarvitaan vain jos projekti pitää joskus pystyttää uudelleen.
    *Add file* → *Create new file* → nimeksi `.github/workflows/paivita.yml` → liitä sisältö.
 3. **Ensimmäinen ajo:** **Actions** → *Päivitä ottelut* → **Run workflow**. Tarkista lokista,
    että jokaiselta joukkueelta löytyi otteluita.
-4. **Julkaisu:** **Settings** → **Pages** → *Deploy from a branch* → **main**, kansio
-   **/docs**.
+4. **Julkaisu:** **Settings** → **Pages** → *Source* → **GitHub Actions**. Robotin työnkulku
+   rakentaa sivun ja julkaisee kansion `docs` itse.
 5. **Oma osoite:** DNS-asetukset ovat Domainhotellissa, eivät Squarespacessa. Lisää
    **vain uusi rivi** — älä koske nimipalvelimiin, ne ohjaavat stude.fi:n Squarespaceen:
    tyyppi `CNAME`, nimi `basket`, arvo `jiistude.github.io`. Sen jälkeen GitHubissa
