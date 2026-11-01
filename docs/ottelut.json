@@ -1,22 +1,6 @@
 {
-  "paivitetty": "1. marraskuuta 2026 klo 11.51",
+  "paivitetty": "1. marraskuuta 2026 klo 13.54",
   "tulevat": [
-    {
-      "match_id": "1012858",
-      "alku": "2026-11-01T09:00:00.000Z",
-      "paiva": "2026-11-01",
-      "kello": "11:00",
-      "koti": "Ura Basket",
-      "vieras": "Pussihukat /Punainen",
-      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
-      "halli": "Valkeavuoren liikuntahalli 2, Veitenmäentie 29, Kaarina",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012858/preview",
-      "lapsi": "Moritz",
-      "joukkue": "RPC",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/ura-basket-p2012/games/g/yxsl5yj2",
-      "mennyt": false
-    },
     {
       "match_id": "1006681",
       "alku": "2026-11-01T14:00:00.000Z",
@@ -972,6 +956,26 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1012858",
+      "alku": "2026-11-01T09:00:00.000Z",
+      "paiva": "2026-11-01",
+      "kello": "11:00",
+      "koti": "Ura Basket",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Valkeavuoren liikuntahalli 2, Veitenmäentie 29, Kaarina",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012858/progress",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": false,
+      "pisteetKoti": 78,
+      "pisteetVieras": 60,
+      "muistiinpano": "",
+      "linkkiKasin": true,
+      "striimi": "https://koristv.fi/ura-basket-p2012/games/g/yxsl5yj2",
+      "mennyt": true
+    },
     {
       "match_id": "1006750",
       "alku": "2026-10-31T15:00:00.000Z",
