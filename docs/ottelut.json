@@ -1,5 +1,5 @@
 {
-  "paivitetty": "31. lokakuuta 2026 klo 22.47",
+  "paivitetty": "1. marraskuuta 2026 klo 10.27",
   "tulevat": [
     {
       "match_id": "1012858",
@@ -1000,6 +1000,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "poissa": true,
       "striimi": "https://koristv.fi/koripallomu19sm/games/g/js0uahcm",
       "mennyt": true
     },
