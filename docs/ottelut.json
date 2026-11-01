@@ -1,22 +1,6 @@
 {
-  "paivitetty": "1. marraskuuta 2026 klo 13.59",
+  "paivitetty": "1. marraskuuta 2026 klo 23.09",
   "tulevat": [
-    {
-      "match_id": "1006681",
-      "alku": "2026-11-01T14:00:00.000Z",
-      "paiva": "2026-11-01",
-      "kello": "16:00",
-      "koti": "Karkkila",
-      "vieras": "Torpan Pojat",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Karkkilan liikuntahalli, Anttilankatu 2-4 , Karkkila",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006681/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/karkkila-m1/games/g/lotvdw6c",
-      "mennyt": false
-    },
     {
       "match_id": "1006714",
       "alku": "2026-11-06T16:30:00.000Z",
@@ -956,6 +940,26 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006681",
+      "alku": "2026-11-01T14:00:00.000Z",
+      "paiva": "2026-11-01",
+      "kello": "16:00",
+      "koti": "Karkkila",
+      "vieras": "Torpan Pojat",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Karkkilan liikuntahalli, Anttilankatu 2-4 , Karkkila",
+      "linkki": "https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNEdgOXEtZ8_aP0iuBYbSxZ4a8veireMdx10w4FiAk5Ykj4hCzZDICMvGjGp7sLpx3ZvAusDb4_bB8-n0dRpTZh-z1-HKXGkuRkHb341DYIwmOaol4fiC-we5GSBz",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": false,
+      "pisteetKoti": 84,
+      "pisteetVieras": 82,
+      "muistiinpano": "",
+      "linkkiKasin": true,
+      "striimi": "https://koristv.fi/karkkila-m1/games/g/lotvdw6c",
+      "mennyt": true
+    },
     {
       "match_id": "1012858",
       "alku": "2026-11-01T09:00:00.000Z",
