@@ -199,24 +199,6 @@ DESCRIPTION:Peli alkaa kahden tunnin kuluttua
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:1006936-stude@stude.fi
-DTSTAMP:20261101T083400Z
-DTSTART:20261108T100000Z
-DTEND:20261108T120000Z
-SUMMARY:Bruno: HoNsU/JBA – ToPo
-LOCATION:Gradia\, Viitaniemen ammattioppilaitos\, D-sali\, Viitaniementie 
- 1\, Jyväskylä
-DESCRIPTION:19-vuotiaat pojat\, SM-sarja\nOttelu tulospalvelussa: https://
- tulospalvelu.basket.fi/match/1006936/preview\nStriimi: https://koristv.fi
- /koripallomu19sm/games/g/v91st10t
-URL;VALUE=URI:https://tulospalvelu.basket.fi/match/1006936/preview
-BEGIN:VALARM
-TRIGGER:-PT2H
-ACTION:DISPLAY
-DESCRIPTION:Peli alkaa kahden tunnin kuluttua
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:1006918-stude@stude.fi
 DTSTAMP:20261101T083400Z
 DTSTART:20261114T124500Z

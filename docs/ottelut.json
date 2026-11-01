@@ -93,6 +93,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "poissa": true,
       "striimi": "https://koristv.fi/koripallomu19sm/games/g/v91st10t",
       "mennyt": false
     },
