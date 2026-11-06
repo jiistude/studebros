@@ -1,38 +1,6 @@
 {
-  "paivitetty": "6. marraskuuta 2026 klo 12.01",
+  "paivitetty": "7. marraskuuta 2026 klo 0.31",
   "tulevat": [
-    {
-      "match_id": "1006714",
-      "alku": "2026-11-06T16:30:00.000Z",
-      "paiva": "2026-11-06",
-      "kello": "18:30",
-      "koti": "Torpan Pojat",
-      "vieras": "Äänekosken Huima",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006714/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": true,
-      "striimi": "https://koristv.fi/topo-m1/games/g/dvg43amk",
-      "mennyt": false
-    },
-    {
-      "match_id": "1006763",
-      "alku": "2026-11-06T16:30:00.000Z",
-      "paiva": "2026-11-06",
-      "kello": "18:30",
-      "koti": "HBA-Märsky",
-      "vieras": "Karkkila",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006763/preview",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": true,
-      "striimi": "https://koristv.fi/hba-m1/games/g/30uo743",
-      "mennyt": false
-    },
     {
       "match_id": "1010002",
       "alku": "2026-11-07T10:30:00.000Z",
@@ -940,6 +908,38 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006763",
+      "alku": "2026-11-06T16:30:00.000Z",
+      "paiva": "2026-11-06",
+      "kello": "18:30",
+      "koti": "HBA-Märsky",
+      "vieras": "Karkkila",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006763/statistics",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/30uo743",
+      "mennyt": true
+    },
+    {
+      "match_id": "1006714",
+      "alku": "2026-11-06T16:30:00.000Z",
+      "paiva": "2026-11-06",
+      "kello": "18:30",
+      "koti": "Torpan Pojat",
+      "vieras": "Äänekosken Huima",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006714/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/dvg43amk",
+      "mennyt": true
+    },
     {
       "match_id": "1006681",
       "alku": "2026-11-01T14:00:00.000Z",
