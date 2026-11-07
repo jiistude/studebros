@@ -1,5 +1,5 @@
 {
-  "paivitetty": "7. marraskuuta 2026 klo 8.59",
+  "paivitetty": "7. marraskuuta 2026 klo 9.01",
   "tulevat": [
     {
       "match_id": "1010002",
@@ -32,6 +32,24 @@
       "omaKotona": false,
       "poissa": true,
       "striimi": "https://koristv.fi/koripallomu19sm/games/g/v91st10t",
+      "mennyt": false
+    },
+    {
+      "match_id": "",
+      "alku": "2026-11-08T12:30:00.000Z",
+      "paiva": "2026-11-08",
+      "kello": "14:30",
+      "koti": "Puhu White",
+      "vieras": "ToPo",
+      "sarja": "16-vuotiaat pojat I divisioona Eteläinen alue",
+      "halli": "Kartanonkosken koulu, Tilkuntie 5, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1009816/preview",
+      "striimi": "",
+      "lapsi": "Moritz",
+      "joukkue": "U16 1D",
+      "omaKotona": true,
+      "kesto": null,
+      "kasin": true,
       "mennyt": false
     },
     {
