@@ -149,7 +149,7 @@ linkki: https://tulospalvelu.basket.fi/match/1009812/preview
 
 lapsi: Moritz
 joukkue: U16 1D
-alkaa: 2026-11-08 14:30
+alkaa: 2026-11-07 14:30
 koti: Puhu White
 vieras: ToPo
 oma: Puhu White
