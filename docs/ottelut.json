@@ -1,23 +1,6 @@
 {
-  "paivitetty": "8. marraskuuta 2026 klo 11.39",
+  "paivitetty": "8. marraskuuta 2026 klo 23.28",
   "tulevat": [
-    {
-      "match_id": "1006936",
-      "alku": "2026-11-08T10:00:00.000Z",
-      "paiva": "2026-11-08",
-      "kello": "12:00",
-      "koti": "HoNsU/JBA",
-      "vieras": "ToPo",
-      "sarja": "19-vuotiaat pojat, SM-sarja",
-      "halli": "Gradia, Viitaniemen ammattioppilaitos, D-sali, Viitaniementie 1, Jyväskylä",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006936/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo U19",
-      "omaKotona": false,
-      "poissa": true,
-      "striimi": "https://koristv.fi/koripallomu19sm/games/g/v91st10t",
-      "mennyt": false
-    },
     {
       "match_id": "1006772",
       "alku": "2026-11-13T16:30:00.000Z",
@@ -893,6 +876,23 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006936",
+      "alku": "2026-11-08T10:00:00.000Z",
+      "paiva": "2026-11-08",
+      "kello": "12:00",
+      "koti": "HoNsU/JBA",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Gradia, Viitaniemen ammattioppilaitos, D-sali, Viitaniementie 1, Jyväskylä",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006936/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "poissa": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/v91st10t",
+      "mennyt": true
+    },
     {
       "match_id": "",
       "alku": "2026-11-07T12:30:00.000Z",
