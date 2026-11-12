@@ -1,5 +1,5 @@
 {
-  "paivitetty": "12. marraskuuta 2026 klo 12.25",
+  "paivitetty": "12. marraskuuta 2026 klo 18.55",
   "tulevat": [
     {
       "match_id": "1006772",
@@ -219,6 +219,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/bf96lxfk",
       "mennyt": false
     },
     {
@@ -234,6 +235,7 @@
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/topo-m1/games/g/bwgpf8kf",
       "mennyt": false
     },
     {
@@ -376,6 +378,7 @@
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "striimi": "https://koristv.fi/hba-m1/games/g/go4ds1y8",
       "mennyt": false
     },
     {
@@ -939,10 +942,14 @@
       "vieras": "Karkkila",
       "sarja": "Miesten I divisioona A",
       "halli": "Urhea-halli, Mäkelänkatu 47, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006763/statistics",
+      "linkki": "https://basket.fi/live/?%7Ew=f%7EeJxNjLsKwzAMAH8laK4gavyQu2ftPyiKBYbSxZ4S-u-Jto53HHdCh9cEHLcSJT1RqBoSGWFZmHGzMJsurKEKPCb4eFy_uL6dDqc-ZLQ-mnZX5kpTqjmT_d246D3PRXayICkz_C63uSBb",
       "lapsi": "Werner",
       "joukkue": "HBA M1A",
       "omaKotona": true,
+      "pisteetKoti": 80,
+      "pisteetVieras": 90,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/hba-m1/games/g/30uo743",
       "mennyt": true
     },
@@ -955,10 +962,14 @@
       "vieras": "Äänekosken Huima",
       "sarja": "Miesten I divisioona A",
       "halli": "Munkkiniemen Yhteiskoulu, Laajalahdentie 21, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006714/statistics",
+      "linkki": "https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL9iNEcQxbFrZ8_aP8iyBYbQxZ4a8veireMdx90w4HCQQsmB44ZMTZFICbNPCYvuq4pPsjeGxcFlcfvg-Tb6Go3Js4_ZZZhSU7K1yJr578ZVCH0thUKI-VUrPD_IEiED",
       "lapsi": "Bruno",
       "joukkue": "ToPo M1A",
       "omaKotona": true,
+      "pisteetKoti": 80,
+      "pisteetVieras": 75,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/topo-m1/games/g/dvg43amk",
       "mennyt": true
     },
