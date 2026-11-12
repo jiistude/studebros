@@ -394,6 +394,7 @@ tilanteessa.
 |---|---|---|
 | Ajo punaisena, lokissa `HTTP 403` | Tulospalvelu ei päästä GitHubin palvelimia | Kerro Claudelle, siirrytään varasuunnitelmaan |
 | Ajo punaisena, lokissa `HTTP 404` | Joukkueen syöteosoite on väärä | Tarkista numero `joukkueet.json`-tiedostosta |
+| *tarkista*-vaihe punaisena | Jokin rivi `tulokset.txt`-, `poissa.txt`-, `lisapelit.txt`- tai `striimit.txt`-tiedostossa on väärin tai ei osu peliin (esim. ottelu siirretty) | Avaa ajo: virheelliset rivit näkyvät yhteenvedon *Annotations*-kohdassa. Sivu on silti julkaistu, vain kyseinen rivi jäi huomiotta |
 | *julkaise*-vaihe punaisena, lokissa `in progress deployment` | GitHubin edellinen julkaisu on jumissa | Odota hetki ja paina **Re-run failed jobs**; tiedot eivät katoa |
 | Ajo punaisena, lokissa `[rejected]` ja `fetch first` | Ajo käynnistettiin *Re-run jobs* -painikkeella | Käynnistä **Run workflow** -painikkeella |
 | Ajo punaisena, lokissa `SyntaxError` | Pilkkuvirhe `joukkueet.json`-tiedostossa | Viimeisen rivin perään ei tule pilkkua |
