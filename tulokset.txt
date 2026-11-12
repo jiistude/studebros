@@ -59,14 +59,14 @@
 2026-10-18 76-96 https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNFcQxbZqd--aP8iKBYHQxZ4S8vegreMdx13Q4TNBTrUk4QWFmiGREZaQM1aLs2nIGpvAa4LD4_bD7-p0OvUhY-9j1-7KXEkwpfjmv1stHFATa42cNl4I7ge11SAX
 2026-10-23 90-92 Bruno https://basket.fi/live/?%7Ew=f%7EeJxNjEEKhDAMAL8iORsw1XZT7173D2lsQFi8tCfFv0tue5xhmBsarANwLDlKCihUDYmMMM_MWGyZTGfWpQqMA_w8riduX6fLqXXpR-uHNlfmSorGQEH-bxMb5pg-ZEp72gM8L7eiIEM 
 2026-11-01 16:00 84-82 https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNEdgOXEtZ8_aP0iuBYbSxZ4a8veireMdx10w4FiAk5Ykj4hCzZDICMvGjGp7sLpx3ZvAusDb4_bB8-n0dRpTZh-z1-HKXGkuRkHb341DYIwmOaol4fiC-we5GSBz
-2026-11-06 18:30 Bruno 80-75 https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL9iNEcQxbFrZ8_aP8iyBYbQxZ4a8veireMdx90w4HCQQsmB44ZMTZFICbNPCYvuq4pPsjeGxcFlcfvg-Tb6Go3Js4_ZZZhSU7K1yJr578ZVCH0thUKI-VUrPD_IEiED
+2026-11-06 18:30 80-75 Bruno https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL9iNEcQxbFrZ8_aP8iyBYbQxZ4a8veireMdx90w4HCQQsmB44ZMTZFICbNPCYvuq4pPsjeGxcFlcfvg-Tb6Go3Js4_ZZZhSU7K1yJr578ZVCH0thUKI-VUrPD_IEiED
 
 # --- Werner, HBA M1A ---
 2026-09-26 10:00 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu
 2026-10-02 71-83 https://basket.fi/live/?%7Ew=f%7EeJxNjEEKAjEMAL-y5GygsemSevfqH5JsAwvipT0p_l1y8zjDMB-YcNtAmvWm-xWVRiBREPYqghZcwqs4D4XLBs-Mxwvvj6R30ly6zrlOn6kiVedSzZv_3YT4wKMZRTXWvRh8f7TPIGc 
 2026-10-16 18:30 81-59 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjLsKwzAMAH8laK4gtmJH7p41_yA_BIHQxZ5S-u-Ntox3HPeFDu8JOOQUJHoU1xSdU4eJmDHrMmshLksTeE1wWtw-uO1Gl1EfMo4-jtJNqamU6v1r9Lhl4ooribBffYw1wO8PtuogKA
 2026-10-31 17:00 53-83 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNFcgxU6Qs3ftHyTHgkDpYk8N-XvQlvGO407osE0gi5VF1xmVmyOzM5YkguaZvCapuSm8JvhG3H74_gT9g_rQcfRx1B7KQ9lKqTj542a5EM6unnfeTYTgugG3aSBy
-2026-11-06 18:30 Werner 80-90 https://basket.fi/live/?%7Ew=f%7EeJxNjLsKwzAMAH8laK4gavyQu2ftPyiKBYbSxZ4S-u-Jto53HHdCh9cEHLcSJT1RqBoSGWFZmHGzMJsurKEKPCb4eFy_uL6dDqc-ZLQ-mnZX5kpTqjmT_d246D3PRXayICkz_C63uSBb
+2026-11-06 18:30 80-90 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjLsKwzAMAH8laK4gavyQu2ftPyiKBYbSxZ4S-u-Jto53HHdCh9cEHLcSJT1RqBoSGWFZmHGzMJsurKEKPCb4eFy_uL6dDqc-ZLQ-mnZX5kpTqjmT_d246D3PRXayICkz_C63uSBb
 
 # --- Werner, HBA U19 ---
 2026-10-22 21:45 97-56 https://netcasting4.webpont.com/?hun_haj_civ_4

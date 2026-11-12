@@ -29,7 +29,7 @@
 2026-10-17 14:30 Bruno https://koristv.fi/koripallomu19sm/games/g/mrvaweau  # WB-Pantterit Black – ToPo
 2026-10-18 17:00 Bruno https://koristv.fi/hnmky-m1/games/g/ecfglmo1  # Helsingin NMKY – Torpan Pojat
 2026-10-23 18:30 Bruno https://koristv.fi/topo-m1/games/g/oq5sth9b  # Torpan Pojat – Raholan Pyrkivä
-2026-10-23 18:30 Werner https://koristv.fi/hba-m1/games/g/go4ds1y8  # HBA-Märsky – Helsingin NMKY
+2027-01-13 18:30 Werner https://koristv.fi/hba-m1/games/g/go4ds1y8  # HBA-Märsky – Helsingin NMKY
 2026-10-24 12:30 Moritz https://koristv.fi/puhu-p12/games/g/2zca1nka  # Pussihukat /Punainen – Tapiolan Honka
 2026-10-24 15:30 Bruno https://koristv.fi/koripallomu19sm/games/g/9dolftua  # ToPo – Ura Basket
 2026-10-25 14:45 Moritz https://koristv.fi/puhu-p12/games/g/iqx97fnt  # Pussihukat /Punainen – Pälkäneen Luja-Lukko
@@ -50,8 +50,8 @@
 2026-11-26 18:30 Bruno https://koristv.fi/lrnmky-m1/games/g/cvqhynqd  # Lappeenrannan NMKY – Torpan Pojat
 2026-11-27 18:30 Werner https://koristv.fi/jba-m1/games/g/du4pg1kq  # Jyväskylä Basketball Academy – HBA-Märsky
 2026-11-29 13:30 Moritz https://koristv.fi/rpc-p15/games/g/o2xbnf6y  # Tampereen Pyrintö – Pussihukat /Punainen
-2026-12-05 15:45 Bruno https://koristv.fi/koripallomu19sm/games/g/bf96lxfk  # ToPo – WB-Pantterit
-2026-12-05 17:00 Bruno https://koristv.fi/topo-m1/games/g/bwgpf8kf  # Torpan Pojat – Pyrintö Akatemia
+2026-12-02 17:45 Bruno https://koristv.fi/koripallomu19sm/games/g/bf96lxfk  # ToPo – WB-Pantterit
+2026-12-05 18:00 Bruno https://koristv.fi/topo-m1/games/g/bwgpf8kf  # Torpan Pojat – Pyrintö Akatemia
 2026-12-06 15:00 Werner https://koristv.fi/hba-m1/games/g/dyaw52ub  # HBA-Märsky – Lappeenrannan NMKY
 2026-12-10 19:00 Werner https://koristv.fi/pyrinto-m1-a/games/g/33ks993p  # Pyrintö Akatemia – HBA-Märsky
 2026-12-12 17:00 Bruno https://koristv.fi/aco-m1/games/g/wfxcbo1k  # ACO Basket – Torpan Pojat
