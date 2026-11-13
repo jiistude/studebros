@@ -1,22 +1,6 @@
 {
-  "paivitetty": "13. marraskuuta 2026 klo 12.14",
+  "paivitetty": "14. marraskuuta 2026 klo 1.00",
   "tulevat": [
-    {
-      "match_id": "1006772",
-      "alku": "2026-11-13T16:30:00.000Z",
-      "paiva": "2026-11-13",
-      "kello": "18:30",
-      "koti": "Äänekosken Huima",
-      "vieras": "HBA-Märsky",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Äänekosken liikuntatalo, Koulumäenkatu 2, Äänekoski",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006772/preview",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/huima-m1/games/g/7gl7qxb4",
-      "mennyt": false
-    },
     {
       "match_id": "1006918",
       "alku": "2026-11-14T12:45:00.000Z",
@@ -879,6 +863,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006772",
+      "alku": "2026-11-13T16:30:00.000Z",
+      "paiva": "2026-11-13",
+      "kello": "18:30",
+      "koti": "Äänekosken Huima",
+      "vieras": "HBA-Märsky",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Äänekosken liikuntatalo, Koulumäenkatu 2, Äänekoski",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006772/statistics",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/huima-m1/games/g/7gl7qxb4",
+      "mennyt": true
+    },
     {
       "match_id": "1006936",
       "alku": "2026-11-08T10:00:00.000Z",
