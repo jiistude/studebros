@@ -1,22 +1,6 @@
 {
-  "paivitetty": "14. marraskuuta 2026 klo 11.35",
+  "paivitetty": "14. marraskuuta 2026 klo 23.48",
   "tulevat": [
-    {
-      "match_id": "1006918",
-      "alku": "2026-11-14T12:45:00.000Z",
-      "paiva": "2026-11-14",
-      "kello": "14:45",
-      "koti": "PuHu Juniorit",
-      "vieras": "ToPo",
-      "sarja": "19-vuotiaat pojat, SM-sarja",
-      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006918/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo U19",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/koripallomu19sm/games/g/4wfmbqrw",
-      "mennyt": false
-    },
     {
       "match_id": "1012863",
       "alku": "2026-11-15T08:00:00.000Z",
@@ -863,6 +847,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006918",
+      "alku": "2026-11-14T12:45:00.000Z",
+      "paiva": "2026-11-14",
+      "kello": "14:45",
+      "koti": "PuHu Juniorit",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006918/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/4wfmbqrw",
+      "mennyt": true
+    },
     {
       "match_id": "1006772",
       "alku": "2026-11-13T16:30:00.000Z",
