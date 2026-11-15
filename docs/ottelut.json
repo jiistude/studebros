@@ -1,22 +1,6 @@
 {
-  "paivitetty": "14. marraskuuta 2026 klo 23.48",
+  "paivitetty": "15. marraskuuta 2026 klo 12.03",
   "tulevat": [
-    {
-      "match_id": "1012863",
-      "alku": "2026-11-15T08:00:00.000Z",
-      "paiva": "2026-11-15",
-      "kello": "10:00",
-      "koti": "Oulun NMKY",
-      "vieras": "Pussihukat /Punainen",
-      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
-      "halli": "Rajakylän koulu, Ruiskukkatie 4-6, Oulu",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012863/preview",
-      "lapsi": "Moritz",
-      "joukkue": "RPC",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/onmky-p2012/games/g/rgv8r5u2",
-      "mennyt": false
-    },
     {
       "match_id": "1006659",
       "alku": "2026-11-15T15:00:00.000Z",
@@ -847,6 +831,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1012863",
+      "alku": "2026-11-15T08:00:00.000Z",
+      "paiva": "2026-11-15",
+      "kello": "10:00",
+      "koti": "Oulun NMKY",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Rajakylän koulu, Ruiskukkatie 4-6, Oulu",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012863/statistics",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/onmky-p2012/games/g/rgv8r5u2",
+      "mennyt": true
+    },
     {
       "match_id": "1006918",
       "alku": "2026-11-14T12:45:00.000Z",
