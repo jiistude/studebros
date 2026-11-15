@@ -1,5 +1,5 @@
 {
-  "paivitetty": "15. marraskuuta 2026 klo 12.48",
+  "paivitetty": "15. marraskuuta 2026 klo 12.49",
   "tulevat": [
     {
       "match_id": "1006659",
@@ -840,10 +840,14 @@
       "vieras": "Pussihukat /Punainen",
       "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
       "halli": "Rajakylän koulu, Ruiskukkatie 4-6, Oulu",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012863/statistics",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012863/progress",
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": false,
+      "pisteetKoti": 73,
+      "pisteetVieras": 100,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/onmky-p2012/games/g/rgv8r5u2",
       "mennyt": true
     },
@@ -856,10 +860,14 @@
       "vieras": "ToPo",
       "sarja": "19-vuotiaat pojat, SM-sarja",
       "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006918/statistics",
+      "linkki": "https://basket.fi/live/?%7Ew=f%7EeJwtjEEKhDAMAL8iORswrbWt9736hzZNQBAv7WnFvy-BPc4wzAMd9gk2TUFKdlgrMRIpYVJakYPmElMLC0eYJ7gslhs_h9HXqI8yzj5O7qbUVBJx5Cvbrf1v4gU1e425Lpt3Au8PxcoggA",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "pisteetKoti": 63,
+      "pisteetVieras": 82,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/koripallomu19sm/games/g/4wfmbqrw",
       "mennyt": true
     },
