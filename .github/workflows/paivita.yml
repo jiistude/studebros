@@ -26,6 +26,9 @@ concurrency:
 jobs:
   paivita:
     runs-on: ubuntu-latest
+    outputs:
+      maara: ${{ steps.huomautukset.outputs.maara }}
+      teksti: ${{ steps.huomautukset.outputs.teksti }}
     steps:
       - uses: actions/checkout@v5
 
@@ -35,6 +38,18 @@ jobs:
 
       - name: Hae ottelut ja rakenna sivu
         run: node hae.js
+
+      # Kerää virheet tulokset.txt-, poissa.txt-, lisapelit.txt- ja striimit.txt-
+      # tiedostoista. Ne näytetään vasta julkaisun jälkeen (vaihe tarkista).
+      - name: Kerää huomautukset
+        id: huomautukset
+        run: |
+          {
+            echo "maara=$(grep -c . varoitukset.txt || true)"
+            echo "teksti<<LOPPU_VAROITUKSET"
+            cat varoitukset.txt
+            echo "LOPPU_VAROITUKSET"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Tallenna muutokset
         run: |
@@ -65,3 +80,25 @@ jobs:
       - name: Julkaise GitHub Pagesiin
         id: julkaisu
         uses: actions/deploy-pages@v4
+
+  # Sivu on jo julkaistu. Jos käsin ylläpidetyissä tiedostoissa on rivejä, joita
+  # ei ymmärretty tai jotka eivät osuneet mihinkään peliin, ajo muuttuu tässä
+  # punaiseksi ja virheet näkyvät ajon yhteenvedossa.
+  tarkista:
+    needs: [paivita, julkaise]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tarkista tulokset, poissaolot, lisäpelit ja striimit
+        env:
+          MAARA: ${{ needs.paivita.outputs.maara }}
+          TEKSTI: ${{ needs.paivita.outputs.teksti }}
+        run: |
+          if [ "${MAARA:-0}" -eq 0 ]; then
+            echo "Kaikki rivit kunnossa."
+            exit 0
+          fi
+          echo "$TEKSTI" | while IFS= read -r rivi; do
+            [ -n "$rivi" ] && echo "::error title=Korjaa rivi::$rivi"
+          done
+          echo "Sivu on julkaistu, mutta yllä olevat rivit jäivät huomiotta. Korjaa ne ja tallenna uudelleen."
+          exit 1

@@ -129,6 +129,16 @@ function lueTiedostoJosOn(nimi) {
 
 // lisapelit.txt: yksi peli kerrallaan "avain: arvo" -riveinä, pelit erotettu
 // tyhjällä rivillä. Rivien järjestyksellä ei ole väliä ja # aloittaa kommentin.
+// Käsin ylläpidettyjen tiedostojen (tulokset, poissa, lisapelit, striimit)
+// virheet kerätään talteen. Ajo kirjoittaa ne lopuksi tiedostoon
+// varoitukset.txt, ja työnkulku muuttaa ajon punaiseksi sivun julkaisun
+// jälkeen, jotta virhe huomataan Actions-välilehdeltä.
+const varoitukset = [];
+function varoita(viesti) {
+  varoitukset.push(viesti);
+  console.error(viesti);
+}
+
 function lueLisapelit() {
   const teksti = lueTiedostoJosOn("lisapelit.txt");
   if (!teksti.trim()) return [];
@@ -155,14 +165,14 @@ function lueLisapelit() {
   for (const kentat of lohkot) {
     if (!kentat.lapsi || !kentat.alkaa) {
       if (Object.keys(kentat).length) {
-        console.error(`lisapelit.txt: ohitettiin lohko, josta puuttuu lapsi tai alkaa (${JSON.stringify(kentat).slice(0, 80)}…).`);
+        varoita(`lisapelit.txt: ohitettiin lohko, josta puuttuu lapsi tai alkaa (${JSON.stringify(kentat).slice(0, 80)}…).`);
       }
       continue;
     }
 
     const aika = kentat.alkaa.match(/^(\d{4})-(\d{2})-(\d{2})[ T]+(\d{1,2})[:.](\d{2})/);
     if (!aika) {
-      console.error(`lisapelit.txt: en ymmärrä aikaa "${kentat.alkaa}". Odotettu muoto 2026-10-24 14:30.`);
+      varoita(`lisapelit.txt: en ymmärrä aikaa "${kentat.alkaa}". Odotettu muoto 2026-10-24 14:30.`);
       continue;
     }
     const alku = seinakelloUTC(+aika[1], +aika[2], +aika[3], +aika[4], +aika[5], TZ);
@@ -198,7 +208,7 @@ function luePoissa() {
     if (!puhdas || puhdas.startsWith("#")) continue;
     const osat = puhdas.match(/^(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2})[:.](\d{2}))?\s+(.+?)\s*$/);
     if (!osat) {
-      console.error(`poissa.txt: en ymmärrä riviä "${puhdas}".`);
+      varoita(`poissa.txt: en ymmärrä riviä "${puhdas}".`);
       continue;
     }
     merkinnat.push({
@@ -233,7 +243,7 @@ function lueTulokset() {
       /^(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2})[:.](\d{2}))?\s+(\d{1,3})\s*[-–—]\s*(\d{1,3})(?:\s+([^\s|]+))?\s*(?:\|\s*(.*))?$/
     );
     if (!osat) {
-      console.error(`tulokset.txt: en ymmärrä riviä "${rivi.trim()}".`);
+      varoita(`tulokset.txt: en ymmärrä riviä "${rivi.trim()}".`);
       continue;
     }
     rivit.push({
@@ -265,7 +275,7 @@ function lueStriimit() {
 
     const osoite = puhdas.match(/\bhttps:\/\/[^\s|]+/);
     if (!osoite) {
-      console.error(`striimit.txt: riviltä puuttuu https-osoite: "${puhdas}".`);
+      varoita(`striimit.txt: riviltä puuttuu https-osoite: "${puhdas}".`);
       continue;
     }
     puhdas = (puhdas.slice(0, osoite.index) + puhdas.slice(osoite.index + osoite[0].length))
@@ -273,7 +283,7 @@ function lueStriimit() {
 
     const osat = puhdas.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{1,2})[:.](\d{2})(?:\s+(\S+))?$/);
     if (!osat) {
-      console.error(`striimit.txt: en ymmärrä riviä "${rivi.trim()}". Odotettu muoto 2026-10-18 17:00 https://koristv.fi/…`);
+      varoita(`striimit.txt: en ymmärrä riviä "${rivi.trim()}". Odotettu muoto 2026-10-18 17:00 https://koristv.fi/…`);
       continue;
     }
     rivit.push({
@@ -1021,7 +1031,7 @@ async function main() {
       (o) => o.paiva === t.paiva && (!t.kello || t.kello === o.kello) && (!t.lapsi || t.lapsi === o.lapsi)
     );
     if (!osumat.length) {
-      console.error(`tulokset.txt: riville "${t.paiva} ${t.koti}-${t.vieras}" ei löytynyt ottelua.`);
+      varoita(`tulokset.txt: riville "${t.paiva} ${t.koti}-${t.vieras}" ei löytynyt ottelua.`);
       continue;
     }
     for (const o of osumat) {
@@ -1044,7 +1054,7 @@ async function main() {
   }
   for (const p of poissa) {
     if (!kaikki.some((o) => o.paiva === p.paiva && o.lapsi === p.lapsi && (!p.kello || p.kello === o.kello))) {
-      console.error(`poissa.txt: riville "${p.paiva} ${p.kello} ${p.lapsi}" ei löytynyt ottelua.`);
+      varoita(`poissa.txt: riville "${p.paiva} ${p.kello} ${p.lapsi}" ei löytynyt ottelua.`);
     }
   }
   if (merkittyja) console.log(`Merkitty poissaolevaksi: ${merkittyja} ottelua.`);
@@ -1062,7 +1072,7 @@ async function main() {
     );
     if (!osumat.length) {
       if (s.alku > Date.now() - Math.abs(asetukset.menneet_paivat ?? 30) * 86400000) {
-        console.error(`striimit.txt: riville "${s.teksti}" ei löytynyt ottelua.`);
+        varoita(`striimit.txt: riville "${s.teksti}" ei löytynyt ottelua.`);
       }
       continue;
     }
@@ -1121,7 +1131,13 @@ async function main() {
   if (puuttuvat.length) console.log(`Ei otteluita: ${puuttuvat.join(", ")}`);
 }
 
-main().catch((virhe) => {
-  console.error(virhe);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Työnkulku lukee tämän tiedoston (ei tallenneta repoon eikä julkaista).
+    fs.writeFileSync("varoitukset.txt", varoitukset.length ? varoitukset.join("\n") + "\n" : "");
+    if (varoitukset.length) console.error(`\nKäsin ylläpidetyissä tiedostoissa ${varoitukset.length} huomautusta.`);
+  })
+  .catch((virhe) => {
+    console.error(virhe);
+    process.exit(1);
+  });
