@@ -1,22 +1,6 @@
 {
-  "paivitetty": "15. marraskuuta 2026 klo 12.49",
+  "paivitetty": "15. marraskuuta 2026 klo 23.17",
   "tulevat": [
-    {
-      "match_id": "1006659",
-      "alku": "2026-11-15T15:00:00.000Z",
-      "paiva": "2026-11-15",
-      "kello": "17:00",
-      "koti": "Pantterit",
-      "vieras": "Torpan Pojat",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Herttoniemenr. liik.halli, Petter Wetterin tie 5, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006659/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/pantterit-m1/games/g/xiifvnw9",
-      "mennyt": false
-    },
     {
       "match_id": "1006708",
       "alku": "2026-11-20T16:30:00.000Z",
@@ -831,6 +815,26 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006659",
+      "alku": "2026-11-15T15:00:00.000Z",
+      "paiva": "2026-11-15",
+      "kello": "17:00",
+      "koti": "Pantterit",
+      "vieras": "Torpan Pojat",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Herttoniemenr. liik.halli, Petter Wetterin tie 5, Helsinki",
+      "linkki": "https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNEcQxXIqd-_aPyiWBYHSxZ4S-vegreMdx13Q4TmB5L1k3VZUao5ETliSCO7Oi9cklZvCPMEn4vbF1zvoDOpDx9HHUXsoD2WsbG7L_41qRk4PMbGtpFbgdwO99CBY",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": false,
+      "pisteetKoti": 93,
+      "pisteetVieras": 66,
+      "muistiinpano": "",
+      "linkkiKasin": true,
+      "striimi": "https://koristv.fi/pantterit-m1/games/g/xiifvnw9",
+      "mennyt": true
+    },
     {
       "match_id": "1012863",
       "alku": "2026-11-15T08:00:00.000Z",
