@@ -44,6 +44,7 @@
 2026-10-11 85-58 https://tulospalvelu.basket.fi/match/1012846/progress | Robert Petersen Cup. Moritz 11 p.
 2026-10-25 74-66 Moritz
 2026-11-01 11:00 78-60 Moritz https://tulospalvelu.basket.fi/match/1012858/progress
+2026-11-15 10:00 73-100 Moritz https://tulospalvelu.basket.fi/match/1012863/progress
 
 
 # --- Bruno, ToPo U19 ---
@@ -52,6 +53,7 @@
 2026-09-20 16:30 94-79 https://tulospalvelu.basket.fi/match/1005620/lineups | MU19 SM-karsintaa. Voitolla sarjapaikka MU19 SM-sarjaan kaudelle 2026-2027.
 2026-10-17 14:30 86-66 Bruno https://tulospalvelu.basket.fi/match/1006905/statistics
 2026-10-24 15:30 71-54
+2026-11-14 14:45 63-82 Bruno https://basket.fi/live/?%7Ew=f%7EeJwtjEEKhDAMAL8iORswrbWt9736hzZNQBAv7WnFvy-BPc4wzAMd9gk2TUFKdlgrMRIpYVJakYPmElMLC0eYJ7gslhs_h9HXqI8yzj5O7qbUVBJx5Cvbrf1v4gU1e425Lpt3Au8PxcoggA
 
 # --- Bruno, ToPo M1A ---
 2026-09-26 15:15 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
