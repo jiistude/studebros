@@ -425,6 +425,14 @@ function gc(tapahtuma, otsikko) {
   return ` data-goatcounter-click="${esc(tapahtuma)}"${otsikko ? ` data-goatcounter-title="${esc(otsikko)}"` : ""}`;
 }
 
+// Muistiinpanon "·"-merkillä erotetut kohdat (esim. tilastorivi "7 p · 5 lp · KH 3/5")
+// pidetään kukin yhdellä rivillä, jotta rivi katkeaa vain välimerkin jälkeen.
+function muistiinpanoHtml(teksti) {
+  const osat = teksti.split(/\s+·\s+/);
+  if (osat.length < 2) return esc(teksti);
+  return osat.map((osa, i) => `<span class="kohta">${esc(osa)}${i < osat.length - 1 ? " ·" : ""}</span>`).join(" ");
+}
+
 function ottelukortti(o, varit) {
   const v = varit[o.lapsi] || { vaalea: "#444", tumma: "#bbb" };
 
@@ -461,7 +469,7 @@ function ottelukortti(o, varit) {
             const merkki = voitto === true ? "Voitto" : voitto === false ? "Tappio" : "";
             return `<div class="tulos${luokka}">${o.pisteetKoti} &ndash; ${o.pisteetVieras}${merkki ? ` <span class="vt">${merkki}</span>` : ""}</div>`;
           })()}
-          ${o.muistiinpano ? `<div class="muistiinpano">${esc(o.muistiinpano)}</div>` : ""}
+          ${o.muistiinpano ? `<div class="muistiinpano">${muistiinpanoHtml(o.muistiinpano)}</div>` : ""}
           ${o.poissa ? `<div class="poissaMerkki">${esc(o.lapsi)} ei ole mukana tässä pelissä</div>` : ""}
           ${kartta}
           ${painikkeet}

@@ -147,6 +147,28 @@ kannattaa pyytää noin kerran kuussa tai kun ottelu siirtyy.
 Striimilinkkejä ei haeta automaattisesti. Liitolle on luvattu, että sivu käyttää vain julkisia
 kalenterisyötteitä, ja tulospalvelun tai KorisTV:n ajastettu lukeminen rikkoisi lupauksen.
 
+### Tilastorivi tuloksen yhteydessä
+
+Pelaajan tilastot kirjoitetaan `tulokset.txt`-riville pystyviivan `|` jälkeen. Kohdat erotetaan
+keskipisteellä ` · ` (Macilla **⌥ + Shift + 9**), ja jokainen kohta pysyy kortilla yhdellä rivillä.
+Lyhenteet ovat englanninkielisiä, kuten basket.fi:n box scoressa:
+
+```
+2026-11-20 18:30 78-54 Werner https://basket.fi/live/?… | Werner 7 PTS · 5 REB · 7 AST · EFF 17 · 28:30 MIN · FG 3/5 · 3P 1/3 · FT 0/0
+```
+
+| Lyhenne | Merkitys |
+|---|---|
+| PTS | pisteet |
+| REB | levypallot |
+| AST | syötöt |
+| STL / BLK / TO | riistot / blokit / menetykset |
+| EFF | tehokkuus |
+| MIN | peliaika |
+| FG | kenttäheitot onnistuneet/yritetyt (2p + 3p yhteensä) |
+| 3P | kolmoset |
+| FT | vapaaheitot |
+
 ### Arkisto — `docs/historia.json`
 
 Tulospalvelun syötteessä on **vain tulevia otteluita**: pelattu peli katoaa syötteestä

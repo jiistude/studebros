@@ -63,6 +63,7 @@
 2026-11-01 16:00 84-82 https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNEdgOXEtZ8_aP0iuBYbSxZ4a8veireMdx10w4FiAk5Ykj4hCzZDICMvGjGp7sLpx3ZvAusDb4_bB8-n0dRpTZh-z1-HKXGkuRkHb341DYIwmOaol4fiC-we5GSBz
 2026-11-06 18:30 80-75 Bruno https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL9iNEcQxbFrZ8_aP8iyBYbQxZ4a8veireMdx90w4HCQQsmB44ZMTZFICbNPCYvuq4pPsjeGxcFlcfvg-Tb6Go3Js4_ZZZhSU7K1yJr578ZVCH0thUKI-VUrPD_IEiED
 2026-11-15 17:00 93-66 Bruno https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNEcQxXIqd-_aPyiWBYHSxZ4S-vegreMdx13Q4TmB5L1k3VZUao5ETliSCO7Oi9cklZvCPMEn4vbF1zvoDOpDx9HHUXsoD2WsbG7L_41qRk4PMbGtpFbgdwO99CBY
+2026-11-20 18:30 119-97 Bruno https://basket.fi/live/?%7Ew=f%7EeJwdjMsKAjEMAH9lydlAkz6y8e7Vf0i7DSyIl_ak-O9ajzMM84YB1w2ILUVhRa21IJETqndHFSu75lz34HDZ4LHi_sTbfdFr0Zg2zzHPNpbypQ6xZNE6Gv0e_1ttyZBzCQc3CRwFPl-SLx_i | Bruno 12 PTS · 2 REB · 6 AST · EFF 17 · 20:19 MIN · FG 4/5 · 3P 2/2 · FT 2/4
 
 # --- Werner, HBA M1A ---
 2026-09-26 10:00 90-63 https://tulospalvelu.basket.fi/match/1006593/statistics | valmistava ottelu
@@ -70,6 +71,7 @@
 2026-10-16 18:30 81-59 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjLsKwzAMAH8laK4gtmJH7p41_yA_BIHQxZ5S-u-Ntox3HPeFDu8JOOQUJHoU1xSdU4eJmDHrMmshLksTeE1wWtw-uO1Gl1EfMo4-jtJNqamU6v1r9Lhl4ooribBffYw1wO8PtuogKA
 2026-10-31 17:00 53-83 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNFcgxU6Qs3ftHyTHgkDpYk8N-XvQlvGO407osE0gi5VF1xmVmyOzM5YkguaZvCapuSm8JvhG3H74_gT9g_rQcfRx1B7KQ9lKqTj542a5EM6unnfeTYTgugG3aSBy
 2026-11-06 18:30 80-90 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjLsKwzAMAH8laK4gavyQu2ftPyiKBYbSxZ4S-u-Jto53HHdCh9cEHLcSJT1RqBoSGWFZmHGzMJsurKEKPCb4eFy_uL6dDqc-ZLQ-mnZX5kpTqjmT_d246D3PRXayICkz_C63uSBb
+2026-11-20 18:30 78-54 Werner https://basket.fi/live/?%7Ew=f%7EeJxNjDEKwzAMAL8SNFcg2XGrdM-aP1iKBYHSxZ5S-vegLeMdx_2gw3sCKbqU-kxYuTkyO-OSRVB9JrcsNrcKjwk-EbcvrlvQGdRHHUcfh_VQHmpXIi1SbjdNljC_bCdyycoO_wu3AyBj | Werner 7 PTS · 5 REB · 7 AST · EFF 17 · 28:30 MIN · FG 3/5 · 3P 1/3 · FT 0/0
 
 # --- Werner, HBA U19 ---
 2026-10-22 21:45 97-56 https://netcasting4.webpont.com/?hun_haj_civ_4
