@@ -1,37 +1,6 @@
 {
-  "paivitetty": "21. marraskuuta 2026 klo 12.23",
+  "paivitetty": "22. marraskuuta 2026 klo 0.35",
   "tulevat": [
-    {
-      "match_id": "1010007",
-      "alku": "2026-11-21T10:30:00.000Z",
-      "paiva": "2026-11-21",
-      "kello": "12:30",
-      "koti": "MaSu",
-      "vieras": "Pussihukat /Punainen",
-      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
-      "halli": "Kankarepuiston peruskoulu, Somerikkopolku 6, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1010007/preview",
-      "lapsi": "Moritz",
-      "joukkue": "U15 1D",
-      "omaKotona": false,
-      "mennyt": false
-    },
-    {
-      "match_id": "1006924",
-      "alku": "2026-11-21T17:45:00.000Z",
-      "paiva": "2026-11-21",
-      "kello": "19:45",
-      "koti": "HNMKY",
-      "vieras": "ToPo",
-      "sarja": "19-vuotiaat pojat, SM-sarja",
-      "halli": "Namika Areena B, Pilkekuja 10, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006924/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo U19",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/koripallomu19sm/games/g/2apx0b57",
-      "mennyt": false
-    },
     {
       "match_id": "1012853",
       "alku": "2026-11-22T10:15:00.000Z",
@@ -783,6 +752,37 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006924",
+      "alku": "2026-11-21T17:45:00.000Z",
+      "paiva": "2026-11-21",
+      "kello": "19:45",
+      "koti": "HNMKY",
+      "vieras": "ToPo",
+      "sarja": "19-vuotiaat pojat, SM-sarja",
+      "halli": "Namika Areena B, Pilkekuja 10, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006924/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo U19",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/koripallomu19sm/games/g/2apx0b57",
+      "mennyt": true
+    },
+    {
+      "match_id": "1010007",
+      "alku": "2026-11-21T10:30:00.000Z",
+      "paiva": "2026-11-21",
+      "kello": "12:30",
+      "koti": "MaSu",
+      "vieras": "Pussihukat /Punainen",
+      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
+      "halli": "Kankarepuiston peruskoulu, Somerikkopolku 6, Helsinki",
+      "linkki": "https://tulospalvelu.basket.fi/match/1010007/statistics",
+      "lapsi": "Moritz",
+      "joukkue": "U15 1D",
+      "omaKotona": false,
+      "mennyt": true
+    },
     {
       "match_id": "1006766",
       "alku": "2026-11-20T16:30:00.000Z",
