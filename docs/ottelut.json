@@ -1,21 +1,6 @@
 {
-  "paivitetty": "22. marraskuuta 2026 klo 12.26",
+  "paivitetty": "22. marraskuuta 2026 klo 15.10",
   "tulevat": [
-    {
-      "match_id": "1012853",
-      "alku": "2026-11-22T10:15:00.000Z",
-      "paiva": "2026-11-22",
-      "kello": "12:15",
-      "koti": "Pussihukat /Punainen",
-      "vieras": "Kori-80 1",
-      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
-      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012853/preview",
-      "lapsi": "Moritz",
-      "joukkue": "RPC",
-      "omaKotona": true,
-      "mennyt": false
-    },
     {
       "match_id": "1006692",
       "alku": "2026-11-26T16:30:00.000Z",
@@ -752,6 +737,21 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1012853",
+      "alku": "2026-11-22T10:15:00.000Z",
+      "paiva": "2026-11-22",
+      "kello": "12:15",
+      "koti": "Pussihukat /Punainen",
+      "vieras": "Kori-80 1",
+      "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012853/statistics",
+      "lapsi": "Moritz",
+      "joukkue": "RPC",
+      "omaKotona": true,
+      "mennyt": true
+    },
     {
       "match_id": "1006924",
       "alku": "2026-11-21T17:45:00.000Z",
