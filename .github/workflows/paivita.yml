@@ -4,10 +4,13 @@ on:
   schedule:
     # Ajat ovat UTC-aikaa: Suomen aika miinus 3 tuntia kesällä, miinus 2 talvella.
     #
+    # Minuutit on valittu pois tasatunneilta: GitHub viivästyttää tasatunnin
+    # ajastuksia ruuhkan vuoksi jopa tunteja.
+    #
     # Aamulla: yön aikana tehdyt ottelusiirrot ja tuore päivänäkymä.
-    - cron: "0 3 * * *"
+    - cron: "17 3 * * *"
     # Illalla: päivän pelit siirtyvät pelattuihin ja kalenteri pysyy ajan tasalla.
-    - cron: "0 18 * * *"
+    - cron: "47 17 * * *"
   workflow_dispatch: # sallii päivityksen käsin GitHubin Actions-välilehdeltä
   push:
     branches: [main]
