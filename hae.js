@@ -664,19 +664,73 @@ ${teemaCss(asetukset.teema)}
   var VIIKKO_OTSIKKO = ${JSON.stringify(`${asetukset.otsikko} — seuraavat 7 päivää`)};
   var SIVUN_OSOITE = ${JSON.stringify(osoite || "")};
 
+  // Päättynyt ottelu siirretään "Pelatut ottelut" -listan alkuun, jotta se näkyy
+  // heti eikä vasta seuraavan ajon jälkeen (ajastettu ajo voi viivästyä tunteja).
+  var OSOITE_TULEVA = ${JSON.stringify(String(asetukset.ottelun_osoite_tuleva || OSOITE_TULEVA))};
+  var OSOITE_PELATTU = ${JSON.stringify(String(asetukset.ottelun_osoite_pelattu || OSOITE_PELATTU))};
+
+  function vaihdaTeksti(linkki, teksti) {
+    for (var i = 0; i < linkki.childNodes.length; i++) {
+      var n = linkki.childNodes[i];
+      if (n.nodeType === 3 && n.textContent.trim()) { n.textContent = teksti + ' '; return; }
+    }
+  }
+
+  function muutaPelatuksi(kortti) {
+    kortti.dataset.tuleva = '0';
+    var tp = kortti.querySelector('a.seuraa:not(.striimi)');
+    if (tp && OSOITE_TULEVA.indexOf('{id}') > -1) {
+      var osat = OSOITE_TULEVA.split('{id}');
+      var h = tp.getAttribute('href') || '';
+      if (h.indexOf(osat[0]) === 0 && h.slice(-osat[1].length || h.length) === osat[1]) {
+        var id = h.slice(osat[0].length, h.length - osat[1].length);
+        tp.setAttribute('href', OSOITE_PELATTU.replace('{id}', id));
+      }
+      vaihdaTeksti(tp, 'Ottelutilastot');
+    }
+    var st = kortti.querySelector('a.seuraa.striimi');
+    if (st) vaihdaTeksti(st, 'Katso tallenne');
+  }
+
+  function siirraPelattuihin(kortti) {
+    var osio = document.getElementById('osio-pelatut');
+    if (!osio) { kortti.dataset.ohi = '1'; kortti.hidden = true; return; }
+    var tyhja = osio.querySelector(':scope > .tyhja');
+    if (tyhja) tyhja.remove();
+    var teksti = kortti.dataset.paivateksti;
+    var paiva = null;
+    osio.querySelectorAll(':scope > .paiva').forEach(function (p) {
+      var h = p.querySelector('h3');
+      if (!paiva && h && h.textContent.trim() === teksti) paiva = p;
+    });
+    if (!paiva) {
+      paiva = document.createElement('section');
+      paiva.className = 'paiva';
+      var h3 = document.createElement('h3');
+      h3.textContent = teksti;
+      paiva.appendChild(h3);
+      var ensimmainen = osio.querySelector(':scope > .paiva, :scope > #vanhat, :scope > .lisaa');
+      osio.insertBefore(paiva, ensimmainen);
+    }
+    var otsikko = paiva.querySelector('h3');
+    paiva.insertBefore(kortti, otsikko.nextSibling);
+    muutaPelatuksi(kortti);
+  }
+
   (function siivoaMenneet() {
     var nyt = Date.now();
-    var kortit = document.querySelectorAll('.ottelu[data-tuleva="1"]');
+    var paattyneet = [];
 
-    kortit.forEach(function (kortti) {
+    document.querySelectorAll('.ottelu[data-tuleva="1"]').forEach(function (kortti) {
       var alku = Date.parse(kortti.dataset.alku);
       if (isNaN(alku)) return;
       var kesto = (Number(kortti.dataset.kesto) > 0 ? Number(kortti.dataset.kesto) : OLETUSKESTO) * 60000;
-      if (alku + kesto < nyt) {
-        kortti.dataset.ohi = '1';
-        kortti.hidden = true;
-      }
+      if (alku + kesto < nyt) paattyneet.push(kortti);
     });
+
+    // Vanhin ensin, jolloin uusin päätyy listan kärkeen.
+    paattyneet.sort(function (a, b) { return Date.parse(a.dataset.alku) - Date.parse(b.dataset.alku); });
+    paattyneet.forEach(siirraPelattuihin);
 
     paivitaPaivat();
   })();
