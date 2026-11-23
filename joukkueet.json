@@ -60,6 +60,13 @@
   "etusivun_tulevat": 5,
   "etusivun_pelatut": 5,
   "ottelun_kesto_min": 120,
+  "lyhenteet": {
+    "Torpan Pojat": "TOPO",
+    "ToPo": "TOPO",
+    "Pussihukat /Punainen": "PUHU",
+    "Pussihukat /Valkoinen": "PUHU",
+    "Puhu White": "PUHU"
+  },
   "goatcounter": "https://studebros.goatcounter.com/count",
   "ottelun_osoite_tuleva": "https://tulospalvelu.basket.fi/match/{id}/preview",
   "ottelun_osoite_pelattu": "https://tulospalvelu.basket.fi/match/{id}/statistics"

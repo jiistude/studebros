@@ -344,6 +344,7 @@ ajon loki huomauttaa siitä. WhatsApp-esikatseluun teksti menee ilman merkintöj
 | `etusivun_pelatut` | Montako pelattua näytetään heti, loput painikkeen takana. `0` = kaikki |
 | `ottelun_kesto_min` | Kuinka pitkän ajan ottelu varaa kalenterista, minuutteina (oletus 120) |
 | `poissa_toiminta` | `himmenna` (oletus) tai `piilota` |
+| `lyhenteet` | Joukkueen lyhenne ottelukortin pyöreään merkkiin, esim. `"Torpan Pojat": "TOPO"`. Muille joukkueille lyhenne muodostetaan nimestä automaattisesti |
 | `goatcounter` | Kävijätilaston laskentaosoite. Poista rivi, jos tilastointi halutaan lopettaa |
 | `ottelun_osoite_tuleva` | Tulevan ottelun linkki tulospalveluun. `{id}` korvautuu ottelunumerolla |
 | `ottelun_osoite_pelattu` | Pelatun ottelun linkki tulospalveluun, samalla tavalla |
