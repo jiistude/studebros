@@ -34,6 +34,7 @@
 # --- Moritz, U15 1D ---
 2026-09-13 78-66 https://tulospalvelu.basket.fi/match/1009988/progress | Kauden avaus. Moritz 8p.
 2026-09-30 54-99 https://tulospalvelu.basket.fi/match/1009992/progress | Aluedivaria RPC ryhmällä. Moritz 17p.
+2026-11-21 12:30 110-70 Moritz https://tulospalvelu.basket.fi/match/1010007/progress
 
 # --- Moritz, U16 1D ---
 2026-10-24 14:30 52-126
@@ -45,6 +46,7 @@
 2026-10-25 74-66 Moritz
 2026-11-01 11:00 78-60 Moritz https://tulospalvelu.basket.fi/match/1012858/progress
 2026-11-15 10:00 73-100 Moritz https://tulospalvelu.basket.fi/match/1012863/progress
+2026-11-22 12:15 62-118 Moritz https://tulospalvelu.basket.fi/match/1012853/progress
 
 
 # --- Bruno, ToPo U19 ---
@@ -54,6 +56,7 @@
 2026-10-17 14:30 86-66 Bruno https://tulospalvelu.basket.fi/match/1006905/statistics
 2026-10-24 15:30 71-54
 2026-11-14 14:45 63-82 Bruno https://basket.fi/live/?%7Ew=f%7EeJwtjEEKhDAMAL8iORswrbWt9736hzZNQBAv7WnFvy-BPc4wzAMd9gk2TUFKdlgrMRIpYVJakYPmElMLC0eYJ7gslhs_h9HXqI8yzj5O7qbUVBJx5Cvbrf1v4gU1e425Lpt3Au8PxcoggA
+2026-11-21 19:45 75-72 Bruno https://basket.fi/sarjat/tilastopalvelu/?gs_game=sr%3Agame%3Abcce1521-bb1d-11f1-af47-353d1bb04155&gs_tab=overview&gs_game_details_tab=box-score | Bruno 18 PTS · 6 REB · 2 AST · EFF 7 · 30:14 MIN · FG 6/17 · 3P 0/8 · FT 6/8
 
 # --- Bruno, ToPo M1A ---
 2026-09-26 15:15 82-74 https://tulospalvelu.basket.fi/match/1006595/lineups | valmistava ottelu. Bruno 11p.
