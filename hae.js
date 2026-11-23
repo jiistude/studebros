@@ -433,6 +433,48 @@ function muistiinpanoHtml(teksti) {
   return osat.map((osa, i) => `<span class="kohta">${esc(osa)}${i < osat.length - 1 ? " ·" : ""}</span>`).join(" ");
 }
 
+// Joukkueen lyhenne kortin pyöreään merkkiin (NCAA-sivun tapaan). Asetuksen
+// "lyhenteet" avulla lyhenteen voi määrätä itse, esim. "Pussihukat /Punainen": "PUHU".
+function joukkueLyhenne(nimi) {
+  const oma = (asetukset.lyhenteet || {})[nimi];
+  if (oma) return String(oma).slice(0, 5);
+  const puhdas = String(nimi || "")
+    .replace(/\(.*?\)/g, "").replace(/\s*\/.*$/, "")
+    .replace(/\s+(?:\d+|I{1,3}|IV|V)$/i, "").trim();
+  const sanat = puhdas.split(/[\s-]+/).filter(Boolean);
+  if (!sanat.length) return "?";
+  const isot = (w) => /^[A-ZÅÄÖ0-9]{2,5}$/.test(w);
+  if (sanat.length === 1) {
+    const w = sanat[0];
+    if (isot(w)) return w;
+    return (w.length <= 4 ? w : w.slice(0, 3)).toUpperCase();
+  }
+  if (isot(sanat[0])) return sanat[0];
+  return sanat.map((w) => (isot(w) || /^\d+$/.test(w) ? w : w[0].toUpperCase())).join("").slice(0, 5);
+}
+
+// Tunnistaa tilastorivin ("Bruno 12 PTS · 2 REB · … · FT 2/4") ja jakaa sen kahdelle
+// riville NCAA-sivun tapaan. Muu muistiinpano näytetään sellaisenaan.
+const ISOT_TILASTOT = ["PTS", "REB", "AST", "STL", "BLK", "TO", "EFF"];
+function tilastorivi(teksti, lapsi) {
+  let t = String(teksti || "").trim();
+  if (lapsi && t.toLowerCase().startsWith(lapsi.toLowerCase() + " ")) t = t.slice(lapsi.length).trim();
+  const osat = t.split(/\s+·\s+/);
+  if (osat.length < 2) return null;
+  const iso = [], pieni = [];
+  for (const osa of osat) {
+    let m;
+    if ((m = osa.match(/^(\d+)\s+(PTS|REB|AST|STL|BLK|TO)$/i))) iso.push(`<b>${m[1]}</b> ${m[2].toUpperCase()}`);
+    else if ((m = osa.match(/^EFF\s+(-?\d+)$/i))) iso.push(`EFF <b>${m[1]}</b>`);
+    else if ((m = osa.match(/^([\d:.]+)\s+MIN$/i))) pieni.push(`${esc(m[1])} MIN`);
+    else if ((m = osa.match(/^(FG|3P|2P|FT)\s+(\d+\/\d+)$/i))) pieni.push(`${m[1].toUpperCase()} ${m[2]}`);
+    else return null; // jokin muu kuin tilasto: näytetään tavallisena muistiinpanona
+  }
+  if (!iso.length) return null;
+  return `<div class="rivi1">${iso.map((x) => `<span class="kohta">${x}</span>`).join(" · ")}</div>` +
+    (pieni.length ? `<div class="rivi2">${pieni.map((x) => `<span class="kohta">${x}</span>`).join(" · ")}</div>` : "");
+}
+
 function ottelukortti(o, varit) {
   const v = varit[o.lapsi] || { vaalea: "#444", tumma: "#bbb" };
 
@@ -443,37 +485,54 @@ function ottelukortti(o, varit) {
   const seuraa = o.linkki
     ? `<a class="seuraa" target="_blank" rel="noopener"${gc(o.mennyt ? "tulospalvelu-tilastot" : "tulospalvelu-live", o.lapsi)} href="${esc(o.linkki)}">${
         o.mennyt ? "Ottelutilastot" : "Seuraa peliä livenä"
-      } <span aria-hidden="true">&rarr;</span></a>`
+      } <span aria-hidden="true">&rsaquo;</span></a>`
     : "";
   const striimi = o.striimi
     ? `<a class="seuraa striimi" target="_blank" rel="noopener"${gc(o.mennyt ? "tallenne" : "striimi", o.lapsi)} href="${esc(o.striimi)}">${
         o.mennyt ? "Katso tallenne" : "Katso striimi"
-      } <span aria-hidden="true">&rarr;</span></a>`
+      } <span aria-hidden="true">&rsaquo;</span></a>`
     : "";
   const painikkeet = seuraa || striimi ? `<div class="painikkeet">${seuraa}${striimi}</div>` : "";
 
-  const kotiLuokka = o.omaKotona === true ? ' class="oma"' : "";
-  const vierasLuokka = o.omaKotona === false ? ' class="oma"' : "";
+  const onTulos = o.pisteetKoti !== undefined;
+  const voitto = onTulos ? voittiko(o) : null;
+  const puoli = (nimi, pisteet, oma, sivu, voitti) => {
+    const l = joukkueLyhenne(nimi);
+    const merkki = `<div class="merkki${oma ? " oma" : ""}${l.length > 4 ? " l5" : l.length > 3 ? " l4" : ""}">${esc(l)}</div>`;
+    const joukkue = `<div class="joukkue">${merkki}<div class="jnimi${oma ? " oma" : ""}">${esc(nimi)}</div></div>`;
+    const p = onTulos ? `<div class="pisteet-iso${voitti === false ? " havio" : ""}">${pisteet}</div>` : "";
+    return `<div class="puoli ${sivu}">${sivu === "vasen" ? joukkue + p : p + joukkue}</div>`;
+  };
+  const kotiVoitti = onTulos ? o.pisteetKoti > o.pisteetVieras : null;
+  const vasen = puoli(o.koti, o.pisteetKoti, o.omaKotona === true, "vasen", onTulos ? kotiVoitti : null);
+  const oikea = puoli(o.vieras, o.pisteetVieras, o.omaKotona === false, "oikea", onTulos ? !kotiVoitti : null);
+
+  let keski;
+  if (onTulos) {
+    keski = `<div class="tila">Loppu</div>` +
+      (voitto === true ? `<div class="vt voitto">Voitto</div>` : voitto === false ? `<div class="vt tappio">Tappio</div>` : "");
+  } else if (o.mennyt) {
+    keski = `<div class="tila">Päättynyt</div><div class="pieni">klo <span class="kello">${esc(o.kello)}</span></div>`;
+  } else {
+    keski = `<div class="tila" hidden></div><div class="kello">${esc(o.kello)}</div>`;
+  }
+
+  const tilasto = o.muistiinpano ? tilastorivi(o.muistiinpano, o.lapsi) : null;
+  const alla = [
+    tilasto ? `<div class="pelaaja"><div class="nimi">${esc(o.lapsi)}</div>${tilasto}</div>` :
+      o.muistiinpano ? `<div class="muistiinpano">${muistiinpanoHtml(o.muistiinpano)}</div>` : "",
+    o.poissa ? `<div class="poissaMerkki">${esc(o.lapsi)} ei ole mukana tässä pelissä</div>` : "",
+    kartta,
+    painikkeet,
+  ].filter(Boolean).join("\n          ");
 
   return `
-      <article class="ottelu${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" data-alku="${esc(o.alku)}" data-kesto="${o.kesto || ""}" data-paivateksti="${esc(pitkaPaiva(o.paiva))}" data-tuleva="${o.mennyt ? "0" : "1"}"${o.poissa ? ' data-poissa="1"' : ""} style="--vaalea:${v.vaalea};--tumma:${v.tumma};--pohja:${v.pohja};--pohjaTeksti:${v.pohjaTeksti}">
-        <div class="kello">${esc(o.kello)}</div>
-        <div class="tiedot">
-          <div class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</div>
-          <div class="joukkueet"><span${kotiLuokka}>${esc(o.koti)}</span> <span class="vs">&ndash;</span> <span${vierasLuokka}>${esc(o.vieras)}</span></div>
-          ${o.sarja ? `<div class="sarja">${esc(o.sarja)}</div>` : ""}
-          ${(() => {
-            if (o.pisteetKoti === undefined) return "";
-            const voitto = voittiko(o);
-            const luokka = voitto === true ? " voitto" : voitto === false ? " tappio" : "";
-            const merkki = voitto === true ? "Voitto" : voitto === false ? "Tappio" : "";
-            return `<div class="tulos${luokka}">${o.pisteetKoti} &ndash; ${o.pisteetVieras}${merkki ? ` <span class="vt">${merkki}</span>` : ""}</div>`;
-          })()}
-          ${o.muistiinpano ? `<div class="muistiinpano">${muistiinpanoHtml(o.muistiinpano)}</div>` : ""}
-          ${o.poissa ? `<div class="poissaMerkki">${esc(o.lapsi)} ei ole mukana tässä pelissä</div>` : ""}
-          ${kartta}
-          ${painikkeet}
-        </div>
+      <article class="ottelu kortti${o.poissa ? " poissa" : ""}" data-lapsi="${esc(o.lapsi)}" data-alku="${esc(o.alku)}" data-kesto="${o.kesto || ""}" data-paivateksti="${esc(pitkaPaiva(o.paiva))}" data-koti="${esc(o.koti)}" data-vieras="${esc(o.vieras)}" data-tuleva="${o.mennyt ? "0" : "1"}"${o.poissa ? ' data-poissa="1"' : ""} style="--vaalea:${v.vaalea};--tumma:${v.tumma};--pohja:${v.pohja};--pohjaTeksti:${v.pohjaTeksti}">
+        <div class="ylarivi"><span class="lapsi">${esc(o.lapsi)}${o.joukkue ? ` &middot; ${esc(o.joukkue)}` : ""}</span>${o.sarja ? `<span class="sarja">${esc(o.sarja)}</span>` : ""}</div>
+        <div class="ylaosa">${vasen}<div class="keski">${keski}</div>${oikea}</div>
+        ${alla ? `<div class="alaosa">
+          ${alla}
+        </div>` : ""}
       </article>`;
 }
 
@@ -678,6 +737,12 @@ ${teemaCss(asetukset.teema)}
 
   function muutaPelatuksi(kortti) {
     kortti.dataset.tuleva = '0';
+    var keski = kortti.querySelector('.keski');
+    var kello = kortti.querySelector('.kello');
+    if (keski && kello) {
+      keski.innerHTML = '<div class="tila">Päättynyt</div><div class="pieni">klo <span class="kello"></span></div>';
+      keski.querySelector('.kello').textContent = kello.textContent;
+    }
     var tp = kortti.querySelector('a.seuraa:not(.striimi)');
     if (tp && OSOITE_TULEVA.indexOf('{id}') > -1) {
       var osat = OSOITE_TULEVA.split('{id}');
@@ -726,6 +791,18 @@ ${teemaCss(asetukset.teema)}
       if (isNaN(alku)) return;
       var kesto = (Number(kortti.dataset.kesto) > 0 ? Number(kortti.dataset.kesto) : OLETUSKESTO) * 60000;
       if (alku + kesto < nyt) paattyneet.push(kortti);
+    });
+
+    // Käynnissä oleva ottelu: merkintä kortin keskelle.
+    document.querySelectorAll('.ottelu[data-tuleva="1"]').forEach(function (kortti) {
+      var alku = Date.parse(kortti.dataset.alku);
+      var kesto = (Number(kortti.dataset.kesto) > 0 ? Number(kortti.dataset.kesto) : OLETUSKESTO) * 60000;
+      var tila = kortti.querySelector('.keski .tila');
+      if (tila && alku <= nyt && nyt <= alku + kesto) {
+        tila.textContent = 'Käynnissä';
+        tila.className = 'tila live';
+        tila.hidden = false;
+      }
     });
 
     // Vanhin ensin, jolloin uusin päätyy listan kärkeen.
@@ -788,7 +865,7 @@ ${teemaCss(asetukset.teema)}
       var halli = k.querySelector('.halli');
       var kello = k.querySelector('.kello').textContent.trim().replace(':', '.');
       rivit.push(pvm + ' klo ' + kello + ' \\u00b7 ' + k.dataset.lapsi + '\\n' +
-        k.querySelector('.joukkueet').textContent.trim() +
+        k.dataset.koti + ' \u2013 ' + k.dataset.vieras +
         (halli ? '\\n' + halli.textContent.trim() : ''));
     });
 
@@ -1120,6 +1197,21 @@ async function main() {
     }
   }
   if (merkittyja) console.log(`Merkitty poissaolevaksi: ${merkittyja} ottelua.`);
+
+  // Oma joukkue: jos syötteestä ei voitu päätellä (esim. syötteessä vain yksi peli),
+  // käytetään saman pojan muista otteluista tunnettuja oman joukkueen nimiä.
+  const omatNimet = {};
+  for (const o of kaikki) {
+    if (o.omaKotona !== true && o.omaKotona !== false) continue;
+    (omatNimet[o.lapsi] = omatNimet[o.lapsi] || new Set()).add(o.omaKotona ? o.koti : o.vieras);
+  }
+  for (const o of kaikki) {
+    if (o.omaKotona === true || o.omaKotona === false) continue;
+    const nimet = omatNimet[o.lapsi];
+    if (!nimet) continue;
+    const koti = nimet.has(o.koti), vieras = nimet.has(o.vieras);
+    if (koti !== vieras) o.omaKotona = koti;
+  }
 
   // Striimilinkit (KorisTV). striimit.txt koskee vain tulospalvelusta haettuja
   // pelejä; käsin lisätyn pelin striimi annetaan lisapelit.txt:n striimi:-rivillä.

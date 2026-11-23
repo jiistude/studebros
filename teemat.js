@@ -617,9 +617,101 @@ const TEEMAT = {
   },
 };
 
+// Ottelukortti NCAA-sivun (ncaa.stude.basketball) tyyliin. Tulee teeman päälle,
+// joten se näyttää samalta teemasta riippumatta. Pojan väri: --pohja (nimitarra ja
+// oman joukkueen merkki) ja --lapsi (painikkeet).
+const KORTTI = `
+  .ottelu.kortti {
+    --kapea: "Arial Narrow", "Roboto Condensed", "Helvetica Neue Condensed", "Helvetica Neue", Arial, sans-serif;
+    --heikko: #6B7078; --vaalea-viiva: #E9EBEE;
+    display: block; background: #FFFFFF; color: #1A1A1A;
+    border: 1px solid var(--raja); border-radius: 16px; padding: 0; margin: 0 0 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .06); overflow: hidden;
+  }
+  .ottelu.kortti:last-child { border-bottom: 1px solid var(--raja); }
+  .kortti .ylarivi {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 10px;
+    padding: 10px 14px 0; text-align: center;
+  }
+  .kortti .lapsi {
+    display: inline-block; margin: 0; font: 700 .66rem/1 var(--fontti); letter-spacing: .14em; text-transform: uppercase;
+    background: var(--pohja); color: var(--pohjaTeksti); padding: .3rem .55rem; border-radius: 3px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+  }
+  .kortti .sarja {
+    margin: 0; font-size: .68rem; font-weight: 700; color: var(--heikko);
+    text-transform: uppercase; letter-spacing: .05em;
+  }
+  .kortti .ylaosa {
+    display: grid; grid-template-columns: 1fr minmax(84px, auto) 1fr; align-items: start;
+    padding: 14px 10px 14px; gap: 6px;
+  }
+  .kortti .puoli { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 8px; min-width: 0; }
+  .kortti .puoli.oikea { grid-template-columns: auto 1fr; }
+  .kortti .joukkue { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; gap: 4px; }
+  .kortti .merkki {
+    width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+    font: 800 .8rem/1 var(--kapea); letter-spacing: .02em;
+    background: var(--vaalea-viiva); color: var(--heikko); border: 2px solid #C4C8CD;
+  }
+  .kortti .merkki.l4 { font-size: .68rem; letter-spacing: 0; }
+  .kortti .merkki.l5 { font-size: .56rem; letter-spacing: 0; }
+  .kortti .merkki.oma { background: var(--pohja); color: var(--pohjaTeksti); border: 0; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2); }
+  .kortti .jnimi { font-size: .92rem; line-height: 1.15; overflow-wrap: break-word; hyphens: auto; max-width: 100%; }
+  .kortti .jnimi.oma { font-weight: 800; }
+  .kortti .pisteet-iso {
+    margin-top: 6px; font: 800 2.3rem/1 var(--kapea); font-variant-numeric: tabular-nums; color: #1A1A1A;
+  }
+  .kortti .pisteet-iso.havio { color: #B4B8BE; }
+  .kortti .puoli.vasen .pisteet-iso { text-align: right; }
+  .kortti .keski { margin-top: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .kortti .tila { font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--heikko); }
+  .kortti .tila.live { color: #E3343A; display: inline-flex; align-items: center; gap: 5px; }
+  .kortti .tila.live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #E3343A; }
+  .kortti .keski > .kello {
+    min-width: 0; padding: 0; margin: 0; color: #1A1A1A;
+    font: 800 2rem/1 var(--kapea); font-variant-numeric: tabular-nums; letter-spacing: 0;
+  }
+  .kortti .pieni { font-size: .76rem; color: var(--heikko); }
+  .kortti .pieni .kello { font: inherit; color: inherit; min-width: 0; padding: 0; }
+  .kortti .vt {
+    font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
+    border-radius: 999px; padding: 2px 8px; margin-top: 2px;
+  }
+  .kortti .vt.voitto { background: #E3F4EA; color: #11703A; }
+  .kortti .vt.tappio { background: var(--vaalea-viiva); color: var(--heikko); }
+  .kortti .alaosa {
+    border-top: 1px solid var(--vaalea-viiva); padding: 10px 14px 14px;
+    display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;
+  }
+  .kortti .pelaaja .nimi { font-weight: 700; }
+  .kortti .rivi1 { font-variant-numeric: tabular-nums; font-size: .98rem; margin-top: 1px; }
+  .kortti .rivi1 b { font-weight: 800; }
+  .kortti .rivi2 { font-variant-numeric: tabular-nums; font-size: .82rem; color: var(--heikko); }
+  .kortti .kohta { white-space: nowrap; }
+  .kortti .muistiinpano { margin: 0; border: 0; padding: 0; font-size: .92rem; color: #1A1A1A; }
+  .kortti .poissaMerkki { margin: 0; }
+  .kortti a.halli { margin: 0; font-size: .82rem; color: var(--heikko); }
+  .kortti .painikkeet { justify-content: center; gap: 8px; }
+  .kortti a.seuraa {
+    margin: 0; font: 700 .8rem/1.2 var(--fontti); text-transform: none; letter-spacing: 0;
+    color: #1A1A1A; border: 1px solid #DCDFE3; border-radius: 999px; padding: 8px 14px; background: #FFFFFF;
+  }
+  .kortti a.seuraa:hover, .kortti a.seuraa:focus { border-color: var(--lapsi); background: #FFFFFF; color: var(--lapsi); }
+  .ottelu.kortti.poissa { opacity: .6; }
+  .ottelu.kortti.poissa .jnimi { text-decoration: line-through; text-decoration-thickness: 1px; }
+  @media (max-width: 420px) {
+    .kortti .pisteet-iso { font-size: 1.8rem; }
+    .kortti .jnimi { font-size: .84rem; }
+    .kortti .ylaosa { padding: 12px 6px; gap: 4px; grid-template-columns: 1fr minmax(70px, auto) 1fr; }
+    .kortti .merkki { width: 40px; height: 40px; }
+    .kortti .keski > .kello { font-size: 1.7rem; }
+  }
+`;
+
 function teemaCss(nimi) {
   const teema = TEEMAT[nimi] || TEEMAT.selkea;
-  return PERUSTA + teema.css;
+  return PERUSTA + teema.css + KORTTI;
 }
 
 module.exports = { TEEMAT, teemaCss };
