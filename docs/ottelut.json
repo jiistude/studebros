@@ -1,5 +1,5 @@
 {
-  "paivitetty": "23. marraskuuta 2026 klo 16.02",
+  "paivitetty": "23. marraskuuta 2026 klo 16.11",
   "tulevat": [
     {
       "match_id": "1006692",
@@ -60,7 +60,7 @@
       "linkki": "https://tulospalvelu.basket.fi/match/1012848/preview",
       "lapsi": "Moritz",
       "joukkue": "RPC",
-      "omaKotona": null,
+      "omaKotona": false,
       "striimi": "https://koristv.fi/rpc-p15/games/g/o2xbnf6y",
       "mennyt": false
     },
