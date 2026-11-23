@@ -1,5 +1,5 @@
 {
-  "paivitetty": "23. marraskuuta 2026 klo 14.40",
+  "paivitetty": "23. marraskuuta 2026 klo 16.02",
   "tulevat": [
     {
       "match_id": "1006692",
@@ -746,10 +746,14 @@
       "vieras": "Kori-80 1",
       "sarja": "15-vuotiaat pojat, Robert Petersen Cup",
       "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1012853/statistics",
+      "linkki": "https://tulospalvelu.basket.fi/match/1012853/progress",
       "lapsi": "Moritz",
       "joukkue": "RPC",
       "omaKotona": true,
+      "pisteetKoti": 62,
+      "pisteetVieras": 118,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "mennyt": true
     },
     {
@@ -761,10 +765,14 @@
       "vieras": "ToPo",
       "sarja": "19-vuotiaat pojat, SM-sarja",
       "halli": "Namika Areena B, Pilkekuja 10, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006924/statistics",
+      "linkki": "https://basket.fi/sarjat/tilastopalvelu/?gs_game=sr%3Agame%3Abcce1521-bb1d-11f1-af47-353d1bb04155&gs_tab=overview&gs_game_details_tab=box-score",
       "lapsi": "Bruno",
       "joukkue": "ToPo U19",
       "omaKotona": false,
+      "pisteetKoti": 75,
+      "pisteetVieras": 72,
+      "muistiinpano": "Bruno 18 PTS · 6 REB · 2 AST · EFF 7 · 30:14 MIN · FG 6/17 · 3P 0/8 · FT 6/8",
+      "linkkiKasin": true,
       "striimi": "https://koristv.fi/koripallomu19sm/games/g/2apx0b57",
       "mennyt": true
     },
@@ -777,10 +785,14 @@
       "vieras": "Pussihukat /Punainen",
       "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
       "halli": "Kankarepuiston peruskoulu, Somerikkopolku 6, Helsinki",
-      "linkki": "https://tulospalvelu.basket.fi/match/1010007/statistics",
+      "linkki": "https://tulospalvelu.basket.fi/match/1010007/progress",
       "lapsi": "Moritz",
       "joukkue": "U15 1D",
       "omaKotona": false,
+      "pisteetKoti": 110,
+      "pisteetVieras": 70,
+      "muistiinpano": "",
+      "linkkiKasin": true,
       "mennyt": true
     },
     {
