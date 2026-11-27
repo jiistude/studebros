@@ -531,6 +531,20 @@
   "joukkue": "HBA M1A",
   "omaKotona": false
  },
+ "1006735|Bruno|ToPo M1A": {
+  "match_id": "1006735",
+  "alku": "2026-12-11T16:30:00.000Z",
+  "paiva": "2026-12-11",
+  "kello": "18:30",
+  "koti": "ACO Basket",
+  "vieras": "Torpan Pojat",
+  "sarja": "Miesten I divisioona A",
+  "halli": "Ouluhalli, Ouluhallintie 20, Oulu",
+  "linkki": "",
+  "lapsi": "Bruno",
+  "joukkue": "ToPo M1A",
+  "omaKotona": false
+ },
  "1010016|Moritz|U15 1D": {
   "match_id": "1010016",
   "alku": "2026-12-12T11:00:00.000Z",
@@ -543,20 +557,6 @@
   "linkki": "",
   "lapsi": "Moritz",
   "joukkue": "U15 1D",
-  "omaKotona": false
- },
- "1006735|Bruno|ToPo M1A": {
-  "match_id": "1006735",
-  "alku": "2026-12-12T15:00:00.000Z",
-  "paiva": "2026-12-12",
-  "kello": "17:00",
-  "koti": "ACO Basket",
-  "vieras": "Torpan Pojat",
-  "sarja": "Miesten I divisioona A",
-  "halli": "Ouluhalli, Ouluhallintie 20, Oulu",
-  "linkki": "",
-  "lapsi": "Bruno",
-  "joukkue": "ToPo M1A",
   "omaKotona": false
  },
  "1006760|Werner|HBA M1A": {
