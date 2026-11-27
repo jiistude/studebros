@@ -1,22 +1,6 @@
 {
-  "paivitetty": "26. marraskuuta 2026 klo 14.33",
+  "paivitetty": "27. marraskuuta 2026 klo 3.10",
   "tulevat": [
-    {
-      "match_id": "1006692",
-      "alku": "2026-11-26T16:30:00.000Z",
-      "paiva": "2026-11-26",
-      "kello": "18:30",
-      "koti": "Lappeenrannan NMKY",
-      "vieras": "Torpan Pojat",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Lappeenrannan Urheilutalo, Pohjolankatu 29, Lappeenranta",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006692/preview",
-      "lapsi": "Bruno",
-      "joukkue": "ToPo M1A",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/lrnmky-m1/games/g/cvqhynqd",
-      "mennyt": false
-    },
     {
       "match_id": "1006662",
       "alku": "2026-11-27T16:30:00.000Z",
@@ -737,6 +721,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006692",
+      "alku": "2026-11-26T16:30:00.000Z",
+      "paiva": "2026-11-26",
+      "kello": "18:30",
+      "koti": "Lappeenrannan NMKY",
+      "vieras": "Torpan Pojat",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Lappeenrannan Urheilutalo, Pohjolankatu 29, Lappeenranta",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006692/statistics",
+      "lapsi": "Bruno",
+      "joukkue": "ToPo M1A",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/lrnmky-m1/games/g/cvqhynqd",
+      "mennyt": true
+    },
     {
       "match_id": "1012853",
       "alku": "2026-11-22T10:15:00.000Z",
