@@ -1,21 +1,6 @@
 {
-  "paivitetty": "28. marraskuuta 2026 klo 2.42",
+  "paivitetty": "28. marraskuuta 2026 klo 13.45",
   "tulevat": [
-    {
-      "match_id": "1010012",
-      "alku": "2026-11-28T08:00:00.000Z",
-      "paiva": "2026-11-28",
-      "kello": "10:00",
-      "koti": "Pussihukat /Punainen",
-      "vieras": "HNMKY Valkoinen",
-      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
-      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
-      "linkki": "https://tulospalvelu.basket.fi/match/1010012/preview",
-      "lapsi": "Moritz",
-      "joukkue": "U15 1D",
-      "omaKotona": true,
-      "mennyt": false
-    },
     {
       "match_id": "1012848",
       "alku": "2026-11-29T11:30:00.000Z",
@@ -704,6 +689,21 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1010012",
+      "alku": "2026-11-28T08:00:00.000Z",
+      "paiva": "2026-11-28",
+      "kello": "10:00",
+      "koti": "Pussihukat /Punainen",
+      "vieras": "HNMKY Valkoinen",
+      "sarja": "15-vuotiaat pojat I divisioona Eteläinen alue",
+      "halli": "Martinlaakson koulu, Martinlaaksonpolku 9, Vantaa",
+      "linkki": "https://tulospalvelu.basket.fi/match/1010012/statistics",
+      "lapsi": "Moritz",
+      "joukkue": "U15 1D",
+      "omaKotona": true,
+      "mennyt": true
+    },
     {
       "match_id": "1006662",
       "alku": "2026-11-27T16:30:00.000Z",
