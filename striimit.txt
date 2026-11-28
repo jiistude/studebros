@@ -54,7 +54,7 @@
 2026-12-05 18:00 Bruno https://koristv.fi/topo-m1/games/g/bwgpf8kf  # Torpan Pojat – Pyrintö Akatemia
 2026-12-06 15:00 Werner https://koristv.fi/hba-m1/games/g/dyaw52ub  # HBA-Märsky – Lappeenrannan NMKY
 2026-12-10 19:00 Werner https://koristv.fi/pyrinto-m1-a/games/g/33ks993p  # Pyrintö Akatemia – HBA-Märsky
-2026-12-12 17:00 Bruno https://koristv.fi/aco-m1/games/g/wfxcbo1k  # ACO Basket – Torpan Pojat
+2026-12-11 18:30 Bruno https://koristv.fi/aco-m1/games/g/wfxcbo1k  # ACO Basket – Torpan Pojat
 2026-12-18 17:30 Werner https://koristv.fi/hba-m1/games/g/5q1twm6b  # HBA-Märsky – ACO Basket
 2026-12-18 18:30 Bruno https://koristv.fi/topo-m1/games/g/st0ih5ez  # Torpan Pojat – Kobrat
 2027-01-08 18:30 Bruno https://koristv.fi/topo-m1/games/g/n2hubtzs  # Torpan Pojat – Helsingin NMKY
