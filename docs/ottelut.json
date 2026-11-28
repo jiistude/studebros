@@ -1,22 +1,6 @@
 {
-  "paivitetty": "27. marraskuuta 2026 klo 14.19",
+  "paivitetty": "28. marraskuuta 2026 klo 2.42",
   "tulevat": [
-    {
-      "match_id": "1006662",
-      "alku": "2026-11-27T16:30:00.000Z",
-      "paiva": "2026-11-27",
-      "kello": "18:30",
-      "koti": "Jyväskylä Basketball Academy",
-      "vieras": "HBA-Märsky",
-      "sarja": "Miesten I divisioona A",
-      "halli": "Jyväskylän Monitoimitalo, Kuntoportti 3, Jyväskylä",
-      "linkki": "https://tulospalvelu.basket.fi/match/1006662/preview",
-      "lapsi": "Werner",
-      "joukkue": "HBA M1A",
-      "omaKotona": false,
-      "striimi": "https://koristv.fi/jba-m1/games/g/du4pg1kq",
-      "mennyt": false
-    },
     {
       "match_id": "1010012",
       "alku": "2026-11-28T08:00:00.000Z",
@@ -720,6 +704,22 @@
     }
   ],
   "menneet": [
+    {
+      "match_id": "1006662",
+      "alku": "2026-11-27T16:30:00.000Z",
+      "paiva": "2026-11-27",
+      "kello": "18:30",
+      "koti": "Jyväskylä Basketball Academy",
+      "vieras": "HBA-Märsky",
+      "sarja": "Miesten I divisioona A",
+      "halli": "Jyväskylän Monitoimitalo, Kuntoportti 3, Jyväskylä",
+      "linkki": "https://tulospalvelu.basket.fi/match/1006662/statistics",
+      "lapsi": "Werner",
+      "joukkue": "HBA M1A",
+      "omaKotona": false,
+      "striimi": "https://koristv.fi/jba-m1/games/g/du4pg1kq",
+      "mennyt": true
+    },
     {
       "match_id": "1006692",
       "alku": "2026-11-26T16:30:00.000Z",
